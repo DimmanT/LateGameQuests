@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- <GenStepDef> -->
+        <!-- <defName>LoGiQ_GenStep_Replacement</defName> -->
+        <!-- <order>5000</order> -->
+        <!-- <genStep Class="LoGiQ.GenStep_Replacement" /> -->
+    <!-- </GenStepDef> -->
+	
+</Defs>

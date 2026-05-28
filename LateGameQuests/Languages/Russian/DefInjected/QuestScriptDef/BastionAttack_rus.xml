@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <LoGiQ_AttackBastion.questDescriptionRules.rulesStrings>
+   <li>questDescription -&gt; Силы [enemyFaction_name] организовали хорошо укрепленный опорный пункт указанных координах. Противник использует ее для подготовки массированных атак на поселение. Уничтожьте базу противника до того, как они подготовят удар. Следует провести тщательную подгогтовку, прежде чем атаковать, поскольку база хорошо защищена.</li>
+   <li>questDescription -&gt; Разведданные указывают на наличие мощной цитадели противника в заданных координатах. [enemyFaction_name] готовят силы, чтобы атаковать колонию. Имеет смысл атаковать и разрушить эту цитадель, однако для этого понадобится подготовить мощный ударный отряд и несколько осадных орудий.</li>
+   <li>questDescription -&gt; Из надежных источников стало известно, что враждебная фракция [enemyFaction_name] построила серьезные укрепления в указанном секторе. Это не обычная военная база, а хорошо укрепленный объект. Для штурма понадобятся осадные орудия и мощный ударный отряд.</li>
+  </LoGiQ_AttackBastion.questDescriptionRules.rulesStrings>
+
+  <LoGiQ_AttackBastion.questNameRules.rulesStrings>
+        <li>questName -&gt; [questAssaultName] [questEnemyBaseName]</li>
+		<li>questAssaultName -&gt; Штурм</li>
+		<li>questAssaultName -&gt; Атака</li>
+		<li>questAssaultName -&gt; Разгром</li>
+		<li>questAssaultName -&gt; Уничтожение</li>
+		<li>questEnemyBaseName -&gt; вражеского опорного пункта</li>
+		<li>questEnemyBaseName -&gt; вражеской крепости</li>
+		<li>questEnemyBaseName -&gt; вражеской цитадели</li>
+		<li>questEnemyBaseName -&gt; вражеской укрепленной базы</li>
+  </LoGiQ_AttackBastion.questNameRules.rulesStrings>
+
+<LoGiQ_AttackBastion.root.nodes.Delay-0.expiryInfoPart.slateRef>$enemyFaction готовятся атаковать колонию {0}</LoGiQ_AttackBastion.root.nodes.Delay-0.expiryInfoPart.slateRef> 
+<LoGiQ_AttackBastion.root.nodes.Delay-0.expiryInfoPartTip.slateRef>$enemyFaction атакуют колонию {0}</LoGiQ_AttackBastion.root.nodes.Delay-0.expiryInfoPartTip.slateRef>
+<LoGiQ_AttackBastion.root.nodes.Delay-0.node.parms.customLetterLabel.value.slateRef>Налетчики с вражеской базы!</LoGiQ_AttackBastion.root.nodes.Delay-0.node.parms.customLetterLabel.value.slateRef>
+<LoGiQ_AttackBastion.root.nodes.Delay-0.node.parms.customLetterText.value.slateRef>Вражеский отряд прибыл с ближайшей крепости. Уничтожьте ее, чтобы предотвратить дальнейшие нападения.</LoGiQ_AttackBastion.root.nodes.Delay-0.node.parms.customLetterText.value.slateRef>
+<LoGiQ_AttackBastion.root.nodes.Delay-1.expiryInfoPart.slateRef>$enemyFaction готовятся атаковать колонию {0}</LoGiQ_AttackBastion.root.nodes.Delay-1.expiryInfoPart.slateRef> 
+<LoGiQ_AttackBastion.root.nodes.Delay-1.expiryInfoPartTip.slateRef>$enemyFaction атакуют колонию {0}</LoGiQ_AttackBastion.root.nodes.Delay-1.expiryInfoPartTip.slateRef> 
+<LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Letter.label.slateRef>Противник вызвал подкрепление.</LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Letter.label.slateRef>
+<LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Letter.text.slateRef>Противник обнаружил ваш отряд и вызвал подкрепления. Они прибудут примерно через сутки.</LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Letter.text.slateRef>
+<LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPart.slateRef>Отряд $enemyFaction прибудет через {0}'</LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPart.slateRef>
+<LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>Отряд $enemyFaction будет здесь {0}'</LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>
+<LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>К противнику подошло подкрепление!</LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>
+<LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>Подкрепление противника прибыло в сектор и готово контратаковать.</LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>
+  
+
+</LanguageData>

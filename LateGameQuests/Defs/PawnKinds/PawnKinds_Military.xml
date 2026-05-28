@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnKindDef ParentName="MercenaryEliteTierBase">
+    <defName>LoGiQ_GarrisonCommander</defName>
+    <label>commander</label>
+    <labelPlural>commanders</labelPlural>
+    <factionLeader>false</factionLeader>
+    <canBeSapper>true</canBeSapper>
+    <initialResistanceRange>17~27</initialResistanceRange>
+	<weaponTags Inherit="False">
+      <li>ShortShots</li>
+    </weaponTags>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="MercenaryGunnerBase">
+    <defName>LoGiQ_SlavetradersBoss</defName>
+    <label>boss</label>
+    <labelPlural>bosses</labelPlural>
+    <factionLeader>false</factionLeader>
+    <canBeSapper>false</canBeSapper>
+    <initialResistanceRange>17~27</initialResistanceRange>
+	<weaponTags Inherit="False">
+      <li>ShortShots</li>
+    </weaponTags>
+	<combatPower Inherit="False">175</combatPower>
+	<apparelMoney Inherit="False">2100~2700</apparelMoney>
+    <apparelAllowHeadgearChance Inherit="False">0.8</apparelAllowHeadgearChance>
+    <weaponMoney Inherit="False">900~1050</weaponMoney>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="MercenaryGunnerBase">
+    <defName>LoGiQ_Mercenary_Crew</defName>
+    <initialResistanceRange>6~10</initialResistanceRange>
+	<label Inherit="False">mercenary crew</label>
+	<labelPlural>mercenary crew</labelPlural>
+    <combatPower Inherit="False">75</combatPower>
+	<weaponTags Inherit="False">
+      <li>ShortShots</li>
+    </weaponTags>
+	<apparelMoney Inherit="False">1000~1200</apparelMoney>
+    <apparelAllowHeadgearChance Inherit="False">0.8</apparelAllowHeadgearChance>
+    <weaponMoney Inherit="False">400~450</weaponMoney>
+	<skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>9~13</range>
+      </li>
+    </skills>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="MercenaryBase" MayRequire="Aoba.Exosuit.AMP">
+    <defName>LoGiQ_AMP_Pawn_Marine</defName>
+    <label>advanced pilot</label>
+    <combatPower>250</combatPower>
+    <aiAvoidCover>true</aiAvoidCover>
+    <isFighter>true</isFighter>
+    <gearHealthRange>0.8~2</gearHealthRange>
+    <apparelTags>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>1300~2000</apparelMoney>
+    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+    <weaponTags>
+	  <li>GunHeavy</li>
+      <li>SpacerGun</li>
+	  <li MayRequire="ceteam.combatextended">MechanoidMinigun</li>
+	</weaponTags>
+    <weaponMoney>3000~4500</weaponMoney>
+    <techHediffsChance>0.2</techHediffsChance>
+    <techHediffsMoney>1000~2200</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>15~24</initialResistanceRange>
+	<requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <modExtensions>
+      <li Class="Exosuit.ModExtForceApparelGen">
+        <StructurePointRange>0.9~1.0</StructurePointRange>
+        <apparels>
+          <li>AMP_Core</li>
+		  <!-- <li>AMP_Apparel_Rifle</li> -->
+        </apparels>
+        <chanceApparels>
+        </chanceApparels>
+        <colorGenerator Class="ColorGenerator_Options">
+          <options>
+            <li>
+              <only>(135, 105, 105)</only>
+            </li>
+            <li>
+              <only>(105, 77, 77)</only>
+            </li>
+            <li>
+              <only>(77, 77, 77)</only>
+            </li>
+          </options>
+        </colorGenerator>
+      </li>
+      <li Class="Exosuit.ModExtension_NoIdeoApparel"/>  <!-- No Ideo Apparel replace apparel -->
+    </modExtensions>
+	<skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>11~16</range>
+      </li>
+    </skills>
+  </PawnKindDef>
+</Defs>

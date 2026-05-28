@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <LoGiQ_RescueMissionHard.questDescriptionRules.rulesStrings>
+    <li>questDescription -&gt; Люди из [askerFaction_name] просят о помощи. Один из их соотечественников был похищен, но им удалось добыть информацию, о том, что пленник может содержаться в одном из лагерей работорговцев.</li>
+  </LoGiQ_RescueMissionHard.questDescriptionRules.rulesStrings>
+
+  <LoGiQ_RescueMissionHard.questNameRules.rulesStrings>
+    <li>questName -&gt; Спасательная операция</li>
+	<li>questName -&gt; Спасательная миссия</li>
+	<li>questName -&gt; Освобождение пленника</li>
+	<li>questName -&gt; Вызволить невиновного</li>
+	<li>questName -&gt; Налет на работорговцев</li>
+  </LoGiQ_RescueMissionHard.questNameRules.rulesStrings>
+
+<LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter.label.slateRef>Противник вызвал подкрепление.</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter.label.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter.text.slateRef>Работорговцы обнаружили ваш отряд и вызвали подкрепление. Оно будет здесь примерно через сутки.</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter.text.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPart.slateRef>Силы $enemyFaction на подходе {0}</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPart.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>Силы $enemyFaction будут здесь {0}</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>Вражеское подкрепление</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>Подкрепление противника уже здесь и готово к контратаке!</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>Прибудьте в течение {0}, чтобы спасти пленника.</LoGiQ_RescueMissionHard.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.WorldObjectTimeout.expiryInfoPartTip.slateRef>Прибудьте не позднее, чем {0},чтобы спасти пленника.</LoGiQ_RescueMissionHard.root.nodes.WorldObjectTimeout.expiryInfoPartTip.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>Время вышло: [resolvedQuestName]</LoGiQ_RescueMissionHard.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>Вы потеряли след пленника. Возможно его перевели в другое место или казнили.</LoGiQ_RescueMissionHard.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>
+
+</LanguageData>

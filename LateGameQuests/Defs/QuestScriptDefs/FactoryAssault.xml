@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>LoGiQ_FactoryAssault</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>	
+		<!-- . . . . . . Get asker  . . . . . . -->
+		<li Class="QuestNode_GetPawn">
+			<storeAs>asker</storeAs>
+			<mustBeFactionLeader>true</mustBeFactionLeader>
+            <allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+			<mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
+		</li>
+		<li Class="QuestNode_GetFactionOf">
+			<thing>$asker</thing>
+            <storeAs>askerFaction</storeAs>
+		</li>
+		
+		<!-- . . . . . . Get enemy . . . . . . -->
+	    <li Class="LoGiQ.QuestNodes.QuestNode_GetFactionAdv">
+          <storeAs>enemyFaction</storeAs>
+          <allowEnemy>true</allowEnemy>
+          <allowNeutral>true</allowNeutral>
+          <allowAlly>false</allowAlly>
+          <allowAskerFaction>false</allowAskerFaction>
+          <allowPermanentEnemy>true</allowPermanentEnemy>
+          <mustBePermanentEnemy>false</mustBePermanentEnemy>
+          <leaderMustBeSafe>False</leaderMustBeSafe>
+          <mustHaveGoodwillRewardsEnabled>False</mustHaveGoodwillRewardsEnabled>
+		  <minTechLevel>Industrial</minTechLevel>
+        </li>
+				
+		<!-- . . . . . . . . Regress. . . . . . . . -->
+		<li Class="LoGiQ.QuestNodes.QuestNode_ProgressComplex">
+		   	<inSignals>
+				<li>AnyProductionBuildingDamaged</li>
+				<li>Engineers.Killed</li>
+				<li>Engineers.LeftMap</li>
+			</inSignals>
+			<increments>
+				<li>-5</li>
+				<li>-10</li>
+				<li>-5</li>
+			</increments>
+		   <progressMax>10</progressMax>
+		   <progressMin>100</progressMin>
+		   <progressMessage>commercial value</progressMessage>
+		   <progressName>CommercialValue</progressName>
+		   <outSignalComplete>TooMuchDestruction</outSignalComplete>
+	    </li>
+		<li Class="QuestNode_Letter">
+		  <inSignal>TooMuchDestruction</inSignal>
+		  <label>Too much destruction!</label>
+		  <letterDef>NegativeEvent</letterDef>
+		  <!-- <text>You made too much destruction, there is no point to rebuild this [questFactoryName]. Your employers are disappointed with such inaccurate work and will not pay.</text> -->
+		  <text>You made too much destruction, there is no point to rebuild this factory. Your employers are disappointed with such inaccurate work and will not pay.</text>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . . . . .  -->
+
+		<!-- . . . . . . . GEN MAP . . . . . . . . . -->
+        <li Class="QuestEditor_Library.QuestNode_RandomCustomMap">
+          <tags>
+			<li><key>LoGiQ_FactoryAssaultRoot</key><value>1</value></li>
+		  </tags>
+          <buffer>10</buffer>
+          <bufferMin>20</bufferMin>
+		  <overrideFaction>$enemyFaction</overrideFaction>
+          <!-- <siteIconPath>Things/Sites/factory</siteIconPath> -->
+          <expandingIconPath>Things/Sites/factory</expandingIconPath>
+          <replaceMapGeneration>False</replaceMapGeneration>
+          <disdestroyBecauseOfNoColonist>True</disdestroyBecauseOfNoColonist>
+          <reenterable>True</reenterable>
+          <beUnreenterableWhenAllEnemiesDefeated>True</beUnreenterableWhenAllEnemiesDefeated>
+          <enableBlack>True</enableBlack>
+          <storeAs>site</storeAs>
+          <distance>
+            <min>10</min>
+            <max>20</max>
+          </distance>
+          <blacklist />
+        </li>
+		<li Class="QuestNode_Signal">
+          <inSignal>site.MapGenerated</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+			  <li Class="QuestNode_Letter">
+				<label>Enemies call to reinforcements.</label>
+				<letterDef>NegativeEvent</letterDef>
+				<text>Enemies have detected you, they call to reinforcements. Forces will be here in a day or so.</text>
+			  </li>
+              <li Class="RimWorld.QuestGen.QuestNode_Delay">
+				  <inSignalDisable>site.Destroyed</inSignalDisable>
+				  <outSignalComplete>ReadyForAttack</outSignalComplete>
+				  <expiryInfoPart TKey="InfoPartReadyForAttack">Forces of $enemyFaction moving to this location {0}</expiryInfoPart>
+				  <expiryInfoPartTip TKey="InfoPartTipReadyForAttack">Forces of $enemyFaction will be here at {0}</expiryInfoPartTip>
+				  <delayTicks>60000</delayTicks> <!-- todo: calc this value using distance to nearest faction's WorldObject -->
+				  <isQuestTimeout>false</isQuestTimeout>
+				  <node Class="RimWorld.QuestGen.QuestNode_SubScript">
+					  <def>Util_RaidSiteComplex</def>
+					  <parms>
+						<points>1500</points>
+						<inSignal>ReadyForAttack</inSignal>
+						<siteToRaid>$site</siteToRaid>
+						<customLetterLabel TKey="LetterLabelAttack">Enemy reinforcements!</customLetterLabel>
+						<customLetterText  TKey="LetterTextAttack"> Enemy squad reached this place and ready for counterattack.</customLetterText>
+						<arrivalMode>EdgeWalkIn</arrivalMode>
+						<canTimeoutOrFlee>true</canTimeoutOrFlee>
+						<inSignalLeave>EndRaid</inSignalLeave>
+					  </parms>
+					</node>
+				</li>
+            </nodes>
+          </node>
+        </li>
+	    <li Class="LoGiQ.QuestNodes.QuestNode_GameConditionSite">
+		  <inSignal>site.MapGenerated</inSignal>
+		  <removeSignal>site.AllEnemiesDefeated</removeSignal>
+		  <gameCondition>LoGiQ_GameCondition_FactoryAssault</gameCondition>
+		  <targetWorld>false</targetWorld>
+		  <duration>-1</duration>
+		  <site>$site</site>
+		</li>
+		<li Class="QuestNode_WorldObjectTimeout">
+		  <worldObject>$site</worldObject>
+		  <delayTicks>$(randInt(11,16)*60000)</delayTicks>
+		  <inSignalDisable>site.MapGenerated</inSignalDisable>
+		  <destroyOnCleanup>true</destroyOnCleanup>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . . . . . -->
+		
+		<!-- hacking -->
+		<li Class="LoGiQ.QuestNodes.QuestNode_ChangeFaction">
+		    <inSignal>SecurityTerminalHacked</inSignal>
+			<newFaction>$askerFaction</newFaction>
+			<onlyFaction>$enemyFaction</onlyFaction>
+			<onlyThingClass>Building_TurretGun</onlyThingClass>
+			<site>$site</site>
+		</li>
+		
+		<!-- . . . . . . . . REWARDS . . . . . . . . -->
+		<li Class="QuestNode_GetMap"/>
+        <!-- <li Class="QuestNode_Set"> -->
+          <!-- <name>rewardValue</name> -->
+          <!-- <value>$(randInt(17,25)*250)</value> -->
+		  <!-- <convertTo>Int32</convertTo> -->
+        <!-- </li> -->
+		<li Class="QuestNode_Set">
+          <name>rewardValue</name>
+          <value>5000</value>
+        </li>
+		<li Class="LoGiQ.QuestNodes.QuestNode_ProgressGiveReward">
+		  <inSignal>site.AllEnemiesDefeated</inSignal>
+		  <progressMin>100</progressMin>
+		  <progressMax>0</progressMax>
+		  <progressName>CommercialValue</progressName>
+		  <maxReward>5000</maxReward>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . . . . . -->
+		
+		<!-- . . . . . FINISHING . . . . . . . . . . -->
+	    <li Class="QuestNode_LoopCount">
+		  <loopCount>4</loopCount>
+		  <node Class="QuestNode_GeneratePawn">
+		    <addToList>askerGuards</addToList>
+		    <faction>$askerFaction</faction>
+		    <kindDef>Mercenary_Gunner</kindDef>
+			<allowAddictions>false</allowAddictions>
+            <biocodeWeaponChance>1</biocodeWeaponChance>
+            <biocodeApparelChance>1</biocodeApparelChance>
+            <allowPregnant>false</allowPregnant>
+            <isChild>false</isChild>
+            <giveDependentDrugs>true</giveDependentDrugs>
+		  </node>
+		 </li>
+		<li Class="LoGiQ.QuestNodes.QuestNode_DropPodsSite">
+		  <inSignal>site.AllEnemiesDefeated</inSignal>
+		  <siteToDrop>$site</siteToDrop>
+		  <contents>$askerGuards</contents>
+		  <useTradeDropSpot>false</useTradeDropSpot>
+		  <dropSpot>(110,0,100)</dropSpot>
+		  <thingsToExcludeFromHyperlinks>$askerGuards</thingsToExcludeFromHyperlinks>
+		</li>
+		<li Class="LoGiQ.QuestNodes.QuestNode_VisitSite">
+		  <inSignal>site.AllEnemiesDefeated</inSignal>
+		  <site>$site</site>
+		  <pawns>$askerGuards</pawns>
+		  <faction>$askerFaction</faction>
+		  <durationTicks>60000</durationTicks>
+		</li>
+	    <li Class="QuestNode_Signal">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Notify_PlayerRaidedSomeone">
+                <getRaidersFromMapParent>$site</getRaidersFromMapParent>
+              </li>
+			  <li Class="QuestNode_Letter">
+				<!-- <label>[resolvedQuestAssaultName] is finished.</label> -->
+				<label>Battle is finished.</label>
+				<letterDef>PositiveEvent</letterDef>
+				<!-- <text>Enemies are defeated, the [resolvedQuestFactoryName] are under your control! Now you can leave.</text> -->
+				<text>Enemies are defeated, the factory are under your control! Now you can leave.</text>
+			  </li>
+			</nodes>
+          </node>
+        </li>
+		<li Class="QuestNode_WorldObjectTimeout">
+		  <worldObject>$site</worldObject>
+		  <delayTicks>16000</delayTicks>
+		  <inSignalEnable>site.AllEnemiesDefeated</inSignalEnable>
+		  <destroyOnCleanup>true</destroyOnCleanup>
+		</li>
+        <li Class="QuestNode_End">
+          <inSignal>site.Destroyed</inSignal>
+          <outcome>Success</outcome>
+        </li>
+		<!-- . . . . . . . . . . . . . . . . . . . .  -->
+	  </nodes>
+    </root>
+	<rootSelectionWeight>1.25</rootSelectionWeight>
+    <randomlySelectable>True</randomlySelectable>
+    <rootMinPoints>2900</rootMinPoints>
+    <rootIncreasesPopulation>False</rootIncreasesPopulation>
+    <minRefireDays>15</minRefireDays>
+	<rootEarliestDay>1</rootEarliestDay>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription -&gt; [asker_nameDef], [asker_faction_leaderTitle] of [asker_faction_name], contacted you and offered some delicate job. [enemyFaction_name] have some kind of factory at given coordinates. [asker_faction_leaderTitle] [asker_nameFull] whants to seizure this place with help of your forces. But the mission must be accurate, if you killed an engineer o let them go, or damage the equipment, your reward will be decreased.
+		\nMax reward will be 5000 of silver chunks.
+		\nIn addition, [asker_nameFull] say, that enemies have central security terminal, that controls turrets. If you hack it, the turrets will stop shooting you. [asker_pronoun] shares the special "icebreaker" with you, it will help you hack the terminal.
+		</li>
+      </rulesStrings>
+      <rulesFiles />
+      <rulesRaw IsNull="True" />
+      <rulesRaw IsNull="True" />
+      <include IsNull="True" />
+    </questDescriptionRules>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName -&gt; [questAssaultName] the [questFactoryName].</li>
+		<li>questAssaultName -&gt; Assault</li>
+		<li>questAssaultName -&gt; Attack</li>
+		<li>questAssaultName -&gt; Raid</li>
+		<li>questAssaultName -&gt; Seizure</li>
+		<li>questFactoryName -&gt; factory</li>
+		<li>questFactoryName -&gt; manufacture</li>
+		<li>questFactoryName -&gt; plant</li>
+		<li>questFactoryName -&gt; fabric</li>
+      </rulesStrings>
+      <rulesFiles />
+      <rulesRaw IsNull="True" />
+      <include IsNull="True" />
+    </questNameRules>
+    <autoAccept>False</autoAccept>
+    <hideOnCleanup>False</hideOnCleanup>
+    <expireDaysRange>
+      <min>7</min>
+      <max>14</max>
+    </expireDaysRange>
+    <nameMustBeUnique>False</nameMustBeUnique>
+    <defaultChallengeRating>-1</defaultChallengeRating>
+    <defaultHidden>False</defaultHidden>
+    <isRootSpecial>True</isRootSpecial>
+    <canGiveRoyalFavor>True</canGiveRoyalFavor>
+    <questAvailableLetterTextIsDescription>False</questAvailableLetterTextIsDescription>
+    <hideInvolvedFactionsInfo>False</hideInvolvedFactionsInfo>
+    <affectedByPopulation>False</affectedByPopulation>
+    <affectedByPoints>False</affectedByPoints>
+    <defaultCharity>False</defaultCharity>
+    <sendAvailableLetter>True</sendAvailableLetter>
+    <epic>False</epic>
+    <endOnColonyMove>True</endOnColonyMove>
+    <everAcceptableInSpace>False</everAcceptableInSpace>
+    <neverPossibleInSpace>False</neverPossibleInSpace>
+    <givenBy />
+    <canOccurOnAllPlanetLayers>False</canOccurOnAllPlanetLayers>
+    <ignoreConfigErrors>False</ignoreConfigErrors>
+    <ignoreIllegalLabelCharacterConfigError>False</ignoreIllegalLabelCharacterConfigError>
+	<successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">Raided_BanditCamp</successHistoryEvent>
+    
+  </QuestScriptDef>
+</Defs>

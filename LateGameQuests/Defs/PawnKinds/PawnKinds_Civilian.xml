@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef ParentName="OutlanderBase" Name="ResearcherBase">
+    <defName>LoGiQ_ResearcherIndustrial</defName>
+    <label>Researcher</label>
+	<labelPlural>Researchers</labelPlural>
+    <combatPower>0</combatPower>
+    <itemQuality>Normal</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.2~2.0</gearHealthRange>
+    <weaponTags/>
+	<apparelTags><li>IndustrialBasic</li></apparelTags>
+	<apparelRequired>
+      <li MayRequire="VanillaExpanded.VAPPE">VAE_Apparel_LabCoat</li>
+    </apparelRequired>
+    <apparelMoney>400~450</apparelMoney>
+    <apparelAllowHeadgearChance>0.2</apparelAllowHeadgearChance>
+    <techHediffsChance>0</techHediffsChance>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~17</initialResistanceRange>
+	<minGenerationAge>27</minGenerationAge>
+	<fixedAdultBackstories>
+		<li>ArmyScientist35</li>
+		<li>CivilEngineer2</li>
+		<li>MilitaryEngineer45</li>
+	</fixedAdultBackstories>
+	<skills>
+      <li>
+        <skill>Intellectual</skill>
+        <range>5~10</range>
+      </li>
+	  <li>
+        <skill>Crafting</skill>
+        <range>5~10</range>
+      </li>
+    </skills>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="OutlanderBase">
+    <defName>LoGiQ_EngineerIndustrial</defName>
+    <label>Engineer</label>
+	<labelPlural>Engineers</labelPlural>
+    <combatPower>0</combatPower>
+    <itemQuality>Normal</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.2~2.0</gearHealthRange>
+    <weaponTags/>
+	<apparelTags><li>IndustrialBasic</li></apparelTags>
+    <apparelMoney>250~350</apparelMoney>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+	<apparelRequired>
+      <li MayRequire="VanillaExpanded.VAPPE">VAE_Apparel_Overalls</li>
+    </apparelRequired>
+    <techHediffsChance>0</techHediffsChance>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~17</initialResistanceRange>
+	<minGenerationAge>22</minGenerationAge>
+	<fixedAdultBackstories>
+		<li>CivilEngineer2</li>
+		<li>MilitaryEngineer45</li>
+		<!-- todo more -->
+	</fixedAdultBackstories>
+	<skills>
+      <li>
+        <skill>Intellectual</skill>
+        <range>3~8</range>
+      </li>
+	  <li>
+        <skill>Crafting</skill>
+        <range>6~12</range>
+      </li>
+    </skills>
+  </PawnKindDef>
+
+</Defs>

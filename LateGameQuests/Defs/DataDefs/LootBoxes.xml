@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- . . . Rescue missions . . . -->
+
+	<QuestEditor_Library.LootDataDef>
+		<defName>LoGiQ_LootBox_RescueMission_Boss</defName>
+		<loots>
+		<li>
+            <dataName>Drugs</dataName>
+            <chance>0.6</chance>
+			<things>
+				<li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>20~25</count>
+					<thing>Beer</thing>
+				</li>
+		        <li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>17~19</count>
+					<thing>SmokeleafJoint</thing>
+				</li>
+			    <li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>20~35</count>
+					<thing>Chocolate</thing>
+				</li>
+			</things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>12~22</count>
+                <category>Drugs</category>
+              </li>
+            </categorys>
+          </li>
+		  <li>
+            <dataName>Neurotrainers</dataName>
+            <chance>0.4</chance>
+			<things>
+				<li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>8~13</count>
+					<thing>MedicineIndustrial</thing>
+				</li>
+			</things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>1~2</count>
+                <category>Neurotrainers</category>
+              </li>
+            </categorys>
+          </li>
+		</loots>
+	</QuestEditor_Library.LootDataDef>
+	<QuestEditor_Library.LootDataDef>
+		<defName>LoGiQ_LootBox_RescueMissionHard_Crate</defName>
+		<loots>
+          <li>
+            <dataName>SomeResources</dataName>
+            <chance>1</chance>
+            <things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>275~350</count>
+                <thing>Steel</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>160~190</count>
+                <thing>DevilstrandCloth</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>22~33</count>
+                <thing>MedicineHerbal</thing>
+              </li>
+            </things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>200~300</count>
+                <category>Leathers</category>
+              </li>
+            </categorys>
+          </li>
+        </loots>
+	</QuestEditor_Library.LootDataDef>
+	
+	<!-- . . . HQ attack . . . -->
+	
+	<QuestEditor_Library.LootDataDef>
+		<defName>LoGiQ_LootBox_HQAttack_Boss</defName>
+		<loots>
+          <li>
+            <dataName>Drugs</dataName>
+            <chance>0.25</chance>
+			<things>
+				<li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>20~25</count>
+					<thing>Beer</thing>
+				</li>
+		        <li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>20~25</count>
+					<thing>SmokeleafJoint</thing>
+				</li>
+			    <li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>20~35</count>
+					<thing>Chocolate</thing>
+				</li>
+				<li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>10~15</count>
+					<thing>GoJuice</thing>
+				</li>
+			</things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>20~40</count>
+                <category>Drugs</category>
+              </li>
+            </categorys>
+          </li>
+		  <li>
+            <dataName>Neurotrainers</dataName>
+            <chance>0.2</chance>
+			<things>
+				<li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>7~15</count>
+					<thing>MedicineUltratech</thing>
+				</li>
+			</things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>2~3</count>
+                <category>Neurotrainers</category>
+              </li>
+            </categorys>
+          </li>
+		  <li>
+            <dataName>Implants</dataName>
+            <chance>0.2</chance>
+		    <things>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+			  	<count>11~17</count>
+			  	<thing>MedicineUltratech</thing>
+			  </li>
+			</things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>1~3</count>
+                <category>BodyPartsBionic</category>
+              </li>
+            </categorys>
+          </li>
+		  <li>
+            <dataName>Implants2</dataName>
+            <chance>0.05</chance>
+            <things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ArchotechEye</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ArchotechLeg</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ArchotechArm</thing>
+              </li>
+            </things>
+          </li>
+		  <li>
+            <dataName>RareResources</dataName>
+            <chance>0.2</chance>
+            <things>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>70~150</count>
+                <thing>Hyperweave</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>120~220</count>
+                <thing>Jade</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>80~120</count>
+                <thing>Gold</thing>
+              </li>
+
+            </things>
+          </li>
+		  <li>
+            <dataName>RareResources2</dataName>
+            <chance>0.2</chance>
+            <things>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>150~170</count>
+                <thing>DevilstrandCloth</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>12~22</count>
+                <thing>MedicineIndustrial</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>150~210</count>
+                <thing>Neutroamine</thing>
+              </li>
+            </things>
+          </li>
+		  <li>
+            <dataName>RareResources3</dataName>
+            <chance>0.2</chance>
+            <things>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>250~450</count>
+                <thing>Synthread</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>25~35</count>
+                <thing>ComponentIndustrial</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ComponentSpacer</thing>
+				<count>3~5</count>
+              </li>
+            </things>
+          </li>
+        </loots>
+	</QuestEditor_Library.LootDataDef>
+    <QuestEditor_Library.LootDataDef>
+		<defName>LoGiQ_LootBox_HQAttack_Crate</defName>
+		<loots>
+          <li>
+            <dataName>RareDetails</dataName>
+            <chance>0.3</chance>
+            <things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>2~3</count>
+                <thing>ReinforcedBarrel</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>3~5</count>
+                <thing>ComponentSpacer</thing>
+              </li>
+            </things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>2~3</count>
+                <category>Neurotrainers</category>
+              </li>
+            </categorys>
+          </li>
+          <li>
+            <dataName>RareResources</dataName>
+            <chance>0.3</chance>
+            <things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>175~250</count>
+                <thing>Hyperweave</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>40~80</count>
+                <thing>Uranium</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>125~150</count>
+                <thing>Plasteel</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>10~20</count>
+                <thing>ComponentIndustrial</thing>
+              </li>
+            </things>
+          </li>
+          <li>
+            <dataName>Implants</dataName>
+            <chance>0.3</chance>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>3~5</count>
+                <category>BodyPartsBionic</category>
+              </li>
+            </categorys>
+          </li>
+          <li>
+            <dataName>ArchImplant</dataName>
+            <chance>0.1</chance>
+            <things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ArchotechEye</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ArchotechLeg</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ArchotechArm</thing>
+              </li>
+            </things>
+          </li>
+		  <li>
+            <dataName>Resources</dataName>
+            <chance>0.5</chance>
+            <things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>225~375</count>
+                <thing>Cloth</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>120~150</count>
+                <thing>Chemfuel</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>215~275</count>
+                <thing>Steel</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>5~10</count>
+                <thing>ComponentIndustrial</thing>
+              </li>
+            </things>
+          </li>
+		  <li>
+            <dataName>Resources2</dataName>
+            <chance>0.3</chance>
+			<things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>120~215</count>
+                <thing>Steel</thing>
+              </li>
+		      <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>60~75</count>
+                <thing>Uranium</thing>
+              </li>
+            </things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>130~300</count>
+                <category>Leathers</category>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>80~340</count>
+                <category>Textiles</category>
+              </li>
+            </categorys>
+          </li>
+        </loots>
+	</QuestEditor_Library.LootDataDef>
+	<QuestEditor_Library.LootDataDef>
+		<defName>LoGiQ_LootBox_HQAttack_Armory</defName>
+		<loots>
+		  <li>
+            <dataName>Weapons1</dataName>
+            <chance>0.25</chance>
+            <message>You found some weapons</message>
+            <things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>Gun_AssaultRifle</thing>
+              </li>
+            </things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>6~9</count>
+                <category>Grenades</category>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>1</count>
+                <category>WeaponsRanged</category>
+              </li>
+            </categorys>
+          </li>
+		  <li>
+            <dataName>Weapons2</dataName>
+            <chance>0.25</chance>
+            <message>You found some weapons</message>
+            <things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>Gun_IncendiaryLauncher</thing>
+              </li>
+            </things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>2~3</count>
+                <category>WeaponsRanged</category>
+              </li>
+            </categorys>
+          </li>
+		  <li>
+            <dataName>Weapons3</dataName>
+            <chance>0.15</chance>
+            <message>You found some weapons</message>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>3~5</count>
+                <category>WeaponsRanged</category>
+              </li>
+            </categorys>
+          </li>
+		  <li>
+            <dataName>Armors1</dataName>
+            <chance>0.25</chance>
+            <message>You found some armor</message>
+            <things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <stuff>Plasteel</stuff>
+                <count>1~3</count>
+                <thing>Apparel_SimpleHelmet</thing>
+              </li>
+            </things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>1~3</count>
+                <category>ApparelArmor</category>
+              </li>
+            </categorys>
+          </li>
+		  <li MayRequire="ceteam.combatextended">
+            <dataName>Ammo1</dataName>
+            <chance>0.25</chance>
+            <message>You found some ammo</message>
+            <things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>25~35</count>
+                <thing>Ammo_40x46mmGrenade_HE</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>55~115</count>
+                <thing>Ammo_20x102mmNATO_Sabot</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>100~250</count>
+                <thing>Ammo_50BMG_Incendiary</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>150~350</count>
+                <thing>Ammo_762x51mmNATO_AP</thing>
+              </li>
+            </things>
+          </li>
+		  <li MayRequire="ceteam.combatextended">
+            <dataName>Ammo2</dataName>
+            <chance>0.25</chance>
+            <message>You found some ammo</message>
+            <things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>25~45</count>
+                <thing>Ammo_30x29mmGrenade_HE</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>45~175</count>
+                <thing>Ammo_145x114mm_Sabot</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>100~250</count>
+                <thing>Ammo_127x108mm_HE</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>150~350</count>
+                <thing>Ammo_762x54mmR_AP</thing>
+              </li>
+            </things>
+          </li>
+        </loots>
+	</QuestEditor_Library.LootDataDef>
+	
+    <QuestEditor_Library.LootDataDef>
+		<defName>LoGiQ_LootBox_HQAttackHard_Boss</defName>
+		<loots>
+           <li>
+            <dataName>Drugs</dataName>
+            <chance>0.2</chance>
+			<things>
+				<li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>40~55</count>
+					<thing>Beer</thing>
+				</li>
+		        <li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>40~45</count>
+					<thing>SmokeleafJoint</thing>
+				</li>
+			    <li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>110~125</count>
+					<thing>Chocolate</thing>
+				</li>
+				<li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>20~45</count>
+					<thing>GoJuice</thing>
+				</li>
+			</things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>25~70</count>
+                <category>Drugs</category>
+              </li>
+            </categorys>
+          </li>
+		  <li>
+            <dataName>Neurotrainers</dataName>
+            <chance>0.15</chance>
+			<things>
+				<li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>15~33</count>
+					<thing>MedicineUltratech</thing>
+				</li>
+			</things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>3~6</count>
+                <category>Neurotrainers</category>
+              </li>
+            </categorys>
+          </li>
+		  <li>
+            <dataName>Implants</dataName>
+            <chance>0.2</chance>
+		    <things>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+			  	<count>15~18</count>
+			  	<thing>MedicineUltratech</thing>
+			  </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ArchotechEye</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ArchotechEye</thing>
+              </li>
+			</things>
+            <categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>4~8</count>
+                <category>BodyPartsBionic</category>
+              </li>
+            </categorys>
+          </li>
+		  <li>
+            <dataName>Implants2</dataName>
+            <chance>0.1</chance>
+            <things>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ArchotechEye</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ArchotechLeg</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ArchotechArm</thing>
+              </li>
+            </things>
+			<categorys>
+              <li Class="QuestEditor_Library.CQFThingCategoryCount">
+                <count>1~2</count>
+                <category>BodyPartsBionic</category>
+              </li>
+            </categorys>
+          </li>
+		  <li>
+            <dataName>RareResources</dataName>
+            <chance>0.2</chance>
+            <things>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>230~350</count>
+                <thing>Hyperweave</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>250~320</count>
+                <thing>Jade</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>165~220</count>
+                <thing>Gold</thing>
+              </li>
+              <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>210~350</count>
+                <thing>Uranium</thing>
+              </li>
+            </things>
+          </li>
+		  <li>
+            <dataName>RareResources2</dataName>
+            <chance>0.2</chance>
+            <things>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>220~270</count>
+                <thing>DevilstrandCloth</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>15~33</count>
+                <thing>MedicineIndustrial</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>170~250</count>
+                <thing>Neutroamine</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>110~340</count>
+                <thing>Uranium</thing>
+              </li>
+            </things>
+          </li>
+		  <li>
+            <dataName>RareResources3</dataName>
+            <chance>0.2</chance>
+            <things>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>350~500</count>
+                <thing>Synthread</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>25~50</count>
+                <thing>ComponentIndustrial</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <thing>ComponentSpacer</thing>
+				<count>3~8</count>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>1~3</count>
+                <thing>ReinforcedBarrel</thing>
+              </li>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+                <count>80~110</count>
+                <thing>Uranium</thing>
+              </li>
+            </things>
+          </li>
+        </loots>
+	</QuestEditor_Library.LootDataDef>
+	
+</Defs>

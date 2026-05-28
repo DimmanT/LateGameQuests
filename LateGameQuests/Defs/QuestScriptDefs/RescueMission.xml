@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>LoGiQ_RescueMission</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+	  	<li Class="QuestNode_Message">
+          <text>points $points</text>
+        </li>
+		<!-- . . . . . . Get asker  . . . . . . -->
+	    <li Class="LoGiQ.QuestNodes.QuestNode_GetFactionAdv">
+          <storeAs>askerFaction</storeAs>
+          <allowEnemy>false</allowEnemy>
+          <allowNeutral>true</allowNeutral>
+          <allowAlly>true</allowAlly>
+          <allowAskerFaction>true</allowAskerFaction>
+          <allowPermanentEnemy>false</allowPermanentEnemy>
+          <mustBePermanentEnemy>false</mustBePermanentEnemy>
+          <leaderMustBeSafe>False</leaderMustBeSafe>
+          <mustHaveGoodwillRewardsEnabled>False</mustHaveGoodwillRewardsEnabled>
+        </li>
+		<!-- <li Class="QuestNode_GeneratePawnRandDevelopmentStage"> -->
+          <!-- <storeAs>joiner</storeAs> -->
+          <!-- <kindDef>Villager</kindDef> -->
+          <!-- <childChance>0.2</childChance> -->
+          <!-- <adultChance>0.8</adultChance> -->
+        <!-- </li> -->
+		<!-- . . . . . . . . . . -->
+		<!-- . . . Get enemy . . . -->
+	    <li Class="LoGiQ.QuestNodes.QuestNode_GetFactionAdv">
+          <storeAs>enemyFaction</storeAs>
+          <allowEnemy>true</allowEnemy>
+          <allowNeutral>false</allowNeutral>
+          <allowAlly>false</allowAlly>
+          <allowAskerFaction>false</allowAskerFaction>
+          <allowPermanentEnemy>true</allowPermanentEnemy>
+          <mustBePermanentEnemy>false</mustBePermanentEnemy>
+          <leaderMustBeSafe>False</leaderMustBeSafe>
+          <mustHaveGoodwillRewardsEnabled>False</mustHaveGoodwillRewardsEnabled>
+		  <mustBeHostileToFaction>$askerFaction</mustBeHostileToFaction>
+		  <minTechLevel>Industrial</minTechLevel>
+        </li>
+		<!-- . . . . . . . . . . -->
+		<!-- . . Get reward  . . -->
+		<li Class="QuestNode_GetMap"/>
+		<li Class="QuestNode_Set">
+          <name>rewardValue</name>
+          <value>$(randInt(1750,2250))</value>
+        </li>
+		<li Class="QuestNode_GiveRewards">
+          <inSignal>Prisoner.LeftMap</inSignal>
+          <parms>
+            <allowGoodwill>true</allowGoodwill>
+            <allowRoyalFavor>true</allowRoyalFavor>
+			<disallowedThingDefs></disallowedThingDefs>
+            <giveToCaravan>false</giveToCaravan>
+          </parms>
+		  <useDifficultyFactor>false</useDifficultyFactor> <!-- we only care about requested total market value -->
+        </li>
+		<!-- . . . . . . . . . . -->
+		<!-- . . . Gen map . . . -->
+        <li Class="QuestEditor_Library.QuestNode_RandomCustomMap">
+          <tags>
+			<li><key>LoGiQ_SlaveTradersBaseRoot</key><value>1</value></li>
+		  </tags>
+          <buffer>10</buffer>
+          <bufferMin>20</bufferMin>
+		  <overrideFaction>$enemyFaction</overrideFaction>
+          <expandingIconPath>Things/Sites/slavetraders_camp</expandingIconPath>
+          <replaceMapGeneration>False</replaceMapGeneration>
+          <!--<disdestroyBecauseOfNoColonist>True</disdestroyBecauseOfNoColonist>-->
+          <!-- <reenterable>True</reenterable> -->
+          <!-- <beUnreenterableWhenAllEnemiesDefeated>True</beUnreenterableWhenAllEnemiesDefeated>-->
+          <enableBlack>True</enableBlack>
+          <storeAs>site</storeAs>
+          <distance>
+            <min>12</min>
+            <max>18</max>
+          </distance>
+          <blacklist />
+        </li>
+		<li Class="QuestNode_Signal">
+          <inSignal>site.MapGenerated</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+			  <li Class="QuestNode_Letter">
+				<label>Enemies call to reinforcements.</label>
+				<letterDef>NegativeEvent</letterDef>
+				<text>Enemies have detected you, they call to reinforcements. Forces will be here in a day or so.</text>
+			  </li>
+              <li Class="RimWorld.QuestGen.QuestNode_Delay">
+				  <inSignalDisable>site.Destroyed</inSignalDisable>
+				  <outSignalComplete>ReadyForAttack</outSignalComplete>
+				  <expiryInfoPart TKey="InfoPartReadyForAttack">$enemyFaction moving to this location {0}</expiryInfoPart>
+				  <expiryInfoPartTip TKey="InfoPartTipReadyForAttack">Forces of $enemyFaction will be here at {0}</expiryInfoPartTip>
+				  <delayTicks>60000</delayTicks> <!-- todo: calc this value using distance to nearest faction's WorldObject -->
+				  <isQuestTimeout>false</isQuestTimeout>
+				  <node Class="RimWorld.QuestGen.QuestNode_SubScript">
+					  <def>Util_RaidSiteComplex</def>
+					  <parms>
+						<points>900</points>
+						<inSignal>ReadyForAttack</inSignal>
+						<siteToRaid>$site</siteToRaid>
+						<customLetterLabel TKey="LetterLabelAttack">Enemy reinforcements!</customLetterLabel>
+						<customLetterText  TKey="LetterTextAttack"> Enemy squad reached this site and ready for counterattack.</customLetterText>
+						<arrivalMode>EdgeWalkIn</arrivalMode>
+						<canTimeoutOrFlee>true</canTimeoutOrFlee>
+						<inSignalLeave>EndRaid</inSignalLeave>
+					  </parms>
+					</node>
+				</li>
+            </nodes>
+          </node>
+        </li>
+		<!-- . . . . . . . . . . -->
+		<!-- . . . Ending  . . . -->
+	    <li Class="QuestNode_Signal">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Notify_PlayerRaidedSomeone">
+                <getRaidersFromMapParent>$site</getRaidersFromMapParent>
+              </li>
+            </nodes>
+          </node>
+        </li>
+		<!-- FINISH SUCCESS if pawn left map -->
+        <li Class="QuestNode_End">
+          <inSignal>Prisoner.LeftMap</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Success</outcome>
+        </li>
+		<!-- FINISH FAIL if pawn killed -->
+	    <li Class="QuestNode_End">
+          <inSignal>Prisoner.Killed</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Fail</outcome>
+        </li>
+		<!-- FINISH FAIL if pawn not left, but all colonist left map and it is destroyed-->
+		<!-- todo: letters for clear quest behavior -->
+		<li Class="QuestNode_End">
+          <inSignal>site.Destroyed</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Fail</outcome>
+        </li>
+	  </nodes>
+    </root>
+    <randomlySelectable>True</randomlySelectable>
+    <rootSelectionWeight>1.25</rootSelectionWeight>
+    <rootMinPoints>1150</rootMinPoints>
+    <rootIncreasesPopulation>False</rootIncreasesPopulation>
+    <minRefireDays>8</minRefireDays>
+	<rootEarliestDay>1</rootEarliestDay>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription -&gt; People from [askerFaction_name] asking us for help. One of them was enslaved but they have information about slave traders camp where prisoner can be.</li>
+      </rulesStrings>
+      <rulesFiles />
+      <rulesRaw IsNull="True" />
+      <include IsNull="True" />
+    </questDescriptionRules>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName -&gt; Rescue operation</li>
+		<li>questName -&gt; Rescue mission</li>
+		<li>questName -&gt; Raid slave traders</li>
+      </rulesStrings>
+      <rulesFiles />
+      <rulesRaw IsNull="True" />
+      <include IsNull="True" />
+    </questNameRules>
+    <autoAccept>false</autoAccept>
+    <hideOnCleanup>False</hideOnCleanup>
+    <expireDaysRange>
+      <min>7</min>
+      <max>12</max>
+    </expireDaysRange>
+    <nameMustBeUnique>False</nameMustBeUnique>
+    <defaultChallengeRating>-1</defaultChallengeRating>
+    <defaultHidden>False</defaultHidden>
+    <isRootSpecial>True</isRootSpecial>
+    <canGiveRoyalFavor>True</canGiveRoyalFavor>
+    <questAvailableLetterTextIsDescription>False</questAvailableLetterTextIsDescription>
+    <hideInvolvedFactionsInfo>False</hideInvolvedFactionsInfo>
+    <affectedByPopulation>False</affectedByPopulation>
+    <affectedByPoints>False</affectedByPoints>
+    <defaultCharity>False</defaultCharity>
+    <sendAvailableLetter>True</sendAvailableLetter>
+    <epic>False</epic>
+    <endOnColonyMove>True</endOnColonyMove>
+    <everAcceptableInSpace>False</everAcceptableInSpace>
+    <neverPossibleInSpace>False</neverPossibleInSpace>
+    <givenBy />
+    <canOccurOnAllPlanetLayers>False</canOccurOnAllPlanetLayers>
+    <ignoreConfigErrors>False</ignoreConfigErrors>
+    <ignoreIllegalLabelCharacterConfigError>False</ignoreIllegalLabelCharacterConfigError>
+	<successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">Raided_BanditCamp</successHistoryEvent>
+    
+  </QuestScriptDef>
+</Defs>

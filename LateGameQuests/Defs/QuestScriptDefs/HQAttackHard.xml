@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>LoGiQ_AttackBastion</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+	    <li Class="LoGiQ.QuestNodes.QuestNode_GetFactionAdv">
+          <storeAs>enemyFaction</storeAs>
+          <allowEnemy>true</allowEnemy>
+          <allowNeutral>false</allowNeutral>
+          <allowAlly>false</allowAlly>
+          <allowAskerFaction>false</allowAskerFaction>
+          <allowPermanentEnemy>true</allowPermanentEnemy>
+          <mustBePermanentEnemy>false</mustBePermanentEnemy>
+          <leaderMustBeSafe>False</leaderMustBeSafe>
+          <mustHaveGoodwillRewardsEnabled>False</mustHaveGoodwillRewardsEnabled>
+		  <minTechLevel>Industrial</minTechLevel>
+        </li>
+		<!-- ... Raid player, until they destroy HQ ... -->
+		<li Class="QuestNode_GetMap"/>
+		<li Class="QuestNode_Set">
+			<name>points</name>
+			<value>2550</value>
+			<convertTo>Int32</convertTo>
+		</li>
+		<li Class="QuestNode_Delay">
+		  <reactivatable>true</reactivatable>
+		  <inSignalEnable>PerformNextRaid</inSignalEnable>
+		  <inSignalDisable>site.AllEnemiesDefeated</inSignalDisable>
+		  <outSignalComplete>PerformNextRaid</outSignalComplete>
+		  <expiryInfoPart>$enemyFaction preparing to attack your homeland {0}</expiryInfoPart>
+		  <expiryInfoPartTip>$enemyFaction will attack your homeland at {0}</expiryInfoPartTip>
+		  <delayTicksRange>
+			<min>480000</min>
+			<max>720000</max>
+		  </delayTicksRange> <!-- todo: calc this value using distance to playermap -->
+		  <isQuestTimeout>false</isQuestTimeout>
+		  <node Class="QuestNode_SubScript"> <!-- maybe use QuestNode_AssaultColony -->
+			  <def>Util_Raid</def>
+			  <parms>
+				<inSignal>PerformNextRaid</inSignal>
+				<customLetterLabel TKey="LetterLabelAttack">Raiders from enemy base!</customLetterLabel>
+				<customLetterText  TKey="LetterTextAttack"> Enemy squad from nearest military base reached your colony. Destroy the base to prevent next attack.</customLetterText>
+				<arrivalMode>EdgeWalkIn</arrivalMode>
+				<canTimeoutOrFlee>true</canTimeoutOrFlee>
+				<inSignalLeave>EndRaid</inSignalLeave>
+			  </parms>
+		  </node>
+		</li>
+		<li Class="QuestNode_Delay">
+		  <inSignalDisable>site.AllEnemiesDefeated</inSignalDisable>
+		  <outSignalComplete>PerformNextRaid</outSignalComplete>
+		  <expiryInfoPart>$enemyFaction preparing to attack your home{0}</expiryInfoPart>
+		  <expiryInfoPartTip>$enemyFaction preparing to attack your home {0}</expiryInfoPartTip>
+		  <delayTicks>$(randInt(12,16)*60000)</delayTicks> <!-- todo: calc this value using distance to playermap -->
+		  <isQuestTimeout>false</isQuestTimeout>
+		</li>
+		<!-- ..................................  -->
+        <li Class="QuestEditor_Library.QuestNode_RandomCustomMap">
+          <tags>
+			<li><key>LoGiQ_MilitaryBastionRoot</key><value>1</value></li>
+		  </tags>
+          <buffer>10</buffer>
+          <bufferMin>20</bufferMin>
+		  <overrideFaction>$enemyFaction</overrideFaction>
+          <expandingIconPath>Things/Sites/militarybastion</expandingIconPath>
+          <replaceMapGeneration>False</replaceMapGeneration>
+          <disdestroyBecauseOfNoColonist>False</disdestroyBecauseOfNoColonist>
+		  <!-- <disdestroyBecauseOfNoColonist>True</disdestroyBecauseOfNoColonist> -->
+          <!-- <reenterable>True</reenterable> -->
+          <!-- <beUnreenterableWhenAllEnemiesDefeated>True</beUnreenterableWhenAllEnemiesDefeated> -->
+          <enableBlack>True</enableBlack>
+          <storeAs>site</storeAs>
+          <distance>
+            <min>12</min>
+            <max>24</max>
+          </distance>
+          <blacklist />
+        </li>
+		<li Class="QuestNode_Signal">
+          <inSignal>site.MapGenerated</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+			  <li Class="QuestNode_Letter">
+				<label>Enemies call to reinforcements.</label>
+				<letterDef>NegativeEvent</letterDef>
+				<text>Enemies have detected you, they call to reinforcements. Forces will be here in a day or so.</text>
+			  </li>
+              <li Class="RimWorld.QuestGen.QuestNode_Delay">
+				  <inSignalDisable>site.Destroyed</inSignalDisable>
+				  <outSignalComplete>ReadyForAttack</outSignalComplete>
+				  <expiryInfoPart TKey="InfoPartReadyForAttack">$enemyFaction moving to this location {0}</expiryInfoPart>
+				  <expiryInfoPartTip TKey="InfoPartTipReadyForAttack">$enemyFaction will be here at {0}</expiryInfoPartTip>
+				  <delayTicks>60000</delayTicks> <!-- todo: calc this value using distance to nearest faction's WorldObject -->
+				  <isQuestTimeout>false</isQuestTimeout>
+				  <node Class="RimWorld.QuestGen.QuestNode_SubScript">
+					  <def>Util_RaidSiteComplex</def>
+					  <parms>
+						<points>1900</points>
+						<inSignal>ReadyForAttack</inSignal>
+						<siteToRaid>$site</siteToRaid>
+						<customLetterLabel TKey="LetterLabelAttack">Enemy reinforcements!</customLetterLabel>
+						<customLetterText  TKey="LetterTextAttack"> Enemy squad reached this site and ready for counterattack.</customLetterText>
+						<arrivalMode>EdgeWalkIn</arrivalMode>
+						<canTimeoutOrFlee>true</canTimeoutOrFlee>
+						<inSignalLeave>EndRaid</inSignalLeave>
+					  </parms>
+					</node>
+				</li>
+            </nodes>
+          </node>
+        </li>
+		
+	    <li Class="QuestNode_Signal">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Notify_PlayerRaidedSomeone">
+                <getRaidersFromMapParent>$site</getRaidersFromMapParent>
+              </li>
+            </nodes>
+          </node>
+        </li>
+        <li Class="QuestNode_End">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <outcome>Success</outcome>
+		  <sendStandardLetter>true</sendStandardLetter>
+        </li>
+	  </nodes>
+    </root>
+	<rootSelectionWeight>1.25</rootSelectionWeight>
+    <randomlySelectable>True</randomlySelectable>
+    <rootMinPoints>3250</rootMinPoints>
+    <rootIncreasesPopulation>False</rootIncreasesPopulation>
+    <minRefireDays>20</minRefireDays>
+	<rootEarliestDay>1</rootEarliestDay>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription -&gt; Forces of [enemyFaction_name] set up a very well fortified stronghold at given coordinates. Now they can prepare massive attacks of your settlement. The stronghold is well protected, so you should prepare thoroughly.</li>
+		<li>questDescription -&gt; Intelligence data indicates the precence of an enemy citadel at given coordinates. [enemyFaction_name] are preparing massive attack the colony. It is recommended to destroy the citadel. Prepare strong team and use siege weapons.</li>
+		<li>questDescription -&gt; It became known from reliable sources, that hostile faction [enemyFaction_name] set up a reinforced fortress in this region. They are planning attack the settlement. It is not usual military base, you need siege weapons and a lot of manpower for assault.</li>
+      </rulesStrings>
+      <rulesFiles />
+      <rulesRaw IsNull="True" />
+      <include IsNull="True" />
+    </questDescriptionRules>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName -&gt; Enemy [questEnemyBaseName] [questAssaultName] </li>
+		<li>questAssaultName -&gt; assault</li>
+		<li>questAssaultName -&gt; attack</li>
+		<li>questAssaultName -&gt; raid</li>
+		<li>questEnemyBaseName -&gt; stronghold</li>
+		<li>questEnemyBaseName -&gt; fortress</li>
+		<li>questEnemyBaseName -&gt; citadel</li>
+      </rulesStrings>
+      <rulesFiles />
+      <rulesRaw IsNull="True" />
+      <include IsNull="True" />
+    </questNameRules>
+    <autoAccept>True</autoAccept>
+    <hideOnCleanup>False</hideOnCleanup>
+    <expireDaysRange>
+      <min>-1</min>
+      <max>-1</max>
+    </expireDaysRange>
+    <nameMustBeUnique>False</nameMustBeUnique>
+    <defaultChallengeRating>2</defaultChallengeRating>
+    <defaultHidden>False</defaultHidden>
+    <isRootSpecial>True</isRootSpecial>
+    <canGiveRoyalFavor>True</canGiveRoyalFavor>
+    <questAvailableLetterTextIsDescription>False</questAvailableLetterTextIsDescription>
+    <hideInvolvedFactionsInfo>False</hideInvolvedFactionsInfo>
+    <affectedByPopulation>False</affectedByPopulation>
+    <affectedByPoints>False</affectedByPoints>
+    <defaultCharity>False</defaultCharity>
+    <sendAvailableLetter>True</sendAvailableLetter>
+    <epic>False</epic>
+    <endOnColonyMove>True</endOnColonyMove>
+    <everAcceptableInSpace>False</everAcceptableInSpace>
+    <neverPossibleInSpace>False</neverPossibleInSpace>
+    <givenBy />
+    <canOccurOnAllPlanetLayers>False</canOccurOnAllPlanetLayers>
+    <ignoreConfigErrors>False</ignoreConfigErrors>
+    <ignoreIllegalLabelCharacterConfigError>False</ignoreIllegalLabelCharacterConfigError>
+	<successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">Raided_BanditCamp</successHistoryEvent>
+    
+  </QuestScriptDef>
+</Defs>

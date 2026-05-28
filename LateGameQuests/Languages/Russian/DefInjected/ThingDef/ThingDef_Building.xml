@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <LoGiQ_InteractableConsole.label>Консоль связи и управления</LoGiQ_InteractableConsole.label>
+    <LoGiQ_InteractableConsole.description>Консоль для взаимодействия, связи и управления.</LoGiQ_InteractableConsole.description>
+    <LoGiQ_TableMachining.label>Станок для демонтажа.</LoGiQ_TableMachining.label>
+    <LoGiQ_TableMachining.description>Позволяет разбирать механические и электронные компоненты сложных систем для исследования их предназначения.</LoGiQ_TableMachining.description>
+    <LoGiQ_SmallTerminal.label>Терминал</LoGiQ_SmallTerminal.label>
+    <LoGiQ_SmallTerminal.description>Небольшой, быстроразвертываемый терминал для подключения к различным информационным системам.</LoGiQ_SmallTerminal.description>
+    <LoGiQ_SimpleResearchBench.label>Стол для исследований</LoGiQ_SimpleResearchBench.label>
+    <LoGiQ_SimpleResearchBench.description>На этим столе лежат несколько приборов для детального анализа оборудования и материалов, а также чертежные приспособления.</LoGiQ_SimpleResearchBench.description>
+    <LoGiQ_MiningDrain.label>Отсек вывода руды</LoGiQ_MiningDrain.label>
+    <LoGiQ_MiningDrain.description>В этот отсек сортировочная машина сбрасывает пригодную к плавке руду.</LoGiQ_MiningDrain.description>
+    <LoGiQ_InteractablePodLauncher.label>пусковая установка для капсул</LoGiQ_InteractablePodLauncher.label>
+    <LoGiQ_InteractablePodLauncher.description>Устройство для подачи топлива и запуска транспортной капсулы.</LoGiQ_InteractablePodLauncher.description>
+    <LoGiQ_TransportPod.label>транспортная капсула</LoGiQ_TransportPod.label>
+    <LoGiQ_TransportPod.description>Капсула, предназначенная для транспортировки грузов, животных или людей.</LoGiQ_TransportPod.description>
+
+    <RoomMarker.label>план помещения</RoomMarker.label>
+    <RoomMarker.description>Отмечает место, где вы собираетесь построить помещение. После размещения нельзя передвинуть.</RoomMarker.description>
+
+
+</LanguageData>

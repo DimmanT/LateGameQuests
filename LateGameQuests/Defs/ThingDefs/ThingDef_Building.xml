@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="CustomToolBase">
+        <defName>LoGiQ_InteractableConsole</defName>
+        <label>InteractableConsole</label>
+        <description>A communication console.</description>
+        <thingClass>QuestEditor_Library.InteractableThing</thingClass>
+        <category>Building</category>
+        <graphicData>
+			<texPath>Things/Building/Misc/CommsConsole</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,4)</drawSize>
+			<damageData>
+				<rect>(0,0,3,1.8)</rect>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+			<shadowData>
+				<volume>(3,0.5,2)</volume>
+			</shadowData>
+        </graphicData>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+		</statBases>
+		<useHitPoints>True</useHitPoints>
+		<size>(3,2)</size>
+        <building>
+            <expandHomeArea>true</expandHomeArea>
+            <claimable>true</claimable>
+        </building>
+		<comps>
+		  <li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<shortCircuitInRain>true</shortCircuitInRain>
+			<basePowerConsumption>100</basePowerConsumption>
+		  </li>
+		</comps>
+		<defaultPlacingRot>North</defaultPlacingRot>
+		<interactionCellOffset>(0,0,2)</interactionCellOffset>
+		<hasInteractionCell>true</hasInteractionCell>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	    <maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+		<designationCategory>Misc</designationCategory>
+		<designatorDropdown>LoGiQ_DesignatorInteractableThings</designatorDropdown>
+    </ThingDef>
+
+	<ThingDef ParentName="CustomToolBase">
+		<defName>LoGiQ_TableMachining</defName>
+		<label>disassembly table</label>
+		<description>A work station for various mechanical works.</description>
+		<thingClass>QuestEditor_Library.InteractableThing</thingClass>
+		<graphicData>
+		  <texPath>Things/Building/Production/TableMachining</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <drawSize>(3.5,1.5)</drawSize>
+		  <damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		  </damageData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+		  <MaxHitPoints>800</MaxHitPoints>
+		  <Cleanliness>-2</Cleanliness>
+		</statBases>
+		<useHitPoints>True</useHitPoints>
+		<size>(3,1)</size>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<comps>
+		  <li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<shortCircuitInRain>true</shortCircuitInRain>
+			<basePowerConsumption>350</basePowerConsumption>
+		  </li>
+		</comps>
+		<placeWorkers>
+		  <li>PlaceWorker_ShowFacilitiesConnections</li>
+		  <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	    <maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+		<designationCategory>Misc</designationCategory>
+		<designatorDropdown>LoGiQ_DesignatorInteractableThings</designatorDropdown>
+	</ThingDef>
+	
+	<ThingDef ParentName="CustomToolBase">
+		<defName>LoGiQ_SmallTerminal</defName>
+		<label>Terminal</label>
+		<description>Access terminal for a complex electronic system.</description>
+		<thingClass>QuestEditor_Library.InteractableThing</thingClass>
+		<graphicData>
+		  <texPath>Things/Building/Misc/VitalsMonitor</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <shadowData>
+			<volume>(0.55, 0.30, 0.40)</volume>
+		  </shadowData>
+		  <damageData>
+			<rectN>(0.078125,0.46875,0.859375,0.53125)</rectN>
+			<rectS>(0.078125,0.46875,0.859375,0.53125)</rectS>
+			<rectE>(0.125,0.46875,0.625,0.296875)</rectE>
+			<rectW>(0.25,0.46875,0.625,0.296875)</rectW>
+			<cornerTR>Damage/Corner</cornerTR>
+		  </damageData>
+		</graphicData>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.2</fillPercent>
+		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<hasInteractionCell>true</hasInteractionCell>
+		<statBases>
+		  <MaxHitPoints>500</MaxHitPoints>
+		  <Mass>20</Mass>
+		</statBases>
+		<useHitPoints>True</useHitPoints>
+		<size>(1,1)</size>
+		<comps>
+		  <li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<shortCircuitInRain>true</shortCircuitInRain>
+			<basePowerConsumption>50</basePowerConsumption>
+		  </li>
+		</comps>
+		<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	    <maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+		<designationCategory>Misc</designationCategory>
+		<designatorDropdown>LoGiQ_DesignatorInteractableThings</designatorDropdown>
+    </ThingDef>
+
+	<ThingDef ParentName="CustomToolBase">
+		<defName>LoGiQ_SimpleResearchBench</defName>
+		<label>research bench</label>
+		<description>A simple bench with writing implements and simple measurement devices.</description>
+		<thingClass>QuestEditor_Library.InteractableThing</thingClass>
+		<size>(3,2)</size>
+		<graphicData>
+		  <texPath>Things/Building/Production/ResearchBenchSimple</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+		  <drawSize>(5,4)</drawSize>
+		  <damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		  </damageData>
+		</graphicData>
+	    <stuffCategories>
+		  <li>Metallic</li>
+		  <li>Woody</li>
+		  <li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>75</costStuffCount>
+		<costList>
+		  <Steel>25</Steel>
+		</costList>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<statBases>
+		  <MaxHitPoints>250</MaxHitPoints>
+		</statBases>
+		<useHitPoints>True</useHitPoints>
+		<placeWorkers>
+		  <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		  <li>PlaceWorker_DrawLinesToBookcasesInRoom</li>
+		</placeWorkers>
+		<fillPercent>0.5</fillPercent>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<hasInteractionCell>true</hasInteractionCell>
+		<surfaceType>Item</surfaceType>	
+		<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	    <maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+		<designationCategory>Misc</designationCategory>
+		<designatorDropdown>LoGiQ_DesignatorInteractableThings</designatorDropdown>
+	</ThingDef>
+
+	<ThingDef ParentName="CustomToolBase">
+		<defName>LoGiQ_InteractablePodLauncher</defName>
+        <label>InteractablePodLauncher</label>
+        <description>A fueling port for launching one transport pod.</description>
+		<thingClass>QuestEditor_Library.InteractableThing</thingClass>
+		<graphicData>
+		  <texPath>Things/Building/Misc/PodLauncher</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <drawSize>(2,3)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+		</statBases>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<size>(1,2)</size>
+		<rotatable>true</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<placeWorkers>
+		  <li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<minTechLevelToBuild>Animal</minTechLevelToBuild>
+		<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+		<designationCategory>Misc</designationCategory>
+		<designatorDropdown>LoGiQ_DesignatorInteractableThings</designatorDropdown>
+	</ThingDef>
+	
+	<ThingDef ParentName="CustomToolBase">
+		<defName>LoGiQ_TransportPod</defName>
+        <label>CargoTransportPod</label>
+        <description>A cargo transport pod is waiting for goods.</description>
+		<thingClass>QuestEditor_Library.InteractableThing</thingClass>
+		<graphicData>
+		  <texPath>Things/Special/DropPod</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>(2,2)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+		</statBases>
+		<size>(1,1)</size>
+		<rotatable>false</rotatable>
+		<tickerType>Never</tickerType>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>false</castEdgeShadows>
+		<placeWorkers>
+		  <li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<!-- <comps> -->
+		  <!-- <li Class="CompProperties_Shuttle" /> -->
+		  <!-- <li Class="CompProperties_Transporter"> -->
+			<!-- <massCapacity>1000</massCapacity> -->
+			<!-- <max1PerGroup>true</max1PerGroup> -->
+			<!-- <canChangeAssignedThingsAfterStarting>false</canChangeAssignedThingsAfterStarting> -->
+			<!-- <showOverallStats>false</showOverallStats> -->
+		  <!-- </li> -->
+		<!-- </comps> -->
+		<minTechLevelToBuild>Animal</minTechLevelToBuild>
+		<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+		<designationCategory>Misc</designationCategory>
+		<designatorDropdown>LoGiQ_DesignatorInteractableThings</designatorDropdown>
+	</ThingDef>
+	
+	<ThingDef ParentName="CustomToolBase">
+		<defName>LoGiQ_MiningDrain</defName>
+        <label>MiningDrain</label>
+        <description>Outcome for mined ore.</description>
+		<thingClass>QuestEditor_Library.CustomContainer</thingClass>
+		<graphicData>
+		  <texPath>Things/Building/Production/Hopper</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <!-- <drawSize>(2,2)</drawSize> -->
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+		</statBases>
+		<size>(1,1)</size>
+		<rotatable>false</rotatable>
+		<tickerType>Never</tickerType>
+		<passability>PassThroughOnly</passability>
+		<pathCost>42</pathCost>
+		<castEdgeShadows>false</castEdgeShadows>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<modExtensions>
+            <li Class="QuestEditor_Library.ModExtension_CustomThing">
+                <captureTrapGraphicdata_Front>
+				  <texPath>Things/Building/Production/Hopper</texPath>
+				  <graphicClass>Graphic_Multi</graphicClass>
+                </captureTrapGraphicdata_Front>
+                <captureTrapGraphicdata_Back>
+				  <texPath>Things/Building/Production/Hopper</texPath>
+				  <graphicClass>Graphic_Multi</graphicClass>
+                </captureTrapGraphicdata_Back>
+                <caturedDrawOffset>0,0.5,-0.2</caturedDrawOffset>
+            </li>
+        </modExtensions>
+		<minTechLevelToBuild>Animal</minTechLevelToBuild>
+		<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+		<designationCategory>Misc</designationCategory>
+		<designatorDropdown>LoGiQ_DesignatorInteractableThings</designatorDropdown>
+	</ThingDef>
+
+	<ThingDef ParentName="CustomThingBase">
+        <defName>LoGiQ_Cabinet</defName>
+        <label>Locked cabinet</label>
+        <description>A cabinet that has been around for an unknown period of time may contain some valuable treasures.</description>
+        <thingClass>QuestEditor_Library.LootBox</thingClass>
+        <category>Building</category>
+        <size>(2,1)</size>
+        <graphicData>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(2,1)</drawSize>
+            <texPath>Things/Building/LoGiQ_Cabinet/logiq_cabinet</texPath>
+        </graphicData>
+        <costStuffCount>50</costStuffCount>
+        <useHitPoints>true</useHitPoints>
+        <statBases>
+            <MaxHitPoints>350</MaxHitPoints>
+            <Mass>20</Mass>
+        </statBases>
+        <stuffCategories>
+            <li>Metallic</li>
+            <li>Woody</li>
+        </stuffCategories>
+        <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+        <building>
+            <expandHomeArea>true</expandHomeArea>
+            <claimable>true</claimable>
+        </building>
+    </ThingDef>
+
+</Defs>

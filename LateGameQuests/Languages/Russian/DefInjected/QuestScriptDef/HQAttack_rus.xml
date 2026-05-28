@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <LoGiQ_AttackHQ.questDescriptionRules.rulesStrings>
+   <li>questDescription -&gt; Силы [enemyFaction_name] организовали хорошо защищенную военную базу в указанных координах. Противник использует ее для подготовки операций против вас. Нужно атаковать до того, как они подготовят удар.</li>
+   <li>questDescription -&gt; Разведданные явно указывают на наличие хорошо подготовленного опорного пункта противника в заданных координатах. [enemyFaction_name] готовят силы, чтобы атаковать колонию. Стоит нанести упреждающий удар! </li>
+   <li>questDescription -&gt; Из надежных источников стало известно, что враждебная фракция [enemyFaction_name] организовала укрепленный штаб в данном районе. Они планируют серию атак на поселение и единственный способ это остановить - уничтожить вражеский штаб.</li>
+  </LoGiQ_AttackHQ.questDescriptionRules.rulesStrings>
+
+  <LoGiQ_AttackHQ.questNameRules.rulesStrings>
+        <li>questName -&gt; [questAssaultName] [questEnemyBaseName]</li>
+		<li>questAssaultName -&gt; Штурм</li>
+		<li>questAssaultName -&gt; Атака</li>
+		<li>questAssaultName -&gt; Разгром</li>
+		<li>questEnemyBaseName -&gt; вражеской военной базы</li>
+		<li>questEnemyBaseName -&gt; вражеского штаба</li>
+		<li>questEnemyBaseName -&gt; вражеского военного лагеря</li>
+  </LoGiQ_AttackHQ.questNameRules.rulesStrings>
+  
+<LoGiQ_AttackHQ.root.nodes.Delay-0.expiryInfoPart.slateRef>$enemyFaction готовят атакуют поселение через {0}</LoGiQ_AttackHQ.root.nodes.Delay-0.expiryInfoPart.slateRef>
+<LoGiQ_AttackHQ.root.nodes.Delay-0.expiryInfoPartTip.slateRef>$enemyFaction готовят атаку на ваше поселение {0}</LoGiQ_AttackHQ.root.nodes.Delay-0.expiryInfoPartTip.slateRef>
+<LoGiQ_AttackHQ.root.nodes.Delay-0.node.parms.customLetterLabel.value.slateRef>Рейдеры с вражеской базы атакуют!</LoGiQ_AttackHQ.root.nodes.Delay-0.node.parms.customLetterLabel.value.slateRef>
+<LoGiQ_AttackHQ.root.nodes.Delay-0.node.parms.customLetterText.value.slateRef>Вражеский отряд прибыл с военной базы расположенной неподалеку и атакует ваше поселение. Уничтожьте базу, чтобы предотврать следующую атаку.</LoGiQ_AttackHQ.root.nodes.Delay-0.node.parms.customLetterText.value.slateRef>
+<LoGiQ_AttackHQ.root.nodes.Delay-1.expiryInfoPart.slateRef>Силы $enemyFaction готовятся к атаке {0}</LoGiQ_AttackHQ.root.nodes.Delay-1.expiryInfoPart.slateRef>
+<LoGiQ_AttackHQ.root.nodes.Delay-1.expiryInfoPartTip.slateRef>Силы $enemyFaction проведут атаку {0}</LoGiQ_AttackHQ.root.nodes.Delay-1.expiryInfoPartTip.slateRef>
+<LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Letter.label.slateRef>Противник вызвал подкрепление</LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Letter.label.slateRef>
+<LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Letter.text.slateRef>Противник обнаружил ваш отряд и запросил подкрепления. Они будут здесь через день или около того.</LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Letter.text.slateRef>
+<LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPart.slateRef>Силы $enemyFaction выдвинулись в сторону этой локации {0}</LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPart.slateRef>
+<LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>Силы $enemyFaction будут здесь {0}</LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>
+<LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>Вражеское подкрепление!</LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>
+<LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>Вражеский отряд достиг точки назначения и готов контратаковать.</LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>
+
+</LanguageData>

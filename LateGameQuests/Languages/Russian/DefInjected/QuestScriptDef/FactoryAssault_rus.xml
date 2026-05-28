@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <LoGiQ_FactoryAssault.questDescriptionRules.rulesStrings>
+	<li>questDescription -&gt; [asker_nameDef], [asker_faction_leaderTitle] из [asker_faction_name], связался с вами, чтобы предложить деликатную работу. Известно, что [enemyFaction_name] организовали что-то вроде фабрики в указанных координатах. [asker_faction_leaderTitle] [asker_nameFull] желает заполучить эти производственные мощности с помощью ваших вооруженных сил. Однако задача должна быть выполнена аккуратно, если в ходе операции погибнет (или убежит) кто-либо из рабочего персонала, или будет повреждено оборудование, то награда будет существенно снижена.
+	\nМаксимальная сумма составит 5000 серебром.
+	\nКроме того, [asker_nameFull] сообщает, что доступ к системам безопасности обеспечивается через выделенный терминал. Если его взломать, то турели прекратят вести по вам огонь. [asker_pronoun] делится с вами особым "ледоколом", с его помощью вы сможете взломать терминал.
+	</li>
+  </LoGiQ_FactoryAssault.questDescriptionRules.rulesStrings>
+
+  <LoGiQ_FactoryAssault.questNameRules.rulesStrings>
+        <li>questName -&gt; [questAssaultName] [questFactoryName].</li>
+		<li>questAssaultName -&gt; Штурм</li>
+		<li>questAssaultName -&gt; Атака</li>
+		<li>questAssaultName -&gt; Захват</li>
+		<li>questAssaultName -&gt; Рейдерский захват</li>
+		<li>questFactoryName -&gt; производства</li>
+		<li>questFactoryName -&gt; мануфактуры</li>
+		<li>questFactoryName -&gt; завода</li>
+		<li>questFactoryName -&gt; фабрики</li>
+  </LoGiQ_FactoryAssault.questNameRules.rulesStrings>
+  
+<LoGiQ_FactoryAssault.root.nodes.ProgressComplex.progressMessage.slateRef>коммерческая ценность</LoGiQ_FactoryAssault.root.nodes.ProgressComplex.progressMessage.slateRef>
+<LoGiQ_FactoryAssault.root.nodes.Letter.label.slateRef>Слишком много разрушений!</LoGiQ_FactoryAssault.root.nodes.Letter.label.slateRef>
+<LoGiQ_FactoryAssault.root.nodes.Letter.text.slateRef>Вы допустили слишком много разрушений, нет смысла восстанавливать разрушенное вами производство! Ваши работодатели расстроены такой неаккуратной работой и отказываются платить.</LoGiQ_FactoryAssault.root.nodes.Letter.text.slateRef>
+<LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Letter.label.slateRef>Противник вызвал подкрепления.</LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Letter.label.slateRef>
+<LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Letter.text.slateRef>Противник обнаружил ваш отряд и вызвал подкрепление. Оно прибудет на место в течение дня или около того.</LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Letter.text.slateRef>
+<LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPart.slateRef>Силы $enemyFaction на пути к этой локации {0}'</LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPart.slateRef> 
+<LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>Силы $enemyFaction будут здесь {0}'</LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>
+<LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>Вражеские подкрепления!</LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>
+<LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>Вражеский отряд достиг точки назначения и готов к контратаке.</LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>
+<LoGiQ_FactoryAssault.root.nodes.siteAllEnemiesDefeated.node.nodes.Letter.label.slateRef>Сражение окончено.</LoGiQ_FactoryAssault.root.nodes.siteAllEnemiesDefeated.node.nodes.Letter.label.slateRef>
+<LoGiQ_FactoryAssault.root.nodes.siteAllEnemiesDefeated.node.nodes.Letter.text.slateRef>Враги повержены, производство под вашим контролем. Теперь можно покинуть это место.</LoGiQ_FactoryAssault.root.nodes.siteAllEnemiesDefeated.node.nodes.Letter.text.slateRef>
+
+</LanguageData>

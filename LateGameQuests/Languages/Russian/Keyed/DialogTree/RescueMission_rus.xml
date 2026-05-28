@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+<LoGiQ_RescueMissionTargetSimpleAKey>Поговорить с пленником</LoGiQ_RescueMissionTargetSimpleAKey>
+<LoGiQ_RescueMissionA_Title>Поговорить с пленником</LoGiQ_RescueMissionA_Title>
+<LoGiQ_RescueMissionA_Intro>Вы здесь, чтобы спасти меня? Большое вам спасибо! Нам пора выбираться из этого ужастного места!</LoGiQ_RescueMissionA_Intro>
+<LoGiQ_RescueMissionA_Finish>Иди вперед, мы прикроем! (завершить)</LoGiQ_RescueMissionA_Finish>
+
+<LoGiQ_RescueMissionTargetSimpleBKey>Поговорить с пленником</LoGiQ_RescueMissionTargetSimpleBKey>
+<LoGiQ_RescueMissionB_Title>Поговорить с пленником</LoGiQ_RescueMissionB_Title>
+<LoGiQ_RescueMissionB_Intro>Как хорошо, что вы здесь! Наконец-то я выберусь отсюда!</LoGiQ_RescueMissionB_Intro>
+<LoGiQ_RescueMissionB_Finish>Иди вперед, мы прикроем! (завершить)</LoGiQ_RescueMissionB_Finish>
+	
+</LanguageData>

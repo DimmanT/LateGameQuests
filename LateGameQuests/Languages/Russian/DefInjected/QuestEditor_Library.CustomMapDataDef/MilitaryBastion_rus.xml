@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+<LoGiQ_Map_MilitaryBastionA.label>Крепость</LoGiQ_Map_MilitaryBastionA.label>
+<LoGiQ_Map_MilitaryBastionA.description>Крепость враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBastionA.description>
+<LoGiQ_Map_MilitaryBastionB.label>Крепость</LoGiQ_Map_MilitaryBastionB.label>
+<LoGiQ_Map_MilitaryBastionB.description>Крепость враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBastionB.description>
+<LoGiQ_Map_MilitaryBastionB.customThings.0.customName>Сундук коменданта.</LoGiQ_Map_MilitaryBastionB.customThings.0.customName>
+<LoGiQ_Map_MilitaryBastionC_CE.label>Крепость</LoGiQ_Map_MilitaryBastionC_CE.label>
+<LoGiQ_Map_MilitaryBastionC_CE.description>Крепость враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBastionC_CE.description>
+<LoGiQ_Map_MilitaryBastionC_CE.customThings.1.customName>Ящик коменданта.</LoGiQ_Map_MilitaryBastionC_CE.customThings.1.customName>
+
+</LanguageData>

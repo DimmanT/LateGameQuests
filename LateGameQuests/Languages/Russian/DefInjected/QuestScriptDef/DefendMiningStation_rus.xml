@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <LoGiQ_DefendMiningStation.questDescriptionRules.rulesStrings>
+    <li>questDescription -&gt; Фракция [askerFaction_name] обращается к вам с просьбой о помощи, их автономная станция добычи полезных ископаемых под угрозой атаки рейдеров. Несмотря на то, что местоположение станции хорошо скрывалось, разведчикам из [enemyFaction_name] удалось выяснить его и сейчас они собирают силы для штурма. В недрах еще остались полезные ископаемые, вам необходимо защитить станцию на время добычи еще одной порции.\n[questNotation]</li>
+	<li>questDescription -&gt; Лидер фракции [askerFaction_name] просит вас организовать оборону автономной добывающей станции. На станцию собираются напасть значительные силы [enemyFaction_name]. Залежи еще не выработаны полностью, вам необходимо зашитить станцию на время добычи еще одной порции.\n[questNotation]</li>
+	<li>questNotation -&gt;  \nВыдвигайтесь к станции и организуйте оборону. Рейдеры совершат несколько атак, ваша задача - дождаться добычи ресурсов и выслать их, после чего станцию можно будет покинуть.</li>
+  </LoGiQ_DefendMiningStation.questDescriptionRules.rulesStrings>
+
+  <LoGiQ_DefendMiningStation.questNameRules.rulesStrings>
+    <li>questName -&gt; Защита автономной станции добычи.</li>
+    <li>questName -&gt; Автоматическая станция добычи в опасности.</li>
+    <li>questName -&gt; Защита лагеря автономной добычи.</li>
+	<li>questName -&gt; Оборона станции добычи ископаемых.</li>
+  </LoGiQ_DefendMiningStation.questNameRules.rulesStrings>
+  
+ 
+<LoGiQ_DefendMiningStation.root.nodes.GiveRewards.customLetterLabel.slateRef>Оплата прибыла</LoGiQ_DefendMiningStation.root.nodes.GiveRewards.customLetterLabel.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.GiveRewards.customLetterText.slateRef>Вы успешно защитили станцию!\n\nОплата от [askerFaction_name] прибыла.</LoGiQ_DefendMiningStation.root.nodes.GiveRewards.customLetterText.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.GiveRewards.nodeIfChosenPawnSignalUsed.text.slateRef>Кто должен получить титул [askerFaction_royalFavorLabel] за выполнение задачи?</LoGiQ_DefendMiningStation.root.nodes.GiveRewards.nodeIfChosenPawnSignalUsed.text.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>Вы должны достичь станцию в течение {0}.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPartTip.slateRef>Прибудьте на станцию не позднее {0}.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPartTip.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>Вы не успели прибыть на станцию вовремя.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>Станция добычи искапаемых была разрушена. Квест [resolvedQuestName] отменен.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.ProgressComplex.progressMessage.slateRef>идёт процесс добычи</LoGiQ_DefendMiningStation.root.nodes.ProgressComplex.progressMessage.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.OverdrivedForTime.node.nodes.Letter.label.slateRef>Перегрузка прошла успешно!</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForTime.node.nodes.Letter.label.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.OverdrivedForTime.node.nodes.Letter.text.slateRef>Время добычи уменьшено</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForTime.node.nodes.Letter.text.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.OverdrivedFailed.node.nodes.Letter.label.slateRef>Перегрузка провалена!</LoGiQ_DefendMiningStation.root.nodes.OverdrivedFailed.node.nodes.Letter.label.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.OverdrivedFailed.node.nodes.Letter.text.slateRef>Добыча займет больше времени, чем ожидалось</LoGiQ_DefendMiningStation.root.nodes.OverdrivedFailed.node.nodes.Letter.text.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Delay-0.expiryInfoPart.slateRef>$enemyFaction готовятся к атаке {0}</LoGiQ_DefendMiningStation.root.nodes.Delay-0.expiryInfoPart.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Delay-0.expiryInfoPartTip.slateRef>$enemyFaction будут готовы атаковать {0}</LoGiQ_DefendMiningStation.root.nodes.Delay-0.expiryInfoPartTip.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Delay-0.node.parms.customLetterLabel.value.slateRef>Рейдеры атакуют!</LoGiQ_DefendMiningStation.root.nodes.Delay-0.node.parms.customLetterLabel.value.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Delay-0.node.parms.customLetterText.value.slateRef>[enemyFaction_pawnsPlural] завершили свои приготовления и приступили к штурму.</LoGiQ_DefendMiningStation.root.nodes.Delay-0.node.parms.customLetterText.value.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Delay-1.expiryInfoPart.slateRef>Подкрепления $enemyFaction прибудут через {0}'</LoGiQ_DefendMiningStation.root.nodes.Delay-1.expiryInfoPart.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Delay-1.expiryInfoPartTip.slateRef>Подкрепления $enemyFaction прибудут {0}'</LoGiQ_DefendMiningStation.root.nodes.Delay-1.expiryInfoPartTip.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterLabel.value.slateRef>Вторая волна рейдеров!</LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterLabel.value.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterText.value.slateRef>[enemyFaction_pawnsPlural] готовы к битве!</LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterText.value.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.label.slateRef>Перегрузка прошла успешно!</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.label.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.text.slateRef>Выход продукции увеличен.</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.text.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.ProductionReady.node.nodes.Message.text.slateRef>добыча завершена, перенесите продукцию в транспортную капсулу</LoGiQ_DefendMiningStation.root.nodes.ProductionReady.node.nodes.Message.text.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.ProductionReady.node.nodes.Progress.progressMessage.slateRef>загружено</LoGiQ_DefendMiningStation.root.nodes.ProductionReady.node.nodes.Progress.progressMessage.slateRef>
+
+</LanguageData>

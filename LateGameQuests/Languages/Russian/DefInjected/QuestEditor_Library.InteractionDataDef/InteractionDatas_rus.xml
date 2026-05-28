@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+<LoGiQ_ResearchCampBase_Disasm.interactions.0.interactionText>Быстрый демонтаж</LoGiQ_ResearchCampBase_Disasm.interactions.0.interactionText>
+<LoGiQ_ResearchCampBase_Disasm.interactions.1.interactionText>Аккуратный демонтаж</LoGiQ_ResearchCampBase_Disasm.interactions.1.interactionText>
+<LoGiQ_ResearchCampBase_Disasm.interactions.1.results.1.actions.0.datas.0.message>Некоторые обломки оказались полезны, проверьте инвентарь.</LoGiQ_ResearchCampBase_Disasm.interactions.1.results.1.actions.0.datas.0.message>
+<LoGiQ_ResearchCampBase_Disasm.interactions.1.results.1.actions.0.datas.1.message>Обнаружен неповрежденный компонент сложной системы, проверьте инвентарь.</LoGiQ_ResearchCampBase_Disasm.interactions.1.results.1.actions.0.datas.1.message>
+<LoGiQ_ResearchCampBase_Disasm.interactions.1.results.1.actions.1.action.datas.0.message>Обнаружен неповрежденный компонент сложной системы, проверьте инвентарь.</LoGiQ_ResearchCampBase_Disasm.interactions.1.results.1.actions.1.action.datas.0.message>
+<LoGiQ_ResearchCampBase_Disasm.interactions.2.interactionText>Плавка образцов брони</LoGiQ_ResearchCampBase_Disasm.interactions.2.interactionText>
+<LoGiQ_ResearchCampBase_Disasm.interactions.3.interactionText>Замена поврежденных частей</LoGiQ_ResearchCampBase_Disasm.interactions.3.interactionText>
+<LoGiQ_ResearchCampBase_Term.interactions.0.interactionText>Расшифровка данных</LoGiQ_ResearchCampBase_Term.interactions.0.interactionText>
+<LoGiQ_ResearchCampBase_Term.interactions.1.interactionText>Взлом черного ящика</LoGiQ_ResearchCampBase_Term.interactions.1.interactionText>
+<LoGiQ_ResearchCampBase_Term.interactions.2.interactionText>Исследование логов</LoGiQ_ResearchCampBase_Term.interactions.2.interactionText>
+<LoGiQ_ResearchCampBase_Term.interactions.3.interactionText>Анализ данных с сенсоров</LoGiQ_ResearchCampBase_Term.interactions.3.interactionText>
+<LoGiQ_ResearchCampBase_RBench.interactions.0.interactionText>Исследования</LoGiQ_ResearchCampBase_RBench.interactions.0.interactionText>
+<LoGiQ_ResearchCampBase_RBench.interactions.1.interactionText>Анализ материалов</LoGiQ_ResearchCampBase_RBench.interactions.1.interactionText>
+<LoGiQ_ResearchCampBase_RBench.interactions.2.interactionText>Моделирование</LoGiQ_ResearchCampBase_RBench.interactions.2.interactionText>
+<LoGiQ_ResearchCampBase_RBench.interactions.3.interactionText>Создание чертежей</LoGiQ_ResearchCampBase_RBench.interactions.3.interactionText>
+<LoGiQ_ResearchCampBase_Console.interactions.0.interactionText>Поиск в базах данных</LoGiQ_ResearchCampBase_Console.interactions.0.interactionText>
+<LoGiQ_ResearchCampBase_Console.interactions.1.interactionText>Онлайн консультация</LoGiQ_ResearchCampBase_Console.interactions.1.interactionText>
+<LoGiQ_ResearchCampAPC_Disasm.interactions.0.interactionText>Быстрый демонтаж</LoGiQ_ResearchCampAPC_Disasm.interactions.0.interactionText>
+<LoGiQ_ResearchCampAPC_Disasm.interactions.1.interactionText>Аккуратный демонтаж</LoGiQ_ResearchCampAPC_Disasm.interactions.1.interactionText>
+<LoGiQ_ResearchCampAPC_Disasm.interactions.1.results.1.actions.0.datas.0.message>Некоторые обломки оказались полезны, проверьте инвентарь.</LoGiQ_ResearchCampAPC_Disasm.interactions.1.results.1.actions.0.datas.0.message>
+<LoGiQ_ResearchCampAPC_Disasm.interactions.1.results.1.actions.0.datas.1.message>Обнаружен неповрежденный компонент сложной системы, проверьте инвентарь.</LoGiQ_ResearchCampAPC_Disasm.interactions.1.results.1.actions.0.datas.1.message>
+<LoGiQ_ResearchCampAPC_Disasm.interactions.1.results.1.actions.1.action.datas.0.message>Обнаружен неповрежденный компонент сложной системы, проверьте инвентарь.</LoGiQ_ResearchCampAPC_Disasm.interactions.1.results.1.actions.1.action.datas.0.message>
+<LoGiQ_ResearchCampAPC_Disasm.interactions.2.interactionText>Плавка образцов брони</LoGiQ_ResearchCampAPC_Disasm.interactions.2.interactionText>
+<LoGiQ_ResearchCampAPC_Disasm.interactions.3.interactionText>Замена поврежденных частей</LoGiQ_ResearchCampAPC_Disasm.interactions.3.interactionText>
+<LoGiQ_ResearchCampAPC_Disasm.interactions.4.interactionText>Разбор снарядов</LoGiQ_ResearchCampAPC_Disasm.interactions.4.interactionText>
+<LoGiQ_ResearchCampAPC_Disasm.interactions.4.results.1.actions.1.message>Что-то пошло не так, когда колонист разрезал снаряд. Может это была плохая идея?</LoGiQ_ResearchCampAPC_Disasm.interactions.4.results.1.actions.1.message>
+<LoGiQ_ResearchCampAPC_RBench.interactions.1.interactionText>Анализ материалов</LoGiQ_ResearchCampAPC_RBench.interactions.1.interactionText>
+<LoGiQ_ResearchCampAPC_RBench.interactions.3.interactionText>Создание чертежей</LoGiQ_ResearchCampAPC_RBench.interactions.3.interactionText>
+<LoGiQ_ResearchCampAPC_RBench.interactions.4.interactionText>Анализ повреждений</LoGiQ_ResearchCampAPC_RBench.interactions.4.interactionText>
+
+<LoGiQ_MiningStation_Terminal.interactions.0.interactionText>Перегрузить для ускорения добычи (Г.дело,Ремесло)</LoGiQ_MiningStation_Terminal.interactions.0.interactionText>
+<LoGiQ_MiningStation_Terminal.interactions.1.interactionText>Перегрузить для увеличения добычи (Г.дело,Ремесло)</LoGiQ_MiningStation_Terminal.interactions.1.interactionText>
+<LoGiQ_MiningStation_TPod.interactions.0.interactionText>Погрузить (Пласталь)</LoGiQ_MiningStation_TPod.interactions.0.interactionText>
+<LoGiQ_MiningStation_TPod.interactions.1.interactionText>Погрузить (Уран)</LoGiQ_MiningStation_TPod.interactions.1.interactionText>
+<LoGiQ_MiningStation_TPod.interactions.2.interactionText>Погрузить (Золото)</LoGiQ_MiningStation_TPod.interactions.2.interactionText>
+
+<LoGiQ_FactoryAssault_Terminal.label>Терминал безопасности</LoGiQ_FactoryAssault_Terminal.label>
+<LoGiQ_FactoryAssault_Terminal.interactions.0.interactionText>Взломать систему безопасности</LoGiQ_FactoryAssault_Terminal.interactions.0.interactionText>
+<LoGiQ_FactoryAssault_Terminal.interactions.0.results.0.actions.1.message>Успешный взлом!</LoGiQ_FactoryAssault_Terminal.interactions.0.results.0.actions.1.message>
+<LoGiQ_FactoryAssault_Terminal.interactions.0.results.1.actions.0.message>Взломать не удалось, попробуйте еще раз!</LoGiQ_FactoryAssault_Terminal.interactions.0.results.1.actions.0.message>
+
+</LanguageData>

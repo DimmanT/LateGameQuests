@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <LoGiQ_Scientist_RCW_DialogReportKey>Talk to scientist</LoGiQ_Scientist_RCW_DialogReportKey>
+    <LoGiQ_SRCW_Title>Talk to scientist</LoGiQ_SRCW_Title>
+	<LoGiQ_SRCW_Intro>Are you here to help us?</LoGiQ_SRCW_Intro>
+	<LoGiQ_SRCW_Finish>(finish)</LoGiQ_SRCW_Finish>
+	<LoGiQ_SRCW_Opt_1>We do what we can.</LoGiQ_SRCW_Opt_1>
+	<LoGiQ_SRCW_Opt_2>How are the research going?</LoGiQ_SRCW_Opt_2>
+	<LoGiQ_SRCW_Opt_3>Maybe I can help you with current task? (-intellect-)</LoGiQ_SRCW_Opt_3>
+    <LoGiQ_SRCW_Opt_4>It was near the wreck. What is it? (-item-)</LoGiQ_SRCW_Opt_4>
+	<LoGiQ_SRCW_Opt_5>How can we help you?</LoGiQ_SRCW_Opt_5>
+	<LoGiQ_SRCW_Rep_1>Ok. Sorry, but i need go work.</LoGiQ_SRCW_Rep_1>
+	<LoGiQ_SRCW_Opt_11>Of course! We are all counting on you!
+A person with such a bright mind quickly solve the problem. (-social-)</LoGiQ_SRCW_Opt_11>
+	<LoGiQ_SRCW_Rep_2>Hey! Try it yourself if you think you can do it better!</LoGiQ_SRCW_Rep_2>
+	<LoGiQ_SRCW_Opt_21>I do (-intellect-)</LoGiQ_SRCW_Opt_21>
+	<LoGiQ_SRCW_Rep_3>M... yes, you looks intellegent, in front of others 
+*shows notes*</LoGiQ_SRCW_Rep_3>
+	<LoGiQ_SRCW_Opt_31>Yes, I can help with that. (finish)</LoGiQ_SRCW_Opt_31>
+	<LoGiQ_SRCW_Rep_4>Interesting! I will take it for research.</LoGiQ_SRCW_Rep_4>
+	<LoGiQ_SRCW_Rep_11>Khm... Thanks... But I really need to go work.
+*smiles*</LoGiQ_SRCW_Rep_11>
+	<LoGiQ_SRCW_Rep_5>We need some qualified engineers at workbench,
+good hacker at terminal, and attentive scientist at research table.
+If you know somebody, who can help with researching, try use commconsole to discuss problems with them.</LoGiQ_SRCW_Rep_5>
+
+	<!--<AE_Survivor_Text_First>You found a "human" in the corpse and you can't help but notice insect characteristics on {Interviewee_objective}.</AE_Survivor_Text_First>-->
+    <!--<AE_Survivor_Text_Survival>"I am {Interviewee_nameDef}. I was captured by a swarm of insects during a wave. To be honest, I don't know why they only didn't kill me. When I woke up, my body was like this. I've got nowhere to go now, please let me join you."</AE_Survivor_Text_Survival>-->
+
+</LanguageData>

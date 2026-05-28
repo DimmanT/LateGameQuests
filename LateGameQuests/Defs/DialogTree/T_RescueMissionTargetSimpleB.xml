@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestEditor_Library.DialogTreeDef>
+    <defName>RescueMissionTargetSimpleB</defName>
+    <title>LoGiQ_RescueMissionB_Title</title>
+    <requireNonHostile>false</requireNonHostile>
+    <dialogReportKey>LoGiQ_RescueMissionTargetSimpleBKey</dialogReportKey>
+    <curIndex>1</curIndex>
+    <nodeMoulds>
+      <li>
+        <key>0</key>
+        <value>
+          <text>LoGiQ_RescueMissionB_Intro</text>
+          <index>0</index>
+          <subNodeIndexs />
+          <options>
+            <li Class="QuestEditor_Library.DialogOption">
+              <text>LoGiQ_RescueMissionB_Finish</text>
+              <removeDialogAfterSelect>false</removeDialogAfterSelect>
+              <results>
+                <li>
+                  <resultName>Exit</resultName>
+                </li>
+              </results>
+            </li>
+          </options>
+        </value>
+      </li>
+    </nodeMoulds>
+  </QuestEditor_Library.DialogTreeDef>
+</Defs>

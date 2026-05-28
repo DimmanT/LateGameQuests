@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+<LoGiQ_Map_MilitaryBaseA.label>Военная база</LoGiQ_Map_MilitaryBaseA.label>
+<LoGiQ_Map_MilitaryBaseA.description>Военная база враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBaseA.description>
+<LoGiQ_Map_MilitaryBaseB.label>Военная база</LoGiQ_Map_MilitaryBaseB.label>
+<LoGiQ_Map_MilitaryBaseB.description>Военная база враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBaseB.description>
+<LoGiQ_Map_MilitaryBaseB.customThings.2.customDescription>Искать что-нибудь полезное</LoGiQ_Map_MilitaryBaseB.customThings.2.customDescription>
+<LoGiQ_Map_MilitaryBaseC.label>Военная база</LoGiQ_Map_MilitaryBaseC.label>
+<LoGiQ_Map_MilitaryBaseC.description>Военная база враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBaseC.description>
+<LoGiQ_Map_MilitaryBaseD.label>Военная база</LoGiQ_Map_MilitaryBaseD.label>
+<LoGiQ_Map_MilitaryBaseD.description>Военная база враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBaseD.description>
+<LoGiQ_Map_MilitaryBaseE_CE.label MayRequire="ceteam.combatextended">Военная база</LoGiQ_Map_MilitaryBaseE_CE.label>
+<LoGiQ_Map_MilitaryBaseE_CE.description MayRequire="ceteam.combatextended">Военная база враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBaseE_CE.description>
+<LoGiQ_Map_MilitaryBaseF_VFS.label MayRequire="VanillaExpanded.VFESecurity">Военная база</LoGiQ_Map_MilitaryBaseF_VFS.label>
+<LoGiQ_Map_MilitaryBaseF_VFS.description MayRequire="VanillaExpanded.VFESecurity">Военная база враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBaseF_VFS.description>
+<LoGiQ_Map_MilitaryBaseG_FI.label MayRequire="aoba.fortress.industrial">Военная база</LoGiQ_Map_MilitaryBaseG_FI.label>
+<LoGiQ_Map_MilitaryBaseG_FI.description MayRequire="aoba.fortress.industrial">Военная база враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBaseG_FI.description>
+</LanguageData>

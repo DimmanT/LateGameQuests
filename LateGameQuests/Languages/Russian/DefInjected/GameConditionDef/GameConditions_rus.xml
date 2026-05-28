@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+<LoGiQ_GameCondition_FactoryAssault.label>Идёт штурм</LoGiQ_GameCondition_FactoryAssault.label>
+<LoGiQ_GameCondition_FactoryAssault.description>Постарайтесь провести штурм аккуратно, за каждого выжившего гражданского заплатят серебром.</LoGiQ_GameCondition_FactoryAssault.description>
+<LoGiQ_GameCondition_FactoryAssault.endMessage>Битва завершена, производство под вашим контролем.</LoGiQ_GameCondition_FactoryAssault.endMessage>
+<LoGiQ_GameCondition_FactoryAssault.letterText>Штурм начался.\n\n Постарайтесь не убивать гражданских, а также не портить производственное оборудование. Чем меньше разрушений вы после себя оставите, тем выше будет награда.</LoGiQ_GameCondition_FactoryAssault.letterText>
+<LoGiQ_GameCondition_FactoryAssault.startMessage>Штурм начался.</LoGiQ_GameCondition_FactoryAssault.startMessage>
+</LanguageData>

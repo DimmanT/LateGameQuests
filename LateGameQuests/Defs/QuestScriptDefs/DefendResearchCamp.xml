@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>LoGiQ_DefendResearchCamp</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+	  	<li Class="QuestNode_Message">
+          <text>points $points</text>
+        </li>
+	    <!-- . . . . . . . . REWARDS . . . . . . . . -->
+		<li Class="QuestNode_GetMap"/>
+		<li Class="QuestNode_GetMapWealth">
+          <map>$map</map>
+          <storeAs>mapWealth</storeAs>
+        </li>
+        <li Class="QuestNode_EvaluateSimpleCurve">
+          <value>$mapWealth</value>
+          <storeAs>wealthRewardValueFactor</storeAs>
+          <curve>
+            <points>
+              <li>0, 1.15</li>
+              <li>50000, 1</li>
+              <li>300000, 0.85</li>
+            </points>
+          </curve>
+        </li>
+        <li Class="QuestNode_Set">
+          <name>rewardValue</name>
+          <value>$($points * $wealthRewardValueFactor * randFloat(1.2, 1.6))</value>
+        </li>
+		<li Class="QuestNode_GiveRewards">
+          <inSignal>FinishResearch</inSignal>
+          <parms>
+            <allowGoodwill>true</allowGoodwill>
+            <allowRoyalFavor>true</allowRoyalFavor>
+            <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+            <giveToCaravan>false</giveToCaravan>
+          </parms>
+		  <customLetterLabel TKey="LetterLabelPaymentArrived">Payment arrived</customLetterLabel>
+          <customLetterText TKey="LetterTextPaymentArrived">You have successfully defend the researchers!\n\nThe payment from [askerFaction_name] has arrived.</customLetterText>
+          <useDifficultyFactor>false</useDifficultyFactor> <!-- we only care about requested total market value -->
+          <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+            <letterDef>ChoosePawn</letterDef>
+            <label TKey="LetterLabelFavorReceiver">[askerFaction_royalFavorLabel]</label>
+            <text TKey="LetterTextFavorReceiver">Who should be credited with [askerFaction_royalFavorLabel] for fulfilling defense duty?</text>
+            <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+            <useColonistsFromCaravanArg>true</useColonistsFromCaravanArg>
+          </nodeIfChosenPawnSignalUsed>
+        </li>
+		<!-- . . . . . . . . . . . . . . . . . . . . -->
+	    <!-- . . . . . . . GENERATE MAP  . . . . . . -->
+		<li Class="QuestNode_GetPawn">
+			<storeAs>asker</storeAs>
+			<mustBeFactionLeader>true</mustBeFactionLeader>
+            <allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+			<mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
+			<minTechLevel>Industrial</minTechLevel>
+		</li>
+		<li Class="QuestNode_GetFactionOf">
+			<thing>$asker</thing>
+            <storeAs>askerFaction</storeAs>
+		</li>
+		<li Class="QuestNode_GetRandomInRangeInt">
+          <storeAs>siteDistance</storeAs>
+          <range>17~30</range>
+        </li>
+		<li Class="QuestNode_Set">
+		  <name>arriveDeadline</name>
+		  <value>$($siteDistance*12000)</value>
+		  <convertTo>Double</convertTo>
+		</li>
+		<!-- Slightly decrease time, if we have access to vehicles. Better increase distance, but i can not, see below (<distance>).-->
+		<li Class="QuestNode_ModIsActive"> 
+		  <modID>SmashPhil.VehicleFramework</modID>
+		  <node Class="QuestNode_Multiply">
+			<value1>0.8</value1>
+			<value2>$arriveDeadline</value2>
+			<storeAs>arriveDeadline</storeAs>
+		  </node>
+		</li>
+        <li Class="QuestEditor_Library.QuestNode_RandomCustomMap">
+		  <tags><li><key>LoGiQ_ResearchCampRoot</key><value>1</value></li></tags>
+          <buffer>10</buffer>
+          <bufferMin>20</bufferMin>
+          <expandingIconPath>Things/Sites/warmachine</expandingIconPath>
+          <replaceMapGeneration>False</replaceMapGeneration>
+          <disdestroyBecauseOfNoColonist>False</disdestroyBecauseOfNoColonist>
+          <reenterable>False</reenterable>
+          <beUnreenterableWhenAllEnemiesDefeated>False</beUnreenterableWhenAllEnemiesDefeated>
+          <enableBlack>True</enableBlack>
+          <storeAs>site</storeAs>
+          <!-- <overrideFaction>$askerFaction</overrideFaction> -->
+          <distance>17~30</distance> <!-- CQF does not allow to set this parameter via Slate mechanism -->
+          <blacklist>
+            <li>CQF_Undercave</li>
+            <li>Underground</li>
+          </blacklist>
+        </li>
+		<li Class="RimWorld.QuestGen.QuestNode_WorldObjectTimeout">
+          <destroyOnCleanup>true</destroyOnCleanup>
+          <worldObject>$site</worldObject>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <delayTicks>$arriveDeadline</delayTicks>
+		  <expiryInfoPart TKey="InfoPartQuestExpired">You must arrive within {0} to save expedition.</expiryInfoPart>
+          <expiryInfoPartTip TKey="InfoPartTipQuestExpired">You must arrive within {0} to save expedition.</expiryInfoPartTip>
+          <node Class="RimWorld.QuestGen.QuestNode_Sequence">
+            <nodes>
+              <li Class="RimWorld.QuestGen.QuestNode_Letter">
+                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestExpired">Research camp was raided and destroyed. The quest [resolvedQuestName] has expired.</text>
+              </li>
+              <li Class="RimWorld.QuestGen.QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+		<li Class="QuestNode_Letter">
+			<inSignal>site.MapGenerated</inSignal>
+			<label TKey="LetterLabelJoin">Reasearchers from [askerFaction_name] joining to you.</label>
+			<text TKey="LetterTextJoin">Researcher joins temporary, until the work is completed. They will leave as soon as all the colonists leave the site.</text>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . . . . . . . . . . -->
+		<!-- . . . . . . . CONFIGURATING RAIDERS . . . . . . . -->
+        <li Class="LoGiQ.QuestNodes.QuestNode_GetFactionAdv">
+          <storeAs>enemyFaction</storeAs>
+          <allowEnemy>true</allowEnemy>
+          <allowNeutral>false</allowNeutral>
+          <allowAlly>false</allowAlly>
+          <allowAskerFaction>false</allowAskerFaction>
+          <allowPermanentEnemy>true</allowPermanentEnemy>
+          <mustBePermanentEnemy>false</mustBePermanentEnemy>
+          <leaderMustBeSafe>False</leaderMustBeSafe>
+          <mustHaveGoodwillRewardsEnabled>False</mustHaveGoodwillRewardsEnabled>
+		  <mustBeHostileToFaction>$askerfaction</mustBeHostileToFaction>
+		  <minTechLevel>Industrial</minTechLevel>
+        </li>
+        <li Class="RimWorld.QuestGen.QuestNode_Delay">
+          <inSignalDisable>site.Destroyed</inSignalDisable>
+          <outSignalComplete>ReadyForAttack</outSignalComplete>
+          <expiryInfoPart TKey="InfoPartReadyForAttack">$enemyFaction preparing for attack {0}</expiryInfoPart>
+          <expiryInfoPartTip TKey="InfoPartTipReadyForAttack">$enemyFaction preparing  for attack {0}</expiryInfoPartTip>
+          <delayTicks>$($arriveDeadline + 30000)</delayTicks>
+          <isQuestTimeout>false</isQuestTimeout>
+		  <!-- see SurvayScanner --> 
+		  <node Class="RimWorld.QuestGen.QuestNode_SubScript">
+			  <def>Util_RaidSiteComplex</def>
+			  <!-- <prefix>raid</prefix> -->
+			  <!-- <allowNonPrefixedLookup>true</allowNonPrefixedLookup> -->
+			  <parms>
+				<points>$points</points>
+				<inSignal>ReadyForAttack</inSignal>
+				<siteToRaid>$site</siteToRaid>
+				<customLetterLabel TKey="LetterLabelAttack">Raiders attack!</customLetterLabel>
+				<customLetterText  TKey="LetterTextAttack">[enemyFaction_pawnsPlural] completed their preparations and began the assault.</customLetterText>
+				<arrivalMode>EdgeWalkIn</arrivalMode>
+				<canTimeoutOrFlee>true</canTimeoutOrFlee>
+				<inSignalLeave>EndRaid</inSignalLeave>
+			  </parms>
+			</node>
+        </li>
+		<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+		<!-- . . . . . . . PROGRESSING . . . . . . . . . . . -->
+		<li Class="QuestNode_Set">
+		  <name>RequiredProgress</name>
+		  <value>100</value>
+		  <convertTo>Double</convertTo>
+		</li>
+		<li Class="LoGiQ.QuestNodes.QuestNode_ProgressComplex">
+			<inSignals>
+				<li>AddSmallProgress</li>
+				<li>AddMediumProgress</li>
+				<li>AddBigProgress</li>
+			</inSignals>
+			<increments>
+				<li>2</li>
+				<li>5</li>
+				<li>10</li>
+			</increments>
+			<progressMin>0</progressMin>
+			<progressMax>$RequiredProgress</progressMax>
+			<progressMessage TKey="ProgressMessage">research progress</progressMessage>
+			<outSignalComplete>FinishResearch</outSignalComplete>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+		<!-- . . . END OF QUEST  . . . . . . . . . . . . . . -->
+		<li Class="QuestEditor_Library.QuestNode_DoCQFActions">
+          <inSignal>FinishResearch</inSignal>
+		  <actions>
+			<li Class="LoGiQ.CQFActions.CQFAction_Leave">
+			  <targetsText>
+			    <li>Scientist.0</li><li>Scientist.1</li><li>Trooper.0</li>
+			  </targetsText>
+			  <sendStandardLetter>true</sendStandardLetter>
+            </li>
+		  </actions>
+        </li>
+        <li Class="QuestEditor_Library.QuestNode_DoCQFActions">
+          <inSignal>site.Destroyed</inSignal>
+		  <actions>
+			<li Class="LoGiQ.CQFActions.CQFAction_Leave">
+			  <targetsText>
+			    <li>Scientist.0</li><li>Scientist.1</li><li>Trooper.0</li>
+			  </targetsText>
+			  <sendStandardLetter>true</sendStandardLetter>
+            </li>
+		  </actions>
+        </li>
+		<li Class="QuestEditor_Library.QuestNode_DoCQFActions">
+          <inSignal>faction.BecameHostileToPlayer</inSignal>
+		  <actions>
+			<li Class="LoGiQ.CQFActions.CQFAction_Leave">
+			  <targetsText>
+			    <li>Scientist.0</li><li>Scientist.1</li><li>Trooper.0</li>
+			  </targetsText>
+			  <sendStandardLetter>true</sendStandardLetter>
+            </li>
+		  </actions>
+        </li>
+		<li Class="RimWorld.QuestGen.QuestNode_End">
+          <inSignal>FinishResearch</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Success</outcome>
+        </li>
+        <li Class="RimWorld.QuestGen.QuestNode_End">
+          <inSignal>site.Destroyed</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Fail</outcome>
+        </li>
+		<li Class="QuestNode_Letter">
+          <inSignal>askerFaction.BecameHostileToPlayer</inSignal>
+          <label TKey="LetterLabelQuestFailed">Quest failed: [resolvedQuestName]</label>
+          <text TKey="LetterTextQuestFailed">[askerFaction_name] became hostile to you.</text>
+        </li>
+        <li Class="QuestNode_End">
+          <inSignal>askerFaction.BecameHostileToPlayer</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Fail</outcome>
+        </li>
+		<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+      </nodes>
+    </root>
+    <rootSelectionWeight>1.25</rootSelectionWeight>
+    <randomlySelectable>True</randomlySelectable>
+    <rootMinPoints>1750</rootMinPoints>
+    <rootIncreasesPopulation>False</rootIncreasesPopulation>
+    <minRefireDays>15</minRefireDays>
+	<rootEarliestDay>1</rootEarliestDay>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription -&gt; Research group of [askerFaction_name] tries to investigate ancient war machine wreck. It has good state and is of scientific interest. But the leader of [askerFaction_name] can not defend them right now, and requesting yout help. \n\n[questNotation]</li>
+		<li>questDescription -&gt; Leader of [askerFaction_name] requesting your help in protecting the science expedition. They found a well preserved wreck of ancient machine, that can be helps in researching impressive technologies of ancients. But that region is unsafe and researches needs a professional guard.\n\n[questNotation]</li>
+		<li>questNotation -&gt;  Move to research camp location and protect the researchers of [askerFaction_name], until they finish the work. Your engineers and scientists may be usefull to speed up the process. Pay an attention, that if you go away from camp you left scientist defenseless and contract will be terminated.</li>
+      </rulesStrings>
+      <rulesFiles />
+      <rulesRaw IsNull="True" />
+      <include IsNull="True" />
+    </questDescriptionRules>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName -&gt; Defend the research camp</li>
+		<li>questName -&gt; Scientists need protection.</li>
+		<li>questName -&gt; Guard the researchers.</li>
+      </rulesStrings>
+      <rulesFiles />
+      <rulesRaw IsNull="True" />
+      <include IsNull="True" />
+    </questNameRules>
+    <autoAccept>False</autoAccept>
+    <hideOnCleanup>False</hideOnCleanup>
+    <expireDaysRange>
+      <min>1</min>
+      <max>2</max>
+    </expireDaysRange>
+    <nameMustBeUnique>False</nameMustBeUnique>
+    <defaultChallengeRating>-1</defaultChallengeRating>
+    <defaultHidden>False</defaultHidden>
+    <isRootSpecial>True</isRootSpecial>
+    <canGiveRoyalFavor>False</canGiveRoyalFavor>
+    <questAvailableLetterTextIsDescription>False</questAvailableLetterTextIsDescription>
+    <hideInvolvedFactionsInfo>False</hideInvolvedFactionsInfo>
+    <affectedByPopulation>False</affectedByPopulation>
+    <affectedByPoints>True</affectedByPoints>
+    <defaultCharity>False</defaultCharity>
+    <sendAvailableLetter>True</sendAvailableLetter>
+    <epic>False</epic>
+    <endOnColonyMove>True</endOnColonyMove>
+    <everAcceptableInSpace>False</everAcceptableInSpace>
+    <neverPossibleInSpace>False</neverPossibleInSpace>
+    <givenBy />
+    <canOccurOnAllPlanetLayers>False</canOccurOnAllPlanetLayers>
+    <ignoreConfigErrors>False</ignoreConfigErrors>
+    <ignoreIllegalLabelCharacterConfigError>False</ignoreIllegalLabelCharacterConfigError>
+  </QuestScriptDef>
+</Defs>

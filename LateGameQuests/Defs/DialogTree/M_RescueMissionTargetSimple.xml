@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestEditor_Library.DialogManagerDef>
+    <defName>RescueMissionSimple</defName>
+    <trees>
+      <li>
+        <tree>RescueMissionTargetSimpleA</tree>
+        <!-- <conditions> -->
+          <!-- <li Class="QuestEditor_Library.DialogCondition_Chance"> -->
+            <!-- <failReason></failReason> -->
+            <!-- <chance>0.5</chance> -->
+          <!-- </li> -->
+        <!-- </conditions> -->
+      </li>
+      <li>
+        <tree>RescueMissionTargetSimpleB</tree>
+        <!-- <conditions> -->
+          <!-- <li Class="QuestEditor_Library.DialogCondition_Chance"> -->
+            <!-- <failReason></failReason> -->
+            <!-- <chance>0.5</chance> -->
+          <!-- </li> -->
+        <!-- </conditions> -->
+      </li>
+    </trees>
+    <tags />
+  </QuestEditor_Library.DialogManagerDef>
+</Defs>

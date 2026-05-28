@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>LoGiQ_BuildVillage_Peaceful</defName>
+    <rootSelectionWeight>1.1</rootSelectionWeight>
+    <rootMinPoints>800</rootMinPoints>
+    <rootMinProgressScore>0</rootMinProgressScore>
+    <expireDaysRange>6~8</expireDaysRange>
+    <canGiveRoyalFavor>true</canGiveRoyalFavor>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription -&gt; [asker_nameDef], [asker_faction_leaderTitle] of [asker_faction_name], whants to expands [asker_possessive] domain and establish a small settlement. You are famous in building settlements, so [asker_pronoun] decided to order constraction. [questPeaceful] \n\n[questNotation]</li>
+		<li>questDescription -&gt; [asker_nameDef], [asker_faction_leaderTitle] of [asker_faction_name], tells you that [asker_pronoun] need move some people and properties to safe place. [asker_pronoun] is asking you to build a temporary camp for [asker_possessive] people. \n\n[questNotation]</li>
+		<li>questDescription -&gt; You got message from people of [asker_faction_name], they whant to order a village contruction to you. [questPeaceful] \n\n[questNotation]</li>
+		<li>questPeaceful -&gt; The region is peaceful and safe, no raids or other threat expected.</li>
+		<li>questNotation -&gt;  Plan contains [buildingsCount] buildings. Total value [monumentRequiredResourcesMarketValue_money]):\n\n Required resources (approximetly):\n[monumentRequiredResources].</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName -&gt; Build a village for asker.</li>
+		<li>questName -&gt; Build a settlement for asker.</li>
+		<li>questName -&gt; Custom settlement construction.</li>
+		<li>questName -&gt; Custom village construction.</li>
+		<li>questName -&gt; Construction order.</li>
+      </rulesStrings>
+      <rulesFiles />
+    </questNameRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+        </li>
+
+        <li Class="QuestNode_Set">
+          <name>rewardOnCompletion</name>
+          <value>true</value>
+        </li>
+		
+        <li Class="QuestNode_SubScript">
+          <def>Util_BuildVillageWorker</def>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

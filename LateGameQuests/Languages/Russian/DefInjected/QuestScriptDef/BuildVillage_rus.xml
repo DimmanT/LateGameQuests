@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <LoGiQ_BuildVillage_Peaceful.questDescriptionRules.rulesStrings>
+   <li>questDescription -&gt; [asker_nameDef], [asker_faction_leaderTitle] из [asker_faction_name], хочет расширить свои владения и заложить небольшое поселение. [asker_pronoun] наслышан о ваших способностях в строительстве и предлагает вам построить для него деревню на заказ. [questPeaceful] \n\n[questNotation]</li>
+   <li>questDescription -&gt; [asker_nameDef], [asker_faction_leaderTitle] из [asker_faction_name], сообщает, что ему нужно переместить часть своих людей и имущество на новое место. [asker_pronoun] просит вас построить временный лагерь, где они могли бы разместиться. [questPeaceful] \n\n[questNotation]</li>
+   <li>questDescription -&gt; Вам поступило сообщение от фракции [asker_faction_name], они хотят заказать у вас застройку нового поселения. [questPeaceful] \n\n[questNotation]</li>
+   <li>questPeaceful -&gt; Район предполагаемого строительства весьма тихий и опасаться нападения или других угроз не стоит.</li>
+   <li>questNotation -&gt; Строительный план содержит [buildingsCount] зданий(я), полной стоимостью около [monumentRequiredResourcesMarketValue_money]):\n\nПримерная смета:\n[monumentRequiredResources].</li>
+  </LoGiQ_BuildVillage_Peaceful.questDescriptionRules.rulesStrings>
+
+  <LoGiQ_BuildVillage_Peaceful.questNameRules.rulesStrings>
+	<li>questName -&gt; Заказное строительство</li>
+	<li>questName -&gt; Строительство на заказ</li>
+	<li>questName -&gt; Заказ на строительство</li>
+	<li>questName -&gt; Поселение под ключ</li>
+	<li>questName -&gt; Поселение для заказчика</li>
+	<li>questName -&gt; Застройка деревни</li>
+  </LoGiQ_BuildVillage_Peaceful.questNameRules.rulesStrings>
+  
+<Util_BuildVillageWorker.root.nodes.Progress.progressMessage.slateRef>прогресс строительства</Util_BuildVillageWorker.root.nodes.Progress.progressMessage.slateRef>
+<Util_BuildVillageWorker.root.nodes.ConstructionCompleted.node.nodes.Letter.label.slateRef>Строительство завершено, вы можете уходить.</Util_BuildVillageWorker.root.nodes.ConstructionCompleted.node.nodes.Letter.label.slateRef>
+<Util_BuildVillageWorker.root.nodes.ConstructionCompleted.node.nodes.Letter.text.slateRef>Вы успешно построили все необходимые здания. Чтобы завершить задание покиньте карту оставив постройки нетронутыми.</Util_BuildVillageWorker.root.nodes.ConstructionCompleted.node.nodes.Letter.text.slateRef>
+<Util_BuildVillageWorker.root.nodes.Delay.node.nodes.Letter.label.slateRef>Время вышло.</Util_BuildVillageWorker.root.nodes.Delay.node.nodes.Letter.label.slateRef>
+<Util_BuildVillageWorker.root.nodes.Delay.node.nodes.Letter.text.slateRef>Лимит времени на строительство истек.</Util_BuildVillageWorker.root.nodes.Delay.node.nodes.Letter.text.slateRef>
+
+
+</LanguageData>

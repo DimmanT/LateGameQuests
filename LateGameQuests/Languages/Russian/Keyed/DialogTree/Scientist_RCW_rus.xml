@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <LoGiQ_Scientist_RCW_DialogReportKey>Обсудить задание</LoGiQ_Scientist_RCW_DialogReportKey>
+    <LoGiQ_SRCW_Title>Поговорить с учёным</LoGiQ_SRCW_Title>
+	<LoGiQ_SRCW_Intro>Вы здесь чтобы помочь нам, или отвлекать разговорами?</LoGiQ_SRCW_Intro>
+	<LoGiQ_SRCW_Finish>(завершить разговор)</LoGiQ_SRCW_Finish>
+	<LoGiQ_SRCW_Opt_1>Мы делаем все, что в наших силах.</LoGiQ_SRCW_Opt_1>
+	<LoGiQ_SRCW_Opt_2>Как проходят исследования?</LoGiQ_SRCW_Opt_2>
+	<LoGiQ_SRCW_Opt_3>Возможно, я мог бы помочь вам с текущей задачей? (-интеллект-)</LoGiQ_SRCW_Opt_3>
+    <LoGiQ_SRCW_Opt_4>Я нашел это рядом с объектом. Что это может быть? (-вещь-)</LoGiQ_SRCW_Opt_4>
+	<LoGiQ_SRCW_Opt_5>А чем мы можем помочь?</LoGiQ_SRCW_Opt_5>
+	<LoGiQ_SRCW_Rep_1>Хорошо бы. Простите, но мне нужно работать.</LoGiQ_SRCW_Rep_1>
+	<LoGiQ_SRCW_Opt_11>Конечно. Мы расчитываем на вас!
+Человек с таким светлым разумом быстро решит любую загадку! (-общение-)</LoGiQ_SRCW_Opt_11>
+	<LoGiQ_SRCW_Rep_2>Эй! Попробуй сам, если думаешь, что можешь лучше.</LoGiQ_SRCW_Rep_2>
+	<LoGiQ_SRCW_Opt_21>Так и сделаю. (-интеллект-)</LoGiQ_SRCW_Opt_21>
+	<LoGiQ_SRCW_Rep_3>М... да-а-а, вы выглядите умным, в сравнении с остальными, конечно...
+*паказывает записи*</LoGiQ_SRCW_Rep_3>
+	<LoGiQ_SRCW_Opt_31>Да, я бы мог с этим помочь. (завершить разговор)</LoGiQ_SRCW_Opt_31>
+	<LoGiQ_SRCW_Rep_4>Интересно! Я возьму это для изучения.</LoGiQ_SRCW_Rep_4>
+	<LoGiQ_SRCW_Rep_11>Кхм... Спасибо... Но я действительно должен идти работать.
+*улыбается*</LoGiQ_SRCW_Rep_11>
+	<LoGiQ_SRCW_Rep_5>Нам нужен квалифицированный инженер за станком,
+толковый хакер за терминалом и внимательный ученый за исследовательским столом.
+Кроме того, если вы знаете кого-то, кто может помочь исследовать объект, попробуйте связаться с ними по консоли связи.</LoGiQ_SRCW_Rep_5>
+
+	<!--<AE_Survivor_Text_First>You found a "human" in the corpse and you can't help but notice insect characteristics on {Interviewee_objective}.</AE_Survivor_Text_First>-->
+    <!--<AE_Survivor_Text_Survival>"I am {Interviewee_nameDef}. I was captured by a swarm of insects during a wave. To be honest, I don't know why they only didn't kill me. When I woke up, my body was like this. I've got nowhere to go now, please let me join you."</AE_Survivor_Text_Survival>-->
+
+</LanguageData>

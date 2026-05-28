@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <LoGiQ_DefendResearchCamp.questDescriptionRules.rulesStrings>
+    <li>questDescription -&gt; Группа ученых из фракции [askerFaction_name] выдвинулась к обнаруженным недавно останкам древней боевой техники. Останки хорошо сохранились и представляют научный и инженерный интерес. Однако лидер [askerFaction_name] в настоящее время не может обеспечить безопасность людей в этом районе и вынужден просить вас о помощи. \n\n[questNotation]</li>
+	<li>questDescription -&gt; Лидер фракции [askerFaction_name] просит вас помочь зашитить группу иссследователей, которая обнаружила хорошо сохранившиеся останки древнего механизма. По их сдовам изучение этого объекта может помочь в разгадке тайн впечатляющих технологий древних. Однако район, в который направляется экспедиция, очень неспокойный и им требуется надежная, профессиональная охрана.  \n\n[questNotation]</li>
+	<li>questNotation -&gt;  Выдвигайтесь к месту расположения лагеря и защитите исследователей, пока они не закончат работу. Ваши ведущие инженеры и ученые также могут быть полезны для ускорения процесса исследований. Обратите внимание, что как только вы покините лагерь, ученые останутся беззащитны и контракт будет расторгнут. </li>
+  </LoGiQ_DefendResearchCamp.questDescriptionRules.rulesStrings>
+
+  <LoGiQ_DefendResearchCamp.questNameRules.rulesStrings>
+    <li>questName -&gt; Оборона лагеря исследователей.</li>
+    <li>questName -&gt; Ученым нужна защита.</li>
+    <li>questName -&gt; Защитите исследователей.</li>
+  </LoGiQ_DefendResearchCamp.questNameRules.rulesStrings>
+  
+  <LoGiQ_DefendResearchCamp.root.nodes.GiveRewards.customLetterLabel.slateRef>Оплата прибыла.</LoGiQ_DefendResearchCamp.root.nodes.GiveRewards.customLetterLabel.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>Время задания истекло: [resolvedQuestName]</LoGiQ_DefendResearchCamp.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>Исследовательский лагерь был разрушен и разграблен. Время, отведённое для задания [resolvedQuestName], истекло.</LoGiQ_DefendResearchCamp.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.Delay.expiryInfoPart.slateRef>$enemyFaction готовятся к атаке {0}</LoGiQ_DefendResearchCamp.root.nodes.Delay.expiryInfoPart.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.Delay.expiryInfoPartTip.slateRef>$enemyFaction готовятся к атаке {0}</LoGiQ_DefendResearchCamp.root.nodes.Delay.expiryInfoPartTip.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.Letter-0.label.slateRef>Исследователи из $askerFaction присоединяются к вам.</LoGiQ_DefendResearchCamp.root.nodes.Letter-0.label.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.Letter-0.text.slateRef>Исследователи и их охрана будут временно подчинятся вам, пока работа не будет выполнена или пока все колонисты не покинут это место.</LoGiQ_DefendResearchCamp.root.nodes.Letter-0.text.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.ProgressComplex.progressMessage.slateRef>прогресс исследования</LoGiQ_DefendResearchCamp.root.nodes.ProgressComplex.progressMessage.slateRef>
+  <!-- <LoGiQ_DefendResearchCamp.root.nodes.Delay.node.QuestNode_SubScript.parms.customLetterLabel.slateRef>Враги атакуют!</LoGiQ_DefendResearchCamp.root.nodes.Delay.node.QuestNode_SubScript.parms.customLetterLabel.slateRef> -->
+  <!-- <LoGiQ_DefendResearchCamp.root.nodes.Delay.node.QuestNode_SubScript.parms.customLetterText.slateRef>[enemyFaction_pawnsPlural] завершили свою подготовку и пошли на штурм.</LoGiQ_DefendResearchCamp.root.nodes.Delay.node.QuestNode_SubScript.parms.customLetterText.slateRef> -->
+  <LoGiQ_DefendResearchCamp.root.nodes.GiveRewards.customLetterText.slateRef>Вы успешно защитили исследователей!\n\nТеперь они отправятся домой, а вы получите оплату от $askerFaction.</LoGiQ_DefendResearchCamp.root.nodes.GiveRewards.customLetterText.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.GiveRewards.nodeIfChosenPawnSignalUsed.text.slateRef>Кто должен получить титул [askerFaction_royalFavorLabel] за выполнение задачи?</LoGiQ_DefendResearchCamp.root.nodes.GiveRewards.nodeIfChosenPawnSignalUsed.text.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>Вы должны прибыть в течение {0}, чтобы спасти экспедицию.</LoGiQ_DefendResearchCamp.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.WorldObjectTimeout.expiryInfoPartTip.slateRef>Вы должны прибыть не позднее {0}, чтобы спасти экспедицию.</LoGiQ_DefendResearchCamp.root.nodes.WorldObjectTimeout.expiryInfoPartTip.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.Delay.node.parms.customLetterLabel.value.slateRef>Рейдеры атакуют!</LoGiQ_DefendResearchCamp.root.nodes.Delay.node.parms.customLetterLabel.value.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.Delay.node.parms.customLetterText.value.slateRef>[enemyFaction_pawnsPlural] из [enemyFaction_name] завершили свою подготовку и начали штурм.</LoGiQ_DefendResearchCamp.root.nodes.Delay.node.parms.customLetterText.value.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.Letter-1.label.slateRef>Квест провален: [resolvedQuestName]</LoGiQ_DefendResearchCamp.root.nodes.Letter-1.label.slateRef>
+  <LoGiQ_DefendResearchCamp.root.nodes.Letter-1.text.slateRef>$askerFaction стали враждебны по отношению к вам.</LoGiQ_DefendResearchCamp.root.nodes.Letter-1.text.slateRef>
+
+</LanguageData>

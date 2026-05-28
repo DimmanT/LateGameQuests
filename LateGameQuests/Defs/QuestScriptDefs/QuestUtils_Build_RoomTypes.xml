@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ <!-- todo : check faction techlevel -->
+  <QuestScriptDef>
+    <defName>Util_BuildVillageWorker_BedroomThings</defName>
+    <root Class="QuestNode_Sequence">
+	<nodes>
+	<li Class="QuestNode_Unset"> <name>CornerThing</name></li>
+	<li Class="QuestNode_Unset"> <name>EdgeThing</name></li>
+	<li Class="QuestNode_Unset"> <name>CenterThing</name></li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CornerThing</storeAs>
+	  <options>
+		<li>Dresser</li>
+		<li>AnimalBed</li>
+		<li>PlantPot</li>
+		<li>PlantPot</li>
+		<li>BookcaseSmall</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>EdgeThing</storeAs>
+	  <options>
+		<li>Dresser</li>
+		<li>Dresser</li>
+		<li>EndTable</li>
+		<li>EndTable</li>
+		<li>Bookcase</li>
+		<li MayRequire="VanillaExpanded.VFECore">Table_Wardrobe</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CenterThing</storeAs>
+	  <options>
+		<li>DoubleBed</li>
+		<li>Bed</li>
+	  </options>
+	</li>
+	</nodes>
+    </root>
+  </QuestScriptDef>
+  
+  <QuestScriptDef>
+    <defName>Util_BuildVillageWorker_DiningRoomThings</defName>
+    <root Class="QuestNode_Sequence">
+	<nodes>
+	<li Class="QuestNode_Unset"> <name>CornerThing</name></li>
+	<li Class="QuestNode_Unset"> <name>EdgeThing</name></li>
+	<li Class="QuestNode_Unset"> <name>CenterThing</name></li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CornerThing</storeAs>
+	  <options>
+		<li>PlantPot</li>
+		<li>Stool</li>
+		<li MayRequire="VanillaExpanded.VFECore">Table_Counter</li>
+		<li MayRequire="VanillaExpanded.VFECore">Table_1x1c</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>EdgeThing</storeAs>
+	  <options>
+		<li>DiningChair</li>
+		<li>DiningChair</li>
+		<li>Stool</li>
+		<li MayRequire="VanillaExpanded.VFECore">Seat_Bench</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CenterThing</storeAs>
+	  <options>
+		<li>Table2x2c</li>
+		<li>Table2x2c</li>
+		<li>Table2x4c</li>
+	  </options>
+	</li>
+	</nodes>
+    </root>
+  </QuestScriptDef>
+  
+  <QuestScriptDef>
+    <defName>Util_BuildVillageWorker_Production</defName>
+    <root Class="QuestNode_Sequence">
+	<nodes>
+	<li Class="QuestNode_Unset"> <name>CornerThing</name></li>
+	<li Class="QuestNode_Unset"> <name>EdgeThing</name></li>
+	<li Class="QuestNode_Unset"> <name>CenterThing</name></li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CornerThing</storeAs>
+	  <options>
+		<li>ShelfSmall</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>EdgeThing</storeAs>
+	  <options>
+		<li>Shelf</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CenterThing</storeAs>
+	  <options>
+		<li>HandTailoringBench</li>
+		<li>TableButcher</li>
+		<li>TableSculpting</li>
+		<li>TableStonecutter</li>
+		<li>FueledStove</li>
+		<li>TableMachining</li>
+		<li>FueledSmithy</li>
+	  </options>
+	</li>
+	</nodes>
+    </root>
+  </QuestScriptDef>
+  
+  <QuestScriptDef>
+    <defName>Util_BuildVillageWorker_Brewery</defName>
+    <root Class="QuestNode_Sequence">
+	<nodes>
+	<li Class="QuestNode_Unset"> <name>CornerThing</name></li>
+	<li Class="QuestNode_Unset"> <name>EdgeThing</name></li>
+	<li Class="QuestNode_Unset"> <name>CenterThing</name></li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CornerThing</storeAs>
+	  <options>
+		<li>FermentingBarrel</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>EdgeThing</storeAs>
+	  <options>
+		<li>FermentingBarrel</li>
+		<li MayRequire="VanillaExpanded.VBrewE">VBE_TequilaBarrel</li>
+		<li MayRequire="VanillaExpanded.VBrewE">VBE_VodkaDrum</li>
+		<li MayRequire="VanillaExpanded.VBrewE">VBE_GinStill</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CenterThing</storeAs>
+	  <options>
+		<li>Brewery</li>
+	  </options>
+	</li>
+	</nodes>
+    </root>
+  </QuestScriptDef>
+  
+  <QuestScriptDef>
+    <defName>Util_BuildVillageWorker_RecRoom</defName>
+    <root Class="QuestNode_Sequence">
+	<nodes>
+	<li Class="QuestNode_Unset"> <name>CornerThing</name></li>
+	<li Class="QuestNode_Unset"> <name>EdgeThing</name></li>
+	<li Class="QuestNode_Unset"> <name>CenterThing</name></li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CornerThing</storeAs>
+	  <options>
+		<li>ChessTable</li>
+		<li>BookcaseSmall</li>
+		<li MayRequire="Ludeon.RimWorld.Royalty">Brazier</li>
+		<li MayRequire="VanillaExpanded.VFECore">Radio_Industrial</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>EdgeThing</storeAs>
+	  <options>
+		<li>Couch</li>
+		<li>Armchair</li>
+		<li MayRequire="VanillaExpanded.VFECore">Joy_Arcade</li>
+		<li MayRequire="VanillaExpanded.VFECore">Joy_InudstrialComputer</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CenterThing</storeAs>
+	  <options>
+		<li>PokerTable</li>
+		<li>Bookcase</li>
+		<li MayRequire="VanillaExpanded.VFECore">Joy_Piano</li>
+	  </options>
+	</li>
+	</nodes>
+    </root>
+  </QuestScriptDef>
+  
+  <QuestScriptDef>
+    <defName>Util_BuildVillageWorker_Laboratory</defName>
+    <root Class="QuestNode_Sequence">
+	<nodes>
+	<li Class="QuestNode_Unset"> <name>CornerThing</name></li>
+	<li Class="QuestNode_Unset"> <name>EdgeThing</name></li>
+	<li Class="QuestNode_Unset"> <name>CenterThing</name></li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CornerThing</storeAs>
+	  <options>
+		<li>BookcaseSmall</li>
+		<li MayRequire="VanillaExpanded.VFECore">Misc_FileCabinet</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>EdgeThing</storeAs>
+	  <options>
+		<li>ShelfSmall</li>
+		<li>Bookcase</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CenterThing</storeAs>
+	  <options>
+		<li>DrugLab</li>
+		<li>SimpleResearchBench</li>
+	  </options>
+	</li>
+	</nodes>
+    </root>
+  </QuestScriptDef>
+  
+    <QuestScriptDef>
+    <defName>Util_BuildVillageWorker_Power</defName>
+    <root Class="QuestNode_Sequence">
+	<nodes>
+	<li Class="QuestNode_Unset"> <name>CornerThing</name></li>
+	<li Class="QuestNode_Unset"> <name>EdgeThing</name></li>
+	<li Class="QuestNode_Unset"> <name>CenterThing</name></li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>EdgeThing</storeAs>
+	  <options>
+		<li>Battery</li>
+	  </options>
+	</li>
+	<li Class="QuestNode_GetRandomElement">
+	  <storeAs>CenterThing</storeAs>
+	  <options>
+		<li>WoodFiredGenerator</li>
+		<li>ChemfuelPoweredGenerator</li>
+		<li>ChemfuelPoweredGenerator</li>
+	  </options>
+	</li>
+	</nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+<LoGiQ_RescueMissionTargetSimpleAKey>Talk with prisoner</LoGiQ_RescueMissionTargetSimpleAKey>
+<LoGiQ_RescueMissionA_Title>Talk with prisoner</LoGiQ_RescueMissionA_Title>
+<LoGiQ_RescueMissionA_Intro>Are you here to save me? Thanks! Lets go far away from this place!</LoGiQ_RescueMissionA_Intro>
+<LoGiQ_RescueMissionA_Finish>Come on! We will cover you. (finsih)</LoGiQ_RescueMissionA_Finish>
+
+<LoGiQ_RescueMissionTargetSimpleBKey>Talk with prisoner</LoGiQ_RescueMissionTargetSimpleBKey>
+<LoGiQ_RescueMissionB_Title>Talk with prisoner</LoGiQ_RescueMissionB_Title>
+<LoGiQ_RescueMissionB_Intro>You are here! I am very glad to see you!</LoGiQ_RescueMissionB_Intro>
+<LoGiQ_RescueMissionB_Finish>Let's go! (finish)</LoGiQ_RescueMissionB_Finish>
+	
+</LanguageData>

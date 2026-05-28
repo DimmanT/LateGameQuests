@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestEditor_Library.CustomMapDataDef MayRequire="ceteam.combatextended">
+    <defName>LoGiQ_MapPart_BlockPostD_CE</defName>
+    <label>LoGiQ_MapPart_BlockPostD_CE</label>
+    <description>require CE</description>
+    <fogged>true</fogged>
+    <size>(8, 1, 8)</size>
+    <isPart>true</isPart>
+    <commonality>0.1</commonality>
+    <faction>MapFaction</faction>
+    <pawns>
+      <li>
+        <key>(3, 0, 3)</key>
+        <value>
+          <li>
+            <dataName>MGsquad</dataName>
+            <kind>LoGiQ_Mercenary_Crew</kind>
+            <enableLord>true</enableLord>
+            <count>2</count>
+            <faction>MapFaction</faction>
+            <duty>LoGiQ_ManClosestTurretCE</duty>
+            <spawnType>MapGeneration</spawnType>
+          </li>
+        </value>
+      </li>
+    </pawns>
+    <roofRects>
+      <li>
+        <key>RoofConstructed</key>
+        <value>
+          <li>(2,2,5,5)</li>
+        </value>
+      </li>
+    </roofRects>
+    <terrainsRect>
+      <li>
+        <key>Mud</key>
+        <value>
+          <li>(0,0,2,1)</li>
+          <li>(1,2,1,5)</li>
+          <li>(0,3,0,5)</li>
+          <li>(3,1,5,1)</li>
+          <li>(5,0,5,0)</li>
+          <li>(2,6,5,6)</li>
+          <li>(6,2,6,5)</li>
+          <li>(3,7,4,7)</li>
+          <li>(7,4,7,5)</li>
+        </value>
+      </li>
+      <li>
+        <key>Gravel</key>
+        <value>
+          <li>(2,2,5,5)</li>
+        </value>
+      </li>
+    </terrainsRect>
+    <thingDatas>
+      <li>
+        <def>Sandbags</def>
+        <stuff>Cloth</stuff>
+        <faction>MapFaction</faction>
+        <allRect>
+          <li>(2,2,5,2)</li>
+          <li>(2,3,2,5)</li>
+          <li>(3,5,5,5)</li>
+          <li>(5,3,5,4)</li>
+        </allRect>
+      </li>
+      <li>
+        <def>Turret_M240B</def>
+        <rotation>1</rotation>
+        <faction>MapFaction</faction>
+        <position>(4,0,4)</position>
+      </li>
+      <li>
+        <def>Column</def>
+        <stuff>WoodLog</stuff>
+        <faction>MapFaction</faction>
+        <position>(4,0,3)</position>
+      </li>
+    </thingDatas>
+    <tags>
+      <li>LoGiQ_MilitaryBasePostL</li>
+    </tags>
+  </QuestEditor_Library.CustomMapDataDef>
+</Defs>

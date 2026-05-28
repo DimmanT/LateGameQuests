@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestEditor_Library.CustomMapDataDef>
+    <defName>LoGiQ_Map_MiningStationA</defName>
+    <label>Autonomous mining station</label>
+	<description>There is autonomous mining station, you should defend.</description>
+    <size>(12, 1, 12)</size>
+    <commonality>1</commonality>
+	<tags><li>LoGiQ_MiningStationRoot</li></tags>
+    <customThings>
+      <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
+        <def>LoGiQ_SmallTerminal</def>
+        <rotation>2</rotation>
+        <faction>PlayerColony</faction>
+        <comps>
+          <li>
+            <compName>MiningTimer</compName>
+            <mode>Tick</mode>
+            <tick>1200</tick>
+            <actions>
+			  <li Class="QuestEditor_Library.CQFAction_Condition">
+			    <actions>
+				  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+					<signal>MiningProgress</signal>
+				  </li>
+			    </actions>
+			    <conditions>
+			  	  <li Class="LoGiQ.CQFConditions.CQFCondition_PowerOn">
+					<targetText>CustomThing</targetText>
+				  </li>
+			    </conditions>
+			  </li>
+            </actions>
+          </li>
+          <li>
+            <compName>TerminalDestroyed</compName>
+            <mode>Destroy</mode>
+            <actions>
+              <li Class="QuestEditor_Library.CQFAction_SentSignal">
+                <signal>QuestObjectDestroyed</signal>
+              </li>
+            </actions>
+          </li>
+		  <li>
+            <compName>DisableOverdrive</compName>
+            <mode>Signal</mode>
+			<signal>ProductionReady</signal>
+            <actions>
+			  <li Class="QuestEditor_Library.CQFAction_SetBool">
+				<keyOfBool>Overdrived</keyOfBool>
+				<valueOfBool>true</valueOfBool>
+			  </li>
+            </actions>
+          </li>
+        </comps>
+        <position>(6,0,4)</position>
+        <operationDefs><li>LoGiQ_MiningStation_Terminal</li></operationDefs>
+      </li>
+      <li Class="QuestEditor_Library.CustomThingData_CustomContainer">
+        <def>LoGiQ_MiningDrain</def>
+        <faction>PlayerColony</faction>
+        <comps>
+          <li>
+            <compName>RegisterInDB</compName>
+            <mode>Signal</mode>
+			<signal>InitCQF</signal>
+            <actions>
+              <li Class="QuestEditor_Library.CQFAction_RecordToDatabase">
+                <targetsText>
+                  <li>CustomThing</li>
+                </targetsText>
+                <recordKey>MiningDrainTarget</recordKey>
+                <recordToQuestBase>true</recordToQuestBase>
+              </li>
+			  <!-- <li Class="QuestEditor_Library.CQFAction_Message"> -->
+                <!-- <message>registered MiningDrainTarget</message> -->
+              <!-- </li> -->
+            </actions>
+          </li>
+		  <li>
+            <compName>MiningDrainDestroyed</compName>
+            <mode>Destroy</mode>
+            <actions>
+              <li Class="QuestEditor_Library.CQFAction_SentSignal">
+                <signal>QuestObjectDestroyed</signal>
+              </li>
+            </actions>
+          </li>
+        </comps>
+        <position>(5,0,7)</position>
+        <tickToOpen>200</tickToOpen>
+        <openingConditions>
+          <li Class="QuestEditor_Library.DialogCondition_ContainerIsFull">
+            <failReason></failReason>
+            <targetText>CustomThing</targetText>
+          </li>
+        </openingConditions>
+      </li>
+      <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
+        <def>LoGiQ_InteractablePodLauncher</def>
+        <faction>PlayerColony</faction>
+        <comps>
+          <li>
+            <compName>PodLauncherDestroyed</compName>
+            <mode>Destroy</mode>
+            <actions>
+              <li Class="QuestEditor_Library.CQFAction_SentSignal">
+                <signal>QuestObjectDestroyed</signal>
+              </li>
+            </actions>
+          </li>
+        </comps>
+        <position>(3,0,9)</position>
+      </li>
+      <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
+        <def>LoGiQ_TransportPod</def>
+        <faction>PlayerColony</faction>
+        <comps>
+          <li>
+            <compName>RegisterInDB</compName>
+            <mode>Signal</mode>
+			<signal>InitCQF</signal>
+            <actions>
+              <li Class="QuestEditor_Library.CQFAction_RecordToDatabase">
+                <targetsText>
+                  <li>CustomThing</li>
+                </targetsText>
+                <recordKey>DropPodTarget</recordKey>
+                <recordToQuestBase>true</recordToQuestBase>
+              </li>
+            </actions>
+          </li>
+        </comps>
+        <position>(4,0,9)</position>
+        <operationDefs><li>LoGiQ_MiningStation_TPod</li></operationDefs>
+      </li>
+    </customThings>
+    <roofRects>
+      <li>
+        <key>RoofRockThick</key>
+        <value>
+          <li>(2,2,9,8)</li>
+        </value>
+      </li>
+    </roofRects>
+    <terrainsRect>
+      <li>
+        <key>Gravel</key>
+        <value>
+          <li>(2,2,5,2)</li>
+          <li>(2,3,2,5)</li>
+          <li>(5,0,7,1)</li>
+          <li>(0,5,1,7)</li>
+          <li>(2,7,2,11)</li>
+          <li>(7,2,9,2)</li>
+          <li>(3,8,5,8)</li>
+          <li>(9,3,9,5)</li>
+          <li>(7,8,9,8)</li>
+          <li>(10,5,11,7)</li>
+          <li>(9,7,9,7)</li>
+          <li>(3,11,9,11)</li>
+          <li>(9,9,9,10)</li>
+        </value>
+      </li>
+      <li>
+        <key>PavedTile</key>
+        <value>
+          <li>(3,3,8,7)</li>
+          <li>(6,2,6,2)</li>
+          <li>(2,6,2,6)</li>
+          <li>(3,9,8,10)</li>
+          <li>(6,8,6,8)</li>
+          <li>(9,6,9,6)</li>
+        </value>
+      </li>
+    </terrainsRect>
+    <thingDatas>
+      <li>
+        <def>Wall</def>
+        <stuff>BlocksGranite</stuff>
+        <faction>PlayerColony</faction>
+        <allRect>
+          <li>(2,2,5,2)</li>
+          <li>(2,3,2,5)</li>
+          <li>(5,4,5,5)</li>
+          <li>(2,7,2,11)</li>
+          <li>(7,2,9,2)</li>
+          <li>(6,5,7,5)</li>
+          <li>(7,4,7,4)</li>
+          <li>(3,8,5,8)</li>
+          <li>(9,3,9,5)</li>
+          <li>(7,8,9,8)</li>
+          <li>(9,7,9,7)</li>
+          <li>(3,11,9,11)</li>
+          <li>(9,9,9,10)</li>
+        </allRect>
+      </li>
+      <li>
+        <def>Door</def>
+        <stuff>Plasteel</stuff>
+        <faction>PlayerColony</faction>
+        <allRect>
+          <li>(6,2,6,2)</li>
+          <li>(6,8,6,8)</li>
+        </allRect>
+      </li>
+      <li>
+        <def>Door</def>
+        <stuff>Plasteel</stuff>
+        <rotation>1</rotation>
+        <faction>PlayerColony</faction>
+        <allRect>
+          <li>(2,6,2,6)</li>
+          <li>(9,6,9,6)</li>
+        </allRect>
+      </li>
+      <li>
+        <def>ChemfuelPoweredGenerator</def>
+        <faction>PlayerColony</faction>
+        <storedEnergy>30</storedEnergy>
+        <position>(3,0,4)</position>
+      </li>
+      <li>
+        <def>Battery</def>
+        <rotation>1</rotation>
+        <faction>PlayerColony</faction>
+        <storedEnergy>600</storedEnergy>
+        <allRect>
+          <li>(3,7,3,7)</li>
+          <li>(7,7,7,7)</li>
+        </allRect>
+      </li>
+      <li>
+        <def>HiddenConduit</def>
+        <faction>PlayerColony</faction>
+        <allRect>
+          <li>(5,5,7,5)</li>
+          <li>(4,6,4,6)</li>
+          <li>(7,6,7,6)</li>
+        </allRect>
+      </li>
+    </thingDatas>
+  </QuestEditor_Library.CustomMapDataDef>
+</Defs>

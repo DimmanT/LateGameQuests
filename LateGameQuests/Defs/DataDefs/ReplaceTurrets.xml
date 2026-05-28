@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- . . . MANUAL . . . . . -->
+ 
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_1x1_Man_LMG</defName>
+    <datas>
+	  <li MayRequire="ceteam.combatextended">
+        <dataName>Turret_M240B</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_LMG>Turret_M240B</LoGiQ_REPL_1x1_Man_LMG>
+		  <LoGiQ_REPL_1x1_Man_LMG_ammo>Ammo_762x51mmNATO_FMJ</LoGiQ_REPL_1x1_Man_LMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="sumghai.DefensiveMachineGunTurretPack">
+        <dataName>Turret_DP28MG</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_LMG>Turret_DP28MG</LoGiQ_REPL_1x1_Man_LMG>
+		  <LoGiQ_REPL_1x1_Man_LMG_ammo>Ammo_762x54mmR_FMJ</LoGiQ_REPL_1x1_Man_LMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.Fortress.Frontier">
+        <dataName>FT_GPMG</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_LMG>FT_GPMG</LoGiQ_REPL_1x1_Man_LMG>
+		  <LoGiQ_REPL_1x1_Man_LMG_ammo>Ammo_762x54mmR_FMJ</LoGiQ_REPL_1x1_Man_LMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.Fortress.Frontier">
+        <dataName>FT_HeavyMachinegun</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_LMG>FT_HeavyMachinegun</LoGiQ_REPL_1x1_Man_LMG>
+		  <LoGiQ_REPL_1x1_Man_LMG_ammo>Ammo_762x54mmR_FMJ</LoGiQ_REPL_1x1_Man_LMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+        <dataName>Turret_GatlingGun</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_LMG>Turret_GatlingGun</LoGiQ_REPL_1x1_Man_LMG>
+		  <LoGiQ_REPL_1x1_Man_LMG_ammo>Ammo_4570Gov_FMJ</LoGiQ_REPL_1x1_Man_LMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Complex_Hmg</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_LMG>VFES_Complex_Hmg</LoGiQ_REPL_1x1_Man_LMG>
+		  <LoGiQ_REPL_1x1_Man_LMG_ammo>Ammo_762x51mmNATO_FMJ</LoGiQ_REPL_1x1_Man_LMG_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_1x1_Man_HMG</defName>
+    <datas>
+	  <li MayRequire="ceteam.combatextended">
+	    <dataName>Turret_KPV</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_HMG>Turret_KPV</LoGiQ_REPL_1x1_Man_HMG>
+		  <LoGiQ_REPL_1x1_Man_HMG_ammo>Ammo_145x114mm_FMJ</LoGiQ_REPL_1x1_Man_HMG_ammo>
+        </replaceThings>
+      </li>	
+	  <li MayRequire="sumghai.DefensiveMachineGunTurretPack">
+        <dataName>Turret_M2HB</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_HMG>Turret_M2HB</LoGiQ_REPL_1x1_Man_HMG>
+		  <LoGiQ_REPL_1x1_Man_HMG_ammo>Ammo_50BMG_FMJ</LoGiQ_REPL_1x1_Man_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="sumghai.DefensiveMachineGunTurretPack">
+        <dataName>Turret_M134MG</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_HMG>Turret_M134MG</LoGiQ_REPL_1x1_Man_HMG>
+		  <LoGiQ_REPL_1x1_Man_HMG_ammo>Ammo_762x51mmNATO_FMJ</LoGiQ_REPL_1x1_Man_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.Fortress.Frontier">
+        <dataName>FT_InfantryAutoCannon</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_HMG>FT_InfantryAutoCannon</LoGiQ_REPL_1x1_Man_HMG>
+		  <LoGiQ_REPL_1x1_Man_HMG_ammo>Ammo_127x108mm_FMJ</LoGiQ_REPL_1x1_Man_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.Fortress.Industrial">
+        <dataName>FT_Maxim4M</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_HMG>FT_Maxim4M</LoGiQ_REPL_1x1_Man_HMG>
+		  <LoGiQ_REPL_1x1_Man_HMG_ammo>Ammo_762x54mmR_FMJ</LoGiQ_REPL_1x1_Man_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.Fortress.Industrial">
+        <dataName>FT_AutoCannon</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_HMG>FT_AutoCannon</LoGiQ_REPL_1x1_Man_HMG>
+		  <LoGiQ_REPL_1x1_Man_HMG_ammo>Ammo_20x138mmB_HE</LoGiQ_REPL_1x1_Man_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="eatKenny.leafzxg.DWs.TurretCollection">
+        <dataName>TCEE_MachineGunTurret</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_HMG>TCEE_MachineGunTurret</LoGiQ_REPL_1x1_Man_HMG>
+		  <LoGiQ_REPL_1x1_Man_HMG_ammo>Ammo_50BMG_FMJ</LoGiQ_REPL_1x1_Man_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="eatKenny.leafzxg.DWs.TurretCollection">
+        <dataName>TCEE_GatlingGunTurret</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_HMG>TCEE_GatlingGunTurret</LoGiQ_REPL_1x1_Man_HMG>
+		  <LoGiQ_REPL_1x1_Man_HMG_ammo>Ammo_762x51mmNATO_FMJ</LoGiQ_REPL_1x1_Man_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Complex_Minigun</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_HMG>VFES_Complex_Minigun</LoGiQ_REPL_1x1_Man_HMG>
+		  <LoGiQ_REPL_1x1_Man_HMG_ammo>Ammo_762x51mmNATO_FMJ</LoGiQ_REPL_1x1_Man_HMG_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_1x1_Man_Launch</defName>
+    <datas>
+	  <li MayRequire="ceteam.combatextended">
+        <dataName>Turret_AGSThirty</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_Launch>Turret_AGSThirty</LoGiQ_REPL_1x1_Man_Launch>
+		  <LoGiQ_REPL_1x1_Man_Launch_ammo>Ammo_30x29mmGrenade_HE</LoGiQ_REPL_1x1_Man_Launch_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="sumghai.DefensiveMachineGunTurretPack">
+        <dataName>Turret_Mk19MGL</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_Launch>Turret_Mk19MGL</LoGiQ_REPL_1x1_Man_Launch>
+		  <LoGiQ_REPL_1x1_Man_Launch_ammo>Ammo_40x53mmGrenade_HE</LoGiQ_REPL_1x1_Man_Launch_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.Fortress.Frontier">
+        <dataName>FT_RecoillessRifle</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_Launch>FT_RecoillessRifle</LoGiQ_REPL_1x1_Man_Launch>
+		  <LoGiQ_REPL_1x1_Man_Launch_ammo>Ammo_SPG9Rocket_Frag</LoGiQ_REPL_1x1_Man_Launch_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.Fortress.Industrial">
+        <dataName>FT_RecoillessGun</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_Launch>FT_RecoillessGun</LoGiQ_REPL_1x1_Man_Launch>
+		  <LoGiQ_REPL_1x1_Man_Launch_ammo>Ammo_105x607mmRShell_HE</LoGiQ_REPL_1x1_Man_Launch_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="eatKenny.leafzxg.DWs.TurretCollection">
+        <dataName>TC_ATGMTurret</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_Launch>TC_ATGMTurret</LoGiQ_REPL_1x1_Man_Launch>
+		  <LoGiQ_REPL_1x1_Man_Launch_ammo>Ammo_ATGM_ATGM</LoGiQ_REPL_1x1_Man_Launch_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_1x1_Man_Mortar</defName>
+    <datas>
+	  <li MayRequire="Aoba.Fortress.Industrial">
+        <dataName>FT_Turret_Mortar</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_Mortar>FT_Turret_Mortar</LoGiQ_REPL_1x1_Man_Mortar>
+		  <LoGiQ_REPL_1x1_Man_Mortar_ammo>Shell_60mmMortar_HE</LoGiQ_REPL_1x1_Man_Mortar_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_1x1_Man_Energy</defName>
+    <datas>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Complex_Charge</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_Energy>VFES_Complex_Charge</LoGiQ_REPL_1x1_Man_Energy>
+        </replaceThings>
+      </li>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Complex_GraserCannon</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Man_Energy>VFES_Complex_GraserCannon</LoGiQ_REPL_1x1_Man_Energy>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_2x2_Man_Flack</defName>
+    <datas>
+	  <li MayRequire="Aoba.Fortress.Industrial">
+        <dataName>FT_TurretAutoCannon_Twin</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Man_Flack>FT_TurretAutoCannon_Twin</LoGiQ_REPL_2x2_Man_Flack>
+		  <LoGiQ_REPL_2x2_Man_Flack_ammo>Ammo_20x138mmB_HE</LoGiQ_REPL_2x2_Man_Flack_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_2x2_Man_LAT</defName>
+    <datas>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_2x2_Man_Mortar</defName>
+    <datas>
+	  <li>
+        <dataName>VanillaMortar</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Man_Mortar>Turret_Mortar</LoGiQ_REPL_2x2_Man_Mortar>
+		  <LoGiQ_REPL_2x2_Man_Mortar_ammo>Shell_HighExplosive</LoGiQ_REPL_2x2_Man_Mortar_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="eatKenny.leafzxg.DWs.TurretCollection">
+        <dataName>TC_IncendiaryLauncher</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Man_Mortar>TC_IncendiaryLauncher</LoGiQ_REPL_2x2_Man_Mortar>
+		  <LoGiQ_REPL_2x2_Man_Mortar_ammo>Ammo_M74_Incendiary</LoGiQ_REPL_2x2_Man_Mortar_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_3x3_Man_Flack</defName>
+    <datas>
+	  <li MayRequire="Aoba.Fortress.Industrial">
+        <dataName>FT_TurretAA</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Man_Flack>FT_TurretAA</LoGiQ_REPL_3x3_Man_Flack>
+		  <LoGiQ_REPL_3x3_Man_Flack_ammo>Ammo_20x138mmB_HE</LoGiQ_REPL_3x3_Man_Flack_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.Fortress.Industrial">
+        <dataName>FT_TurretQuadAA</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Man_Flack>FT_TurretQuadAA</LoGiQ_REPL_3x3_Man_Flack>
+		  <LoGiQ_REPL_3x3_Man_Flack_ammo>Ammo_20x138mmB_HE</LoGiQ_REPL_3x3_Man_Flack_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_3x3_Man_LAT</defName>
+    <datas>
+	  <li MayRequire="Aoba.Fortress.Industrial">
+        <dataName>FT_TurretAT</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Man_LAT>FT_TurretAT</LoGiQ_REPL_3x3_Man_LAT>
+		  <LoGiQ_REPL_3x3_Man_LAT_ammo>Ammo_37x223mmR_AP</LoGiQ_REPL_3x3_Man_LAT_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.Fortress.Industrial">
+        <dataName>FT_TurretAT_Plus</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Man_LAT>FT_TurretAT_Plus</LoGiQ_REPL_3x3_Man_LAT>
+		  <LoGiQ_REPL_3x3_Man_LAT_ammo>Ammo_762x385mmRCannonShell_HE</LoGiQ_REPL_3x3_Man_LAT_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_3x3_Man_HAT</defName>
+    <datas>
+	  <li MayRequire="ceteam.combatextended">
+	    <dataName>Turret_Flak</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Man_Flack>Turret_Flak</LoGiQ_REPL_3x3_Man_Flack>
+		  <LoGiQ_REPL_3x3_Man_Flack_ammo>Ammo_90mmCannonShell_HEAT</LoGiQ_REPL_3x3_Man_Flack_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="ceteam.combatextended">
+	    <dataName>TC_CannonTurret</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Man_Flack>TC_CannonTurret</LoGiQ_REPL_3x3_Man_Flack>
+		  <LoGiQ_REPL_3x3_Man_Flack_ammo>Ammo_120mmCannonShell_AMP_TC</LoGiQ_REPL_3x3_Man_Flack_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_3x3_Man_Mortar</defName>
+    <datas>
+	  <li MayRequire="eatKenny.leafzxg.DWs.TurretCollection">
+        <dataName>TC_Howitzer</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Man_Mortar>TC_Howitzer</LoGiQ_REPL_3x3_Man_Mortar>
+		  <LoGiQ_REPL_3x3_Man_Mortar_ammo>Ammo_155mmHowitzerShell_HE</LoGiQ_REPL_3x3_Man_Mortar_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="eatKenny.leafzxg.DWs.TurretCollection">
+        <dataName>TC_RocketLauncher</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Man_Mortar>TC_RocketLauncher</LoGiQ_REPL_3x3_Man_Mortar>
+		  <LoGiQ_REPL_3x3_Man_Mortar_ammo>Ammo_130mmType63_HE</LoGiQ_REPL_3x3_Man_Mortar_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.DeadManSwitch.Core">
+        <dataName>DMS_Turret_Vasilek</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Man_Mortar>DMS_Turret_Vasilek</LoGiQ_REPL_3x3_Man_Mortar>
+		  <LoGiQ_REPL_3x3_Man_Mortar_ammo>Shell_HighExplosive</LoGiQ_REPL_3x3_Man_Mortar_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.Fortress.Industrial">
+        <dataName>FT_TurretHexMortar</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Man_Mortar>FT_TurretHexMortar</LoGiQ_REPL_3x3_Man_Mortar>
+		  <LoGiQ_REPL_3x3_Man_Mortar_ammo>Ammo_15cmNebelwerfer_HE</LoGiQ_REPL_3x3_Man_Mortar_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.Fortress.Industrial">
+        <dataName>FT_TurretPrince</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Man_Mortar>FT_TurretPrince</LoGiQ_REPL_3x3_Man_Mortar>
+		  <LoGiQ_REPL_3x3_Man_Mortar_ammo>Ammo_105mmHowitzerShell_HE</LoGiQ_REPL_3x3_Man_Mortar_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<!-- . . . AUTOMATIC . . . . . -->
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_1x1_Auto_LMG</defName>
+    <datas>
+      <li>
+        <dataName>VanillaMini</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_LMG>Turret_MiniTurret</LoGiQ_REPL_1x1_Auto_LMG>
+		  <LoGiQ_REPL_1x1_Auto_LMG_ammo>Ammo_556x45mmNATO_FMJ</LoGiQ_REPL_1x1_Auto_LMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Turret_ArmoredTurret</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_LMG>VFES_Turret_ArmoredTurret</LoGiQ_REPL_1x1_Auto_LMG>
+		  <LoGiQ_REPL_1x1_Auto_LMG_ammo>Ammo_556x45mmNATO_FMJ</LoGiQ_REPL_1x1_Auto_LMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Turret_MilitaryTurret</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_LMG>VFES_Turret_MilitaryTurret</LoGiQ_REPL_1x1_Auto_LMG>
+		  <LoGiQ_REPL_1x1_Auto_LMG_ammo>Ammo_556x45mmNATO_FMJ</LoGiQ_REPL_1x1_Auto_LMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="ceteam.combatextended">
+        <dataName>Turret_Medium</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_LMG>Turret_Medium</LoGiQ_REPL_1x1_Auto_LMG>
+		  <LoGiQ_REPL_1x1_Auto_LMG_ammo>Ammo_762x51mmNATO_FMJ</LoGiQ_REPL_1x1_Auto_LMG_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_1x1_Auto_HMG</defName>
+    <datas>
+	  <li MayRequire="ceteam.combatextended">
+        <dataName>Turret_Heavy</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_HMG>Turret_Heavy</LoGiQ_REPL_1x1_Auto_HMG>
+		  <LoGiQ_REPL_1x1_Auto_HMG_ammo>Ammo_145x114mm_FMJ</LoGiQ_REPL_1x1_Auto_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="sumghai.DefensiveMachineGunTurretPack">
+	    <dataName>Turret_M134MGs</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_HMG>Turret_M134MGs</LoGiQ_REPL_1x1_Auto_HMG>
+		  <LoGiQ_REPL_1x1_Auto_HMG_ammo>Ammo_762x51mmNATO_FMJ</LoGiQ_REPL_1x1_Auto_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="sumghai.DefensiveMachineGunTurretPack">
+	    <dataName>Turret_M2HBs</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_HMG>Turret_M2HBs</LoGiQ_REPL_1x1_Auto_HMG>
+		  <LoGiQ_REPL_1x1_Auto_HMG_ammo>Ammo_50BMG_FMJ</LoGiQ_REPL_1x1_Auto_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="sumghai.DefensiveMachineGunTurretPack">
+	    <dataName>Turret_M230LFs</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_HMG>Turret_M230LFs</LoGiQ_REPL_1x1_Auto_HMG>
+		  <LoGiQ_REPL_1x1_Auto_HMG_ammo>Ammo_30x113mmB_AP</LoGiQ_REPL_1x1_Auto_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Locals.LCLCESentriesLight">
+        <dataName>Turret_MSniperSentry</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_HMG>Turret_MSniperSentry</LoGiQ_REPL_1x1_Auto_HMG>
+		  <LoGiQ_REPL_1x1_Auto_HMG_ammo>Ammo_50BMG_FMJ</LoGiQ_REPL_1x1_Auto_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.DeadManSwitch.Core">
+        <dataName>DMS_Turret_Okhotnik</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_HMG>DMS_Turret_Okhotnik</LoGiQ_REPL_1x1_Auto_HMG>
+		  <LoGiQ_REPL_1x1_Auto_HMG_ammo>Ammo_127x108mm_FMJ</LoGiQ_REPL_1x1_Auto_HMG_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_1x1_Auto_Launch</defName>
+    <datas>
+	  <li MayRequire="Locals.LCLCESentriesLight">
+        <dataName>Turret_LGrenadierSentry</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_Launch>Turret_LGrenadierSentry</LoGiQ_REPL_1x1_Auto_Launch>
+		  <LoGiQ_REPL_1x1_Auto_Launch_ammo>Ammo_40x46mmGrenade_HE</LoGiQ_REPL_1x1_Auto_Launch_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="sumghai.DefensiveMachineGunTurretPack">
+        <dataName>Turret_Mk19MGLs</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_Launch>Turret_Mk19MGLs</LoGiQ_REPL_1x1_Auto_Launch>
+		  <LoGiQ_REPL_1x1_Auto_Launch_ammo>Ammo_40x53mmGrenade_HE</LoGiQ_REPL_1x1_Auto_Launch_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_1x1_Auto_Energy</defName>
+    <datas>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Turret_ChargeTurret</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_Energy>VFES_Turret_ChargeTurret</LoGiQ_REPL_1x1_Auto_Energy>
+		  <LoGiQ_REPL_1x1_Auto_Energy_ammo>Ammo_6x24mmCharged</LoGiQ_REPL_1x1_Auto_Energy_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="ceteam.combatextended">
+        <dataName>Turret_Blaster</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_Energy>Turret_Blaster</LoGiQ_REPL_1x1_Auto_Energy>
+		  <LoGiQ_REPL_1x1_Auto_Energy_ammo>Ammo_8x35mmCharged</LoGiQ_REPL_1x1_Auto_Energy_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_1x1_Auto_CloseCombat</defName>
+    <datas>
+	  <li MayRequire="GoGaTio.DeadManSwitch.RenegadeClan">
+        <dataName>DMSRC_Turret_Straj</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_CloseCombat>DMSRC_Turret_Straj</LoGiQ_REPL_1x1_Auto_CloseCombat>
+		  <LoGiQ_REPL_1x1_Auto_CloseCombat_ammo>Ammo_12Gauge_Buck</LoGiQ_REPL_1x1_Auto_CloseCombat_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Turret_Flame</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_CloseCombat>VFES_Turret_Flame</LoGiQ_REPL_1x1_Auto_CloseCombat>
+		  <LoGiQ_REPL_1x1_Auto_CloseCombat_ammo>Ammo_Flamethrower_Napalm</LoGiQ_REPL_1x1_Auto_CloseCombat_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Turret_ShotgunTurret</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_CloseCombat>VFES_Turret_ShotgunTurret</LoGiQ_REPL_1x1_Auto_CloseCombat>
+		  <LoGiQ_REPL_1x1_Auto_CloseCombat_ammo>Ammo_12Gauge_Buck</LoGiQ_REPL_1x1_Auto_CloseCombat_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Locals.LCLCESentriesLight">
+        <dataName>Turret_LFlamer</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_CloseCombat>Turret_LFlamer</LoGiQ_REPL_1x1_Auto_CloseCombat>
+		  <LoGiQ_REPL_1x1_Auto_CloseCombat_ammo>Ammo_Flamethrower_Napalm</LoGiQ_REPL_1x1_Auto_CloseCombat_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Locals.LCLCESentriesLight">
+        <dataName>Turret_LShotgunSentry</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_1x1_Auto_CloseCombat>Turret_LShotgunSentry</LoGiQ_REPL_1x1_Auto_CloseCombat>
+		  <LoGiQ_REPL_1x1_Auto_CloseCombat_ammo>Ammo_12Gauge_Buck</LoGiQ_REPL_1x1_Auto_CloseCombat_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_2x2_Auto_HMG</defName>
+    <datas>
+	  <li MayRequire="Locals.LCLGravshipTurrets">
+        <dataName>Turret_LCLSmallPDCSentry</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_HMG>Turret_LCLSmallPDCSentry</LoGiQ_REPL_2x2_Auto_HMG>
+		  <LoGiQ_REPL_2x2_Auto_HMG_ammo>Ammo_762x51mmNATO_FMJ</LoGiQ_REPL_2x2_Auto_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Locals.LCLGravshipTurrets">
+        <dataName>Turret_LCL_SpathaSentry</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_HMG>Turret_LCL_SpathaSentry</LoGiQ_REPL_2x2_Auto_HMG>
+		  <LoGiQ_REPL_2x2_Auto_HMG_ammo>Ammo_50BMG_FMJ</LoGiQ_REPL_2x2_Auto_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Turret_Minigun</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_HMG>VFES_Turret_Minigun</LoGiQ_REPL_2x2_Auto_HMG>
+		  <LoGiQ_REPL_2x2_Auto_HMG_ammo>Ammo_762x51mmNATO_FMJ</LoGiQ_REPL_2x2_Auto_HMG_ammo>
+        </replaceThings>
+      </li>
+	  <!-- todo as fallback -->
+	  <li>
+        <dataName>VanillaAC</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_HMG>Turret_Autocannon</LoGiQ_REPL_2x2_Auto_HMG>
+		  <LoGiQ_REPL_2x2_Auto_HMG_ammo>Ammo_20x102mmNATO_AP</LoGiQ_REPL_2x2_Auto_HMG_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_2x2_Auto_Flack</defName>
+    <datas>
+      <li>
+        <dataName>VanillaAC</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_Flack>Turret_Autocannon</LoGiQ_REPL_2x2_Auto_Flack>
+		  <LoGiQ_REPL_2x2_Auto_Flack_ammo>Ammo_20x102mmNATO_AP</LoGiQ_REPL_2x2_Auto_Flack_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Turret_AutocannonDouble</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_Flack>VFES_Turret_AutocannonDouble</LoGiQ_REPL_2x2_Auto_Flack>
+		  <LoGiQ_REPL_2x2_Auto_Flack_ammo>Ammo_20x102mmNATO_AP</LoGiQ_REPL_2x2_Auto_Flack_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Locals.LCLGravshipTurrets">
+        <dataName>Turret_LCL_HastaSentry</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_Flack>Turret_LCL_HastaSentry</LoGiQ_REPL_2x2_Auto_Flack>
+		  <LoGiQ_REPL_2x2_Auto_Flack_ammo>Ammo_25x137mmNATO_AP</LoGiQ_REPL_2x2_Auto_Flack_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_2x2_Auto_AT</defName>
+    <datas>
+	  <li>
+        <dataName>VanillaUS</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_AT>Turret_Sniper</LoGiQ_REPL_2x2_Auto_AT>
+		  <LoGiQ_REPL_2x2_Auto_AT_ammo>Ammo_40x311mmR_AP</LoGiQ_REPL_2x2_Auto_AT_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="Aoba.DeadManSwitch.Core">
+        <dataName>DMS_Turret_MK44_Navy</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_AT>DMS_Turret_MK44_Navy</LoGiQ_REPL_2x2_Auto_AT>
+		  <LoGiQ_REPL_2x2_Auto_AT_ammo>Ammo_30x173mmNATO_AP</LoGiQ_REPL_2x2_Auto_AT_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="eatKenny.leafzxg.DWs.TurretCollection">
+        <dataName>TC_AntiMaterielTurret</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_AT>TC_AntiMaterielTurret</LoGiQ_REPL_2x2_Auto_AT>
+		  <LoGiQ_REPL_2x2_Auto_AT_ammo>Ammo_30x173mmNATO_AP</LoGiQ_REPL_2x2_Auto_AT_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_2x2_Auto_Launch</defName>
+    <datas>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Turret_AutomatedMortar</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_Launch>VFES_Turret_AutomatedMortar</LoGiQ_REPL_2x2_Auto_Launch>
+		  <LoGiQ_REPL_2x2_Auto_Launch_ammo>Shell_HighExplosive</LoGiQ_REPL_2x2_Auto_Launch_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_2x2_Auto_Energy</defName>
+    <datas>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Turret_ChargeRailgun</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_Energy>VFES_Turret_ChargeRailgun</LoGiQ_REPL_2x2_Auto_Energy>
+		  <LoGiQ_REPL_2x2_Auto_Energy_ammo>Ammo_12mmRailgun_Sabot</LoGiQ_REPL_2x2_Auto_Energy_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="VanillaExpanded.VFESecurity">
+        <dataName>VFES_Turret_TeslaBlaster</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_2x2_Auto_Energy>VFES_Turret_TeslaBlaster</LoGiQ_REPL_2x2_Auto_Energy>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_3x3_Auto_Super</defName>
+    <datas>
+	  <li MayRequire="Aoba.DeadManSwitch.Core">
+        <dataName>DMS_Turret_Dawnblade</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Auto_Super>DMS_Turret_Dawnblade</LoGiQ_REPL_3x3_Auto_Super>
+		  <LoGiQ_REPL_3x3_Auto_Super_ammo>Ammo_762x385mmRCannonShell_HEAT</LoGiQ_REPL_3x3_Auto_Super_ammo>
+        </replaceThings>
+      </li>
+      <li MayRequire="Aoba.DeadManSwitch.Core">
+        <dataName>DMS_Turret_GateKeeper</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Auto_Super>DMS_Turret_GateKeeper</LoGiQ_REPL_3x3_Auto_Super>
+		  <LoGiQ_REPL_3x3_Auto_Super_ammo>Ammo_30x173mmNATO_AP</LoGiQ_REPL_3x3_Auto_Super_ammo>
+        </replaceThings>
+      </li>
+	  <li MayRequire="eatKenny.leafzxg.DWs.TurretCollection">
+        <dataName>TC_AvengerTurret</dataName>
+        <replaceThings>
+          <LoGiQ_REPL_3x3_Auto_Super>TC_AvengerTurret</LoGiQ_REPL_3x3_Auto_Super>
+		  <LoGiQ_REPL_3x3_Auto_Super_ammo>Ammo_30x173mmNATO_AP</LoGiQ_REPL_3x3_Auto_Super_ammo>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+</Defs>

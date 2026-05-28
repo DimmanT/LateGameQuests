@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- . . . MANUAL . . . . . -->
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_1x1_Man_LMG_ammo</defName>
+    <label>Ammo for 1x1 manual LMG</label>
+    <description>E.g. 7.62x51 . This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_lmg_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>500</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_1x1_Man_HMG_ammo</defName>
+    <label>Ammo for 1x1 manual HMG</label>
+    <description>E.g. 14.5x114 . This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_hmg_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>500</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_1x1_Man_Launch_ammo</defName>
+    <label>Ammo for 1x1 manual launcher</label>
+    <description>E.g. grenade 30mm. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_launch_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>25</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_1x1_Man_Mortar_ammo</defName>
+    <label>Ammo for 1x1 manual mortar</label>
+    <description>E.g. mine 60mm. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_launch_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>25</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_2x2_Man_Flack_ammo</defName>
+    <label>Ammo for 2x2 manual flack</label>
+    <description>E.g. 20mm. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_flack_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>200</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_2x2_Man_LAT_ammo</defName>
+    <label>Ammo for 2x2 manual light AT</label>
+    <description>E.g. 37mm. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_lat_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>25</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_2x2_Man_HAT_ammo</defName>
+    <label>Ammo for 2x2 manual heavy AT</label>
+    <description>E.g. 76mm. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_hat_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>25</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_2x2_Man_Mortar_ammo</defName>
+    <label>Ammo for 2x2 manual mortar</label>
+    <description>E.g. vanilla shells. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_mortar_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>25</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_3x3_Man_LAT_ammo</defName>
+    <label>Ammo for 3x3 manual light AT</label>
+    <description>E.g. 37mm. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_lat_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>25</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_3x3_Man_HAT_ammo</defName>
+    <label>Ammo for 3x3 manual heavy AT</label>
+    <description>E.g. 90mm. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_hat_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>25</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_3x3_Man_Mortar_ammo</defName>
+    <label>Ammo for 3x3 manual mortar</label>
+    <description>E.g. vanilla shells. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_hat_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>25</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<!-- . . . AUTOMATIC . . . . . -->
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_1x1_Auto_LMG_ammo</defName>
+    <label>Ammo for 1x1 auto LMG</label>
+    <description>E.g. 7.62x51 . This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_lmg_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>500</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_1x1_Auto_HMG_ammo</defName>
+    <label>Ammo for 1x1 auto HMG</label>
+    <description>E.g. 14.5x114 . This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_hmg_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>500</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_1x1_Auto_Launch_ammo</defName>
+    <label>Ammo for 1x1 auto launcher</label>
+    <description>E.g. grenade 30mm. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_launch_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>25</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_1x1_Auto_Energy_ammo</defName>
+    <label>Ammo for 1x1 auto energy turret</label>
+    <description>E.g. energy shell. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_energy_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>200</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Ultra</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_1x1_Auto_CloseCombat_ammo</defName>
+    <label>Ammo for 1x1 auto close combat turret</label>
+    <description>E.g. 12cal. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_closecombat_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>200</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_2x2_Auto_Flack_ammo</defName>
+    <label>Ammo for 2x2 flack autoturret</label>
+    <description>E.g. 20mm. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_flack_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>200</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_2x2_Auto_AT_ammo</defName>
+    <label>Ammo for 2x2 AT autoturret</label>
+    <description>E.g. 76mm. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_at_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>25</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Ultra</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_2x2_Auto_Launch_ammo</defName>
+    <label>Ammo for 2x2 launcher autoturret</label>
+    <description>E.g. 30mm grenade. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_launch_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>25</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Industrial</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_REPL_2x2_Auto_Energy_ammo</defName>
+    <label>Ammo for 2x2 AT autoturret</label>
+    <description>E.g. 76mm. This object will be replaced during special map generation step.</description>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_energy_ammo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>25</stackLimit>
+    <useHitPoints>false</useHitPoints>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+	<statBases><Mass>8</Mass></statBases>
+	<techLevel>Ultra</techLevel>
+	<tradeability>None</tradeability>
+</ThingDef>
+
+</Defs>

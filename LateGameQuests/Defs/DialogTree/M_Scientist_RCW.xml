@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestEditor_Library.DialogManagerDef>
+    <defName>Scientist_RCW</defName>
+    <trees>
+      <li>
+        <tree>Scientist_RCW_Tree</tree>
+        <conditions />
+      </li>
+    </trees>
+    <tags />
+  </QuestEditor_Library.DialogManagerDef>
+</Defs>

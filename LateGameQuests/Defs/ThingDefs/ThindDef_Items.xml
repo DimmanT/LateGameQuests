@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+    <ThingDef ParentName="ResourceBase">
+    <defName>LoGiQ_QI_MechanismFragment</defName>
+    <label>fragment of a mechanism</label>
+    <description>A broken detail of unknown purpose.</description>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedComponent</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>1</stackLimit>
+    <tradeNeverStack>true</tradeNeverStack>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>100</MarketValue>
+      <MaxHitPoints>80</MaxHitPoints>
+	  <Mass>2.7</Mass>
+    </statBases>
+	<thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <drawGUIOverlay>false</drawGUIOverlay>
+	<techLevel>Ultra</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+	<tradeability>Sellable</tradeability>
+  </ThingDef>
+  
+</Defs>

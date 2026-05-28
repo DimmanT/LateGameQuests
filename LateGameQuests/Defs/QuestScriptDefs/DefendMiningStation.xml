@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>LoGiQ_DefendMiningStation</defName>
+    <root Class="RimWorld.QuestGen.QuestNode_Sequence">
+      <nodes>
+	    <!-- . . . . . . . . ASKER . . . . . . . . -->
+		<li Class="QuestNode_GetPawn">
+		  <storeAs>asker</storeAs>
+		  <mustBeFactionLeader>true</mustBeFactionLeader>
+          <allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+		  <mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
+		  <minTechLevel>Industrial</minTechLevel>
+		</li>
+		<li Class="QuestNode_GetFactionOf">
+		  <thing>$asker</thing>
+		  <storeAs>askerFaction</storeAs>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . . . . . -->
+	    <!-- . . . . . . . . REWARDS . . . . . . . . -->
+		<li Class="QuestNode_GetMap"/>
+		<li Class="QuestNode_GetMapWealth">
+          <map>$map</map>
+          <storeAs>mapWealth</storeAs>
+        </li>
+        <li Class="QuestNode_EvaluateSimpleCurve">
+          <value>$mapWealth</value>
+          <storeAs>wealthRewardValueFactor</storeAs>
+          <curve>
+            <points>
+              <li>0, 1.15</li>
+              <li>50000, 1</li>
+              <li>300000, 0.85</li>
+            </points>
+          </curve>
+        </li>
+        <li Class="QuestNode_Set">
+          <name>rewardValue</name>
+          <value>$($points * $wealthRewardValueFactor * randFloat(1.2, 1.6))</value>
+        </li>
+		<li Class="QuestNode_GiveRewards">
+          <inSignal>GoodsLaunchedSuccessfully</inSignal>
+          <parms>
+            <allowGoodwill>true</allowGoodwill>
+            <allowRoyalFavor>true</allowRoyalFavor>
+            <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+			<disallowedThingDefs></disallowedThingDefs>
+            <giveToCaravan>false</giveToCaravan>
+          </parms>
+		  <customLetterLabel TKey="LetterLabelPaymentArrived">Payment arrived</customLetterLabel>
+          <customLetterText TKey="LetterTextPaymentArrived">You have successfully defend the mining station!\n\nThe payment from [askerFaction_name] has arrived.</customLetterText>
+          <useDifficultyFactor>false</useDifficultyFactor> <!-- we only care about requested total market value -->
+          <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+            <letterDef>ChoosePawn</letterDef>
+            <label TKey="LetterLabelFavorReceiver">[askerFaction_royalFavorLabel]</label>
+            <text TKey="LetterTextFavorReceiver">Who should be credited with [askerFaction_royalFavorLabel] for fulfilling defense duty?</text>
+            <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+            <useColonistsFromCaravanArg>true</useColonistsFromCaravanArg>
+          </nodeIfChosenPawnSignalUsed>
+        </li>
+		<!-- . . . . . . . . . . . . . . . . . . . . -->
+		<!-- . . . . . . . GENERATE MAP  . . . . . . -->
+		<li Class="QuestNode_GetRandomInRangeInt">
+          <storeAs>siteDistance</storeAs>
+          <range>17~30</range>
+        </li>
+		<li Class="QuestNode_Set">
+		  <name>arriveDeadline</name>
+		  <value>$($siteDistance*12000)</value>
+		  <convertTo>Double</convertTo>
+		</li>
+		<!-- Slightly decrease time, if we have access to vehicles. Better increase distance, but i can not, see below (<distance>).-->
+		<li Class="QuestNode_ModIsActive"> 
+		  <modID>SmashPhil.VehicleFramework</modID>
+		  <node Class="QuestNode_Multiply">
+			<value1>0.8</value1>
+			<value2>$arriveDeadline</value2>
+			<storeAs>arriveDeadline</storeAs>
+		  </node>
+		</li>
+        <li Class="QuestEditor_Library.QuestNode_RandomCustomMap">
+          <tags><li><key>LoGiQ_MiningStationRoot</key><value>1</value></li></tags>
+          <buffer>10</buffer>
+          <bufferMin>20</bufferMin>
+          <expandingIconPath>Things/Sites/miningstation</expandingIconPath>
+          <replaceMapGeneration>False</replaceMapGeneration>
+          <disdestroyBecauseOfNoColonist>False</disdestroyBecauseOfNoColonist>
+          <reenterable>False</reenterable>
+          <beUnreenterableWhenAllEnemiesDefeated>False</beUnreenterableWhenAllEnemiesDefeated>
+          <enableBlack>True</enableBlack>
+          <storeAs>site</storeAs>
+          <distance>17~30</distance> 
+          <blacklist>
+            <li>CQF_Undercave</li>
+            <li>Underground</li>
+          </blacklist>
+        </li>
+		<li Class="RimWorld.QuestGen.QuestNode_WorldObjectTimeout">
+          <destroyOnCleanup>true</destroyOnCleanup>
+          <worldObject>$site</worldObject>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <delayTicks>$arriveDeadline</delayTicks>
+		  <expiryInfoPart TKey="InfoPartQuestExpired">You must arrive within {0} to protect station.</expiryInfoPart>
+          <expiryInfoPartTip TKey="InfoPartTipQuestExpired">You must arrive within {0} to protect station.</expiryInfoPartTip>
+          <node Class="RimWorld.QuestGen.QuestNode_Sequence">
+            <nodes>
+              <li Class="RimWorld.QuestGen.QuestNode_Letter">
+                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestExpired">Mining station was raided and destroyed. The quest [resolvedQuestName] has expired.</text>
+              </li>
+              <li Class="RimWorld.QuestGen.QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+		<li Class="QuestNode_Signal">
+          <inSignal>site.MapGenerated</inSignal>
+		  <outSignals><li>InitCQF</li></outSignals>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . . . . . . . . . . -->
+		<!-- . . . . . . . PROGRESSING . . . . . . . . . . . . -->
+		<li Class="QuestNode_Set">
+		  <name>miningTime</name>
+		  <value>120000</value>
+		  <convertTo>Double</convertTo>
+		</li>
+		<li Class="LoGiQ.QuestNodes.QuestNode_ProgressComplex">
+		   	<inSignals>
+				<li>MiningProgress</li>
+				<li>OverdrivedForTime</li>
+				<li>OverdriveFailed</li>
+			</inSignals>
+			<increments>
+				<li>1</li>
+				<li>10</li>
+				<li>-5</li>
+			</increments>
+		   <progressMin>0</progressMin>
+		   <progressMax>100</progressMax>
+		   <progressMessage>mining in progress</progressMessage>
+		   <outSignalComplete>ProductionReady</outSignalComplete>
+	    </li>
+		<li Class="QuestNode_Signal">
+		    <inSignal>OverdrivedForTime</inSignal>
+			<node Class="QuestNode_Sequence">
+			  <nodes>
+			  <li Class="QuestNode_Letter">
+				<label>Overdrive successfull.</label>
+				<letterDef>PositiveEvent</letterDef>
+				<text>Mining time reduced.</text>
+			  </li>
+			  </nodes>
+			</node>
+		</li>
+		<li Class="QuestNode_Signal">
+		    <inSignal>OverdrivedFailed</inSignal>
+			<node Class="QuestNode_Sequence">
+			  <nodes>
+			  <li Class="QuestNode_Letter">
+				<label>Overdrive failed.</label>
+				<letterDef>NegativeEvent</letterDef>
+				<text>Mining will take more time, than expected.</text>
+			  </li>
+			  </nodes>
+			</node>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . . . . . . . . . . -->
+		<!-- . . . . . . . CONFIGURATING RAIDERS . . . . . . . -->
+        <li Class="LoGiQ.QuestNodes.QuestNode_GetFactionAdv">
+          <storeAs>enemyFaction</storeAs>
+          <allowEnemy>true</allowEnemy>
+          <allowNeutral>false</allowNeutral>
+          <allowAlly>false</allowAlly>
+          <allowAskerFaction>false</allowAskerFaction>
+          <allowPermanentEnemy>true</allowPermanentEnemy>
+          <mustBePermanentEnemy>false</mustBePermanentEnemy>
+          <leaderMustBeSafe>False</leaderMustBeSafe>
+          <mustHaveGoodwillRewardsEnabled>False</mustHaveGoodwillRewardsEnabled>
+		  <mustBeHostileToFaction>$askerfaction</mustBeHostileToFaction>
+		  <minTechLevel>Industrial</minTechLevel>
+        </li>
+		<!-- first wave -->
+        <li Class="RimWorld.QuestGen.QuestNode_Delay">
+          <inSignalDisable>site.Destroyed</inSignalDisable>
+          <outSignalComplete>ReadyForAttack</outSignalComplete>
+          <expiryInfoPart TKey="InfoPartReadyForAttack">$enemyFaction preparing for attack {0}</expiryInfoPart>
+          <expiryInfoPartTip TKey="InfoPartTipReadyForAttack">$enemyFaction will be ready for attack at {0}</expiryInfoPartTip>
+          <delayTicks>$($arriveDeadline + 0.1*$miningTime)</delayTicks>
+          <isQuestTimeout>false</isQuestTimeout>
+		  <node Class="RimWorld.QuestGen.QuestNode_SubScript">
+			  <def>Util_RaidSiteComplex</def>
+			  <parms>
+				<points>$points</points>
+				<inSignal>ReadyForAttack</inSignal>
+				<siteToRaid>$site</siteToRaid>
+				<customLetterLabel TKey="LetterLabelAttack">Raiders attack!</customLetterLabel>
+				<customLetterText  TKey="LetterTextAttack">[enemyFaction_pawnsPlural] completed their preparations and began the assault.</customLetterText>
+				<arrivalMode>EdgeWalkIn</arrivalMode>
+				<canTimeoutOrFlee>true</canTimeoutOrFlee>
+				<inSignalLeave>EndRaid</inSignalLeave>
+			  </parms>
+			</node>
+        </li>
+		<!-- second wave -->
+		<!-- <li Class="RimWorld.QuestGen.QuestNode_Signal"> -->
+          <!-- <inSignal>ReadyForAttack</inSignal> -->
+          <!-- <node Class="RimWorld.QuestGen.QuestNode_Delay"> -->
+			  <!-- <inSignalDisable>site.Destroyed</inSignalDisable> -->
+			  <!-- <outSignalComplete>ReadyForAttack2</outSignalComplete> -->
+			  <!-- <expiryInfoPart TKey="InfoPartReadyForAttack">$enemyFaction reinforcements on the way {0}</expiryInfoPart> -->
+			  <!-- <expiryInfoPartTip TKey="InfoPartTipReadyForAttack">$enemyFaction reinforcements on the way {0}</expiryInfoPartTip> -->
+			  <!-- <delayTicks>$atkDelay</delayTicks> -->
+			  <!-- <isQuestTimeout>false</isQuestTimeout> -->
+			  <!-- <node Class="RimWorld.QuestGen.QuestNode_SubScript"> -->
+			  <!-- <def>Util_RaidSiteComplex</def> -->
+				  <!-- <parms> -->
+					<!-- <points>$(0.5*$points)</points> -->
+					<!-- <inSignal>ReadyForAttack2</inSignal> -->
+					<!-- <siteToRaid>$site</siteToRaid> -->
+					<!-- <customLetterLabel TKey="LetterLabelAttack">Second wave of raiders!</customLetterLabel> -->
+					<!-- <customLetterText  TKey="LetterTextAttack">[enemyFaction_pawnsPlural] completed their preparations and began the assault.</customLetterText> -->
+					<!-- <arrivalMode>EdgeWalkIn</arrivalMode> -->
+					<!-- <canTimeoutOrFlee>true</canTimeoutOrFlee> -->
+					<!-- <inSignalLeave>EndRaid</inSignalLeave> -->
+				  <!-- </parms> -->
+			  <!-- </node> -->
+		  <!-- </node> -->
+		<!-- </li> -->
+		<li Class="RimWorld.QuestGen.QuestNode_Delay">
+		  <inSignalDisable>site.Destroyed</inSignalDisable>
+		  <outSignalComplete>ReadyForAttack2</outSignalComplete>
+		  <expiryInfoPart TKey="InfoPartReadyForAttack">$enemyFaction reinforcements on the way {0}</expiryInfoPart>
+		  <expiryInfoPartTip TKey="InfoPartTipReadyForAttack">$enemyFaction reinforcements on the way {0}</expiryInfoPartTip>
+		  <delayTicks>$($arriveDeadline + 0.5*$miningTime)</delayTicks>
+		  <isQuestTimeout>false</isQuestTimeout>
+		  <node Class="RimWorld.QuestGen.QuestNode_SubScript">
+			<def>Util_RaidSiteComplex</def>
+		    <parms>
+		 	  <points>$points</points>
+		 	  <inSignal>ReadyForAttack2</inSignal>
+		 	  <siteToRaid>$site</siteToRaid>
+		 	  <customLetterLabel TKey="LetterLabelAttack">Another wave of raiders!</customLetterLabel>
+		 	  <customLetterText  TKey="LetterTextAttack">[enemyFaction_pawnsPlural] ready for battle.</customLetterText>
+		 	  <arrivalMode>EdgeWalkIn</arrivalMode>
+		 	  <canTimeoutOrFlee>true</canTimeoutOrFlee>
+		 	  <inSignalLeave>EndRaid</inSignalLeave>
+		    </parms>
+			</node>
+		</li>
+		<li Class="RimWorld.QuestGen.QuestNode_Delay">
+		  <inSignalDisable>site.Destroyed</inSignalDisable>
+		  <outSignalComplete>ReadyForAttack2</outSignalComplete>
+		  <delayTicks>$($arriveDeadline + 0.9*$miningTime)</delayTicks>
+		  <isQuestTimeout>false</isQuestTimeout>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+		<!-- . . . . . . . ON PRODUCTION READY . . . . . . . -->
+		<li Class="QuestNode_Set">
+			<name>GoodsToLoad</name>
+			<value>$(75*randInt(4,8))</value>
+			<convertTo>Int32</convertTo>
+		</li>
+			<li Class="QuestNode_Set">
+			<name>OverdrivedGoods</name>
+			<value>75</value>
+			<convertTo>Int32</convertTo>
+		</li>
+		<li Class="QuestNode_GetRandomElement">
+			<storeAs>ChoosenResource</storeAs>
+			<options>
+				<li>Plasteel</li>
+				<li>Uranium</li>
+				<li>Gold</li>
+			</options>
+		</li>
+		<li Class="LoGiQ.QuestNodes.QuestNode_DoCQFActionAddToContainer">
+			<inSignal>ProductionReady</inSignal>
+			<thingCount>$GoodsToLoad</thingCount>
+			<thingDefName>$ChoosenResource</thingDefName>
+			<containerTargetName>MiningDrainTarget</containerTargetName>
+		</li>
+		<li Class="LoGiQ.QuestNodes.QuestNode_DoCQFActionAddToContainer">
+			<inSignal>OverdrivedForProduction</inSignal>
+			<thingCount>$OverdrivedGoods</thingCount>
+			<thingDefName>$ChoosenResource</thingDefName>
+			<containerTargetName>MiningDrainTarget</containerTargetName>
+		</li>
+		<li Class="QuestNode_Signal">
+			<inSignal>OverdrivedForProduction</inSignal>
+			<node Class="QuestNode_Sequence">
+			  <nodes>
+				<li Class="QuestNode_Letter">
+				  <label>Overdrive successfull.</label>
+				  <letterDef>PositiveEvent</letterDef>
+				  <text>Production outcome will be increased.</text>
+				</li>
+			  </nodes>
+			</node>
+		</li>
+		<li Class="QuestNode_Signal">
+          <inSignal>ProductionReady</inSignal>
+          <node Class="QuestNode_Sequence">
+		    <nodes>
+              <li Class="QuestNode_Message">
+				  <messageType>PositiveEvent</messageType>
+				  <text>production ready, load it to trasport pod.</text>
+			  </li>
+			  <li Class="LoGiQ.QuestNodes.QuestNode_Progress">
+			    <inSignal>PartOfGoodsLoaded</inSignal>
+			    <increment>75</increment>
+			    <progressMin>0</progressMin>
+			    <progressMax>$GoodsToLoad</progressMax>
+			    <progressMessage>stored</progressMessage>
+			    <outSignalComplete>GoodsLoadedSuccessfully</outSignalComplete>
+			  </li>
+		    </nodes>
+		  </node>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . -->
+		<li Class="QuestNode_Signal">
+          <inSignal>GoodsLoadedSuccessfully</inSignal>
+          <node Class="QuestNode_Sequence">
+		    <nodes>
+			  <li Class="QuestEditor_Library.QuestNode_DoCQFActions">
+				<actions>
+				  <li Class="LoGiQ.CQFActions.CQFAction_SpawnSkyfaller">
+				  	<targetsText><li>DropPodTarget</li></targetsText>
+					<skyfallerDefName>DropPodLeaving</skyfallerDefName>
+				  </li>
+				  <li Class="QuestEditor_Library.CQFAction_Destory">
+				  	<targetsText><li>DropPodTarget</li></targetsText>
+				  </li>
+				</actions>
+			  </li>
+			</nodes>
+		  </node>
+		  <outSignals><li>GoodsLaunchedSuccessfully</li></outSignals>
+		</li>
+		<!-- . . . END OF QUEST  . . . . . . -->
+		<li Class="RimWorld.QuestGen.QuestNode_End">
+          <inSignal>GoodsLaunchedSuccessfully</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Success</outcome>
+        </li>
+        <li Class="RimWorld.QuestGen.QuestNode_End">
+          <inSignal>site.Destroyed</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Fail</outcome>
+        </li>
+		<li Class="RimWorld.QuestGen.QuestNode_End">
+          <inSignal>QuestObjectDestroyed</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Fail</outcome>
+        </li>
+		<li Class="QuestEditor_Library.QuestNode_RemoveDataWhenEnd"/>
+		<!-- . . . . . . . . . . . . . . . . -->
+      </nodes>
+    </root>
+	<rootSelectionWeight>1.25</rootSelectionWeight>
+    <randomlySelectable>True</randomlySelectable>
+    <rootMinPoints>2000</rootMinPoints>
+	<minRefireDays>15</minRefireDays>
+	<rootEarliestDay>1</rootEarliestDay>
+    <rootIncreasesPopulation>False</rootIncreasesPopulation>   
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription -&gt; The [askerFaction_name] faction is reaching out to you for help, their autonomous mining station is under threat of a raider attack. Although the location of the station was well hidden, scouts from [enemyFaction_name] managed to find it and are now gathering forces for an assault. There are still minerals left in the depths, you need to defend the station while another batch is being mined.</li>
+		<li>questDescription -&gt; The leader of the [askerFaction_name] faction asks you to organize the defense of the autonomous mining station. A significant force of the [enemyFaction_name] plans to attack the station. The deposits have not yet been fully exhausted, you need to protect the station while extracting another batch.</li>
+		<li>questNotation -&gt; Move to the station and set up a defense. Raiders will make several attacks, your task is to wait for the resources to be collected and send them out, after which the station can be left. </li>
+	  </rulesStrings>
+      <rulesFiles />
+      <rulesRaw IsNull="True" />
+      <include IsNull="True" />
+    </questDescriptionRules>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName -&gt; Defend autonomous mining station.</li>
+		<li>questName -&gt; Autonomous mining station in danger.</li>
+		<li>questName -&gt; Autonomous mining station defense.</li>
+		<li>questName -&gt; Defend autonomous mining outpost.</li>
+      </rulesStrings>
+      <rulesFiles />
+      <rulesRaw IsNull="True" />
+      <include IsNull="True" />
+    </questNameRules>
+    <autoAccept>False</autoAccept>
+    <hideOnCleanup>False</hideOnCleanup>
+    <expireDaysRange>
+      <min>1</min>
+      <max>2</max>
+    </expireDaysRange>
+    <nameMustBeUnique>False</nameMustBeUnique>
+    <defaultChallengeRating>-1</defaultChallengeRating>
+    <defaultHidden>False</defaultHidden>
+    <isRootSpecial>False</isRootSpecial>
+    <canGiveRoyalFavor>False</canGiveRoyalFavor>
+    <questAvailableLetterTextIsDescription>False</questAvailableLetterTextIsDescription>
+    <hideInvolvedFactionsInfo>False</hideInvolvedFactionsInfo>
+    <affectedByPopulation>False</affectedByPopulation>
+    <affectedByPoints>True</affectedByPoints>
+    <defaultCharity>False</defaultCharity>
+    <sendAvailableLetter>True</sendAvailableLetter>
+    <epic>False</epic>
+    <endOnColonyMove>False</endOnColonyMove>
+    <everAcceptableInSpace>False</everAcceptableInSpace>
+    <neverPossibleInSpace>False</neverPossibleInSpace>
+    <givenBy />
+    <canOccurOnAllPlanetLayers>False</canOccurOnAllPlanetLayers>
+    <ignoreConfigErrors>False</ignoreConfigErrors>
+    <ignoreIllegalLabelCharacterConfigError>False</ignoreIllegalLabelCharacterConfigError>
+  </QuestScriptDef>
+</Defs>

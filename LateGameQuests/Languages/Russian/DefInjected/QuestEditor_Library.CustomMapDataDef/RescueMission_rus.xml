@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+<LoGiQ_Map_RescueMissionA.label>Лагерь работорговцев</LoGiQ_Map_RescueMissionA.label>
+<LoGiQ_Map_RescueMissionA.description>В этом лагере удерживают пленника, которого требуется найти.</LoGiQ_Map_RescueMissionA.description>
+<LoGiQ_Map_RescueMissionA.customThings.2.innerThings.0.message>Пленник освобожден. Сопроводите его к краю карты.</LoGiQ_Map_RescueMissionA.customThings.2.innerThings.0.message> 
+<LoGiQ_Map_RescueMissionB.label>Лагерь работорговцев</LoGiQ_Map_RescueMissionB.label>
+<LoGiQ_Map_RescueMissionB.description>В этом лагере удерживают пленника, которого требуется найти.</LoGiQ_Map_RescueMissionB.description>
+<LoGiQ_Map_RescueMissionB.customThings.2.innerThings.0.message>Пленник освобожден. Сопроводите его к краю карты.</LoGiQ_Map_RescueMissionB.customThings.2.innerThings.0.message> 
+<LoGiQ_Map_RescueMissionC.label>Лагерь работорговцев</LoGiQ_Map_RescueMissionC.label>
+<LoGiQ_Map_RescueMissionC.description>В этом лагере удерживают пленника, которого требуется найти.</LoGiQ_Map_RescueMissionC.description>
+<LoGiQ_Map_RescueMissionC.customThings.1.innerThings.0.message>Пленник освобожден. Сопроводите его к краю карты.</LoGiQ_Map_RescueMissionC.customThings.1.innerThings.0.message> 
+<LoGiQ_Map_RescueMissionD_VFS.label>Лагерь работорговцев</LoGiQ_Map_RescueMissionD_VFS.label>
+<LoGiQ_Map_RescueMissionD_VFS.description>В этом лагере удерживают пленника, которого требуется найти.</LoGiQ_Map_RescueMissionD_VFS.description>
+<LoGiQ_Map_RescueMissionD_VFS.customThings.0.innerThings.0.message>Пленник освобожден. Сопроводите его к краю карты.</LoGiQ_Map_RescueMissionD_VFS.customThings.0.innerThings.0.message> 
+
+</LanguageData>

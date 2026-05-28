@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<DesignatorDropdownGroupDef>
+		<defName>LoGiQ_DesignatorTurretReplacements</defName>
+		<label>random replacements for turrets</label>
+		<iconSource>Placed</iconSource>
+	</DesignatorDropdownGroupDef>
+	
+	<DesignatorDropdownGroupDef>
+		<defName>LoGiQ_DesignatorInteractableThings</defName>
+		<label>interactable things</label>
+		<iconSource>Placed</iconSource>
+	</DesignatorDropdownGroupDef>
+	
+</Defs>

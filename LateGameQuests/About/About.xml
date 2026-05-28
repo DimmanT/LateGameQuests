@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+	<name>LateGameQuests (LoGiQ)</name>
+	<author>Dimman</author>
+	<url>none</url>
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+	<packageId>Dimman.LateGameQuests</packageId>
+	<modVersion>0.5.0.0</modVersion>
+	<description>This quest pack provides several interactive defensive and offensive missions. These missions are designed for advanced colonies in the mid and late game. Quests use content from some other mods if they are installed. \n\nThe mod is under active development; you can report any issues or suggest ideas on the project's page on GitHub or Steam.</description>
+	<modIconPath IgnoreIfNoMatchingField="True">UI/Icons/ModIcon</modIconPath>
+	<modDependencies>
+		<li>
+			<packageId>HaiLuan.CustomQuestFramework</packageId>
+			<displayName>Custom Quest Framework</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2978572782</steamWorkshopUrl>
+			<downloadUrl>steam://url/CommunityFilePage/2978572782</downloadUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>HaiLuan.CustomQuestFramework</li>
+		<li>CETeam.CombatExtended</li>
+		<li>SmashPhil.VehicleFramework</li>
+		<li>vanillaexpanded.vfecore</li>
+		<li>oskarpotocki.vanillafactionsexpanded.settlersmodule</li>
+		<li>oskarpotocki.vanillafactionsexpanded.core</li>
+		<li>vanillaexpanded.vfesecurity</li>
+		<li>oskarpotocki.vfe.pirates</li>
+		<li>aoba.framework</li>
+		<li>aoba.deadmanswitch.core</li>
+		<li>aoba.usac.core</li>
+		<li>Aoba.Exosuit.Framework</li>
+		<li>sumghai.defensivemachinegunturretpack</li>
+		<li>aoba.fortress.industrial</li>
+		<li>aoba.fortress.industrial.citadel</li>
+		<li>aoba.fortress.frontier</li>
+		<li>aoba.fortress.industrial.nucleardawn</li>
+		<li>aoba.deadmanswitch.synthetic</li>
+		<li>aoba.deadmanswitch.ancientcorps</li>
+		<li>gogatio.deadmanswitch.renegadeclan</li>
+		<li>srxf.deadmanswitch.legion</li>
+		<li>xmb.giantimperialcannonturret.mo</li>
+		<li>locals.lclgravshipturrets</li>
+		<li>locals.lclcesentrieslight</li>
+		<li>eatkenny.leafzxg.dws.turretcollection</li>
+	</loadAfter>
+
+</ModMetaData>

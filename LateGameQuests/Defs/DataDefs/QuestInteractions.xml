@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- ======= ResearchCamp ======= -->
+
+<!-- . . . . BASE . . . . -->
+
+<QuestEditor_Library.InteractionDataDef Name="ResearchCampBase_Disasm">
+  <defName>LoGiQ_ResearchCampBase_Disasm</defName>
+  <interactions>
+	<li>
+		<interactionText>Fast disassembling</interactionText>
+		<tickToOperate>2500</tickToOperate>
+		<results>
+		  <li>
+			<resultName>SmallProgress</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>AddSmallProgress</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<skill>Crafting</skill>
+			<level>5</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+		</conditions>
+	</li>
+	<li>
+		<interactionText>Accurate disassembling</interactionText>
+		<tickToOperate>5000</tickToOperate>
+		<results>
+		  <li>
+			<resultName>SmallProgressPlusLoot</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>AddSmallProgress</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		  <li>
+			<resultName>Loot</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SpawnAndAddToInventory">
+				<targetsText>
+				  <li>Trigger</li>
+				</targetsText>
+				<datas>
+				  <li>
+					<dataName>GuarantLoot</dataName>
+					<chance>1</chance>
+					<message>Some scrubs are usefull, check inventory.</message>
+					<things>
+					  <li Class="QuestEditor_Library.CQFThingDefCount">
+						<count>5~10</count>
+						<thing>Plasteel</thing>
+					  </li>
+					  <li Class="QuestEditor_Library.CQFThingDefCount">
+						<count>0~2</count>
+						<thing>ComponentIndustrial</thing>
+					  </li>
+					  <li Class="QuestEditor_Library.CQFThingDefCount">
+						<count>10~20</count>
+						<thing>Steel</thing>
+					  </li>
+					</things>
+				  </li>
+				  <li>
+					<dataName>RareLoot</dataName>
+					<chance>0.1</chance>
+					<message>Your found undamaged component of complex system, check inventory.</message>
+					<things>
+					  <li Class="QuestEditor_Library.CQFThingDefCount">
+						<thing>ComponentSpacer</thing>
+					  </li>
+					</things>
+				  </li>
+				</datas>
+			  </li>
+			  <li Class="QuestEditor_Library.CQFAction_Chance">
+				<chance>0.1</chance>
+				<action Class="QuestEditor_Library.CQFAction_SpawnAndAddToInventory">
+					<targetsText>
+					  <li>Trigger</li>
+					</targetsText>
+					<datas>
+					  <li>
+						<dataName>RareLoot</dataName>
+						<chance>1</chance>
+						<message>Your found undamaged component of complex system, check inventory.</message>
+						<things>
+						  <li Class="QuestEditor_Library.CQFThingDefCount">
+							<thing>ComponentSpacer</thing>
+						  </li>
+						</things>
+					  </li>
+					</datas>	
+				</action>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<skill>Crafting</skill>
+			<level>11</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+	      <li Class="LoGiQ.CQFConditions.CQFCondition_PowerOn">
+			<targetText>CustomThing</targetText>
+		  </li>
+		</conditions>
+	</li>
+	<li>
+		<interactionText>Melting armor samples</interactionText>
+		<tickToOperate>4000</tickToOperate>
+		<results>
+		  <li>
+			<resultName>MediumProgress</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>AddMediumProgress</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<skill>Crafting</skill>
+			<level>9</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+		  <li Class="LoGiQ.CQFConditions.CQFCondition_PowerOn">
+			<targetText>CustomThing</targetText>
+		  </li>
+		</conditions>
+	</li>
+	<li>
+		<interactionText>Repearing parts</interactionText>
+		<tickToOperate>6000</tickToOperate>
+		<results>
+		  <li>
+			<resultName>BigProgress</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>AddBigProgress</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_And">
+			<failReason>crafting and intellect</failReason>
+			<condition>
+			  <li Class="QuestEditor_Library.DialogCondition_Skill">
+				<failReason></failReason>
+				<targetText>Trigger</targetText>
+				<skill>Crafting</skill>
+				<level>15</level>
+				<needToBeGreater>true</needToBeGreater>
+			  </li>
+			  <li Class="QuestEditor_Library.DialogCondition_Skill">
+				<failReason></failReason>
+				<targetText>Trigger</targetText>
+				<skill>Intellectual</skill>
+				<level>5</level>
+				<needToBeGreater>true</needToBeGreater>
+			  </li>
+			  <li Class="LoGiQ.CQFConditions.CQFCondition_PowerOn">
+				<targetText>CustomThing</targetText>
+			  </li>
+			</condition>
+		  </li>
+		</conditions>
+	  </li>
+  </interactions>
+</QuestEditor_Library.InteractionDataDef>
+
+<QuestEditor_Library.InteractionDataDef Name="ResearchCampBase_Term">
+  <defName>LoGiQ_ResearchCampBase_Term</defName>
+  <interactions>
+	  <li>
+		<interactionText>Try decode data</interactionText>
+		<tickToOperate>2900</tickToOperate>
+		<results>
+		  <li>
+			<resultName>DefaultName</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>AddSmallProgress</signal>
+			  </li>
+			</actions>
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<targetText>Trigger</targetText>
+			<skill>Intellectual</skill>
+			<level>6</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+		  <li Class="LoGiQ.CQFConditions.CQFCondition_PowerOn">
+			<targetText>CustomThing</targetText>
+		  </li>
+		</conditions>
+	  </li>
+	  <li>
+		<interactionText>Hack the black box</interactionText>
+		<tickToOperate>7100</tickToOperate>
+		<results>
+		  <li>
+			<resultName>StateChanged</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SetBool">
+				<keyOfBool>blackboxhacked</keyOfBool>
+				<valueOfBool>true</valueOfBool>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_And">
+			<failReason></failReason>
+			<condition>
+			  <li Class="QuestEditor_Library.DialogCondition_Skill">
+				<failReason>intellect</failReason>
+				<targetText>Trigger</targetText>
+				<skill>Intellectual</skill>
+				<level>16</level>
+				<needToBeGreater>true</needToBeGreater>
+			  </li>
+			  <li Class="QuestEditor_Library.DialogCondition_Reversal">
+				<failReason>done</failReason>
+				<condition Class="QuestEditor_Library.DialogCondition_Bool">
+				  <failReason></failReason>
+				  <boolName>blackboxhacked</boolName>
+				</condition>
+			  </li>
+			  <li Class="LoGiQ.CQFConditions.CQFCondition_PowerOn">
+				<targetText>CustomThing</targetText>
+			  </li>
+			</condition>
+		  </li>
+		</conditions>
+	  </li>
+	  <li>
+		<interactionText>Inspect logs</interactionText>
+		<tickToOperate>1500</tickToOperate>
+		<results>
+		  <li>
+			<resultName>SmallProgress</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>AddSmallProgress</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_And">
+			<failReason></failReason>
+			<condition>
+			  <li Class="QuestEditor_Library.DialogCondition_Bool">
+				<failReason>not hacked</failReason>
+				<boolName>blackboxhacked</boolName>
+			  </li>
+			  <li Class="QuestEditor_Library.DialogCondition_Skill">
+				<failReason>low intellect</failReason>
+				<targetText>Trigger</targetText>
+				<skill>Intellectual</skill>
+				<level>3</level>
+				<needToBeGreater>true</needToBeGreater>
+			  </li>
+			  <li Class="LoGiQ.CQFConditions.CQFCondition_PowerOn">
+				<targetText>CustomThing</targetText>
+			  </li>
+			</condition>
+		  </li>
+		</conditions>
+	  </li>
+	  <li>
+		<interactionText>Analize data from sensors</interactionText>
+		<tickToOperate>2000</tickToOperate>
+		<results>
+		  <li>
+			<resultName>SmallProgress</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>AddMediumProgress</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_And">
+			<failReason>not hacked</failReason>
+			<condition>
+			  <li Class="QuestEditor_Library.DialogCondition_Bool">
+				<failReason>not hacked</failReason>
+				<boolName>blackboxhacked</boolName>
+			  </li>
+			  <li Class="QuestEditor_Library.DialogCondition_Skill">
+				<failReason>low intellect</failReason>
+				<targetText>Trigger</targetText>
+				<skill>Intellectual</skill>
+				<level>6</level>
+				<needToBeGreater>true</needToBeGreater>
+			  </li>
+			  <li Class="LoGiQ.CQFConditions.CQFCondition_PowerOn">
+				<targetText>CustomThing</targetText>
+			  </li>
+			</condition>
+		  </li>
+		</conditions>
+	  </li>
+	</interactions>
+</QuestEditor_Library.InteractionDataDef>
+
+<QuestEditor_Library.InteractionDataDef Name="ResearchCampBase_RBench">
+  <defName>LoGiQ_ResearchCampBase_RBench</defName>
+  <interactions>
+	  <li>
+		<interactionText>Research</interactionText>
+		<tickToOperate>3200</tickToOperate>
+		<results>
+		  <li>
+			<resultName>DefaultName</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>AddSmallProgress</signal>
+			  </li>
+			</actions>            
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<failReason>intellect</failReason>
+			<targetText>Trigger</targetText>
+			<skill>Intellectual</skill>
+			<level>5</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+		</conditions>
+	  </li>
+	  <li>
+		<interactionText>Analizing materials</interactionText>
+		<tickToOperate>3000</tickToOperate>
+		<results>
+		  <li>
+			<resultName>DefaultName</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>AddSmallProgress</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_And">
+			<failReason>intellect and mining</failReason>
+			<condition>
+			  <li Class="QuestEditor_Library.DialogCondition_Skill">
+				<failReason></failReason>
+				<targetText>Trigger</targetText>
+				<skill>Intellectual</skill>
+				<level>5</level>
+				<needToBeGreater>true</needToBeGreater>
+			  </li>
+			  <li Class="QuestEditor_Library.DialogCondition_Skill">
+				<failReason></failReason>
+				<targetText>Trigger</targetText>
+				<skill>Mining</skill>
+				<level>4</level>
+				<needToBeGreater>true</needToBeGreater>
+			  </li>
+			</condition>
+		  </li>
+		</conditions>
+	  </li>
+	  <li>
+		<interactionText>Modeling</interactionText>
+		<tickToOperate>4000</tickToOperate>
+		<results>
+		  <li>
+			<resultName>MediumProgress</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>AddMediumProgress</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<failReason>intellect</failReason>
+			<targetText>Trigger</targetText>
+			<skill>Intellectual</skill>
+			<level>10</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+		</conditions>
+	  </li>
+	  <li>
+		<interactionText>Making drawings</interactionText>
+		<tickToOperate>2000</tickToOperate>
+		<results>
+		  <li>
+			<resultName>SmallProgress</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>AddSmallProgress</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<skill>Artistic</skill>
+			<level>8</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+		</conditions>
+	  </li>
+  </interactions>
+</QuestEditor_Library.InteractionDataDef>
+
+<QuestEditor_Library.InteractionDataDef Name="ResearchCampBase_Console">
+  <defName>LoGiQ_ResearchCampBase_Console</defName>
+  <interactions>
+  <li>
+	<interactionText>Search in databases</interactionText>
+	<tickToOperate>2500</tickToOperate>
+	<results>
+	  <li>
+		<resultName>SmallProgress</resultName>
+		<actions>
+		  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+			<signal>AddSmallProgress</signal>
+		  </li>
+		</actions>
+		<conditions />
+	  </li>
+	</results>
+	<conditions>
+	  <li Class="QuestEditor_Library.DialogCondition_Skill">
+		<failReason></failReason>
+		<targetText>Trigger</targetText>
+		<skill>Intellectual</skill>
+		<level>6</level>
+		<needToBeGreater>true</needToBeGreater>
+	  </li>
+	  <li Class="LoGiQ.CQFConditions.CQFCondition_PowerOn">
+		<targetText>CustomThing</targetText>
+	  </li>
+	</conditions>
+  </li>
+  <li>
+	<interactionText>Online consultation</interactionText>
+	<tickToOperate>3000</tickToOperate>
+	<results>
+	  <li>
+		<resultName>MediumResult</resultName>
+		<actions>
+		  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+			<signal>AddMediumResult</signal>
+		  </li>
+		</actions>
+		<conditions />
+	  </li>
+	</results>
+	<conditions>
+	  <li Class="QuestEditor_Library.DialogCondition_And">
+		<failReason></failReason>
+		<condition>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<skill>Social</skill>
+			<level>5</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<skill>Intellectual</skill>
+			<level>8</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+          <li Class="LoGiQ.CQFConditions.CQFCondition_PowerOn">
+			<targetText>CustomThing</targetText>
+		  </li>
+		</condition>
+	  </li>
+	</conditions>
+  </li>
+  </interactions>
+</QuestEditor_Library.InteractionDataDef>
+
+
+<!-- . . . . DERIVED . . . . -->
+
+<QuestEditor_Library.InteractionDataDef Name="ResearchCampAPC_Disasm" ParentName="ResearchCampBase_Disasm">
+  <defName>LoGiQ_ResearchCampAPC_Disasm</defName>
+  <interactions>
+	<li>
+	<interactionText>Disassembling shells</interactionText>
+	<tickToOperate>3000</tickToOperate>
+	<results>
+	  <li>
+		<resultName>MediumProgress</resultName>
+		<actions>
+		  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+			<signal>AddMediumProgress</signal>
+		  </li>
+		</actions>
+		<conditions />
+	  </li>
+	  <li>
+		<resultName>EXPLOUZION</resultName>
+		<actions>
+		  <li Class="QuestEditor_Library.CQFAction_Explosion">
+			<targetsText><li>Trigger</li></targetsText>
+			<radius>1.5</radius>
+			<damage>Bomb</damage>
+			<amount>18</amount>
+		  </li>
+		  <li Class="QuestEditor_Library.CQFAction_Message">
+			<message>Something gone wrong when colonist tried disarm shell. Maybe it was bad idea?</message>
+			<type>NegativeEvent</type>
+		  </li>
+		</actions>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Chance">
+			<chance>0.33</chance>
+		  </li>
+		</conditions>
+	  </li>
+	</results>
+	<conditions>
+	  <li Class="QuestEditor_Library.DialogCondition_Skill">
+		<failReason></failReason>
+		<targetText>Trigger</targetText>
+		<skill>Crafting</skill>
+		<level>10</level>
+		<needToBeGreater>true</needToBeGreater>
+	  </li>
+	</conditions>
+  </li>
+  </interactions>
+</QuestEditor_Library.InteractionDataDef>
+
+<QuestEditor_Library.InteractionDataDef Name="ResearchCampAPC_RBench" ParentName="ResearchCampBase_RBench">
+  <defName>LoGiQ_ResearchCampAPC_RBench</defName>
+  <interactions>
+	<li>
+		<interactionText>Analize destructions</interactionText>
+		<tickToOperate>3000</tickToOperate>
+		<results>
+		  <li>
+			<resultName>SmallProgress</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>AddSmallProgress</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<skill>Shooting</skill>
+			<level>8</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+		</conditions>
+	</li>
+  </interactions>
+</QuestEditor_Library.InteractionDataDef>
+
+
+<!-- ============================ -->
+<!-- ======= MiningStation ====== -->
+
+<QuestEditor_Library.InteractionDataDef Name="MiningStation_Terminal">
+  <defName>LoGiQ_MiningStation_Terminal</defName>
+  <interactions>
+	  <li>
+		<interactionText>Overdrive to reduce time (Mining,Crafting)</interactionText>
+		<tickToOperate>500</tickToOperate>
+		<onlyGenerateSingleResult>true</onlyGenerateSingleResult>
+		<results>
+		  <li>
+			<resultName>OverdriveSuccess</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>OverdrivedForTime</signal>
+			  </li>
+			  <li Class="QuestEditor_Library.CQFAction_SetBool">
+				<keyOfBool>Overdrived</keyOfBool>
+				<valueOfBool>true</valueOfBool>
+			  </li>
+			</actions>
+			<conditions>
+			  <li Class="QuestEditor_Library.DialogCondition_SkillCheck">
+				<failReason>skill check failed</failReason>
+				<targetText>Trigger</targetText>
+				<skill>Mining</skill>
+				<checkModifier>4</checkModifier>
+			  </li>
+			</conditions>
+		  </li>
+		  <li>
+			<resultName>OverdriveFail</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>OverdriveFailed</signal>
+			  </li>
+			  <li Class="QuestEditor_Library.CQFAction_SetBool">
+				<keyOfBool>Overdrived</keyOfBool>
+				<valueOfBool>true</valueOfBool>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_And">
+			<failReason>Need more skills or already done</failReason>
+			<condition>
+			  <li Class="QuestEditor_Library.DialogCondition_Reversal">
+				<failReason>Already done</failReason>
+				<condition Class="QuestEditor_Library.DialogCondition_Bool">
+				  <failReason>Already done</failReason>
+				  <boolName>Overdrived</boolName>
+				</condition>
+			  </li>
+			  <li Class="QuestEditor_Library.DialogCondition_Skill">
+				<failReason>Need more skills</failReason>
+				<targetText>Trigger</targetText>
+				<skill>Mining</skill>
+				<level>9</level>
+				<needToBeGreater>true</needToBeGreater>
+			  </li>
+			  <li Class="QuestEditor_Library.DialogCondition_Skill">
+				<failReason>Need more skills</failReason>
+				<targetText>Trigger</targetText>
+				<skill>Crafting</skill>
+				<level>5</level>
+				<needToBeGreater>true</needToBeGreater>
+			  </li>
+			</condition>
+		  </li>
+		</conditions>
+	  </li>
+	  <li>
+		<interactionText>Overdrive to increase production (Mining,Crafting)</interactionText>
+		<tickToOperate>1500</tickToOperate>
+		<onlyGenerateSingleResult>true</onlyGenerateSingleResult>
+		<results>
+		  <li>
+			<resultName>OverdriveSuccess</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>OverdrivedForProduction</signal>
+			  </li>
+			  <li Class="QuestEditor_Library.CQFAction_SetBool">
+				<keyOfBool>Overdrived</keyOfBool>
+				<valueOfBool>true</valueOfBool>
+			  </li>
+			</actions>
+			<conditions>
+			  <li Class="QuestEditor_Library.DialogCondition_SkillCheck">
+				<failReason>skill check failed</failReason>
+				<targetText>Trigger</targetText>
+				<skill>Mining</skill>
+				<checkModifier>2</checkModifier>
+			  </li>
+			</conditions>
+		  </li>
+		  <li>
+			<resultName>OverdriveFail</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>OverdriveFailed</signal>
+			  </li>
+			  <li Class="QuestEditor_Library.CQFAction_SetBool">
+				<keyOfBool>Overdrived</keyOfBool>
+				<valueOfBool>true</valueOfBool>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_And">
+			<failReason>Need more skills or already done</failReason>
+			<condition>
+			  <li Class="QuestEditor_Library.DialogCondition_Reversal">
+				<failReason>Already done</failReason>
+				<condition Class="QuestEditor_Library.DialogCondition_Bool">
+				  <failReason>Already done</failReason>
+				  <boolName>Overdrived</boolName>
+				</condition>
+			  </li>
+			  <li Class="QuestEditor_Library.DialogCondition_Skill">
+				<failReason>Need more skills</failReason>
+				<targetText>Trigger</targetText>
+				<skill>Mining</skill>
+				<level>10</level>
+				<needToBeGreater>true</needToBeGreater>
+			  </li>
+			  <li Class="QuestEditor_Library.DialogCondition_Skill">
+				<failReason>Need more skills</failReason>
+				<targetText>Trigger</targetText>
+				<skill>Crafting</skill>
+				<level>6</level>
+				<needToBeGreater>true</needToBeGreater>
+			  </li>
+			</condition>
+		  </li>
+		</conditions>
+	  </li>
+	</interactions>
+</QuestEditor_Library.InteractionDataDef>
+
+<QuestEditor_Library.InteractionDataDef Name="MiningStation_TPod">
+  <defName>LoGiQ_MiningStation_TPod</defName>
+  <interactions>
+	  <li>
+		<interactionText>Load cargo (Plasteel)</interactionText>
+		<tickToOperate>50</tickToOperate>
+		<results>
+		  <li>
+			<resultName>Consume</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_ConsumeInInventory">
+				<targetsText>
+				  <li>Trigger</li>
+				</targetsText>
+				<requirations>
+				  <li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>75</count>
+					<thing>Plasteel</thing>
+				  </li>
+				</requirations>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		  <li>
+			<resultName>SendSignal</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>PartOfGoodsLoaded</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Inventory">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<requirations>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+				<count>75</count>
+				<thing>Plasteel</thing>
+			  </li>
+			</requirations>
+		  </li>
+		</conditions>
+	  </li>
+	  <li>
+		<interactionText>Load cargo (Uranium)</interactionText>
+		<tickToOperate>50</tickToOperate>
+		<results>
+		  <li>
+			<resultName>Consume</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_ConsumeInInventory">
+				<targetsText>
+				  <li>Trigger</li>
+				</targetsText>
+				<requirations>
+				  <li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>75</count>
+					<thing>Uranium</thing>
+				  </li>
+				</requirations>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		  <li>
+			<resultName>SendSignal</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>PartOfGoodsLoaded</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Inventory">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<requirations>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+				<count>75</count>
+				<thing>Uranium</thing>
+			  </li>
+			</requirations>
+		  </li>
+		</conditions>
+	  </li>
+	  <li>
+		<interactionText>Load cargo (Gold)</interactionText>
+		<tickToOperate>50</tickToOperate>
+		<results>
+		  <li>
+			<resultName>Consume</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_ConsumeInInventory">
+				<targetsText>
+				  <li>Trigger</li>
+				</targetsText>
+				<requirations>
+				  <li Class="QuestEditor_Library.CQFThingDefCount">
+					<count>75</count>
+					<thing>Gold</thing>
+				  </li>
+				</requirations>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		  <li>
+			<resultName>SendSignal</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>PartOfGoodsLoaded</signal>
+			  </li>
+			</actions>
+			<conditions />
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Inventory">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<requirations>
+			  <li Class="QuestEditor_Library.CQFThingDefCount">
+				<count>75</count>
+				<thing>Gold</thing>
+			  </li>
+			</requirations>
+		  </li>
+		</conditions>
+	  </li>
+	</interactions>
+</QuestEditor_Library.InteractionDataDef>
+
+<!-- ============================ -->
+
+<!-- ====== FactoryAssault ====== -->
+<QuestEditor_Library.InteractionDataDef >
+	<defName>LoGiQ_FactoryAssault_Terminal</defName>
+	<label>LoGiQ_FactoryAssault_Terminal</label>
+	<interactions>
+	  <li>
+		<interactionText>Hack security system</interactionText>
+		<tickToOperate>900</tickToOperate>
+		<onlyGenerateSingleResult>true</onlyGenerateSingleResult>
+		<results>
+		  <li>
+			<resultName>Success</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>SecurityTerminalHacked</signal>
+			  </li>
+			  <li Class="QuestEditor_Library.CQFAction_Message">
+				<message>Successfully hacked!</message>
+				<type>PositiveEvent</type>
+			  </li>
+			</actions>
+			<conditions>
+			  <li Class="QuestEditor_Library.DialogCondition_SkillCheck">
+				<skill>Intellectual</skill>
+				<targetText>Trigger</targetText>
+				<checkModifier>2</checkModifier>
+			  </li>
+			</conditions>
+		  </li>
+		  <li>
+			<resultName>Fail</resultName>
+			<actions>
+			  <li Class="QuestEditor_Library.CQFAction_Message">
+				<message>Hacking was unsuccessfull, try again!</message>
+				<type>NegativeEvent</type>
+			  </li>
+			</actions>
+		  </li>
+		</results>
+		<conditions>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<skill>Intellectual</skill>
+			<level>6</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+		</conditions>
+	  </li>
+	</interactions>
+</QuestEditor_Library.InteractionDataDef>
+<!-- ============================ -->
+
+</Defs>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<TransportShipDef>
+		<defName>LoGiQ_ShuttleCargoPod</defName>
+		<label>CargoPod</label>
+		<shipThing>LoGiQ_TransportPod</shipThing>
+		<arrivingSkyfaller>DropPodIncoming</arrivingSkyfaller>
+		<leavingSkyfaller>DropPodLeaving</leavingSkyfaller>
+		<!--<worldObject>TravelingShuttle</worldObject>-->
+		<maxLaunchDistance>70</maxLaunchDistance>
+	</TransportShipDef>
+	
+</Defs>

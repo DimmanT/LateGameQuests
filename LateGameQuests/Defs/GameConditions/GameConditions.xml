@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs> 
+<GameConditionDef>
+    <defName>LoGiQ_GameCondition_FactoryAssault</defName>
+    <conditionClass>LoGiQ.GameConditions.FactoryAssault</conditionClass>
+    <label>Assault in progress</label>
+    <description>Try assault accurate, every citizen life is silver bonus for you.</description>
+	<startMessage>The assault begun.</startMessage>
+    <endMessage>Assault is over! The factory is under your control.</endMessage>
+    <letterText>The assault begun.\n\n Try do not kill citizens, destroy production machinery and equipment. The less destruction you cased, the more will be reward.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+    <!-- <letterHyperlinks> -->
+      <!-- <li>PassiveCooler</li> -->
+      <!-- <li>Cooler</li> -->
+    <!-- </letterHyperlinks> -->
+	<canBePermanent>True</canBePermanent>
+  </GameConditionDef>
+
+</Defs>

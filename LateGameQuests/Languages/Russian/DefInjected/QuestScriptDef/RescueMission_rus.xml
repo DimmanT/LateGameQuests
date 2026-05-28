@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <LoGiQ_RescueMission.questDescriptionRules.rulesStrings>
+    <li>questDescription -&gt; Люди из [askerFaction_name] просят о помощи. Один из их соотечественников был похищен, но им удалось добыть информацию, о том, что пленник может содержаться в одном из лагерей работорговцев.</li>
+  </LoGiQ_RescueMission.questDescriptionRules.rulesStrings>
+
+  <LoGiQ_RescueMission.questNameRules.rulesStrings>
+    <li>questName -&gt; Спасательная операция</li>
+	<li>questName -&gt; Спасательная миссия</li>
+	<li>questName -&gt; Освобождение пленника</li>
+	<li>questName -&gt; Вызволить невиновного</li>
+	<li>questName -&gt; Налет на работорговцев</li>
+  </LoGiQ_RescueMission.questNameRules.rulesStrings>
+
+<LoGiQ_RescueMission.root.nodes.siteMapGenerated.node.nodes.Letter.label.slateRef>Противник вызвал подкрепление.</LoGiQ_RescueMission.root.nodes.siteMapGenerated.node.nodes.Letter.label.slateRef>
+<LoGiQ_RescueMission.root.nodes.siteMapGenerated.node.nodes.Letter.text.slateRef>Работорговцы обнаружили ваш отряд и вызвали подкрепление. Оно будет здесь примерно через сутки.</LoGiQ_RescueMission.root.nodes.siteMapGenerated.node.nodes.Letter.text.slateRef>
+<LoGiQ_RescueMission.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPart.slateRef> Силы $enemyFaction_name на подходе {0}</LoGiQ_RescueMission.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPart.slateRef>
+<LoGiQ_RescueMission.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef> Силы $enemyFaction_name будут здесь {0}</LoGiQ_RescueMission.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>
+<LoGiQ_RescueMission.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>Вражеские подкрепления</LoGiQ_RescueMission.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>
+<LoGiQ_RescueMission.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>Подкрепления противника уже здесь и готовы к контратаке!</LoGiQ_RescueMission.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>
+  
+
+</LanguageData>

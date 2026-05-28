@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+        <mods>
+			<li>Core</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+			<operations>
+			    <li Class="PatchOperationReplace">
+					<xpath>Defs/IncidentDef[workerClass = "IncidentWorker_GiveQuest"]/baseChance</xpath>
+					<value>
+						<baseChance>2.125</baseChance>
+					</value> 
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/StorytellerDef[defName = "Cassandra"]/comps/li[category = "GiveQuest"]/onDays</xpath>
+					<value>
+						<onDays>8</onDays>
+					</value> 
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/StorytellerDef[defName = "Cassandra"]/comps/li[category = "GiveQuest"]/numIncidentsRange</xpath>
+					<value>
+						<numIncidentsRange>3</numIncidentsRange>
+					</value> 
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/StorytellerDef[defName = "Cassandra"]/comps/li[category = "GiveQuest"]/minSpacingDays</xpath>
+					<value>
+						<minSpacingDays>1.5</minSpacingDays>
+					</value> 
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/StorytellerDef[defName = "Randy"]/comps/li[category = "GiveQuest"]/onDays</xpath>
+					<value>
+						<onDays>8</onDays>
+					</value> 
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/StorytellerDef[defName = "Randy"]/comps/li[category = "GiveQuest"]/numIncidentsRange</xpath>
+					<value>
+						<numIncidentsRange>3</numIncidentsRange>
+					</value> 
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/StorytellerDef[defName = "Randy"]/comps/li[category = "GiveQuest"]/minSpacingDays</xpath>
+					<value>
+						<minSpacingDays>0.2</minSpacingDays>
+					</value> 
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

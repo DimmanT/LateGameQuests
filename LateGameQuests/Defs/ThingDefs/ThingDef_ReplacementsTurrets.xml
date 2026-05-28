@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- . . . MANUAL . . . . . -->
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_1x1_Man_LMG</defName>
+    <label>Random manual LMG 1x1</label>
+    <description>E.g. M240B. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_lmg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(1,1)</size>
+    <uiOrder>2000</uiOrder>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <uiIconPath>Things/Replacements/repl_man_lmg</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+ </ThingDef>
+ 
+ <ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_1x1_Man_HMG</defName>
+    <label>Random manual HMG 1x1</label>
+    <description>E.g. KPV. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_hmg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(1,1)</size>
+    <uiOrder>2000</uiOrder>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <uiIconPath>Things/Replacements/repl_man_hmg</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+ </ThingDef>
+ 
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_1x1_Man_Launch</defName>
+    <label>Random manual launcher 1x1</label>
+    <description>Grenade or rocket launcher (e.g. AGS-30). This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_launch</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(1,1)</size>
+    <uiOrder>2000</uiOrder>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <uiIconPath>Things/Replacements/repl_man_launch</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_1x1_Man_Mortar</defName>
+    <label>Random manual mortar 1x1</label>
+    <description>E.g 60mm mortar. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_mortar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(1,1)</size>
+    <uiOrder>2000</uiOrder>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <uiIconPath>Things/Replacements/repl_man_mortar</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_1x1_Man_Energy</defName>
+    <label>Random manual energy turret 1x1</label>
+    <description>E.g charge complex. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_energy</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(1,1)</size>
+    <uiOrder>2000</uiOrder>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <uiIconPath>Things/Replacements/repl_man_energy</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_2x2_Man_Flack</defName>
+    <label>Random manual flack 2x2</label>
+    <description>E.g. vanilla autocannon. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_flack</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(2,2)</size>
+    <uiOrder>2000</uiOrder>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <uiIconPath>Things/Replacements/repl_man_flack</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_2x2_Man_LAT</defName>
+    <label>Random manual light AT 2x2</label>
+    <description>E.g. 37mm cannon. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_lat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(2,2)</size>
+    <uiOrder>2000</uiOrder>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <uiIconPath>Things/Replacements/repl_man_lat</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_2x2_Man_Mortar</defName>
+    <label>Random manual mortar 2x2</label>
+    <description>E.g. vanilla mortar. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_mortar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(2,2)</size>
+    <uiOrder>2000</uiOrder>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <uiIconPath>Things/Replacements/repl_man_mortar</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_3x3_Man_Flack</defName>
+    <label>Random manual flack 3x3</label>
+    <description>E.g. AA 30mm flack. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_flack</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(3,3)</size>
+    <uiOrder>2000</uiOrder>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <uiIconPath>Things/Replacements/repl_man_flack</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_3x3_Man_LAT</defName>
+    <label>Random manual light AT 3x3</label>
+    <description>E.g. 37mm cannon. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_lat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(3,3)</size>
+    <uiOrder>2000</uiOrder>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(-1,0,-1)</interactionCellOffset>
+    <uiIconPath>Things/Replacements/repl_man_lat</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_3x3_Man_HAT</defName>
+    <label>Random manual heavy AT 3x3</label>
+    <description>E.g. 90mm cannon. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_hat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(3,3)</size>
+    <uiOrder>2000</uiOrder>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(-1,0,-1)</interactionCellOffset>
+    <uiIconPath>Things/Replacements/repl_man_hat</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_3x3_Man_Mortar</defName>
+    <label>Random manual mortar 3x3</label>
+    <description>E.g. vanilla artillery. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_man_mortar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(3,3)</size>
+    <uiOrder>2000</uiOrder>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(-1,0,-1)</interactionCellOffset>
+    <uiIconPath>Things/Replacements/repl_man_mortar</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<!-- . . . AUTOMATIC . . . . . -->
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_1x1_Auto_LMG</defName>
+    <label>Random autoturret LMG 1x1</label>
+    <description>E.g. vanilla miniturret. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_lmg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(1,1)</size>
+    <uiOrder>2000</uiOrder>
+    <uiIconPath>Things/Replacements/repl_auto_lmg</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_1x1_Auto_HMG</defName>
+    <label>Random autoturret HMG 1x1</label>
+    <description>E.g. heavy autoturret. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_hmg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(1,1)</size>
+    <uiOrder>2000</uiOrder>
+    <uiIconPath>Things/Replacements/repl_auto_hmg</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_1x1_Auto_Launch</defName>
+    <label>Random autoturret launcher 1x1</label>
+    <description>Grenade or rocket. E.g. automatic mk19. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_launch</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(1,1)</size>
+    <uiOrder>2000</uiOrder>
+    <uiIconPath>Things/Replacements/repl_auto_launch</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_1x1_Auto_Energy</defName>
+    <label>Random energy autoturret 1x1</label>
+    <description>E.g. blaster turret. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_energy</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(1,1)</size>
+    <uiOrder>2000</uiOrder>
+    <uiIconPath>Things/Replacements/repl_auto_energy</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_1x1_Auto_CloseCombat</defName>
+    <label>Random close combat autoturret 1x1</label>
+    <description>E.g. shotgun turret. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_closecombat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(1,1)</size>
+    <uiOrder>2000</uiOrder>
+    <uiIconPath>Things/Replacements/repl_auto_closecombat</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_2x2_Auto_HMG</defName>
+    <label>Random HMG autoturret 2x2</label>
+    <description>E.g. Local's Spatha. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_hmg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(2,2)</size>
+    <uiOrder>2000</uiOrder>
+    <uiIconPath>Things/Replacements/repl_auto_hmg</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_2x2_Auto_Flack</defName>
+    <label>Random flack autoturret 2x2</label>
+    <description>E.g. vanilla autocannon. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_flack</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(2,2)</size>
+    <uiOrder>2000</uiOrder>
+    <uiIconPath>Things/Replacements/repl_auto_flack</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_2x2_Auto_AT</defName>
+    <label>Random AT autoturret 2x2</label>
+    <description>E.g. vanilla uranium slug. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_at</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(2,2)</size>
+    <uiOrder>2000</uiOrder>
+    <uiIconPath>Things/Replacements/repl_auto_at</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_2x2_Auto_Launch</defName>
+    <label>Random launcher autoturret 2x2</label>
+    <description>E.g. automortar. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_launch</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(2,2)</size>
+    <uiOrder>2000</uiOrder>
+    <uiIconPath>Things/Replacements/repl_auto_launch</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_2x2_Auto_Energy</defName>
+    <label>Random energy autoturret 2x2</label>
+    <description>E.g. blaster 2x2. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_energy</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(2,2)</size>
+    <uiOrder>2000</uiOrder>
+    <uiIconPath>Things/Replacements/repl_auto_energy</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>LoGiQ_REPL_3x3_Auto_Super</defName>
+    <label>Random auto super turret 3x3</label>
+    <description>E.g. DMS GateKeeper. This object will be replaced during special map generation step.</description>
+	<minTechLevelToBuild>Animal</minTechLevelToBuild>
+	<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
+	<forceDebugSpawnable>True</forceDebugSpawnable>
+    <graphicData>
+      <texPath>Things/Replacements/repl_auto_at</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <size>(3,3)</size>
+    <uiOrder>2000</uiOrder>
+    <uiIconPath>Things/Replacements/repl_auto_at</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+	<relicChance>0</relicChance>
+	<genericMarketSellable>False</genericMarketSellable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases><Mass>8</Mass></statBases>
+    <tickerType>Rare</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+	<designatorDropdown>LoGiQ_DesignatorTurretReplacements</designatorDropdown>
+    <building/>
+</ThingDef>
+</Defs>
