@@ -9,7 +9,7 @@
 	</supportedVersions>
 	<packageId>Dimman.LateGameQuests</packageId>
 	<modVersion>0.5.0.0</modVersion>
-	<description>This quest pack provides several interactive defensive and offensive missions. These missions are designed for advanced colonies in the mid and late game. Quests use content from some other mods if they are installed. \n\nThe mod is under active development; you can report any issues or suggest ideas on the project's page on GitHub or Steam.</description>
+	<description>This quest pack provides several interactive defensive and offensive missions. These missions are designed for advanced colonies in the mid and late game. Quests use content from some other mods if they are installed. \n\nIncluded translations: Russian. \n\nThe mod is under active development; you can report any issues or suggest ideas on the project's page on GitHub (https://github.com/DimmanT/LateGameQuests) or Steam.</description>
 	<modIconPath IgnoreIfNoMatchingField="True">UI/Icons/ModIcon</modIconPath>
 	<modDependencies>
 		<li>
