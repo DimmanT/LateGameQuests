@@ -18,7 +18,7 @@
         </li>
 		<li Class="QuestNode_GeneratePawnRandDevelopmentStage">
           <storeAs>joiner</storeAs>
-          <kindDef>Villager</kindDef>
+          <kindDef>LoGiQ_Prisoner</kindDef>
           <childChance>0.2</childChance>
           <adultChance>0.8</adultChance>
 		  <faction>$askerFaction</faction>
@@ -43,7 +43,7 @@
 		<li Class="QuestNode_GetMap"/>
 		<li Class="QuestNode_Set">
           <name>rewardValue</name>
-          <value>$(randInt(3000,4000))</value>
+          <value>$(randInt(3900,4350))</value>
         </li>
 		<li Class="QuestNode_GiveRewards">
           <inSignal>Prisoner.LeftMap</inSignal>
@@ -82,6 +82,11 @@
 		  <outSignals><li>InitCQF</li></outSignals>
           <node Class="QuestNode_Sequence">
             <nodes>
+			  <li Class="QuestNode_Letter">
+				<label>Find the prisoner.</label>
+				<letterDef>NeutralEvent</letterDef>
+				<text>Find and rescue the prisoner from this slavetraders citadel. Look in jails and prison cells. Be carefull while escorting to the edge of map, do not let the prisoner die!</text>
+			  </li>
 			  <li Class="QuestNode_Letter">
 				<label>Enemies call to reinforcements.</label>
 				<letterDef>NegativeEvent</letterDef>
@@ -177,7 +182,7 @@
       <rulesStrings>
         <li>questName -&gt; Rescue operation</li>
 		<li>questName -&gt; Rescue mission</li>
-		<li>questName -&gt; Raid slave traders</li>
+		<li>questName -&gt; Raid slavetraders</li>
       </rulesStrings>
       <rulesFiles />
       <rulesRaw IsNull="True" />
@@ -190,7 +195,7 @@
       <max>12</max>
     </expireDaysRange>
     <nameMustBeUnique>False</nameMustBeUnique>
-    <defaultChallengeRating>-1</defaultChallengeRating>
+    <defaultChallengeRating>3</defaultChallengeRating>
     <defaultHidden>False</defaultHidden>
     <isRootSpecial>True</isRootSpecial>
     <canGiveRoyalFavor>True</canGiveRoyalFavor>

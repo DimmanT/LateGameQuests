@@ -80,13 +80,13 @@
         </allRect>
       </li>
       <li>
-        <def>LoGiQ_REPL_1x1_Man_HMG</def>
+        <def>Turret_KPV</def>
         <rotation>1</rotation>
         <faction>MapFaction</faction>
         <position>(6,0,4)</position>
       </li>
       <li>
-        <def>LoGiQ_REPL_1x1_Man_LMG</def>
+        <def>Turret_M240B</def>
         <rotation>3</rotation>
         <faction>MapFaction</faction>
         <position>(1,0,4)</position>
@@ -106,13 +106,13 @@
         <position>(1,0,2)</position>
       </li>
       <li>
-        <def>LoGiQ_REPL_1x1_Man_HMG_ammo</def>
+        <def>Ammo_145x114mm_FMJ</def>
         <count>50</count>
         <position>(1,0,2)</position>
       </li>
       <li>
-        <def>LoGiQ_REPL_1x1_Man_LMG_ammo</def>
-        <count>50</count>
+        <def>Ammo_762x51mmNATO_FMJ</def>
+        <count>100</count>
         <position>(1,0,2)</position>
       </li>
       <li>

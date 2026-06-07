@@ -12,8 +12,10 @@
 	<li>questName -&gt; Налет на работорговцев</li>
   </LoGiQ_RescueMissionHard.questNameRules.rulesStrings>
 
-<LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter.label.slateRef>Противник вызвал подкрепление.</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter.label.slateRef>
-<LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter.text.slateRef>Работорговцы обнаружили ваш отряд и вызвали подкрепление. Оно будет здесь примерно через сутки.</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter.text.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter-0.label.slateRef>Найдите пленника.</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter-0.label.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter-0.text.slateRef>Найдите и спасите пленника из цитадели работорговцев. Ищите в тюремных камерах и карцерах. Будьте осторожны после освобождения пленика: доставьте его живым к краю карты!</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter-0.text.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter-1.label.slateRef>Противник вызвал подкрепление.</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter-1.label.slateRef>
+<LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter-1.text.slateRef>Работорговцы обнаружили ваш отряд и вызвали подкрепление. Оно будет здесь примерно через сутки.</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Letter-1.text.slateRef>
 <LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPart.slateRef>Силы $enemyFaction на подходе {0}</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPart.slateRef>
 <LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>Силы $enemyFaction будут здесь {0}</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>
 <LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>Вражеское подкрепление</LoGiQ_RescueMissionHard.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>

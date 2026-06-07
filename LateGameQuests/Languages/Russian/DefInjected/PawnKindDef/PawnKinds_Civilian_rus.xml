@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
+<LoGiQ_Prisoner.label>Пленник</LoGiQ_Prisoner.label>
+<LoGiQ_Prisoner.labelPlural>Пленники</LoGiQ_Prisoner.labelPlural>
 <LoGiQ_ResearcherIndustrial.label>Исследователь</LoGiQ_ResearcherIndustrial.label>
 <LoGiQ_ResearcherIndustrial.labelPlural>Исследователи</LoGiQ_ResearcherIndustrial.labelPlural>
 <LoGiQ_EngineerIndustrial.label>Инженер</LoGiQ_EngineerIndustrial.label>

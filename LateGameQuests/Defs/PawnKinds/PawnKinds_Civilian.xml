@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <PawnKindDef ParentName="OutlanderBase" Name="PrisonerBase">
+    <defName>LoGiQ_Prisoner</defName>
+    <label>prisoner</label>
+    <combatPower>0</combatPower>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.2~2.0</gearHealthRange>
+    <weaponTags></weaponTags>
+    <weaponMoney>0</weaponMoney>
+    <apparelMoney>100~200</apparelMoney>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <techHediffsChance>0.06</techHediffsChance>
+    <techHediffsMoney>50~600</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+      <li>Simple</li>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>10~17</initialResistanceRange>
+  </PawnKindDef>
+
   <PawnKindDef ParentName="OutlanderBase" Name="ResearcherBase">
     <defName>LoGiQ_ResearcherIndustrial</defName>
     <label>Researcher</label>

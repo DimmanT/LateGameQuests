@@ -163,7 +163,7 @@
       <max>-1</max>
     </expireDaysRange>
     <nameMustBeUnique>False</nameMustBeUnique>
-    <defaultChallengeRating>-1</defaultChallengeRating>
+    <defaultChallengeRating>2</defaultChallengeRating>
     <defaultHidden>False</defaultHidden>
     <isRootSpecial>True</isRootSpecial>
     <canGiveRoyalFavor>True</canGiveRoyalFavor>

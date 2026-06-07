@@ -1265,6 +1265,7 @@
 			<li>LoGiQ_REPL_3x3_Man_Mortar</li>			
 			<li>LoGiQ_REPL_2x2_Auto_AT</li>
 			<li>LoGiQ_REPL_2x2_Auto_Flack</li>
+			<li>LoGiQ_REPL_2x2_Auto_HMG</li>
 			<li>LoGiQ_REPL_2x2_Man_Mortar</li>
 			<li>LoGiQ_REPL_2x2_Man_Flack</li>
 		</replaceDataDefNames>

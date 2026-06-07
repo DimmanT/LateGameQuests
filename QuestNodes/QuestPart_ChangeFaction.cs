@@ -49,8 +49,13 @@ namespace LoGiQ.QuestNodes
                     return;
                 }
                 Log.Message($"replacing faction of {onlyFaction},{onlyPawn},{onlyBuilding},{onlyThingClass}");
+                //int dbg = 0;
                 foreach (Thing t in mapParent.Map.listerThings.GetAllThings(validate))
+                {
                     t.SetFaction(newFaction);
+                    //dbg++;
+                }
+                //Log.Message($"replaced {dbg}.");
             }
         }
 
@@ -63,7 +68,6 @@ namespace LoGiQ.QuestNodes
             ok = ok && (!onlyPawn || t is Pawn);
             ok = ok && (!onlyBuilding || t is Building);
             ok = ok && (onlyThingClass == null || t.def.thingClass == onlyThingClass);
-
             return ok;
         }
 

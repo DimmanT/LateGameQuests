@@ -22,12 +22,12 @@
           <allowEnemy>true</allowEnemy>
           <allowNeutral>true</allowNeutral>
           <allowAlly>false</allowAlly>
-          <allowAskerFaction>false</allowAskerFaction>
           <allowPermanentEnemy>true</allowPermanentEnemy>
           <mustBePermanentEnemy>false</mustBePermanentEnemy>
           <leaderMustBeSafe>False</leaderMustBeSafe>
           <mustHaveGoodwillRewardsEnabled>False</mustHaveGoodwillRewardsEnabled>
 		  <minTechLevel>Industrial</minTechLevel>
+		  <exclude><li>$askerFaction</li></exclude>
         </li>
 				
 		<!-- . . . . . . . . Regress. . . . . . . . -->
@@ -44,7 +44,7 @@
 			</increments>
 		   <progressMax>10</progressMax>
 		   <progressMin>100</progressMin>
-		   <progressMessage>commercial value</progressMessage>
+		   <progressMessage>commercial value left</progressMessage>
 		   <progressName>CommercialValue</progressName>
 		   <outSignalComplete>TooMuchDestruction</outSignalComplete>
 	    </li>
@@ -52,7 +52,6 @@
 		  <inSignal>TooMuchDestruction</inSignal>
 		  <label>Too much destruction!</label>
 		  <letterDef>NegativeEvent</letterDef>
-		  <!-- <text>You made too much destruction, there is no point to rebuild this [questFactoryName]. Your employers are disappointed with such inaccurate work and will not pay.</text> -->
 		  <text>You made too much destruction, there is no point to rebuild this factory. Your employers are disappointed with such inaccurate work and will not pay.</text>
 		</li>
 		<!-- . . . . . . . . . . . . . . . . . . . .  -->
@@ -129,13 +128,23 @@
 		<!-- . . . . . . . . . . . . . . . . . . . . -->
 		
 		<!-- hacking -->
-		<li Class="LoGiQ.QuestNodes.QuestNode_ChangeFaction">
+		<li Class="QuestNode_ModIsActive"> 
+		  <modID>ceteam.combatextended</modID>
+		  <node Class="LoGiQ.QuestNodes.QuestNode_ChangeFaction">
+		    <inSignal>SecurityTerminalHacked</inSignal>
+			<newFaction>$askerFaction</newFaction>
+			<onlyFaction>$enemyFaction</onlyFaction>
+			<onlyThingClass>CombatExtended.Building_TurretGunCE</onlyThingClass>
+			<site>$site</site>
+		  </node>
+		  <elseNode Class="LoGiQ.QuestNodes.QuestNode_ChangeFaction">
 		    <inSignal>SecurityTerminalHacked</inSignal>
 			<newFaction>$askerFaction</newFaction>
 			<onlyFaction>$enemyFaction</onlyFaction>
 			<onlyThingClass>Building_TurretGun</onlyThingClass>
 			<site>$site</site>
-		</li>
+		  </elseNode>
+	    </li>
 		
 		<!-- . . . . . . . . REWARDS . . . . . . . . -->
 		<li Class="QuestNode_GetMap"/>
@@ -195,11 +204,12 @@
                 <getRaidersFromMapParent>$site</getRaidersFromMapParent>
               </li>
 			  <li Class="QuestNode_Letter">
-				<!-- <label>[resolvedQuestAssaultName] is finished.</label> -->
 				<label>Battle is finished.</label>
 				<letterDef>PositiveEvent</letterDef>
-				<!-- <text>Enemies are defeated, the [resolvedQuestFactoryName] are under your control! Now you can leave.</text> -->
-				<text>Enemies are defeated, the factory are under your control! Now you can leave.</text>
+				<text>Enemies are defeated, the factory are under your control! Now you can leave. The incomed forces will tend civils.</text>
+			  </li>
+			  <li Class="QuestNode_End">
+			    <outcome>Success</outcome>
 			  </li>
 			</nodes>
           </node>
@@ -210,10 +220,10 @@
 		  <inSignalEnable>site.AllEnemiesDefeated</inSignalEnable>
 		  <destroyOnCleanup>true</destroyOnCleanup>
 		</li>
-        <li Class="QuestNode_End">
-          <inSignal>site.Destroyed</inSignal>
-          <outcome>Success</outcome>
-        </li>
+        <!-- <li Class="QuestNode_End"> -->
+          <!-- <inSignal>site.Destroyed</inSignal> -->
+          <!-- <outcome>Success</outcome> -->
+        <!-- </li> -->
 		<!-- . . . . . . . . . . . . . . . . . . . .  -->
 	  </nodes>
     </root>
@@ -258,7 +268,7 @@
       <max>14</max>
     </expireDaysRange>
     <nameMustBeUnique>False</nameMustBeUnique>
-    <defaultChallengeRating>-1</defaultChallengeRating>
+    <defaultChallengeRating>2</defaultChallengeRating>
     <defaultHidden>False</defaultHidden>
     <isRootSpecial>True</isRootSpecial>
     <canGiveRoyalFavor>True</canGiveRoyalFavor>

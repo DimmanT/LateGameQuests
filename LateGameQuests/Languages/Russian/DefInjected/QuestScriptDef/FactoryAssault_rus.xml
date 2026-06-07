@@ -29,6 +29,6 @@
 <LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>Вражеские подкрепления!</LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>
 <LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>Вражеский отряд достиг точки назначения и готов к контратаке.</LoGiQ_FactoryAssault.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>
 <LoGiQ_FactoryAssault.root.nodes.siteAllEnemiesDefeated.node.nodes.Letter.label.slateRef>Сражение окончено.</LoGiQ_FactoryAssault.root.nodes.siteAllEnemiesDefeated.node.nodes.Letter.label.slateRef>
-<LoGiQ_FactoryAssault.root.nodes.siteAllEnemiesDefeated.node.nodes.Letter.text.slateRef>Враги повержены, производство под вашим контролем. Теперь можно покинуть это место.</LoGiQ_FactoryAssault.root.nodes.siteAllEnemiesDefeated.node.nodes.Letter.text.slateRef>
+<LoGiQ_FactoryAssault.root.nodes.siteAllEnemiesDefeated.node.nodes.Letter.text.slateRef>Враги повержены, производство под вашим контролем. Теперь можно покинуть это место. Прибывшие силы позаботятся о раненых. </LoGiQ_FactoryAssault.root.nodes.siteAllEnemiesDefeated.node.nodes.Letter.text.slateRef>
 
 </LanguageData>

@@ -40,6 +40,7 @@ namespace LoGiQ
                     continue;
                 }
                 var data = replaceDef.datas.RandomElement();
+                Log.Message($"Choosen kit {data.DataName} from {replaceDef.datas.Count} variants");
                 foreach (var originalName in data.replaceThings.Keys) //todo via GetEnumerator
                 {
                     string newName = data.replaceThings[originalName];

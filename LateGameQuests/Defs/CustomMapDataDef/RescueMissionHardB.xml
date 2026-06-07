@@ -648,13 +648,13 @@
           <li>(20,11,20,11)</li>
         </allRect>
       </li>
-      <li>
-        <def>Turret_Mortar</def>
-        <stuff>Steel</stuff>
-        <rotation>2</rotation>
-        <storedEnergy>20</storedEnergy>
-        <position>(24,0,5)</position>
-      </li>
+      <!-- <li> -->
+        <!-- <def>Turret_Mortar</def> -->
+        <!-- <stuff>Steel</stuff> -->
+        <!-- <rotation>2</rotation> -->
+        <!-- <storedEnergy>20</storedEnergy> -->
+        <!-- <position>(24,0,5)</position> -->
+      <!-- </li> -->
       <li>
         <def>Shelf</def>
         <stuff>Steel</stuff>

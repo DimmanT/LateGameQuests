@@ -24,6 +24,7 @@ namespace LoGiQ.QuestNodes
                 gameCondition = copy;
                 applied = true;
             }
+			else
             if (signal.tag == removeSignal && applied && gameCondition!=null)
             {
                 Log.Message($"QuestPart_GameConditionRemovable: END '{gameCondition}'");
@@ -38,7 +39,6 @@ namespace LoGiQ.QuestNodes
             base.ExposeData();
             Scribe_Values.Look(ref removeSignal, "removeSignal");
             Scribe_Values.Look(ref applied, "applied");
-            Scribe_References.Look(ref mapParent, "mapParent");
         }
     }
 }

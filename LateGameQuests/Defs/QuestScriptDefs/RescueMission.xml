@@ -45,7 +45,7 @@
 		<li Class="QuestNode_GetMap"/>
 		<li Class="QuestNode_Set">
           <name>rewardValue</name>
-          <value>$(randInt(1750,2250))</value>
+          <value>$(randInt(1900,2500))</value>
         </li>
 		<li Class="QuestNode_GiveRewards">
           <inSignal>Prisoner.LeftMap</inSignal>
@@ -55,7 +55,7 @@
 			<disallowedThingDefs></disallowedThingDefs>
             <giveToCaravan>false</giveToCaravan>
           </parms>
-		  <useDifficultyFactor>false</useDifficultyFactor> <!-- we only care about requested total market value -->
+		  <useDifficultyFactor>false</useDifficultyFactor>
         </li>
 		<!-- . . . . . . . . . . -->
 		<!-- . . . Gen map . . . -->
@@ -83,6 +83,11 @@
           <inSignal>site.MapGenerated</inSignal>
           <node Class="QuestNode_Sequence">
             <nodes>
+			  <li Class="QuestNode_Letter">
+				<label>Find the prisoner.</label>
+				<letterDef>NeutralEvent</letterDef>
+				<text>Find and rescue the prisoner from this slavetraders camp. They usually hold people in cages. Be carefull while escorting to the edge of map, do not let the prisoner die!</text>
+			  </li>
 			  <li Class="QuestNode_Letter">
 				<label>Enemies call to reinforcements.</label>
 				<letterDef>NegativeEvent</letterDef>
@@ -176,7 +181,7 @@
       <max>12</max>
     </expireDaysRange>
     <nameMustBeUnique>False</nameMustBeUnique>
-    <defaultChallengeRating>-1</defaultChallengeRating>
+    <defaultChallengeRating>1</defaultChallengeRating>
     <defaultHidden>False</defaultHidden>
     <isRootSpecial>True</isRootSpecial>
     <canGiveRoyalFavor>True</canGiveRoyalFavor>

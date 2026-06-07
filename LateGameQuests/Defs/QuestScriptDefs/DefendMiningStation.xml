@@ -66,7 +66,7 @@
         </li>
 		<li Class="QuestNode_Set">
 		  <name>arriveDeadline</name>
-		  <value>$($siteDistance*12000)</value>
+		  <value>$($siteDistance*13500)</value>
 		  <convertTo>Double</convertTo>
 		</li>
 		<!-- Slightly decrease time, if we have access to vehicles. Better increase distance, but i can not, see below (<distance>).-->
@@ -118,11 +118,16 @@
           <inSignal>site.MapGenerated</inSignal>
 		  <outSignals><li>InitCQF</li></outSignals>
 		</li>
+		<li Class="QuestNode_Letter">
+			<inSignal>site.MapGenerated</inSignal>
+			<label TKey="LetterLabelJoin">It is time to organize the defense.</label>
+			<text TKey="LetterTextJoin">Your squad has arrived to autonomous mining station. It is time to organize the defense. Do not let the invaders destroy the mining terminal, drain or trasport pod.\n\nWhen the machine complete mining, load the output into trasnport pod.</text>
+		</li>
 		<!-- . . . . . . . . . . . . . . . . . . . . . . . . . -->
 		<!-- . . . . . . . PROGRESSING . . . . . . . . . . . . -->
 		<li Class="QuestNode_Set">
 		  <name>miningTime</name>
-		  <value>120000</value>
+		  <value>125000</value>
 		  <convertTo>Double</convertTo>
 		</li>
 		<li Class="LoGiQ.QuestNodes.QuestNode_ProgressComplex">
@@ -165,6 +170,12 @@
 			  </nodes>
 			</node>
 		</li>
+		<li Class="QuestNode_Letter">
+			<inSignal>ProductionReady</inSignal>
+			<letterDef>PositiveEvent</letterDef>
+			<label TKey="LetterLabelJoin">Mining complete.</label>
+			<text TKey="LetterTextJoin">Open the drain and load the mining output to the trasport pod. When the pod is filled, the contract will be fullfilled and your squad may leave the area.</text>
+		</li>
 		<!-- . . . . . . . . . . . . . . . . . . . . . . . . . -->
 		<!-- . . . . . . . CONFIGURATING RAIDERS . . . . . . . -->
         <li Class="LoGiQ.QuestNodes.QuestNode_GetFactionAdv">
@@ -177,7 +188,7 @@
           <mustBePermanentEnemy>false</mustBePermanentEnemy>
           <leaderMustBeSafe>False</leaderMustBeSafe>
           <mustHaveGoodwillRewardsEnabled>False</mustHaveGoodwillRewardsEnabled>
-		  <mustBeHostileToFaction>$askerfaction</mustBeHostileToFaction>
+		  <mustBeHostileToFaction>$askerFaction</mustBeHostileToFaction>
 		  <minTechLevel>Industrial</minTechLevel>
         </li>
 		<!-- first wave -->
@@ -186,12 +197,12 @@
           <outSignalComplete>ReadyForAttack</outSignalComplete>
           <expiryInfoPart TKey="InfoPartReadyForAttack">$enemyFaction preparing for attack {0}</expiryInfoPart>
           <expiryInfoPartTip TKey="InfoPartTipReadyForAttack">$enemyFaction will be ready for attack at {0}</expiryInfoPartTip>
-          <delayTicks>$($arriveDeadline + 0.1*$miningTime)</delayTicks>
+          <delayTicks>$($arriveDeadline + 0.05*$miningTime)</delayTicks>
           <isQuestTimeout>false</isQuestTimeout>
 		  <node Class="RimWorld.QuestGen.QuestNode_SubScript">
 			  <def>Util_RaidSiteComplex</def>
 			  <parms>
-				<points>$points</points>
+				<points>$(0.85*$points)</points>
 				<inSignal>ReadyForAttack</inSignal>
 				<siteToRaid>$site</siteToRaid>
 				<customLetterLabel TKey="LetterLabelAttack">Raiders attack!</customLetterLabel>
@@ -232,7 +243,7 @@
 		  <outSignalComplete>ReadyForAttack2</outSignalComplete>
 		  <expiryInfoPart TKey="InfoPartReadyForAttack">$enemyFaction reinforcements on the way {0}</expiryInfoPart>
 		  <expiryInfoPartTip TKey="InfoPartTipReadyForAttack">$enemyFaction reinforcements on the way {0}</expiryInfoPartTip>
-		  <delayTicks>$($arriveDeadline + 0.5*$miningTime)</delayTicks>
+		  <delayTicks>$($arriveDeadline + 0.4*$miningTime)</delayTicks>
 		  <isQuestTimeout>false</isQuestTimeout>
 		  <node Class="RimWorld.QuestGen.QuestNode_SubScript">
 			<def>Util_RaidSiteComplex</def>
@@ -270,7 +281,7 @@
 			<storeAs>ChoosenResource</storeAs>
 			<options>
 				<li>Plasteel</li>
-				<li>Uranium</li>
+				<!-- <li>Uranium</li>  temporary disabled becase pawn can not hold 75 pieces of uranium-->
 				<li>Gold</li>
 			</options>
 		</li>
@@ -293,7 +304,7 @@
 				<li Class="QuestNode_Letter">
 				  <label>Overdrive successfull.</label>
 				  <letterDef>PositiveEvent</letterDef>
-				  <text>Production outcome will be increased.</text>
+				  <text>Production outcome will be increased. You can keep the excess for yourself.</text>
 				</li>
 			  </nodes>
 			</node>
@@ -391,7 +402,7 @@
       <max>2</max>
     </expireDaysRange>
     <nameMustBeUnique>False</nameMustBeUnique>
-    <defaultChallengeRating>-1</defaultChallengeRating>
+    <defaultChallengeRating>2</defaultChallengeRating>
     <defaultHidden>False</defaultHidden>
     <isRootSpecial>False</isRootSpecial>
     <canGiveRoyalFavor>False</canGiveRoyalFavor>

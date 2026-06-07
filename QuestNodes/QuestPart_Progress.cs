@@ -61,6 +61,7 @@ namespace LoGiQ.QuestNodes
     /// </summary>
     class QuestPart_ProgressComplex : QuestPartActivable
     {
+        //todo disable signal
         public Dictionary<string, float> inSignals; //map {signal -> increment}
         public float  progressCur;
         public float  progressMax;
@@ -148,6 +149,12 @@ namespace LoGiQ.QuestNodes
             {
                 //Log.Message("QuestPart_ProgressGiveReward C");
                 float rel;
+                if(progressMin == progressMax) //something gone wrong if they are equal!
+                {
+                    rel = 1;
+                    Log.Warning($"ProgressReward: 'progressMin' is equal to 'progressMax'( {progressMin}={progressMax}), it is wrong!");
+                }
+                else
                 if (inverse)
                 {
                     float span = progressMin - progressMax;
@@ -218,7 +225,7 @@ namespace LoGiQ.QuestNodes
         {
             base.ExposeData();
             Scribe_Values.Look(ref inSignal, "inSignal");
-            Scribe_Values.Look(ref progressMax, "progressMin");
+            Scribe_Values.Look(ref progressMin, "progressMin");
             Scribe_Values.Look(ref progressMax, "progressMax");
             Scribe_Values.Look(ref progressName, "progressName");
             Scribe_Values.Look(ref maxReward, "maxReward");

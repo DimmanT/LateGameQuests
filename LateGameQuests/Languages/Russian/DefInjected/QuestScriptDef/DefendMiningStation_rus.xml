@@ -2,7 +2,7 @@
 <LanguageData>
   <LoGiQ_DefendMiningStation.questDescriptionRules.rulesStrings>
     <li>questDescription -&gt; Фракция [askerFaction_name] обращается к вам с просьбой о помощи, их автономная станция добычи полезных ископаемых под угрозой атаки рейдеров. Несмотря на то, что местоположение станции хорошо скрывалось, разведчикам из [enemyFaction_name] удалось выяснить его и сейчас они собирают силы для штурма. В недрах еще остались полезные ископаемые, вам необходимо защитить станцию на время добычи еще одной порции.\n[questNotation]</li>
-	<li>questDescription -&gt; Лидер фракции [askerFaction_name] просит вас организовать оборону автономной добывающей станции. На станцию собираются напасть значительные силы [enemyFaction_name]. Залежи еще не выработаны полностью, вам необходимо зашитить станцию на время добычи еще одной порции.\n[questNotation]</li>
+	<li>questDescription -&gt; Лидер фракции [askerFaction_name] просит вас организовать оборону автономной добывающей станции. На станцию собираются напасть значительные силы [enemyFaction_name]. Залежи еще не выработаны полностью, вам необходимо защитить станцию на время добычи еще одной порции.\n[questNotation]</li>
 	<li>questNotation -&gt;  \nВыдвигайтесь к станции и организуйте оборону. Рейдеры совершат несколько атак, ваша задача - дождаться добычи ресурсов и выслать их, после чего станцию можно будет покинуть.</li>
   </LoGiQ_DefendMiningStation.questDescriptionRules.rulesStrings>
 
@@ -20,12 +20,16 @@
 <LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>Вы должны достичь станцию в течение {0}.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPartTip.slateRef>Прибудьте на станцию не позднее {0}.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPartTip.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>Вы не успели прибыть на станцию вовремя.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>
-<LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>Станция добычи искапаемых была разрушена. Квест [resolvedQuestName] отменен.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>Станция добычи искапаемых была разрушена. Задание [resolvedQuestName] провалено.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Letter-0.label.slateRef>Время организовать оборону.</LoGiQ_DefendMiningStation.root.nodes.Letter-0.label.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Letter-0.text.slateRef>Ваш отряд прибыл к автономной добывающей станции. Время организовать её оборону. Не дайте завхатчикам уничтожить терминал, отсек для вывода руды или транспортную капсулу.\n\nКак только машина закончит добычу, вам необходимо будет загрузить руду в транспортную капсулу.</LoGiQ_DefendMiningStation.root.nodes.Letter-0.text.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.ProgressComplex.progressMessage.slateRef>идёт процесс добычи</LoGiQ_DefendMiningStation.root.nodes.ProgressComplex.progressMessage.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.OverdrivedForTime.node.nodes.Letter.label.slateRef>Перегрузка прошла успешно!</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForTime.node.nodes.Letter.label.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.OverdrivedForTime.node.nodes.Letter.text.slateRef>Время добычи уменьшено</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForTime.node.nodes.Letter.text.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.OverdrivedFailed.node.nodes.Letter.label.slateRef>Перегрузка провалена!</LoGiQ_DefendMiningStation.root.nodes.OverdrivedFailed.node.nodes.Letter.label.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.OverdrivedFailed.node.nodes.Letter.text.slateRef>Добыча займет больше времени, чем ожидалось</LoGiQ_DefendMiningStation.root.nodes.OverdrivedFailed.node.nodes.Letter.text.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Letter-1.label.slateRef>Добыча завершена.</LoGiQ_DefendMiningStation.root.nodes.Letter-1.label.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Letter-1.text.slateRef>Откройте отсек вывода руды и загрузите всё его содержимое в транспортную капсулу. Как только капсула будет полностью загружена, контракт будет исполнен и ваш отряд сможет уйти.</LoGiQ_DefendMiningStation.root.nodes.Letter-1.text.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.Delay-0.expiryInfoPart.slateRef>$enemyFaction готовятся к атаке {0}</LoGiQ_DefendMiningStation.root.nodes.Delay-0.expiryInfoPart.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.Delay-0.expiryInfoPartTip.slateRef>$enemyFaction будут готовы атаковать {0}</LoGiQ_DefendMiningStation.root.nodes.Delay-0.expiryInfoPartTip.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.Delay-0.node.parms.customLetterLabel.value.slateRef>Рейдеры атакуют!</LoGiQ_DefendMiningStation.root.nodes.Delay-0.node.parms.customLetterLabel.value.slateRef>
@@ -35,7 +39,7 @@
 <LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterLabel.value.slateRef>Вторая волна рейдеров!</LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterLabel.value.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterText.value.slateRef>[enemyFaction_pawnsPlural] готовы к битве!</LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterText.value.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.label.slateRef>Перегрузка прошла успешно!</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.label.slateRef>
-<LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.text.slateRef>Выход продукции увеличен.</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.text.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.text.slateRef>Выход продукции увеличен. Излишек можно оставить себе.</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.text.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.ProductionReady.node.nodes.Message.text.slateRef>добыча завершена, перенесите продукцию в транспортную капсулу</LoGiQ_DefendMiningStation.root.nodes.ProductionReady.node.nodes.Message.text.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.ProductionReady.node.nodes.Progress.progressMessage.slateRef>загружено</LoGiQ_DefendMiningStation.root.nodes.ProductionReady.node.nodes.Progress.progressMessage.slateRef>
 

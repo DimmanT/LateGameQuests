@@ -4,9 +4,6 @@
     <defName>LoGiQ_DefendResearchCamp</defName>
     <root Class="QuestNode_Sequence">
       <nodes>
-	  	<li Class="QuestNode_Message">
-          <text>points $points</text>
-        </li>
 	    <!-- . . . . . . . . REWARDS . . . . . . . . -->
 		<li Class="QuestNode_GetMap"/>
 		<li Class="QuestNode_GetMapWealth">
@@ -118,7 +115,7 @@
 		<li Class="QuestNode_Letter">
 			<inSignal>site.MapGenerated</inSignal>
 			<label TKey="LetterLabelJoin">Reasearchers from [askerFaction_name] joining to you.</label>
-			<text TKey="LetterTextJoin">Researcher joins temporary, until the work is completed. They will leave as soon as all the colonists leave the site.</text>
+			<text TKey="LetterTextJoin">Researchers and their guard join temporary, until the work is completed. They will leave as soon as all the colonists leave the site. Send them to perform researching at machine bench and research table.\n\nWhile scientists doing their job, order engineers to build defense positions. You can also try to complete the research before enemy attacks, by sending your own colonists to research tables.</text>
 		</li>
 		<!-- . . . . . . . . . . . . . . . . . . . . . . . . . -->
 		<!-- . . . . . . . CONFIGURATING RAIDERS . . . . . . . -->
@@ -148,7 +145,7 @@
 			  <!-- <prefix>raid</prefix> -->
 			  <!-- <allowNonPrefixedLookup>true</allowNonPrefixedLookup> -->
 			  <parms>
-				<points>$points</points>
+				<points>$(0.85*$points)</points>
 				<inSignal>ReadyForAttack</inSignal>
 				<siteToRaid>$site</siteToRaid>
 				<customLetterLabel TKey="LetterLabelAttack">Raiders attack!</customLetterLabel>
@@ -174,8 +171,8 @@
 			</inSignals>
 			<increments>
 				<li>2</li>
-				<li>5</li>
-				<li>10</li>
+				<li>4</li>
+				<li>9</li>
 			</increments>
 			<progressMin>0</progressMin>
 			<progressMax>$RequiredProgress</progressMax>
@@ -273,7 +270,7 @@
       <max>2</max>
     </expireDaysRange>
     <nameMustBeUnique>False</nameMustBeUnique>
-    <defaultChallengeRating>-1</defaultChallengeRating>
+    <defaultChallengeRating>2</defaultChallengeRating>
     <defaultHidden>False</defaultHidden>
     <isRootSpecial>True</isRootSpecial>
     <canGiveRoyalFavor>False</canGiveRoyalFavor>

@@ -26,7 +26,7 @@
                 <datas>
                   <li>
                     <dataName>WrongPrisonerAA</dataName>
-                    <kind>Villager</kind>
+                    <kind>Slave</kind>
                     <count>1</count>
                     <faction>RandomNeutral</faction>
                     <spawnType>MapGeneration</spawnType>
@@ -61,7 +61,7 @@
                 <datas>
                   <li>
                     <dataName>WrongPrisonerBA</dataName>
-                    <kind>Villager</kind>
+                    <kind>Slave</kind>
                     <count>1</count>
                     <faction>RandomNeutral</faction>
                     <spawnType>MapGeneration</spawnType>
@@ -98,7 +98,7 @@
             <pawnDatas>
               <li>
                 <dataName>Prisoner</dataName>
-                <kind>Villager</kind>
+                <kind>LoGiQ_Prisoner</kind>
                 <enableLord>true</enableLord>
                 <count>1</count>
                 <faction>OutlanderCivil</faction>

@@ -39,6 +39,13 @@
     </questDescriptionRules>
     <root Class="QuestNode_Sequence">
       <nodes>
+	    <!-- <li Class="QuestNode_ModIsActive">  -->
+		  <!-- <modID>Aoba.DeadManSwitch.Core</modID> -->
+		  <!-- <node Class="QuestNode_Set"> -->
+			<!-- <name>points</name> -->
+			<!-- <value>$(0.9*$points)</value> -->
+		  <!-- </node> -->
+	    <!-- </li> -->
 	    <li Class="QuestNode_Greater">
           <value1>$points</value1>
           <value2>5000</value2>
@@ -58,6 +65,20 @@
 					<value>1</value>
 				  </node>
 			  </li>
+			  <li Class="QuestNode_ModIsActive"> 
+				  <modID>OskarPotocki.VFE.Pirates</modID>
+				  <node Class="QuestNode_Set">
+					<name>anyArmoredMod</name>
+					<value>1</value>
+				  </node>
+			  </li>
+			  <li Class="QuestNode_ModIsActive"> 
+				  <modID>Aoba.DeadManSwitch.Core</modID>
+				  <node Class="QuestNode_Set">
+					<name>anyArmoredMod</name>
+					<value>1</value>
+				  </node>
+			  </li>
 			  <li Class="QuestNode_IsSet">
 		        <name>anyArmoredMod</name>
 		        <node Class="QuestNode_GetRandomElement">
@@ -65,8 +86,14 @@
 					<options>
 					  <li MayRequire="Aoba.Exosuit.AMP">LoGiQ_AMP_Pawn_Marine</li>
 					  <!-- <li MayRequire="SmashPhil.VehicleFramework">Veh</li> -->
+					  <!-- todo group mech in anyMech -->
+					  <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Mech_Mammoth</li>
 					  <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Mech_Iguana</li>
-					  <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Mech_HermitCrab</li>
+					  <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Mech_Gecko</li>
+					  <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Mech_Killdozer</li>
+					  <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Mech_Geochelone</li>
+					  <li MayRequire="OskarPotocki.VFE.Pirates">VFEP_HeavyWeaponsPlatform</li>
+					  <li MayRequire="OskarPotocki.VFE.Pirates">VFEP_Artillery</li>
 					</options>
 		        </node>
 				<elseNode Class="QuestNode_Set">
@@ -124,16 +151,17 @@
 		        <storeAs>choosenHeavyKind</storeAs>
 		        <options>
 		      	  <li>Mercenary_Heavy</li>
-		      	  <li>AncientSoldier</li> <!-- temp -->
 				  <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Mech_Grenadier</li>
 				  <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Mech_Kanonier</li>
 				  <li MayRequire="Aoba.Exosuit.AMP">AMP_Pawn_Pirate</li>
+				  <li MayRequire="OskarPotocki.VFE.Pirates">VFEP_Pyro</li>
+				  <li MayRequire="OskarPotocki.VFE.Pirates">VFEP_Veteran</li>
 		        </options>
 		      </li>
 		      <li Class="LoGiQ.QuestNodes.QuestNode_RaidSite">
 			    <siteToRaid>$site</siteToRaid>
 		        <tag>$tag</tag>
-		        <points>$(0.2*$points)</points>
+		        <points>$(0.15*$points)</points>
 		        <arrivalMode>$arrivalMode</arrivalMode>
 		        <canTimeoutOrFlee>$canTimeoutOrFlee</canTimeoutOrFlee>
 		        <raidPawnKind>$choosenHeavyKind</raidPawnKind>
@@ -157,6 +185,7 @@
 					<li>Mercenary_Gunner</li>
 					<li MayRequire="ceteam.combatextended">CE_Mercenary_MachineGunner</li>
 					<li MayRequire="Aoba.DeadManSwitch.Core">DMS_Soldier</li>
+					<li MayRequire="OskarPotocki.VFE.Pirates">VFEP_Footsoldier</li>
 				</options>
 			</li>
 			<li Class="LoGiQ.QuestNodes.QuestNode_RaidSite">

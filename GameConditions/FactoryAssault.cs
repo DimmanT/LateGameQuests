@@ -32,6 +32,7 @@ namespace LoGiQ.GameConditions
             foreach (var th in map.spawnedThings)
                 if (th is Building bld)
                 {
+                    
                     bool isProduction  = bld.def.designationCategory == DesignationCategoryDefOf.Production;
                     bool isPowerSupply = bld.PowerComp != null;
                          isPowerSupply = isPowerSupply && bld.PowerComp.Props != null;
@@ -44,7 +45,8 @@ namespace LoGiQ.GameConditions
                         hitpoints.Add(bld.HitPoints);
                     }
 
-                    //if (ok) Log.Message($"Add building {bld} to thingHitpoints");
+                    //Log.Message($"DBG: {bld} -> {bld.def.designationCategory}; is it powerSupply: {isPowerSupply}.");
+                    if (ok) Log.Message($"Track building hitpoits:  {bld}");
 
                 }
             //Log.Message("---end---");
@@ -57,7 +59,7 @@ namespace LoGiQ.GameConditions
                 for(int i = 0 ; i < things.Count(); ++i)
                 {
                     var t = things[i];
-                    float rel = (hitpoints[i] - t.HitPoints) / t.MaxHitPoints;
+                    float rel = (float)(hitpoints[i] - t.HitPoints) / t.MaxHitPoints;
 
                     if (rel > 0.1) 
                     {

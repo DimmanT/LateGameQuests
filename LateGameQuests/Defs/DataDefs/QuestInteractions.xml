@@ -10,7 +10,7 @@
   <interactions>
 	<li>
 		<interactionText>Fast disassembling</interactionText>
-		<tickToOperate>2500</tickToOperate>
+		<tickToOperate>3000</tickToOperate>
 		<results>
 		  <li>
 			<resultName>SmallProgress</resultName>
@@ -123,7 +123,7 @@
 	</li>
 	<li>
 		<interactionText>Melting armor samples</interactionText>
-		<tickToOperate>4000</tickToOperate>
+		<tickToOperate>4800</tickToOperate>
 		<results>
 		  <li>
 			<resultName>MediumProgress</resultName>
@@ -150,7 +150,7 @@
 	</li>
 	<li>
 		<interactionText>Repearing parts</interactionText>
-		<tickToOperate>6000</tickToOperate>
+		<tickToOperate>7000</tickToOperate>
 		<results>
 		  <li>
 			<resultName>BigProgress</resultName>
@@ -195,7 +195,7 @@
   <interactions>
 	  <li>
 		<interactionText>Try decode data</interactionText>
-		<tickToOperate>2900</tickToOperate>
+		<tickToOperate>3500</tickToOperate>
 		<results>
 		  <li>
 			<resultName>DefaultName</resultName>
@@ -220,7 +220,7 @@
 	  </li>
 	  <li>
 		<interactionText>Hack the black box</interactionText>
-		<tickToOperate>7100</tickToOperate>
+		<tickToOperate>7500</tickToOperate>
 		<results>
 		  <li>
 			<resultName>StateChanged</resultName>
@@ -338,7 +338,7 @@
   <interactions>
 	  <li>
 		<interactionText>Research</interactionText>
-		<tickToOperate>3200</tickToOperate>
+		<tickToOperate>3800</tickToOperate>
 		<results>
 		  <li>
 			<resultName>DefaultName</resultName>
@@ -361,7 +361,7 @@
 	  </li>
 	  <li>
 		<interactionText>Analizing materials</interactionText>
-		<tickToOperate>3000</tickToOperate>
+		<tickToOperate>3600</tickToOperate>
 		<results>
 		  <li>
 			<resultName>DefaultName</resultName>
@@ -397,7 +397,7 @@
 	  </li>
 	  <li>
 		<interactionText>Modeling</interactionText>
-		<tickToOperate>4000</tickToOperate>
+		<tickToOperate>4800</tickToOperate>
 		<results>
 		  <li>
 			<resultName>MediumProgress</resultName>
@@ -421,7 +421,7 @@
 	  </li>
 	  <li>
 		<interactionText>Making drawings</interactionText>
-		<tickToOperate>2000</tickToOperate>
+		<tickToOperate>2400</tickToOperate>
 		<results>
 		  <li>
 			<resultName>SmallProgress</resultName>
@@ -451,7 +451,7 @@
   <interactions>
   <li>
 	<interactionText>Search in databases</interactionText>
-	<tickToOperate>2500</tickToOperate>
+	<tickToOperate>3000</tickToOperate>
 	<results>
 	  <li>
 		<resultName>SmallProgress</resultName>
@@ -478,7 +478,7 @@
   </li>
   <li>
 	<interactionText>Online consultation</interactionText>
-	<tickToOperate>3000</tickToOperate>
+	<tickToOperate>3600</tickToOperate>
 	<results>
 	  <li>
 		<resultName>MediumResult</resultName>
@@ -526,7 +526,7 @@
   <interactions>
 	<li>
 	<interactionText>Disassembling shells</interactionText>
-	<tickToOperate>3000</tickToOperate>
+	<tickToOperate>3600</tickToOperate>
 	<results>
 	  <li>
 		<resultName>MediumProgress</resultName>
@@ -576,7 +576,7 @@
   <interactions>
 	<li>
 		<interactionText>Analize destructions</interactionText>
-		<tickToOperate>3000</tickToOperate>
+		<tickToOperate>3600</tickToOperate>
 		<results>
 		  <li>
 			<resultName>SmallProgress</resultName>
@@ -610,7 +610,7 @@
   <interactions>
 	  <li>
 		<interactionText>Overdrive to reduce time (Mining,Crafting)</interactionText>
-		<tickToOperate>500</tickToOperate>
+		<tickToOperate>1000</tickToOperate>
 		<onlyGenerateSingleResult>true</onlyGenerateSingleResult>
 		<results>
 		  <li>
@@ -678,7 +678,7 @@
 	  </li>
 	  <li>
 		<interactionText>Overdrive to increase production (Mining,Crafting)</interactionText>
-		<tickToOperate>1500</tickToOperate>
+		<tickToOperate>1000</tickToOperate>
 		<onlyGenerateSingleResult>true</onlyGenerateSingleResult>
 		<results>
 		  <li>
