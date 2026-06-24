@@ -5,6 +5,8 @@
 <LoGiQ_RescueMissionA_Title>Поговорить с пленником</LoGiQ_RescueMissionA_Title>
 <LoGiQ_RescueMissionA_Intro>Вы здесь, чтобы спасти меня? Большое вам спасибо! Нам пора выбираться из этого ужастного места!</LoGiQ_RescueMissionA_Intro>
 <LoGiQ_RescueMissionA_Finish>Иди вперед, мы прикроем! (завершить)</LoGiQ_RescueMissionA_Finish>
+<LoGiQ_RescueMissionA_Stay>Жди здесь.</LoGiQ_RescueMissionA_Stay>
+<LoGiQ_RescueMissionA_Move>Продолжай идти!</LoGiQ_RescueMissionA_Move>
 
 <LoGiQ_RescueMissionTargetSimpleBKey>Поговорить с пленником</LoGiQ_RescueMissionTargetSimpleBKey>
 <LoGiQ_RescueMissionB_Title>Поговорить с пленником</LoGiQ_RescueMissionB_Title>

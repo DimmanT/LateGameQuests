@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestEditor_Library.DialogTreeDef>
+    <defName>LoGiQ_FA_Engineer_Tree</defName>
+    <title>LoGiQ_FA_Engineer_Title</title>
+    <requireNonHostile>false</requireNonHostile>
+    <dialogReportKey>LoGiQ_FA_Engineer_Title_ReportKey</dialogReportKey>
+    <curIndex>1</curIndex>
+    <nodeMoulds>
+      <li>
+        <key>0</key>
+        <value>
+          <text>LoGiQ_FA_Engineer_Intro</text>
+          <index>0</index>
+          <subNodeIndexs />
+          <options>
+            <li Class="QuestEditor_Library.DialogOption">
+              <text>LoGiQ_FA_Engineer_LetGo</text>
+              <removeDialogAfterSelect>false</removeDialogAfterSelect>
+              <results>
+                <li>
+                  <resultName>Exit</resultName>
+                </li>
+              </results>
+            </li>
+            <li Class="QuestEditor_Library.DialogOption">
+              <text>LoGiQ_FA_Engineer_KnockOut</text>
+              <removeDialogAfterSelect>true</removeDialogAfterSelect>
+              <results>
+                <li>
+                  <resultName>Punch</resultName>
+                  <actions>
+                    <li Class="QuestEditor_Library.CQFAction_Hediff">
+                      <targetsText>
+                        <li>Interviewer</li>
+                      </targetsText>
+                      <hediff>Anesthetic</hediff>
+                      <severity>0.5</severity>
+                    </li>
+                  </actions>
+                  <conditions>
+                    <li Class="QuestEditor_Library.DialogCondition_SkillCheck">
+                      <failReason></failReason>
+                      <targetText>Interviewee</targetText>
+                      <skill>Melee</skill>
+                      <checkModifier>4</checkModifier>
+                    </li>
+                  </conditions>
+                </li>
+              </results>
+            </li>
+          </options>
+        </value>
+      </li>
+    </nodeMoulds>
+  </QuestEditor_Library.DialogTreeDef>
+</Defs>

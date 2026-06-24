@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+<LoGiQ_FA_Engineer_Title_ReportKey>Try knock out</LoGiQ_FA_Engineer_Title_ReportKey>
+<LoGiQ_FA_Engineer_Title>Try knock out</LoGiQ_FA_Engineer_Title>
+
+<LoGiQ_FA_Engineer_Intro>{Interviewee_nameDef} grabs the engineer, {Interviewee_pronoun} can try to knock out {Interviewer_nameDef}. Success depends on melee skill of {Interviewee_nameDef}.</LoGiQ_FA_Engineer_Intro>
+<LoGiQ_FA_Engineer_LetGo>Let go</LoGiQ_FA_Engineer_LetGo>
+<LoGiQ_FA_Engineer_KnockOut>Knock out</LoGiQ_FA_Engineer_KnockOut>
+
+</LanguageData>

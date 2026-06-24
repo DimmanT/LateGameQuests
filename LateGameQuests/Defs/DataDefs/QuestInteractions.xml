@@ -481,10 +481,10 @@
 	<tickToOperate>3600</tickToOperate>
 	<results>
 	  <li>
-		<resultName>MediumResult</resultName>
+		<resultName>MediumProgress</resultName>
 		<actions>
 		  <li Class="QuestEditor_Library.CQFAction_SentSignal">
-			<signal>AddMediumResult</signal>
+			<signal>AddMediumProgress</signal>
 		  </li>
 		</actions>
 		<conditions />

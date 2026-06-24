@@ -5,22 +5,10 @@
     <trees>
       <li>
         <tree>RescueMissionTargetSimpleA</tree>
-        <!-- <conditions> -->
-          <!-- <li Class="QuestEditor_Library.DialogCondition_Chance"> -->
-            <!-- <failReason></failReason> -->
-            <!-- <chance>0.5</chance> -->
-          <!-- </li> -->
-        <!-- </conditions> -->
       </li>
-      <li>
-        <tree>RescueMissionTargetSimpleB</tree>
-        <!-- <conditions> -->
-          <!-- <li Class="QuestEditor_Library.DialogCondition_Chance"> -->
-            <!-- <failReason></failReason> -->
-            <!-- <chance>0.5</chance> -->
-          <!-- </li> -->
-        <!-- </conditions> -->
-      </li>
+      <!-- <li> -->
+        <!-- <tree>RescueMissionTargetSimpleB</tree> -->
+      <!-- </li> -->
     </trees>
     <tags />
   </QuestEditor_Library.DialogManagerDef>

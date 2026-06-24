@@ -85,6 +85,8 @@
                 <partLabelForSeeing />
               </li>
             </hediffs>
+			<enableLord>true</enableLord>
+			<duty>PrisonerEscape</duty>
           </li>
         </value>
       </li>

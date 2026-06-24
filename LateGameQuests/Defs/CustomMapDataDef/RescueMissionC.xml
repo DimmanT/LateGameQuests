@@ -56,10 +56,10 @@
         <stuff>Steel</stuff>
         <position>(5,0,2)</position>
 		<tickToOpen>300</tickToOpen>
+		<!-- todo openingAction+signal to questscript.letter -->
 	    <innerThings>
           <li>
             <chance>1</chance>
-            <message>A prisoner is freed</message>
             <pawnDatas>
               <li>
                 <dataName>Prisoner</dataName>

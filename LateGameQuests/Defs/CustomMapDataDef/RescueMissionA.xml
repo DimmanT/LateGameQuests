@@ -91,10 +91,10 @@
         <stuff>Steel</stuff>
         <position>(4,0,5)</position>
         <tickToOpen>300</tickToOpen>
+		<!-- todo openingAction+signal to questscript.letter -->
         <innerThings>
           <li>
             <chance>1</chance>
-            <message>A prisoner is freed</message>
             <pawnDatas>
               <li>
                 <dataName>Prisoner</dataName>
@@ -103,7 +103,7 @@
                 <count>1</count>
                 <faction>OutlanderCivil</faction>
                 <dialogManager>RescueMissionSimple</dialogManager>
-                <duty>ExitMapBestAndDefendSelf</duty>
+                <duty>PrisonerEscape</duty>
                 <spawnType>MapGeneration</spawnType>
 			  </li>
             </pawnDatas>

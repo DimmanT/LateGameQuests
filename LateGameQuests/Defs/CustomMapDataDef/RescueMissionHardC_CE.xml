@@ -141,6 +141,8 @@
             <count>1~3</count>
             <faction>RandomNeutral</faction>
             <spawnType>MapGeneration</spawnType>
+			<enableLord>true</enableLord>
+			<duty>PrisonerEscape</duty>
           </li>
         </value>
       </li>

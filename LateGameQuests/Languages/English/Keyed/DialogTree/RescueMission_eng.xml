@@ -4,7 +4,9 @@
 <LoGiQ_RescueMissionTargetSimpleAKey>Talk with prisoner</LoGiQ_RescueMissionTargetSimpleAKey>
 <LoGiQ_RescueMissionA_Title>Talk with prisoner</LoGiQ_RescueMissionA_Title>
 <LoGiQ_RescueMissionA_Intro>Are you here to save me? Thanks! Lets go far away from this place!</LoGiQ_RescueMissionA_Intro>
-<LoGiQ_RescueMissionA_Finish>Come on! We will cover you. (finsih)</LoGiQ_RescueMissionA_Finish>
+<LoGiQ_RescueMissionA_Finish>Come on! We will cover you. (finish)</LoGiQ_RescueMissionA_Finish>
+<LoGiQ_RescueMissionA_Stay>Stay here.</LoGiQ_RescueMissionA_Stay>
+<LoGiQ_RescueMissionA_Move>Keep moving!</LoGiQ_RescueMissionA_Move>
 
 <LoGiQ_RescueMissionTargetSimpleBKey>Talk with prisoner</LoGiQ_RescueMissionTargetSimpleBKey>
 <LoGiQ_RescueMissionB_Title>Talk with prisoner</LoGiQ_RescueMissionB_Title>

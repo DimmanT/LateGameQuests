@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestEditor_Library.DialogManagerDef>
+    <defName>LoGiQ_FA_Engineer_Dialog</defName>
+    <trees>
+      <li>
+        <tree>LoGiQ_FA_Engineer_Tree</tree>
+        <conditions />
+      </li>
+    </trees>
+    <iconColor>RGBA(0.700, 0.460, 0.100, 1.000)</iconColor>
+    <!-- <tags> -->
+      <!-- <li>mytesttag</li> -->
+    <!-- </tags> -->
+  </QuestEditor_Library.DialogManagerDef>
+</Defs>

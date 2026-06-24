@@ -17,7 +17,6 @@
         <innerThings>
           <li>
             <chance>1</chance>
-            <message>A prisoner is freed</message>
             <pawnDatas>
               <li>
                 <dataName>Prisoner</dataName>

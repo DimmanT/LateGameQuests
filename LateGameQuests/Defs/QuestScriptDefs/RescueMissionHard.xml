@@ -19,9 +19,20 @@
 		<li Class="QuestNode_GeneratePawnRandDevelopmentStage">
           <storeAs>joiner</storeAs>
           <kindDef>LoGiQ_Prisoner</kindDef>
-          <childChance>0.2</childChance>
-          <adultChance>0.8</adultChance>
+          <childChance>0.0</childChance>
+          <adultChance>1.0</adultChance>
 		  <faction>$askerFaction</faction>
+        </li>
+		<li Class="LoGiQ.QuestNodes.QuestNode_AddDialog">
+          <pawn>$joiner</pawn>
+          <dialogManager>RescueMissionSimple</dialogManager>
+        </li>
+		<li Class="LoGiQ.QuestNodes.QuestNode_MakeCustomLord">
+          <!-- <pawns><li>$joiner</li></pawns> -->
+		  <pawn>$joiner</pawn>
+		  <inSignal>joiner.Spawned</inSignal>
+		  <!-- <duty>PrisonerEscape</duty> -->
+		  <duty>ExitMapBestAndDefendSelf</duty>
         </li>
 		<!-- . . . . . . . . . . -->
 		<!-- . . . Get enemy . . . -->

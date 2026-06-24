@@ -30,6 +30,7 @@
             <faction>MapFaction</faction>
             <duty>WanderClose</duty>
             <spawnType>MapGeneration</spawnType>
+			<dialogManager>LoGiQ_FA_Engineer_Dialog</dialogManager>
           </li>
         </value>
       </li>

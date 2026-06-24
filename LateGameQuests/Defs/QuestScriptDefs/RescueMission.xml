@@ -4,9 +4,6 @@
     <defName>LoGiQ_RescueMission</defName>
     <root Class="QuestNode_Sequence">
       <nodes>
-	  	<li Class="QuestNode_Message">
-          <text>points $points</text>
-        </li>
 		<!-- . . . . . . Get asker  . . . . . . -->
 	    <li Class="LoGiQ.QuestNodes.QuestNode_GetFactionAdv">
           <storeAs>askerFaction</storeAs>

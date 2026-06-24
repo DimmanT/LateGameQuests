@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+<LoGiQ_FA_Engineer_Title_ReportKey>Попытаться вырубить</LoGiQ_FA_Engineer_Title_ReportKey>
+<LoGiQ_FA_Engineer_Title>Попытка вырубить</LoGiQ_FA_Engineer_Title>
+
+<LoGiQ_FA_Engineer_Intro>{Interviewee_nameDef} хватает инженера, {Interviewee_pronoun} может поробовать лишить {Interviewer_nameDef} возможности двигаться. Вероятность успеха зависит от навыков ближнего боя {Interviewee_nameDef}.</LoGiQ_FA_Engineer_Intro>
+<LoGiQ_FA_Engineer_LetGo>Отпустить</LoGiQ_FA_Engineer_LetGo>
+<LoGiQ_FA_Engineer_KnockOut>Вырубить</LoGiQ_FA_Engineer_KnockOut>
+
+</LanguageData>
