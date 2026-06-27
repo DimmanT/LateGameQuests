@@ -103,7 +103,7 @@
                 <count>1</count>
                 <faction>OutlanderCivil</faction>
                 <dialogManager>RescueMissionSimple</dialogManager>
-                <duty>PrisonerEscape</duty>
+                <duty>ExitMapBestAndDefendSelf</duty>
                 <spawnType>MapGeneration</spawnType>
 			  </li>
             </pawnDatas>

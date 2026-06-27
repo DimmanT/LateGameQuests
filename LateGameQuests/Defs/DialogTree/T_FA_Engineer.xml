@@ -35,7 +35,10 @@
                         <li>Interviewer</li>
                       </targetsText>
                       <hediff>Anesthetic</hediff>
-                      <severity>0.5</severity>
+                      <severity>0.95</severity>
+                    </li>
+					<li Class="QuestEditor_Library.CQFAction_Message">
+                      <message>Successfull move! Worker is knocked out!</message>
                     </li>
                   </actions>
                   <conditions>
@@ -43,7 +46,7 @@
                       <failReason></failReason>
                       <targetText>Interviewee</targetText>
                       <skill>Melee</skill>
-                      <checkModifier>4</checkModifier>
+                      <checkModifier>6</checkModifier>
                     </li>
                   </conditions>
                 </li>

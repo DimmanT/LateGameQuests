@@ -163,13 +163,22 @@
             </nodes>
           </node>
         </li>
+		<!-- FINISH SUCCESS if pawn left map -->
         <li Class="QuestNode_End">
           <inSignal>joiner.LeftMap</inSignal>
 		  <sendStandardLetter>true</sendStandardLetter>
           <outcome>Success</outcome>
         </li>
+		<!-- FINISH FAIL if pawn killed -->
 	    <li Class="QuestNode_End">
           <inSignal>joiner.Killed</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Fail</outcome>
+        </li>
+		<!-- FINISH FAIL if pawn not left, but all colonist left map and it is destroyed-->
+		<!-- todo: letters for clear quest behavior -->
+		<li Class="QuestNode_End">
+          <inSignal>site.Destroyed</inSignal>
 		  <sendStandardLetter>true</sendStandardLetter>
           <outcome>Fail</outcome>
         </li>

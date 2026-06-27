@@ -139,7 +139,7 @@
         <value>
           <li>
             <dataName>WrongPrisonersA</dataName>
-            <kind>Villager</kind>
+            <kind>Slave</kind>
             <enableLord>true</enableLord>
             <count>2</count>
             <faction>RandomNeutral</faction>

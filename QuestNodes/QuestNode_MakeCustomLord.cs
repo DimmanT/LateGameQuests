@@ -73,7 +73,7 @@ namespace LoGiQ.QuestNodes
         {
             base.ExposeData();
             Scribe_Values.Look(ref inSignal, "inSignal");
-            Scribe_Values.Look(ref duty, "duty");
+            Scribe_Defs.Look(ref duty, "duty");
             Scribe_Collections.Look(ref pawns, "pawns", LookMode.Reference);
         }
     }
