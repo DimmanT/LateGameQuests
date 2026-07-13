@@ -143,7 +143,7 @@
             <enableLord>true</enableLord>
             <count>2</count>
             <faction>RandomNeutral</faction>
-            <duty>PrisonerEscape</duty>
+            <duty>ExitMapBestAndDefendSelf</duty>
             <spawnType>MapGeneration</spawnType>
             <hediffs>
               <li>

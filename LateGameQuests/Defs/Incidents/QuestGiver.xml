@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef Name="LoGiQ_QuestGiver">
+    <category>GiveQuest</category>
+	<!-- <category>Misc</category> -->
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+	<defName>LoGiQ_QuestGiver</defName>
+    <workerClass>LoGiQ.Events.IncidentWorker_QuestGiver</workerClass>
+    <letterDef>NewQuest</letterDef>
+	<letterLabel>Quest available</letterLabel>
+    <baseChance>2</baseChance>
+    <canOccurOnAllPlanetLayers>true</canOccurOnAllPlanetLayers> <!-- Quests check if they can run on a layer. -->
+  </IncidentDef>
+
+</Defs>

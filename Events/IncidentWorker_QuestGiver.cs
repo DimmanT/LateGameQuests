@@ -9,7 +9,7 @@ using Verse;
 
 namespace LoGiQ.Events
 {
-    public class IncidentWorker_QuestGiver : IncidentWorker//IncidentWorker_GiveQuest
+    public class IncidentWorker_QuestGiver : IncidentWorker
     {
         static List<QuestScriptDef> LoGiQ_Quests;
         static float minPointsOverAll = 0;
@@ -23,7 +23,7 @@ namespace LoGiQ.Events
                 var rate = Math.Min(5, Mod.Settings.ChoosenRate);
                     rate = Math.Max(0, rate);
 
-                Log.Message($"Chance is {chance}->{chance * MULT[rate]}");
+                //Log.Message($"Chance is {chance}->{chance * MULT[rate]}");
                 return chance * MULT[rate];
             }
         }
@@ -37,27 +37,27 @@ namespace LoGiQ.Events
             if (LoGiQ_Quests.NullOrEmpty())
                 RecacheLoGiQQuests();
 
-            Log.Message($"CanFireNowSub points {parms.points}/{minPointsOverAll}");
+            //Log.Message($"CanFireNowSub points {parms.points}/{minPointsOverAll}");
             if (parms.points < minPointsOverAll)
                 return false;
 
             var ok =  PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonists_NoSuspended.Any();
 
-            Log.Message($"CanFireNowSub {ok}");
+            //Log.Message($"CanFireNowSub {ok}");
 
             return ok;
         }
 
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
-            Log.Message($"EXECUTE {parms.points}.");
+            //Log.Message($"EXECUTE {parms.points}.");
             QuestScriptDef questScriptDef = ChooseLoGiQRandomQuest(parms.points, parms.target);
             if (questScriptDef == null)
             {
-                Log.Message("No quest to run now.");
+                //Log.Message("No quest to run now.");
                 return false;
             }
-            Log.Message($"quest is {questScriptDef.defName}");
+            //Log.Message($"quest is {questScriptDef.defName}");
             parms.questScriptDef = questScriptDef;
             GiveQuest(parms, questScriptDef);
             return true;
@@ -100,7 +100,7 @@ namespace LoGiQ.Events
         static void RecacheLoGiQQuests()
         {
             LoGiQ_Quests = new List<QuestScriptDef>();
-            var collection = DefDatabase<QuestScriptDef>.AllDefs.Where((QuestScriptDef x) => x.defName.StartsWith("LoGiQ"));
+            var collection = DefDatabase<QuestScriptDef>.AllDefs.Where((QuestScriptDef x) => x.decreeTags!=null && x.decreeTags.Contains("LoGiQ_Random"));
             LoGiQ_Quests.AddRange(collection);
 
             //... find minimal required points ...

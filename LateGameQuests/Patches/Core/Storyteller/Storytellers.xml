@@ -7,6 +7,7 @@
         <match Class="PatchOperationSequence">
             <success>Always</success>
 			<operations>
+			<!--
 			    <li Class="PatchOperationReplace">
 					<xpath>Defs/IncidentDef[workerClass = "IncidentWorker_GiveQuest"]/baseChance</xpath>
 					<value>
@@ -50,6 +51,7 @@
 						<minSpacingDays>0.2</minSpacingDays>
 					</value> 
 				</li>
+			-->
 			</operations>
 		</match>
 	</Operation>

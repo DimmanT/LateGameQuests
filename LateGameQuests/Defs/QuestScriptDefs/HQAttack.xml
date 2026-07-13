@@ -128,7 +128,9 @@
 	  </nodes>
     </root>
 	<rootSelectionWeight>1.25</rootSelectionWeight>
-    <randomlySelectable>True</randomlySelectable>
+    <randomlySelectable>False</randomlySelectable>
+	<decreeTags><li>LoGiQ_Random</li></decreeTags>
+	<decreeSelectionWeight>0</decreeSelectionWeight>
     <rootMinPoints>1800</rootMinPoints>
     <rootIncreasesPopulation>False</rootIncreasesPopulation>
     <minRefireDays>15</minRefireDays>

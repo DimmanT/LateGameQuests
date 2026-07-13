@@ -369,7 +369,9 @@
       </nodes>
     </root>
 	<rootSelectionWeight>1.25</rootSelectionWeight>
-    <randomlySelectable>True</randomlySelectable>
+    <randomlySelectable>False</randomlySelectable>
+	<decreeTags><li>LoGiQ_Random</li></decreeTags>
+	<decreeSelectionWeight>0</decreeSelectionWeight>
     <rootMinPoints>2000</rootMinPoints>
 	<minRefireDays>15</minRefireDays>
 	<rootEarliestDay>1</rootEarliestDay>
@@ -404,7 +406,7 @@
     <nameMustBeUnique>False</nameMustBeUnique>
     <defaultChallengeRating>2</defaultChallengeRating>
     <defaultHidden>False</defaultHidden>
-    <isRootSpecial>False</isRootSpecial>
+    <isRootSpecial>True</isRootSpecial>
     <canGiveRoyalFavor>False</canGiveRoyalFavor>
     <questAvailableLetterTextIsDescription>False</questAvailableLetterTextIsDescription>
     <hideInvolvedFactionsInfo>False</hideInvolvedFactionsInfo>
