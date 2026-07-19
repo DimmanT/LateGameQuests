@@ -2,5 +2,10 @@
 <LanguageData>
 
   <LoGiQSettings_RateButtonText>Как часто выдаются квесты:</LoGiQSettings_RateButtonText>
+  <LoGiQ_VeryRarely>Очень редко</LoGiQ_VeryRarely>
+  <LoGiQ_Rarely>Редко</LoGiQ_Rarely>
+  <LoGiQ_Normal>Обычно</LoGiQ_Normal>
+  <LoGiQ_Often>Часто</LoGiQ_Often>
+  <LoGiQ_VeryOften>Очень часто</LoGiQ_VeryOften>
   
 </LanguageData> 

@@ -23,7 +23,7 @@
 <LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>Станция добычи искапаемых была разрушена. Задание [resolvedQuestName] провалено.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.Letter-0.label.slateRef>Время организовать оборону.</LoGiQ_DefendMiningStation.root.nodes.Letter-0.label.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.Letter-0.text.slateRef>Ваш отряд прибыл к автономной добывающей станции. Время организовать её оборону. Не дайте завхатчикам уничтожить терминал, отсек для вывода руды или транспортную капсулу.\n\nКак только машина закончит добычу, вам необходимо будет загрузить руду в транспортную капсулу.</LoGiQ_DefendMiningStation.root.nodes.Letter-0.text.slateRef>
-<LoGiQ_DefendMiningStation.root.nodes.ProgressComplex.progressMessage.slateRef>идёт процесс добычи</LoGiQ_DefendMiningStation.root.nodes.ProgressComplex.progressMessage.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.ProgressComplex.progressMessage.slateRef>Идёт процесс добычи</LoGiQ_DefendMiningStation.root.nodes.ProgressComplex.progressMessage.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.OverdrivedForTime.node.nodes.Letter.label.slateRef>Перегрузка прошла успешно!</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForTime.node.nodes.Letter.label.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.OverdrivedForTime.node.nodes.Letter.text.slateRef>Время добычи уменьшено</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForTime.node.nodes.Letter.text.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.OverdrivedFailed.node.nodes.Letter.label.slateRef>Перегрузка провалена!</LoGiQ_DefendMiningStation.root.nodes.OverdrivedFailed.node.nodes.Letter.label.slateRef>

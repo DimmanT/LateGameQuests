@@ -16,7 +16,7 @@ namespace LoGiQ
         private string ChoosenRateStr;
         public void DoSettingsWindowContents(Rect inRect)
         {
-            var NAMES = new List<string> { "Never".Translate(), "Very rarely".Translate(), "Rarely".Translate(), "Normal".Translate(), "Often".Translate(), "Very often".Translate() };
+            var NAMES = new List<string> { "Never".Translate(), "LoGiQ_VeryRarely".Translate(), "LoGiQ_Rarely".Translate(), "LoGiQ_Normal".Translate(), "LoGiQ_Often".Translate(), "LoGiQ_VeryOften".Translate() };
             Rect viewRect = new Rect(0,0,inRect.width - 16, viewHeight);
             Widgets.BeginScrollView(inRect, ref buttonPosition, viewRect);
 

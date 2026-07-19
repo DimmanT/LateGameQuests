@@ -112,6 +112,10 @@
             </nodes>
           </node>
         </li>
+		<li Class="QuestNode_Signal">
+          <inSignal>site.MapGenerated</inSignal>
+		  <outSignals><li>InitCQF</li></outSignals>
+		</li>
 		<li Class="QuestNode_Letter">
 			<inSignal>site.MapGenerated</inSignal>
 			<label TKey="LetterLabelJoin">Reasearchers from [askerFaction_name] joining to you.</label>
@@ -178,6 +182,9 @@
 			<progressMax>$RequiredProgress</progressMax>
 			<progressMessage TKey="ProgressMessage">research progress</progressMessage>
 			<outSignalComplete>FinishResearch</outSignalComplete>
+			<addInfoToInspectStringOf>
+		      <li>CampResearchTable</li>
+		    </addInfoToInspectStringOf>
 		</li>
 		<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
 		<!-- . . . END OF QUEST  . . . . . . . . . . . . . . -->

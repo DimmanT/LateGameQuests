@@ -44,6 +44,7 @@ namespace LoGiQ.QuestNodes
                 Find.SignalManager.SendSignal(new Signal(outSignalComplete, new SignalArgs()));
             }
         }
+
         public override void ExposeData()
         {
             base.ExposeData();
@@ -68,6 +69,8 @@ namespace LoGiQ.QuestNodes
         public string message;
         public bool   inverse = false;
         public string progressName;
+        public List<string> inspectTargets; // inspect text will be inserted in things marked with 'targetName'='inspectTarget' in CompQuestInspectTarget
+        private List<int> cachedInspectTargetsIDs;
 
         public override void Notify_QuestSignalReceived(Signal signal)
         {
@@ -99,6 +102,33 @@ namespace LoGiQ.QuestNodes
             if (complete) Complete();
 
         }
+        public override string ExtraInspectString(ISelectable target)
+        {
+            if (inspectTargets.NullOrEmpty())
+                return "";
+            if (target is QuestEditor_Library.InteractableThing)
+            {
+                var thing = (QuestEditor_Library.InteractableThing)target;
+                if (cachedInspectTargetsIDs.NullOrEmpty())
+                {
+                    cachedInspectTargetsIDs = new List<int>();
+                    Dictionary<string, TargetInfo> targets = new Dictionary<string, TargetInfo>();
+                    Dictionary<string, TargetInfo> targets2 = QuestEditor_Library.GameTools.GetTargets(targets, quest, inspectTargets);
+                    Log.Message($"inTargets: {inspectTargets}, outTargetsSize={targets2.Count},{targets.Count}");
+                    foreach (var t in targets2)
+                        cachedInspectTargetsIDs.Add(t.Value.Thing.thingIDNumber);
+                }
+
+                Log.Message($"cachedInspectTargetsIDs: {cachedInspectTargetsIDs}. thingID={thing.thingIDNumber}");
+
+                if (cachedInspectTargetsIDs.Contains(thing.thingIDNumber))
+                    return message + $" {progressCur} / {progressMax}\n";
+            }
+            //maybe if is site too
+
+            return "";
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();
@@ -108,6 +138,7 @@ namespace LoGiQ.QuestNodes
             Scribe_Values.Look(ref message, "message");
             Scribe_Values.Look(ref inverse, "inverse");
             Scribe_Values.Look(ref progressName, "progressName");
+            Scribe_Collections.Look(ref inspectTargets, "inspectTargets");
         }
     }
 

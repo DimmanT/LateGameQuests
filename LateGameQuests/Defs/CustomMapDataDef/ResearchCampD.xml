@@ -27,6 +27,22 @@
         <faction>PlayerColony</faction>
         <position>(9,0,15)</position>
 		<operationDefs><li>LoGiQ_ResearchCampBase_RBench</li></operationDefs>
+		<comps>
+          <li>
+            <compName>RegisterInDB</compName>
+            <mode>Signal</mode>
+		    <signal>InitCQF</signal>
+            <actions>
+              <li Class="QuestEditor_Library.CQFAction_RecordToDatabase">
+                <targetsText>
+                  <li>CustomThing</li>
+                </targetsText>
+                <recordKey>CampResearchTable</recordKey>
+                <recordToQuestBase>true</recordToQuestBase>
+              </li>
+            </actions>
+          </li>
+        </comps>
       </li>
       <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
         <def>LoGiQ_InteractableConsole</def>

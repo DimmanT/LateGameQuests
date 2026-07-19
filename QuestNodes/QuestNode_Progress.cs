@@ -79,6 +79,9 @@ namespace LoGiQ.QuestNodes
 		[NoTranslate]
 		public SlateRef<string> progressName;
 
+		[NoTranslate]
+		public SlateRef<IEnumerable<string>> addInfoToInspectStringOf;
+
 		public SlateRef<float> progressMax;
 		public SlateRef<float> progressMin;
 
@@ -137,6 +140,8 @@ namespace LoGiQ.QuestNodes
 				defProgressMax = 100;
 			if (!progressMessage.TryGetValue(slate, out string defMessage))
 				defMessage = "";
+			if (!addInfoToInspectStringOf.TryGetValue(slate, out IEnumerable<string> defInspectTarget))
+				defInspectTarget = new List<string>();
 
 			string defProgressName="";
 			progressName.TryGetValue(slate, out defProgressName);
@@ -146,6 +151,8 @@ namespace LoGiQ.QuestNodes
 			questPart.message     = defMessage;
 			questPart.inverse     = defProgressCur > defProgressMax;
 			questPart.progressName = defProgressName;
+			if (!defInspectTarget.EnumerableNullOrEmpty())
+                questPart.inspectTargets = new List<string>(defInspectTarget);
 
 			QuestGen.quest.AddPart(questPart);
 		}
@@ -190,6 +197,7 @@ namespace LoGiQ.QuestNodes
 			float defProgressMax = 100;
 			int defMaxReward   = 1000;
 			string defProgressName = "";
+			string defInspectTarget = "";
 			MapParent defSite=null;
 
 

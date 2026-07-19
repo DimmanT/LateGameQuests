@@ -2,5 +2,10 @@
 <LanguageData>
 
   <LoGiQSettings_RateButtonText>How often quests occure:</LoGiQSettings_RateButtonText>
+  <LoGiQ_VeryRarely>Very rarely</LoGiQ_VeryRarely>
+  <LoGiQ_Rarely>Rarely</LoGiQ_Rarely>
+  <LoGiQ_Normal>Normal</LoGiQ_Normal>
+  <LoGiQ_Often>Often</LoGiQ_Often>
+  <LoGiQ_VeryOften>Very often</LoGiQ_VeryOften>
   
 </LanguageData> 

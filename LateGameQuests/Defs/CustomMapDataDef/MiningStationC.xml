@@ -50,6 +50,20 @@
         <faction>PlayerColony</faction>
         <position>(5,0,13)</position>
 		<comps>
+		  <li>
+            <compName>RegisterInDB</compName>
+            <mode>Signal</mode>
+		    <signal>InitCQF</signal>
+            <actions>
+              <li Class="QuestEditor_Library.CQFAction_RecordToDatabase">
+                <targetsText>
+                  <li>CustomThing</li>
+                </targetsText>
+                <recordKey>MiningTerminal</recordKey>
+                <recordToQuestBase>true</recordToQuestBase>
+              </li>
+            </actions>
+          </li>
           <li>
             <compName>MiningTimer</compName>
             <mode>Tick</mode>

@@ -14,6 +14,20 @@
         <faction>PlayerColony</faction>
         <comps>
           <li>
+            <compName>RegisterInDB</compName>
+            <mode>Signal</mode>
+		    <signal>InitCQF</signal>
+            <actions>
+              <li Class="QuestEditor_Library.CQFAction_RecordToDatabase">
+                <targetsText>
+                  <li>CustomThing</li>
+                </targetsText>
+                <recordKey>MiningTerminal</recordKey>
+                <recordToQuestBase>true</recordToQuestBase>
+              </li>
+            </actions>
+          </li>
+		  <li>
             <compName>MiningTimer</compName>
             <mode>Tick</mode>
             <tick>1200</tick>
@@ -72,9 +86,6 @@
                 <recordKey>MiningDrainTarget</recordKey>
                 <recordToQuestBase>true</recordToQuestBase>
               </li>
-			  <!-- <li Class="QuestEditor_Library.CQFAction_Message"> -->
-                <!-- <message>registered MiningDrainTarget</message> -->
-              <!-- </li> -->
             </actions>
           </li>
 		  <li>
