@@ -9,6 +9,36 @@
     <commonality>1</commonality>
     <faction>MapFaction</faction>
     <customThings>
+	  <li Class="QuestEditor_Library.CustomThingData_CustomTrap">
+        <def>QE_TriggerTrap</def>
+        <position>(14,0,21)</position>
+        <trapComps>
+          <li>
+            <mode>Tick</mode>
+            <triggerWhenDamaged>false</triggerWhenDamaged>
+            <tick>75</tick>
+            <actions>
+              <li Class="QuestEditor_Library.CQFAction_Condition">
+                <actions>
+                  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+                    <signal>PlayerInZone</signal>
+                  </li>
+                </actions>
+                <conditions>
+                  <li Class="LoGiQ.CQFConditions.CQFCondition_ColonistsInRadius">
+                    <failReason></failReason>
+                    <targetText>CustomThing</targetText>
+                    <radius>12</radius>
+                    <colonistCount>0</colonistCount>
+                    <needToBeGreater>true</needToBeGreater>
+                  </li>
+                </conditions>
+              </li>
+            </actions>
+          </li>
+        </trapComps>
+        <trapName>DefendPoint</trapName>
+      </li>
       <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
         <def>LoGiQ_InteractableConsole</def>
         <rotation>2</rotation>
@@ -53,6 +83,7 @@
             <dataName>TrenchTroopsA</dataName>
             <kind>Mercenary_Elite</kind>
             <enableLord>true</enableLord>
+			<lordDataName>agressivedefense</lordDataName>
             <count>1</count>
             <faction>MapFaction</faction>
             <duty>QE_Duty_Waiter</duty>
@@ -68,6 +99,7 @@
             <dataName>TrenchTroopsB</dataName>
             <kind>Mercenary_Elite_Acidifier</kind>
             <enableLord>true</enableLord>
+			<lordDataName>agressivedefense</lordDataName>
             <count>1</count>
             <faction>MapFaction</faction>
             <duty>QE_Duty_Waiter</duty>
@@ -111,6 +143,7 @@
             <dataName>Troops</dataName>
             <kind>Mercenary_Elite</kind>
             <enableLord>true</enableLord>
+			<lordDataName>agressivedefense</lordDataName>
             <count>4~5</count>
             <faction>MapFaction</faction>
             <duty>Defend</duty>
@@ -816,5 +849,16 @@
     <tags>
       <li>LoGiQ_MilitaryBaseRoot</li>
     </tags>
+    <lordDatas>
+      <li>
+        <name>agressivedefense</name>
+        <lordJobData Class="QuestEditor_Library.LordJobData">
+          <lordJob>QuestEditor_Library.LordJob_ComplexCustom</lordJob>
+          <dutyMap>LoGiQ_AggressiveDefense</dutyMap>
+          <dutyMapStartNodeId>DefendNode</dutyMapStartNodeId>
+        </lordJobData>
+        <faction>MapFaction</faction>
+      </li>
+    </lordDatas>
   </QuestEditor_Library.CustomMapDataDef>
 </Defs>

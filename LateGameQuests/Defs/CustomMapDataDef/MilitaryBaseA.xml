@@ -10,6 +10,36 @@
     <commonality>1</commonality>
     <faction>MapFaction</faction>
     <customThings>
+	  <li Class="QuestEditor_Library.CustomThingData_CustomTrap">
+        <def>QE_TriggerTrap</def>
+        <position>(11,0,16)</position>
+        <trapComps>
+          <li>
+            <mode>Tick</mode>
+            <triggerWhenDamaged>false</triggerWhenDamaged>
+            <tick>75</tick>
+            <actions>
+              <li Class="QuestEditor_Library.CQFAction_Condition">
+                <actions>
+                  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+                    <signal>PlayerInZone</signal>
+                  </li>
+                </actions>
+                <conditions>
+                  <li Class="LoGiQ.CQFConditions.CQFCondition_ColonistsInRadius">
+                    <failReason></failReason>
+                    <targetText>CustomThing</targetText>
+                    <radius>12</radius>
+                    <colonistCount>0</colonistCount>
+                    <needToBeGreater>true</needToBeGreater>
+                  </li>
+                </conditions>
+              </li>
+            </actions>
+          </li>
+        </trapComps>
+        <trapName>DefendPoint</trapName>
+      </li>
       <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
         <def>LoGiQ_InteractableConsole</def>
         <rotation>2</rotation>
@@ -59,12 +89,13 @@
         <key>(10, 0, 16)</key>
         <value>
           <li>
-            <dataName>Elite</dataName>
+            <dataName>EliteA</dataName>
             <kind>Mercenary_Elite</kind>
             <count>4</count>
             <faction>MapFaction</faction>
             <spawnType>MapGeneration</spawnType>
 			<enableLord>true</enableLord>
+			<lordDataName>agressivedefense</lordDataName>
           </li>
         </value>
       </li>
@@ -72,13 +103,14 @@
         <key>(10, 0, 6)</key>
         <value>
           <li>
-            <dataName>Elite</dataName>
+            <dataName>EliteB</dataName>
             <kind>Mercenary_Elite</kind>
             <count>4</count>
             <faction>MapFaction</faction>
             <spawnType>MapGeneration</spawnType>
 			<enableLord>true</enableLord>
 			<duty>Defend</duty>
+			<lordDataName>agressivedefense</lordDataName>
           </li>
         </value>
       </li>
@@ -1038,12 +1070,16 @@
 		</replaceDataDefNames>
 	  </li>
     </customSteps>
-    <disgenerate>
-      <li>(0, 0, 31)</li>
-      <li>(1, 0, 31)</li>
-      <li>(0, 0, 28)</li>
-      <li>(0, 0, 29)</li>
-      <li>(0, 0, 30)</li>
-    </disgenerate>
+	<lordDatas>
+      <li>
+        <name>agressivedefense</name>
+        <lordJobData Class="QuestEditor_Library.LordJobData">
+          <lordJob>QuestEditor_Library.LordJob_ComplexCustom</lordJob>
+          <dutyMap>LoGiQ_AggressiveDefense</dutyMap>
+          <dutyMapStartNodeId>DefendNode</dutyMapStartNodeId>
+        </lordJobData>
+        <faction>MapFaction</faction>
+      </li>
+    </lordDatas>
   </QuestEditor_Library.CustomMapDataDef>
 </Defs>

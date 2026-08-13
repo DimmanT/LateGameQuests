@@ -9,6 +9,36 @@
     <commonality>1</commonality>
     <faction>MapFaction</faction>
     <customThings>
+	  <li Class="QuestEditor_Library.CustomThingData_CustomTrap">
+        <def>QE_TriggerTrap</def>
+        <position>(11,0,16)</position>
+        <trapComps>
+          <li>
+            <mode>Tick</mode>
+            <triggerWhenDamaged>false</triggerWhenDamaged>
+            <tick>75</tick>
+            <actions>
+              <li Class="QuestEditor_Library.CQFAction_Condition">
+                <actions>
+                  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+                    <signal>PlayerInZone</signal>
+                  </li>
+                </actions>
+                <conditions>
+                  <li Class="LoGiQ.CQFConditions.CQFCondition_ColonistsInRadius">
+                    <failReason></failReason>
+                    <targetText>CustomThing</targetText>
+                    <radius>18</radius>
+                    <colonistCount>0</colonistCount>
+                    <needToBeGreater>true</needToBeGreater>
+                  </li>
+                </conditions>
+              </li>
+            </actions>
+          </li>
+        </trapComps>
+        <trapName>DefendPoint</trapName>
+      </li>
       <li Class="QuestEditor_Library.CustomThingData_CustomMapEntrance">
         <def>QE_SubMap_StoneBurrow</def>
         <customName>Mine entrance</customName>
@@ -134,6 +164,7 @@
             <dataName>Troops</dataName>
             <kind>Mercenary_Elite_Acidifier</kind>
             <enableLord>true</enableLord>
+			<lordDataName>agressivedefense</lordDataName>
             <count>4</count>
             <faction>MapFaction</faction>
             <duty>Defend</duty>
@@ -1234,5 +1265,16 @@
     <tags>
       <li>LoGiQ_SlaveTradersBastionRoot</li>
     </tags>
+	 <lordDatas>
+      <li>
+        <name>agressivedefense</name>
+        <lordJobData Class="QuestEditor_Library.LordJobData">
+          <lordJob>QuestEditor_Library.LordJob_ComplexCustom</lordJob>
+          <dutyMap>LoGiQ_AggressiveDefense</dutyMap>
+          <dutyMapStartNodeId>DefendNode</dutyMapStartNodeId>
+        </lordJobData>
+        <faction>MapFaction</faction>
+      </li>
+    </lordDatas>
   </QuestEditor_Library.CustomMapDataDef>
 </Defs>

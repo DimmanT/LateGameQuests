@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestEditor_Library.DutyMapDef>
+    <defName>LoGiQ_AggressiveDefense</defName>
+    <label>AggressiveDefense</label>
+    <startNodeId>DefendNode</startNodeId>
+    <nextNodeIndex>3</nextNodeIndex>
+    <nodes>
+      <li>
+        <nodeId>DefendNode</nodeId>
+        <editorPosition>(10.00, 10.00)</editorPosition>
+        <duty>DefendBase</duty>
+        <radius>5</radius>
+        <wanderRadius>3.25</wanderRadius>
+        <locomotion>Walk</locomotion>
+        <maxDanger>Deadly</maxDanger>
+      </li>
+      <li>
+        <nodeId>SaDNode</nodeId>
+        <editorPosition>(20.00, 10.00)</editorPosition>
+        <duty>HuntEnemiesIndividual</duty>
+        <radius>5</radius>
+        <locomotion>Sprint</locomotion>
+        <maxDanger>Deadly</maxDanger>
+        <enterActions>
+          <li Class="QuestEditor_Library.CQFAction_Message">
+            <message>SADNODE_ACTIVE</message>
+            <type>NegativeEvent</type>
+          </li>
+        </enterActions>
+      </li>
+    </nodes>
+    <transitions>
+      <li>
+        <fromNodeId>DefendNode</fromNodeId>
+        <toNodeId>SaDNode</toNodeId>
+        <triggers>
+          <li Class="QuestEditor_Library.CustomDutyTrigger_Signal">
+            <signal>PlayerInZone</signal>
+            <addQuestPrefix>true</addQuestPrefix>
+          </li>
+        </triggers>
+      </li>
+    </transitions>
+  </QuestEditor_Library.DutyMapDef>
+</Defs>

@@ -9,6 +9,36 @@
     <commonality>1</commonality>
     <faction>MapFaction</faction>
     <customThings>
+	  <li Class="QuestEditor_Library.CustomThingData_CustomTrap">
+        <def>QE_TriggerTrap</def>
+        <position>(13,0,17)</position>
+        <trapComps>
+          <li>
+            <mode>Tick</mode>
+            <triggerWhenDamaged>false</triggerWhenDamaged>
+            <tick>75</tick>
+            <actions>
+              <li Class="QuestEditor_Library.CQFAction_Condition">
+                <actions>
+                  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+                    <signal>PlayerInZone</signal>
+                  </li>
+                </actions>
+                <conditions>
+                  <li Class="LoGiQ.CQFConditions.CQFCondition_ColonistsInRadius">
+                    <failReason></failReason>
+                    <targetText>CustomThing</targetText>
+                    <radius>12</radius>
+                    <colonistCount>0</colonistCount>
+                    <needToBeGreater>true</needToBeGreater>
+                  </li>
+                </conditions>
+              </li>
+            </actions>
+          </li>
+        </trapComps>
+        <trapName>DefendPoint</trapName>
+      </li>
       <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
         <def>LoGiQ_InteractableConsole</def>
         <position>(19,0,12)</position>
@@ -46,6 +76,7 @@
             <dataName>TroopsEdge</dataName>
             <kind>Mercenary_Gunner</kind>
             <enableLord>true</enableLord>
+			<lordDataName>agressivedefense</lordDataName>
             <count>4</count>
             <faction>MapFaction</faction>
             <duty>Defend</duty>
@@ -72,7 +103,8 @@
             <dataName>Troops</dataName>
             <kind>Mercenary_Elite</kind>
             <enableLord>true</enableLord>
-            <count>6~7</count>
+			<lordDataName>agressivedefense</lordDataName>
+            <count>3~7</count>
             <faction>MapFaction</faction>
             <duty>Defend</duty>
             <spawnType>MapGeneration</spawnType>

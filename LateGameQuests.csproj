@@ -70,6 +70,7 @@
     <Compile Include="CQFActions\CQFAction_InteractWith.cs" />
     <Compile Include="CQFActions\CQFAction_Leave.cs" />
     <Compile Include="CQFActions\CQFAction_SpawnSkyfaller.cs" />
+    <Compile Include="CQFConditions\CQFCondition_ColonistsInRadius.cs" />
     <Compile Include="CQFConditions\CQFCondition_PowerOn.cs" />
     <Compile Include="Events\IncidentWorker_QuestGiver.cs" />
     <Compile Include="GameConditions\FactoryAssault.cs" />

@@ -79,6 +79,7 @@
         </li>
 		<li Class="QuestNode_Signal">
           <inSignal>site.MapGenerated</inSignal>
+		  <outSignals><li>InitCQF</li></outSignals>
           <node Class="QuestNode_Sequence">
             <nodes>
 			  <li Class="QuestNode_Letter">

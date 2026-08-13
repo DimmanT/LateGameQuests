@@ -23,4 +23,41 @@
     </thinkNode>
   </DutyDef>
   
+  <DutyDef>
+    <defName>LoGiQ_AggressiveDefense</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>SatisfyBasicNeeds</treeDef>
+        </li> 
+        <li Class="JobGiver_TakeCombatEnhancingDrug">
+          <onlyIfInDanger>true</onlyIfInDanger>
+        </li>
+        <li Class="JobGiver_AIDefendPoint">
+          <targetAcquireRadius>52</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+        </li>
+		<li Class="JobGiver_WanderNearDutyLocation">
+          <wanderRadius>8</wanderRadius>
+          <locomotionUrgencyOutsideRadius>Sprint</locomotionUrgencyOutsideRadius>
+        </li>
+      </subNodes>
+    </thinkNode>
+	<constantThinkNode Class="ThinkNode_ConditionalUnderCombatPressure">
+	  <maxThreatDistance>16</maxThreatDistance>
+	  <minCloseTargets>1</minCloseTargets>
+      <subNodes>
+		<li Class="JobGiver_TakeCombatEnhancingDrug" />
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Abilities_Aggressive</treeDef>
+        </li>
+        <li Class="JobGiver_AIFightEnemies">
+          <targetAcquireRadius>40</targetAcquireRadius>
+          <targetKeepRadius>55</targetKeepRadius>
+        </li>
+        <li Class="JobGiver_AIGotoNearestHostile" />
+      </subNodes>
+    </constantThinkNode>
+  </DutyDef>
+  
 </Defs>
