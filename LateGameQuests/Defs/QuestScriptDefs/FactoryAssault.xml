@@ -166,7 +166,27 @@
 		  <maxReward>5000</maxReward>
 		</li>
 		<!-- . . . . . . . . . . . . . . . . . . . . -->
-		
+		<!-- . . . GOALS . . . . . . . . . . . . . . -->
+		<li Class="LoGiQ.QuestNodes.QuestNode_Goals">
+			<mandatory>
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
+					<label>Defeat factory guards</label>
+					<setSignal>site.AllEnemiesDefeated</setSignal>
+				</li>
+				<li Class="LoGiQ.QuestNodes.GoalProgress">
+					<label>Keep workers and equipment safe</label>
+					<progressName>CommercialValue</progressName>
+				</li>
+			</mandatory>
+			<optional>
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
+					<label>Hack the security terminal</label>
+					<setSignal>SecurityTerminalHacked</setSignal>
+					<initialState>false</initialState>
+				</li>
+			</optional>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . . . . . -->
 		<!-- . . . . . FINISHING . . . . . . . . . . -->
 	    <li Class="QuestNode_LoopCount">
 		  <loopCount>4</loopCount>

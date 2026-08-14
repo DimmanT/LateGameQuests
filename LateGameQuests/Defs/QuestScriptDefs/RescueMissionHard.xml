@@ -152,6 +152,16 @@
           </node>
         </li>
 		<!-- . . . . . . . . . . -->
+		<!-- . . . GOALS . . . . -->
+		<li Class="LoGiQ.QuestNodes.QuestNode_Goals">
+			<mandatory>
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
+					<label>Follow the prisoner to the edge of map</label>
+					<setSignal>joiner.LeftMap</setSignal>
+				</li>
+			</mandatory>
+		</li>
+		<!-- . . . . . . . . . . -->
 		<!-- . . . Ending  . . . -->
 	    <li Class="QuestNode_Signal">
           <inSignal>site.AllEnemiesDefeated</inSignal>

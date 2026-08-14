@@ -38,9 +38,9 @@ namespace LoGiQ.QuestNodes
             var questPart = new QuestPart_Goals();
             QuestGen.quest.AddPart(questPart);
 
-            if (mandatory.TryGetValue(slate, out List<Goal> manList))
+            if (mandatory.TryGetValue(slate, out List<Goal> manList) && manList != null)
                 questPart.SetMandatory(PrependQuestIdToSignals(ref manList));
-            if (optional.TryGetValue(slate, out List<Goal> optList))
+            if (optional.TryGetValue(slate, out List<Goal> optList) && optList !=null)
                 questPart.SetOptional(PrependQuestIdToSignals(ref optList));
         }
 

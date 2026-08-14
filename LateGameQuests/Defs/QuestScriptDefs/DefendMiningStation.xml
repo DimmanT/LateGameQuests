@@ -144,6 +144,7 @@
 		   <progressMin>0</progressMin>
 		   <progressMax>100</progressMax>
 		   <progressMessage>mining in progress</progressMessage>
+		   <progressName>MiningProgress</progressName>
 		   <addInfoToInspectStringOf>
 		     <li>MiningTerminal</li>
 			 <li>MiningDrainTarget</li>
@@ -321,12 +322,13 @@
 				  <messageType>PositiveEvent</messageType>
 				  <text>production ready, load it to trasport pod.</text>
 			  </li>
-			  <li Class="LoGiQ.QuestNodes.QuestNode_Progress">
-			    <inSignal>PartOfGoodsLoaded</inSignal>
-			    <increment>75</increment>
+			  <li Class="LoGiQ.QuestNodes.QuestNode_ProgressComplex">
+			    <inSignals><li>PartOfGoodsLoaded</li></inSignals>
+			    <increments><li>75</li></increments>
 			    <progressMin>0</progressMin>
 			    <progressMax>$GoodsToLoad</progressMax>
 			    <progressMessage>stored</progressMessage>
+				<progressName>StoreProgress</progressName>
 			    <outSignalComplete>GoodsLoadedSuccessfully</outSignalComplete>
 			  </li>
 		    </nodes>
@@ -352,6 +354,24 @@
 		  </node>
 		  <outSignals><li>GoodsLaunchedSuccessfully</li></outSignals>
 		</li>
+		<!-- . . . GOALS . . . . . . . . . . -->
+		<li Class="LoGiQ.QuestNodes.QuestNode_Goals">
+			<mandatory>
+				<li Class="LoGiQ.QuestNodes.GoalProgress">
+					<label>Wait until mining is finished</label>
+					<progressName>MiningProgress</progressName>
+				</li>
+				<li Class="LoGiQ.QuestNodes.GoalProgress">
+					<label>Fill transport pod with ore</label>
+					<progressName>StoreProgress</progressName>
+				</li>
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
+					<label>Launch transport pod with ore </label>
+					<setSignal>GoodsLoadedSuccessfully</setSignal>
+				</li>
+			</mandatory>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . -->
 		<!-- . . . END OF QUEST  . . . . . . -->
 		<li Class="RimWorld.QuestGen.QuestNode_End">
           <inSignal>GoodsLaunchedSuccessfully</inSignal>
