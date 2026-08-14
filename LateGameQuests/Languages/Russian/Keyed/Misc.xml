@@ -8,4 +8,8 @@
   <LoGiQ_Often>Часто</LoGiQ_Often>
   <LoGiQ_VeryOften>Очень часто</LoGiQ_VeryOften>
   
+  <LoGiQ_QuestGoals>Цели задания</LoGiQ_QuestGoals>
+  <LoGiQ_MandatoryGoals>Обязательные</LoGiQ_MandatoryGoals>
+  <LoGiQ_OptionalGoals>Дополнительные</LoGiQ_OptionalGoals>
+  
 </LanguageData> 

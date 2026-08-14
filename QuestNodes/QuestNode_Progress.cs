@@ -197,7 +197,6 @@ namespace LoGiQ.QuestNodes
 			float defProgressMax = 100;
 			int defMaxReward   = 1000;
 			string defProgressName = "";
-			string defInspectTarget = "";
 			MapParent defSite=null;
 
 

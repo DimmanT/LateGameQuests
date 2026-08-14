@@ -8,4 +8,8 @@
   <LoGiQ_Often>Often</LoGiQ_Often>
   <LoGiQ_VeryOften>Very often</LoGiQ_VeryOften>
   
+  <LoGiQ_QuestGoals>Quest goals</LoGiQ_QuestGoals>
+  <LoGiQ_MandatoryGoals>Mandatory</LoGiQ_MandatoryGoals>
+  <LoGiQ_OptionalGoals>Optional</LoGiQ_OptionalGoals>
+  
 </LanguageData> 

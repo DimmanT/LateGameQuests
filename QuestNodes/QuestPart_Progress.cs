@@ -72,10 +72,15 @@ namespace LoGiQ.QuestNodes
         public List<string> inspectTargets; // inspect text will be inserted in things marked with 'targetName'='inspectTarget' in CompQuestInspectTarget
         private List<int> cachedInspectTargetsIDs;
 
+        public float getRelativeProgress()  
+        {
+            if(inverse) 
+                 return progressCur;//todo
+            else return (progressCur / progressMax);
+        }
+
         public override void Notify_QuestSignalReceived(Signal signal)
         {
-            //Log.Message($"FACKN SIGNAL RECEIVED {signal.tag}: {progressCur}/{progressMax}");
-
             if (State != QuestPartState.Enabled)
                 Enable(new SignalArgs());
 

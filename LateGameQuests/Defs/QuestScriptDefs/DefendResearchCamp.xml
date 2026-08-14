@@ -178,6 +178,7 @@
 				<li>4</li>
 				<li>9</li>
 			</increments>
+			<progressName>ResearchProgress</progressName>
 			<progressMin>0</progressMin>
 			<progressMax>$RequiredProgress</progressMax>
 			<progressMessage TKey="ProgressMessage">research progress</progressMessage>
@@ -185,6 +186,34 @@
 			<addInfoToInspectStringOf>
 		      <li>CampResearchTable</li>
 		    </addInfoToInspectStringOf>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+		<!-- . . . GOALS . . . . . . . . . . . . . . . . . . -->
+		<li Class="LoGiQ.QuestNodes.QuestNode_Goals">
+			<mandatory>
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
+					<label>Finish the research</label>
+					<setSignal>FinishResearch</setSignal>
+				</li>
+				<li Class="LoGiQ.QuestNodes.GoalProgress">
+					<label>Research progress</label>
+					<progressName>ResearchProgress</progressName>
+				</li>
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
+					<label>Stay at sector</label>
+					<setSignal>site.MapGenerated</setSignal>
+					<unsetSignal>site.Destroyed</unsetSignal>
+					<initialState>false</initialState>
+				</li>
+			</mandatory>
+			<optional>
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
+					<label>Defeat raiders</label>
+					<setSignal>site.AllEnemiesDefeated</setSignal>
+					<unsetSignal>ReadyForAttack</unsetSignal>
+					<initialState>true</initialState>
+				</li>
+			</optional>
 		</li>
 		<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
 		<!-- . . . END OF QUEST  . . . . . . . . . . . . . . -->

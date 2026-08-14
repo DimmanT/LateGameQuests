@@ -35,9 +35,15 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>Dependencies\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>Dependencies\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="HarmonyMod">
+      <HintPath>Dependencies\HarmonyMod.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>Dependencies\netstandard.dll</HintPath>
@@ -65,6 +71,12 @@
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>Dependencies\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>Dependencies\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>Dependencies\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CQFActions\CQFAction_InteractWith.cs" />
@@ -75,7 +87,9 @@
     <Compile Include="Events\IncidentWorker_QuestGiver.cs" />
     <Compile Include="GameConditions\FactoryAssault.cs" />
     <Compile Include="Jobs\JobGiver_ManTurretsCE.cs" />
+    <Compile Include="Misc\QuestGoalsPanelMaker.cs" />
     <Compile Include="Misc\GenStep_Replacement.cs" />
+    <Compile Include="Misc\HarmonyPatches.cs" />
     <Compile Include="Misc\ModSettings.cs" />
     <Compile Include="Misc\SketchResolver_Room.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +103,7 @@
     <Compile Include="QuestNodes\QuestNode_GenerateSketch.cs" />
     <Compile Include="QuestNodes\QuestNode_GetFactionAdv.cs" />
     <Compile Include="QuestNodes\QuestNode_GetSketchesRequiredResourcesString.cs" />
+    <Compile Include="QuestNodes\QuestNode_Goals.cs" />
     <Compile Include="QuestNodes\QuestNode_MakeCustomLord.cs" />
     <Compile Include="QuestNodes\QuestNode_Progress.cs" />
     <Compile Include="QuestNodes\QuestNode_RaidSite.cs" />
@@ -98,6 +113,7 @@
     <Compile Include="QuestNodes\QuestPart_DoCQFActionAddToContainer.cs" />
     <Compile Include="QuestNodes\QuestPart_DoCQFActionChangeFaction.cs" />
     <Compile Include="QuestNodes\QuestPart_GameConditionRemovable.cs" />
+    <Compile Include="QuestNodes\QuestPart_Goals.cs" />
     <Compile Include="QuestNodes\QuestPart_Progress.cs" />
     <Compile Include="Misc\ThingDefOfLocal.cs" />
     <Compile Include="QuestNodes\QuestPart_SpawnAtAnchor.cs" />
