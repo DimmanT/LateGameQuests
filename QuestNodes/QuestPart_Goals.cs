@@ -16,6 +16,8 @@ namespace LoGiQ.QuestNodes
         public Goal Config => _config;
         protected Goal _config;
 
+        //todo visible(set,get) for BuildVillage quest
+
         protected GoalRuntime() { } //for loading
         protected GoalRuntime(Goal config)
         {

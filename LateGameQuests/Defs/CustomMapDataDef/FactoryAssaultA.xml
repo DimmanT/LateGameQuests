@@ -11,7 +11,7 @@
     <customThings>
 	  <li Class="QuestEditor_Library.CustomThingData_CustomTrap">
         <def>QE_TriggerTrap</def>
-        <position>(42,0,53)</position>
+        <position>(42,0,26)</position>
         <trapComps>
           <li>
             <mode>Tick</mode>
@@ -28,7 +28,7 @@
                   <li Class="LoGiQ.CQFConditions.CQFCondition_ColonistsInRadius">
                     <failReason></failReason>
                     <targetText>CustomThing</targetText>
-                    <radius>14</radius>
+                    <radius>18</radius>
                     <colonistCount>0</colonistCount>
                     <needToBeGreater>true</needToBeGreater>
                   </li>

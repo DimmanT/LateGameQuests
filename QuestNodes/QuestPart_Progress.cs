@@ -11,53 +11,6 @@ using RimWorld.Planet;
 namespace LoGiQ.QuestNodes
 {
     /// <summary>
-    /// \ref QuestNode_Progress
-    /// </summary>
-    class QuestPart_Progress : QuestPart
-    {        
-        public string inSignal;
-        public string outSignalComplete;
-        public int    increment;
-        public int    progressCur;
-        public int    progressMax;
-        public string message;
-
-        public override void Notify_QuestSignalReceived(Signal signal)
-        {
-            if (progressCur >= progressMax)
-                return;
-
-            if (signal.tag != inSignal)
-                return;
-            
-            progressCur += increment;
-
-            Log.Message($"progress {progressCur} / {progressMax}");
-            TaggedString formattedText = message + $" {progressCur} / {progressMax}";
-            if (!formattedText.NullOrEmpty())
-            {
-                Messages.Message(formattedText, LookTargets.Invalid, MessageTypeDefOf.NeutralEvent, quest.hidden ? null : quest, false);
-            }
-
-            if (progressCur >= progressMax && !outSignalComplete.NullOrEmpty())
-            {
-                Find.SignalManager.SendSignal(new Signal(outSignalComplete, new SignalArgs()));
-            }
-        }
-
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_Values.Look(ref inSignal, "inSignal");
-            Scribe_Values.Look(ref outSignalComplete, "outSignalComplete");
-            Scribe_Values.Look(ref increment, "increment");
-            Scribe_Values.Look(ref progressCur, "progressCur");
-            Scribe_Values.Look(ref progressMax, "progressMax");
-            Scribe_Values.Look(ref message, "message");
-        }
-    }
-
-    /// <summary>
     /// \ref QuestNode_ProgressComplex
     /// </summary>
     class QuestPart_ProgressComplex : QuestPartActivable
@@ -65,18 +18,19 @@ namespace LoGiQ.QuestNodes
         //todo disable signal
         public Dictionary<string, float> inSignals; //map {signal -> increment}
         public float  progressCur;
+        public float  progressMin;
         public float  progressMax;
         public string message;
         public bool   inverse = false;
         public string progressName;
-        public List<string> inspectTargets; // inspect text will be inserted in things marked with 'targetName'='inspectTarget' in CompQuestInspectTarget
+        public List<string> inspectTargets; // inspect text will be inserted in things marked with 'targetName'='inspectTarget' in CompQuestInspectTarget (!!! todo remove it, case obsolete)
         private List<int> cachedInspectTargetsIDs;
 
         public float getRelativeProgress()  
         {
-            if(inverse) 
-                 return progressCur;//todo
-            else return (progressCur / progressMax);
+            if(inverse)
+                 return (progressCur - progressMax) / (progressMin - progressMax);
+            else return (progressCur - progressMin) / (progressMax - progressMin);
         }
 
         public override void Notify_QuestSignalReceived(Signal signal)
@@ -139,6 +93,7 @@ namespace LoGiQ.QuestNodes
             base.ExposeData();
             Scribe_Collections.Look(ref inSignals, "inSignals");
             Scribe_Values.Look(ref progressCur, "progressCur");
+            Scribe_Values.Look(ref progressMin, "progressMin");
             Scribe_Values.Look(ref progressMax, "progressMax");
             Scribe_Values.Look(ref message, "message");
             Scribe_Values.Look(ref inverse, "inverse");

@@ -173,9 +173,19 @@
 					<label>Defeat factory guards</label>
 					<setSignal>site.AllEnemiesDefeated</setSignal>
 				</li>
-				<li Class="LoGiQ.QuestNodes.GoalProgress">
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
 					<label>Keep workers and equipment safe</label>
+					<unsetSignal>TooMuchDestruction</unsetSignal>
+					<initialState>true</initialState>
+				</li>
+				<li Class="LoGiQ.QuestNodes.GoalProgress">
+					<label>Commercial value</label>
 					<progressName>CommercialValue</progressName>
+				</li>
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
+					<label>Keep workers and equipment safe</label>
+					<unsetSignal>TooMuchDestruction</unsetSignal>
+					<initialState>true</initialState>
 				</li>
 			</mandatory>
 			<optional>

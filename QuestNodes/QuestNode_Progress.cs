@@ -21,6 +21,9 @@ namespace LoGiQ.QuestNodes
 		[NoTranslate]
 		public SlateRef<string> outSignalComplete;
 
+		[NoTranslate]
+		public SlateRef<string> progressName;
+
 		public SlateRef<string> progressMessage;
 
 		public SlateRef<int> progressMax; ///< default is 100
@@ -35,24 +38,29 @@ namespace LoGiQ.QuestNodes
 		{
 
 			Slate slate = QuestGen.slate;
-			QuestPart_Progress questPart = new QuestPart_Progress();
+			var questPart = new QuestPart_ProgressComplex();
 
-			questPart.outSignalComplete = QuestGenUtility.HardcodedSignalWithQuestID(outSignalComplete.GetValue(slate));
-			questPart.inSignal = QuestGenUtility.HardcodedSignalWithQuestID(inSignal.GetValue(slate));
+			questPart.outSignalsCompleted.Add(QuestGenUtility.HardcodedSignalWithQuestID(outSignalComplete.GetValue(slate)));
 
             if (!progressMin.TryGetValue(slate, out int defProgressCur))
                 defProgressCur = 0;
 			if (!progressMax.TryGetValue(slate, out int defProgressMax))
-				defProgressCur = 100;
+				defProgressMax = 100;
 			if (!increment.TryGetValue(slate, out int defIncrement))
 				defIncrement = 1;
 			if (!progressMessage.TryGetValue(slate, out string defMessage))
 				defMessage = "";
 
-			questPart.increment   = defIncrement;
+			string defProgressName = "";
+			progressName.TryGetValue(slate, out defProgressName);
+
+			questPart.progressMin = defProgressCur;
 			questPart.progressCur = defProgressCur;
 			questPart.progressMax = defProgressMax;
 			questPart.message     = defMessage;
+			questPart.progressName = defProgressName;
+
+			questPart.inSignals.Add(QuestGenUtility.HardcodedSignalWithQuestID(inSignal.GetValue(slate)), defIncrement);
 
 			QuestGen.quest.AddPart(questPart);
 		}
@@ -147,6 +155,7 @@ namespace LoGiQ.QuestNodes
 			progressName.TryGetValue(slate, out defProgressName);
 
 			questPart.progressCur = defProgressCur;
+			questPart.progressMin = defProgressCur;
 			questPart.progressMax = defProgressMax;
 			questPart.message     = defMessage;
 			questPart.inverse     = defProgressCur > defProgressMax;

@@ -10,8 +10,8 @@
         <nodeId>DefendNode</nodeId>
         <editorPosition>(10.00, 10.00)</editorPosition>
         <duty>DefendBase</duty>
-        <radius>5</radius>
-        <wanderRadius>3.25</wanderRadius>
+        <radius>10</radius>
+        <wanderRadius>5.25</wanderRadius>
         <locomotion>Walk</locomotion>
         <maxDanger>Deadly</maxDanger>
       </li>
@@ -19,15 +19,15 @@
         <nodeId>SaDNode</nodeId>
         <editorPosition>(20.00, 10.00)</editorPosition>
         <duty>HuntEnemiesIndividual</duty>
-        <radius>5</radius>
+        <radius>10</radius>
         <locomotion>Sprint</locomotion>
         <maxDanger>Deadly</maxDanger>
-        <enterActions>
-          <li Class="QuestEditor_Library.CQFAction_Message">
-            <message>SADNODE_ACTIVE</message>
-            <type>NegativeEvent</type>
-          </li>
-        </enterActions>
+        <!-- <enterActions> -->
+          <!-- <li Class="QuestEditor_Library.CQFAction_Message"> -->
+            <!-- <message>SADNODE_ACTIVE</message> -->
+            <!-- <type>NegativeEvent</type> -->
+          <!-- </li> -->
+        <!-- </enterActions> -->
       </li>
     </nodes>
     <transitions>

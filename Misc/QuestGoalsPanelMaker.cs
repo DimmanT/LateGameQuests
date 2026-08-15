@@ -38,7 +38,7 @@ namespace LoGiQ
             DrawHeaderL1("LoGiQ_QuestGoals".Translate(), innerRect, ref curY);
             DrawMandatory(goalsPart.getMandatory(), innerRect, ref curY);
             DrawOptional (goalsPart.getOptional (), innerRect, ref curY);
-            boxRect.height = curY + H_MARGIN - boxRect.y;
+            boxRect.height = curY + 2*H_MARGIN - boxRect.y;
             DrawBox(boxRect, H_MARGIN);
             curY += H_MARGIN;
         }

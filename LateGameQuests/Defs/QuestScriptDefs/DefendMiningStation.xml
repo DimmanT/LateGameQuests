@@ -322,9 +322,9 @@
 				  <messageType>PositiveEvent</messageType>
 				  <text>production ready, load it to trasport pod.</text>
 			  </li>
-			  <li Class="LoGiQ.QuestNodes.QuestNode_ProgressComplex">
-			    <inSignals><li>PartOfGoodsLoaded</li></inSignals>
-			    <increments><li>75</li></increments>
+			  <li Class="LoGiQ.QuestNodes.QuestNode_Progress">
+			    <inSignal>PartOfGoodsLoaded</inSignal>
+			    <increment>75</increment>
 			    <progressMin>0</progressMin>
 			    <progressMax>$GoodsToLoad</progressMax>
 			    <progressMessage>stored</progressMessage>
@@ -357,19 +357,31 @@
 		<!-- . . . GOALS . . . . . . . . . . -->
 		<li Class="LoGiQ.QuestNodes.QuestNode_Goals">
 			<mandatory>
-				<li Class="LoGiQ.QuestNodes.GoalProgress">
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
 					<label>Wait until mining is finished</label>
+					<setSignal>ProductionReady</setSignal>
+				</li>
+				<li Class="LoGiQ.QuestNodes.GoalProgress">
+					<label>Mining progress</label>
 					<progressName>MiningProgress</progressName>
 				</li>
-				<li Class="LoGiQ.QuestNodes.GoalProgress">
-					<label>Fill transport pod with ore</label>
-					<progressName>StoreProgress</progressName>
-				</li>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Launch transport pod with ore </label>
+					<label>Fill transport pod with ore</label>
 					<setSignal>GoodsLoadedSuccessfully</setSignal>
 				</li>
+				<li Class="LoGiQ.QuestNodes.GoalProgress">
+					<label>Filling progress</label>
+					<progressName>StoreProgress</progressName>
+				</li>
 			</mandatory>
+			<optional>
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
+					<label>Defeat raiders</label>
+					<setSignal>site.AllEnemiesDefeated</setSignal>
+					<unsetSignal>ReadyForAttack</unsetSignal>
+					<initialState>false</initialState>
+				</li>
+			</optional>
 		</li>
 		<!-- . . . . . . . . . . . . . . . . -->
 		<!-- . . . END OF QUEST  . . . . . . -->

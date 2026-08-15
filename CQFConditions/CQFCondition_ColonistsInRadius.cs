@@ -49,7 +49,7 @@ namespace LoGiQ.CQFConditions
                     if (needToBeGreater && colonistsInRadius > colonistCount)
                         break;
                 }
-                Log.Message($"Checking colonists total={map.PlayerPawnsForStoryteller.Count()} , result= {colonistsInRadius} / {colonistCount}");
+                Log.Message($"Checking colonists total={map.PlayerPawnsForStoryteller.Count()} , result= {colonistsInRadius} / {colonistCount}. Radius={radius}, center={center}.");
                 return needToBeGreater ^ (colonistsInRadius <= colonistCount);
                 //.....................................................................
                 
