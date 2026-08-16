@@ -189,15 +189,15 @@
 		<li Class="LoGiQ.QuestNodes.QuestNode_Goals">
 			<mandatory>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Finish the research</label>
+					<label>LoGiQ_GoalLabel_FinishResearch</label>
 					<setSignal>FinishResearch</setSignal>
 				</li>
 				<li Class="LoGiQ.QuestNodes.GoalProgress">
-					<label>Research progress</label>
+					<label>LoGiQ_GoalLabel_ResearchProgress</label>
 					<progressName>ResearchProgress</progressName>
 				</li>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Stay at sector</label>
+					<label>LoGiQ_GoalLabel_StayAtSector</label>
 					<setSignal>site.MapGenerated</setSignal>
 					<unsetSignal>site.Destroyed</unsetSignal>
 					<initialState>false</initialState>
@@ -205,7 +205,7 @@
 			</mandatory>
 			<optional>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Defeat raiders</label>
+					<label>LoGiQ_GoalLabel_DefeatRaders</label>
 					<setSignal>site.AllEnemiesDefeated</setSignal>
 					<unsetSignal>ReadyForAttack</unsetSignal>
 					<initialState>true</initialState>

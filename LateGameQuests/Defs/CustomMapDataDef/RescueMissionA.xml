@@ -28,7 +28,7 @@
                   <li Class="LoGiQ.CQFConditions.CQFCondition_ColonistsInRadius">
                     <failReason></failReason>
                     <targetText>CustomThing</targetText>
-                    <radius>9</radius>
+                    <radius>12</radius>
                     <colonistCount>0</colonistCount>
                     <needToBeGreater>true</needToBeGreater>
                   </li>

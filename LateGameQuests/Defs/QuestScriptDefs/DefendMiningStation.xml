@@ -120,8 +120,8 @@
 		</li>
 		<li Class="QuestNode_Letter">
 			<inSignal>site.MapGenerated</inSignal>
-			<label TKey="LetterLabelJoin">It is time to organize the defense.</label>
-			<text TKey="LetterTextJoin">Your squad has arrived to autonomous mining station. It is time to organize the defense. Do not let the invaders destroy the mining terminal, drain or trasport pod.\n\nWhen the machine complete mining, load the output into trasnport pod.</text>
+			<label TKey="LetterLabelWelcome">It is time to organize the defense.</label>
+			<text TKey="LetterTextWelcome">Your squad has arrived to autonomous mining station. It is time to organize the defense. Do not let the invaders destroy the mining terminal, drain or trasport pod.\n\nWhen the machine complete mining, load the output into trasnport pod.</text>
 		</li>
 		<!-- . . . . . . . . . . . . . . . . . . . . . . . . . -->
 		<!-- . . . . . . . PROGRESSING . . . . . . . . . . . . -->
@@ -143,7 +143,7 @@
 			</increments>
 		   <progressMin>0</progressMin>
 		   <progressMax>100</progressMax>
-		   <progressMessage>mining in progress</progressMessage>
+		   <progressMessage TKey="MiningProgressMessage">mining in progress</progressMessage>
 		   <progressName>MiningProgress</progressName>
 		   <outSignalComplete>ProductionReady</outSignalComplete>
 	    </li>
@@ -152,9 +152,9 @@
 			<node Class="QuestNode_Sequence">
 			  <nodes>
 			  <li Class="QuestNode_Letter">
-				<label>Overdrive successfull.</label>
+				<label TKey="LetterLabelOverdrivedForTime">Overdrive successfull.</label>
+				<text TKey="LetterTextOverdrivedForTime">Mining time reduced.</text>
 				<letterDef>PositiveEvent</letterDef>
-				<text>Mining time reduced.</text>
 			  </li>
 			  </nodes>
 			</node>
@@ -164,9 +164,9 @@
 			<node Class="QuestNode_Sequence">
 			  <nodes>
 			  <li Class="QuestNode_Letter">
-				<label>Overdrive failed.</label>
+				<label TKey="LetterLabelOverdriveFailed">Overdrive failed.</label>
+				<text TKey="LetterTextOverdriveFailed">Mining will take more time, than expected.</text>
 				<letterDef>NegativeEvent</letterDef>
-				<text>Mining will take more time, than expected.</text>
 			  </li>
 			  </nodes>
 			</node>
@@ -174,8 +174,8 @@
 		<li Class="QuestNode_Letter">
 			<inSignal>ProductionReady</inSignal>
 			<letterDef>PositiveEvent</letterDef>
-			<label TKey="LetterLabelJoin">Mining complete.</label>
-			<text TKey="LetterTextJoin">Open the drain and load the mining output to the trasport pod. When the pod is filled, the contract will be fullfilled and your squad may leave the area.</text>
+			<label TKey="LetterLabelMiningComplete">Mining complete.</label>
+			<text TKey="LetterTextMiningComplete">Open the drain and load the mining output to the trasport pod. When the pod is filled, the contract will be fullfilled and your squad may leave the area.</text>
 		</li>
 		<!-- . . . . . . . . . . . . . . . . . . . . . . . . . -->
 		<!-- . . . . . . . CONFIGURATING RAIDERS . . . . . . . -->
@@ -242,8 +242,8 @@
 		<li Class="RimWorld.QuestGen.QuestNode_Delay">
 		  <inSignalDisable>site.Destroyed</inSignalDisable>
 		  <outSignalComplete>ReadyForAttack2</outSignalComplete>
-		  <expiryInfoPart TKey="InfoPartReadyForAttack">$enemyFaction reinforcements on the way {0}</expiryInfoPart>
-		  <expiryInfoPartTip TKey="InfoPartTipReadyForAttack">$enemyFaction reinforcements on the way {0}</expiryInfoPartTip>
+		  <expiryInfoPart TKey="InfoPartReadyForAttack2">$enemyFaction reinforcements on the way {0}</expiryInfoPart>
+		  <expiryInfoPartTip TKey="InfoPartTipReadyForAttack2">$enemyFaction reinforcements on the way {0}</expiryInfoPartTip>
 		  <delayTicks>$($arriveDeadline + 0.4*$miningTime)</delayTicks>
 		  <isQuestTimeout>false</isQuestTimeout>
 		  <node Class="RimWorld.QuestGen.QuestNode_SubScript">
@@ -252,8 +252,8 @@
 		 	  <points>$points</points>
 		 	  <inSignal>ReadyForAttack2</inSignal>
 		 	  <siteToRaid>$site</siteToRaid>
-		 	  <customLetterLabel TKey="LetterLabelAttack">Another wave of raiders!</customLetterLabel>
-		 	  <customLetterText  TKey="LetterTextAttack">[enemyFaction_pawnsPlural] ready for battle.</customLetterText>
+		 	  <customLetterLabel TKey="LetterLabelAttack2">Another wave of raiders!</customLetterLabel>
+		 	  <customLetterText  TKey="LetterTextAttack2">[enemyFaction_pawnsPlural] ready for battle.</customLetterText>
 		 	  <arrivalMode>EdgeWalkIn</arrivalMode>
 		 	  <canTimeoutOrFlee>true</canTimeoutOrFlee>
 		 	  <inSignalLeave>EndRaid</inSignalLeave>
@@ -303,9 +303,9 @@
 			<node Class="QuestNode_Sequence">
 			  <nodes>
 				<li Class="QuestNode_Letter">
-				  <label>Overdrive successfull.</label>
+				  <label TKey="LetterLabelOverdrivedForProduction">Overdrive successfull.</label>
+				  <text TKey="LetterTextOverdrivedForProduction">Production outcome will be increased. You can keep the excess for yourself.</text>
 				  <letterDef>PositiveEvent</letterDef>
-				  <text>Production outcome will be increased. You can keep the excess for yourself.</text>
 				</li>
 			  </nodes>
 			</node>
@@ -316,14 +316,14 @@
 		    <nodes>
               <li Class="QuestNode_Message">
 				  <messageType>PositiveEvent</messageType>
-				  <text>production ready, load it to trasport pod.</text>
+				  <text TKey="LetterTextProductionReady">production ready, load it to trasport pod.</text>
 			  </li>
 			  <li Class="LoGiQ.QuestNodes.QuestNode_Progress">
 			    <inSignal>PartOfGoodsLoaded</inSignal>
 			    <increment>75</increment>
 			    <progressMin>0</progressMin>
 			    <progressMax>$GoodsToLoad</progressMax>
-			    <progressMessage>stored</progressMessage>
+			    <progressMessage TKey="FillProgressMessage">stored</progressMessage>
 				<progressName>StoreProgress</progressName>
 			    <outSignalComplete>GoodsLoadedSuccessfully</outSignalComplete>
 			  </li>
@@ -354,27 +354,32 @@
 		<li Class="LoGiQ.QuestNodes.QuestNode_Goals">
 			<mandatory>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Wait until mining is finished</label>
+					<label>LoGiQ_GoalLabel_WaitMiningProgress</label>
 					<setSignal>ProductionReady</setSignal>
 				</li>
 				<li Class="LoGiQ.QuestNodes.GoalProgress">
-					<label>Mining progress</label>
+					<label>LoGiQ_GoalLabel_MiningProgress</label>
 					<progressName>MiningProgress</progressName>
 				</li>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Fill transport pod with ore</label>
+					<label>LoGiQ_GoalLabel_FillTrPodWithOre</label>
 					<setSignal>GoodsLoadedSuccessfully</setSignal>
 				</li>
 				<li Class="LoGiQ.QuestNodes.GoalProgress">
-					<label>Filling progress</label>
+					<label>LoGiQ_GoalLabel_FillingProgress</label>
 					<progressName>StoreProgress</progressName>
 				</li>
 			</mandatory>
 			<optional>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Defeat raiders</label>
+					<label>LoGiQ_GoalLabel_DefeatRaders</label>
 					<setSignal>site.AllEnemiesDefeated</setSignal>
 					<unsetSignal>ReadyForAttack</unsetSignal>
+					<initialState>false</initialState>
+				</li>
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
+					<label>LoGiQ_GoalLabel_OverdriveMining</label>
+					<setSignal>OverdriveSuccessed</setSignal>
 					<initialState>false</initialState>
 				</li>
 			</optional>

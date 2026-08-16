@@ -120,11 +120,11 @@
 		<li Class="LoGiQ.QuestNodes.QuestNode_Goals">
 			<mandatory>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Find the prisoner</label>
+					<label>LoGiQ_GoalLabel_FindPrisoner</label>
 					<setSignal>Prisoner.Spawned</setSignal>
 				</li>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Follow the prisoner to the edge of map</label>
+					<label>LoGiQ_GoalLabel_FollowPrisoner</label>
 					<setSignal>Prisoner.LeftMap</setSignal>
 				</li>
 			</mandatory>

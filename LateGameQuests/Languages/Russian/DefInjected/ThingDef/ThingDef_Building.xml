@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+	<LoGiQ_Cabinet.label>Запертый комод</LoGiQ_Cabinet.label>
+	<LoGiQ_Cabinet.description>Этот комод заперт не просто так, стоит поискать в нем что-нибудь полезное.</LoGiQ_Cabinet.description>
     <LoGiQ_InteractableConsole.label>Консоль связи и управления</LoGiQ_InteractableConsole.label>
     <LoGiQ_InteractableConsole.description>Консоль для взаимодействия, связи и управления.</LoGiQ_InteractableConsole.description>
     <LoGiQ_TableMachining.label>Станок для демонтажа.</LoGiQ_TableMachining.label>

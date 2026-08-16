@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<!-- . . . Common data . . . -->
+	<LoGiQ_GoalLabel_DefeatRaders>Defeat raiders</LoGiQ_GoalLabel_DefeatRaders>
+	<LoGiQ_GoalLabel_DefeatGuards>Defeat guards</LoGiQ_GoalLabel_DefeatGuards>
+	<LoGiQ_GoalLabel_HackSecurityTerminal>Hack the security terminal</LoGiQ_GoalLabel_HackSecurityTerminal>
+	<!-- . . . . . . . . . . . . -->
+	
+	<!-- . DefendMiningStation . -->
+	<LoGiQ_GoalLabel_WaitMiningProgress>Wait until mining is finished</LoGiQ_GoalLabel_WaitMiningProgress>
+	<LoGiQ_GoalLabel_MiningProgress>Mining progress</LoGiQ_GoalLabel_MiningProgress>
+	<LoGiQ_GoalLabel_FillTrPodWithOre>Fill transport pod with ore</LoGiQ_GoalLabel_FillTrPodWithOre>
+	<LoGiQ_GoalLabel_FillingProgress>Filling progress</LoGiQ_GoalLabel_FillingProgress>
+	<LoGiQ_GoalLabel_OverdriveMining>Optimize mining</LoGiQ_GoalLabel_OverdriveMining>
+	<!-- . . . . . . . . . . . . -->
+		
+	<!-- . DefendMiningStation . -->
+	<LoGiQ_GoalLabel_FinishResearch>Finish the research</LoGiQ_GoalLabel_FinishResearch>
+	<LoGiQ_GoalLabel_ResearchProgress>Research progress</LoGiQ_GoalLabel_ResearchProgress>
+	<LoGiQ_GoalLabel_StayAtSector>Stay at sector</LoGiQ_GoalLabel_StayAtSector>
+	<!-- . . . . . . . . . . . . -->
+	
+	<!-- RescueMission(Easy/Hard)  -->
+	<LoGiQ_GoalLabel_FindPrisoner>Find the prisoner</LoGiQ_GoalLabel_FindPrisoner>
+	<LoGiQ_GoalLabel_FollowPrisoner>Follow the prisoner away</LoGiQ_GoalLabel_FollowPrisoner>
+	<!-- . . . . . . . . . . . . . -->
+	
+	 <!-- . . Factory assault  . -->
+	<LoGiQ_GoalLabel_CommercialValueProgress>Commercial value</LoGiQ_GoalLabel_CommercialValueProgress>
+	<LoGiQ_GoalLabel_KeepFactorySafe>Keep workers and equipment safe</LoGiQ_GoalLabel_KeepFactorySafe>
+	<!-- . . . . . . . . . . . . -->
+</LanguageData> 

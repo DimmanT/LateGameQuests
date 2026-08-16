@@ -10,8 +10,9 @@ namespace LoGiQ.QuestNodes
 {
     public class Goal
     {
+        
         public string label = "unnamed";
-        //todo setVisible/setInvisible (it is important for FactoryAssault quest)
+        //todo setVisible/setInvisible (it is important for BuildVillage quest)
     }
     public class GoalBoolean : Goal
     {

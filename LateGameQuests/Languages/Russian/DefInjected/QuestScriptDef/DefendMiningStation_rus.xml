@@ -15,9 +15,9 @@
   
  
 <LoGiQ_DefendMiningStation.root.nodes.GiveRewards.customLetterLabel.slateRef>Оплата прибыла</LoGiQ_DefendMiningStation.root.nodes.GiveRewards.customLetterLabel.slateRef>
-<LoGiQ_DefendMiningStation.root.nodes.GiveRewards.customLetterText.slateRef>Вы успешно защитили станцию!\n\nОплата от [askerFaction_name] прибыла.</LoGiQ_DefendMiningStation.root.nodes.GiveRewards.customLetterText.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.GiveRewards.customLetterText.slateRef>Вы успешно защsитили станцию!\n\nОплата от [askerFaction_name] прибыла.</LoGiQ_DefendMiningStation.root.nodes.GiveRewards.customLetterText.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.GiveRewards.nodeIfChosenPawnSignalUsed.text.slateRef>Кто должен получить титул [askerFaction_royalFavorLabel] за выполнение задачи?</LoGiQ_DefendMiningStation.root.nodes.GiveRewards.nodeIfChosenPawnSignalUsed.text.slateRef>
-<LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>Вы должны достичь станцию в течение {0}.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>Вы должны достичь станции в течение {0}.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPartTip.slateRef>Прибудьте на станцию не позднее {0}.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.expiryInfoPartTip.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>Вы не успели прибыть на станцию вовремя.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>Станция добычи искапаемых была разрушена. Задание [resolvedQuestName] провалено.</LoGiQ_DefendMiningStation.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>

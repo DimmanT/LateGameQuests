@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  	<!-- . . . Common data . . . -->
+	<LoGiQ_GoalLabel_DefeatRaders>Отразить атаку рейдеров</LoGiQ_GoalLabel_DefeatRaders>
+	<LoGiQ_GoalLabel_DefeatGuards>Победить защитников</LoGiQ_GoalLabel_DefeatGuards>
+	<LoGiQ_GoalLabel_HackSecurityTerminal>Взломать терминал системы безопасности</LoGiQ_GoalLabel_HackSecurityTerminal>
+	<!-- . . . . . . . . . . . . -->
+	
+	<!-- . DefendMiningStation . -->
+	<LoGiQ_GoalLabel_WaitMiningProgress>Дождаться завершения добычи</LoGiQ_GoalLabel_WaitMiningProgress>
+	<LoGiQ_GoalLabel_MiningProgress>Прогресс добычи</LoGiQ_GoalLabel_MiningProgress>
+	<LoGiQ_GoalLabel_FillTrPodWithOre>Загрузить руду в транспортную капсулу</LoGiQ_GoalLabel_FillTrPodWithOre>
+	<LoGiQ_GoalLabel_FillingProgress>Прогресс загрузки</LoGiQ_GoalLabel_FillingProgress>
+	<LoGiQ_GoalLabel_OverdriveMining>Оптимизировать добычу</LoGiQ_GoalLabel_OverdriveMining>
+	<!-- . . . . . . . . . . . . -->
+	
+	<!-- . DefendMiningStation . -->
+	<LoGiQ_GoalLabel_FinishResearch>Завершить исследование</LoGiQ_GoalLabel_FinishResearch>
+	<LoGiQ_GoalLabel_ResearchProgress>Прогресс исследования</LoGiQ_GoalLabel_ResearchProgress>
+	<LoGiQ_GoalLabel_StayAtSector>Оставаться в секторе</LoGiQ_GoalLabel_StayAtSector>
+	<!-- . . . . . . . . . . . . -->
+	
+	<!-- RescueMission(Easy/Hard)  -->
+	<LoGiQ_GoalLabel_FindPrisoner>Найти пленника</LoGiQ_GoalLabel_FindPrisoner>
+	<LoGiQ_GoalLabel_FollowPrisoner>Вывести пленника</LoGiQ_GoalLabel_FollowPrisoner>
+	<!-- . . . . . . . . . . . . . -->
+	
+	 <!-- . . Factory assault  . -->
+	<LoGiQ_GoalLabel_CommercialValueProgress>Коммерческая ценность фабрики</LoGiQ_GoalLabel_CommercialValueProgress>
+	<LoGiQ_GoalLabel_KeepFactorySafe>Обеспечить сохранность персонала и оборудования</LoGiQ_GoalLabel_KeepFactorySafe>
+	<!-- . . . . . . . . . . . . -->
+	
+</LanguageData>

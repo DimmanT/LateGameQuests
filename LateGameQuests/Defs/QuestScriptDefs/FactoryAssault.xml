@@ -170,27 +170,22 @@
 		<li Class="LoGiQ.QuestNodes.QuestNode_Goals">
 			<mandatory>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Defeat factory guards</label>
+					<label>LoGiQ_GoalLabel_DefeatGuards</label>
 					<setSignal>site.AllEnemiesDefeated</setSignal>
 				</li>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Keep workers and equipment safe</label>
+					<label>LoGiQ_GoalLabel_KeepFactorySafe</label>
 					<unsetSignal>TooMuchDestruction</unsetSignal>
 					<initialState>true</initialState>
 				</li>
 				<li Class="LoGiQ.QuestNodes.GoalProgress">
-					<label>Commercial value</label>
+					<label>LoGiQ_GoalLabel_CommercialValueProgress</label>
 					<progressName>CommercialValue</progressName>
-				</li>
-				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Keep workers and equipment safe</label>
-					<unsetSignal>TooMuchDestruction</unsetSignal>
-					<initialState>true</initialState>
 				</li>
 			</mandatory>
 			<optional>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Hack the security terminal</label>
+					<label>LoGiQ_GoalLabel_HackSecurityTerminal</label>
 					<setSignal>SecurityTerminalHacked</setSignal>
 					<initialState>false</initialState>
 				</li>
@@ -239,8 +234,10 @@
 				<letterDef>PositiveEvent</letterDef>
 				<text>Enemies are defeated, the factory are under your control! Now you can leave. The incomed forces will tend civils.</text>
 			  </li>
-			  <li Class="QuestNode_End">
-			    <outcome>Success</outcome>
+			  <li Class="QuestNode_End">          
+				<inSignal>TooMuchDestruction</inSignal>
+				<sendStandardLetter>true</sendStandardLetter>
+				<outcome>Fail</outcome>
 			  </li>
 			</nodes>
           </node>
@@ -250,6 +247,9 @@
 		  <delayTicks>16000</delayTicks>
 		  <inSignalEnable>site.AllEnemiesDefeated</inSignalEnable>
 		  <destroyOnCleanup>true</destroyOnCleanup>
+		</li>
+		<li Class="QuestNode_End">
+			<outcome>Success</outcome>
 		</li>
         <!-- <li Class="QuestNode_End"> -->
           <!-- <inSignal>site.Destroyed</inSignal> -->

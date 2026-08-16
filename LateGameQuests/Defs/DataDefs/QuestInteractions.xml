@@ -623,6 +623,9 @@
 				<keyOfBool>Overdrived</keyOfBool>
 				<valueOfBool>true</valueOfBool>
 			  </li>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>OverdriveSuccessed</signal>
+			  </li>
 			</actions>
 			<conditions>
 			  <li Class="QuestEditor_Library.DialogCondition_SkillCheck">
@@ -690,6 +693,9 @@
 			  <li Class="QuestEditor_Library.CQFAction_SetBool">
 				<keyOfBool>Overdrived</keyOfBool>
 				<valueOfBool>true</valueOfBool>
+			  </li>
+			  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+				<signal>OverdriveSuccessed</signal>
 			  </li>
 			</actions>
 			<conditions>

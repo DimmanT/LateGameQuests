@@ -49,7 +49,7 @@ namespace LoGiQ.QuestNodes
 
             progressCur += increment;
 
-            Log.Message($"progress '{message}' {progressCur} / {progressMax}");
+            //Log.Message($"progress '{message}' {progressCur} / {progressMax}");
             //TaggedString formattedText = message.Formatted(P.currProgress, P.progressMax);
 
             if (!message.NullOrEmpty())

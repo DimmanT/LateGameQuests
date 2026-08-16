@@ -55,12 +55,13 @@ namespace LoGiQ
 
         static private void DrawGoal(QuestNodes.GoalRuntime goal, Rect innerRect, ref float curY)
         {
+            var label = goal.Label.Translate();
             if(goal is QuestNodes.IGoalBooleanRuntime gb)
             {
                 bool checkedOn = gb.IsCompleted();
-                var h = Text.CalcHeight(goal.Label, innerRect.width);
+                var h = Text.CalcHeight(label, innerRect.width);
                 Rect rect = new Rect(innerRect.x, curY, innerRect.width, h);
-                Widgets.CheckboxLabeled(rect, goal.Label, ref checkedOn, disabled: true);
+                Widgets.CheckboxLabeled(rect, label, ref checkedOn, disabled: true);
                 curY += h;
             }
             else
@@ -68,9 +69,9 @@ namespace LoGiQ
             {
                 const int W_MARGIN = 4;
                 var width = (innerRect.width / 2) - W_MARGIN;
-                var h = Text.CalcHeight(goal.Label, width);
+                var h = Text.CalcHeight(label, width);
                 Rect rect = new Rect(innerRect.x, curY, width, h);
-                Widgets.Label(rect, goal.Label); //label of progress
+                Widgets.Label(rect, label); //label of progress
 
                 Rect rect2 = new Rect(innerRect.x + width + 2* W_MARGIN, curY, width, 0.85f*h);
                 //todo check percentOnly

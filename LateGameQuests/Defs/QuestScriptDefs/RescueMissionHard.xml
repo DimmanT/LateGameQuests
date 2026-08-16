@@ -156,7 +156,7 @@
 		<li Class="LoGiQ.QuestNodes.QuestNode_Goals">
 			<mandatory>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>Follow the prisoner to the edge of map</label>
+					<label>LoGiQ_GoalLabel_FollowPrisoner</label>
 					<setSignal>joiner.LeftMap</setSignal>
 				</li>
 			</mandatory>
