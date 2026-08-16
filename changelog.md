@@ -1,3 +1,12 @@
+### 2026 aug 16 0.6.0.0
+Improvements:
+	1. Add GUI panel with quest goals in Quest Description section of quests panel. Previous QoL update with quest progress in quest buildings removed.
+	2. Improve the AI in attack quests (MilitaryBase, MilitaryBastion, RescueMission, RescueMissionHard). Now guards are attacking player forces, when them come close.
+
+Knowns issues:
+	1. (not fixed) If load game before open prisoner cage, the dialog disappers from prisoner (maybe CQF bug).
+
+
 ### 2026 jul 19 0.5.2.0
 Improvements:
 	1. Changed the quest-giving mechanism. Now my quests are given when a certain event is triggered. You can adjust the chance of this event happening in the mod's user settings menu.
