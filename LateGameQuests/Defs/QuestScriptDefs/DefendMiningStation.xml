@@ -145,10 +145,6 @@
 		   <progressMax>100</progressMax>
 		   <progressMessage>mining in progress</progressMessage>
 		   <progressName>MiningProgress</progressName>
-		   <addInfoToInspectStringOf>
-		     <li>MiningTerminal</li>
-			 <li>MiningDrainTarget</li>
-		   </addInfoToInspectStringOf>
 		   <outSignalComplete>ProductionReady</outSignalComplete>
 	    </li>
 		<li Class="QuestNode_Signal">

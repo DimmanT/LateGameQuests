@@ -183,9 +183,6 @@
 			<progressMax>$RequiredProgress</progressMax>
 			<progressMessage TKey="ProgressMessage">research progress</progressMessage>
 			<outSignalComplete>FinishResearch</outSignalComplete>
-			<addInfoToInspectStringOf>
-		      <li>CampResearchTable</li>
-		    </addInfoToInspectStringOf>
 		</li>
 		<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
 		<!-- . . . GOALS . . . . . . . . . . . . . . . . . . -->

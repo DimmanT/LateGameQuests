@@ -7,30 +7,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System;
 using RimWorld.Planet;
+using UnityEngine;
 
 namespace LoGiQ.QuestNodes
 {
     /// <summary>
-    /// \ref QuestNode_ProgressComplex
+    /// \see QuestNode_ProgressComplex, QuestNode_Progress
     /// </summary>
     class QuestPart_ProgressComplex : QuestPartActivable
     {
         //todo disable signal
-        public Dictionary<string, float> inSignals; //map {signal -> increment}
+        public Dictionary<string, float> inSignals = new Dictionary<string, float>(); //map {signal -> increment}
         public float  progressCur;
         public float  progressMin;
         public float  progressMax;
         public string message;
         public bool   inverse = false;
         public string progressName;
-        public List<string> inspectTargets; // inspect text will be inserted in things marked with 'targetName'='inspectTarget' in CompQuestInspectTarget (!!! todo remove it, case obsolete)
-        private List<int> cachedInspectTargetsIDs;
 
         public float getRelativeProgress()  
         {
-            if(inverse)
-                 return (progressCur - progressMax) / (progressMin - progressMax);
-            else return (progressCur - progressMin) / (progressMax - progressMin);
+            float rel;
+            if (inverse)
+                 rel = (progressCur - progressMax) / (progressMin - progressMax);
+            else rel = (progressCur - progressMin) / (progressMax - progressMin);
+            return Mathf.Clamp(rel, 0, 1);
         }
 
         public override void Notify_QuestSignalReceived(Signal signal)
@@ -48,11 +49,12 @@ namespace LoGiQ.QuestNodes
 
             progressCur += increment;
 
-            Log.Message($"progress {progressCur} / {progressMax}");
+            Log.Message($"progress '{message}' {progressCur} / {progressMax}");
             //TaggedString formattedText = message.Formatted(P.currProgress, P.progressMax);
-            TaggedString formattedText = message + $" {progressCur} / {progressMax}";
-            if (!formattedText.NullOrEmpty())
+
+            if (!message.NullOrEmpty())
             {
+                TaggedString formattedText = message + $" {progressCur} / {progressMax}";
                 Messages.Message(formattedText, LookTargets.Invalid, MessageTypeDefOf.NeutralEvent, quest.hidden ? null : quest, false);
             }
 
@@ -60,32 +62,6 @@ namespace LoGiQ.QuestNodes
             if (inverse ) complete = !complete;
             if (complete) Complete();
 
-        }
-        public override string ExtraInspectString(ISelectable target)
-        {
-            if (inspectTargets.NullOrEmpty())
-                return "";
-            if (target is QuestEditor_Library.InteractableThing)
-            {
-                var thing = (QuestEditor_Library.InteractableThing)target;
-                if (cachedInspectTargetsIDs.NullOrEmpty())
-                {
-                    cachedInspectTargetsIDs = new List<int>();
-                    Dictionary<string, TargetInfo> targets = new Dictionary<string, TargetInfo>();
-                    Dictionary<string, TargetInfo> targets2 = QuestEditor_Library.GameTools.GetTargets(targets, quest, inspectTargets);
-                    Log.Message($"inTargets: {inspectTargets}, outTargetsSize={targets2.Count},{targets.Count}");
-                    foreach (var t in targets2)
-                        cachedInspectTargetsIDs.Add(t.Value.Thing.thingIDNumber);
-                }
-
-                Log.Message($"cachedInspectTargetsIDs: {cachedInspectTargetsIDs}. thingID={thing.thingIDNumber}");
-
-                if (cachedInspectTargetsIDs.Contains(thing.thingIDNumber))
-                    return message + $" {progressCur} / {progressMax}\n";
-            }
-            //maybe if is site too
-
-            return "";
         }
 
         public override void ExposeData()
@@ -98,7 +74,6 @@ namespace LoGiQ.QuestNodes
             Scribe_Values.Look(ref message, "message");
             Scribe_Values.Look(ref inverse, "inverse");
             Scribe_Values.Look(ref progressName, "progressName");
-            Scribe_Collections.Look(ref inspectTargets, "inspectTargets");
         }
     }
 
@@ -111,8 +86,8 @@ namespace LoGiQ.QuestNodes
         public MapParent mapParent;
 
         public string inSignal;
-        public float  progressMin;
-        public float  progressMax;
+        public float  progressMin=0;
+        public float  progressMax=100;
         public string progressName;
         public int    maxReward;
 
@@ -123,40 +98,25 @@ namespace LoGiQ.QuestNodes
 
             //Log.Message("QuestPart_ProgressGiveReward A");
 
+            float rel = 1;
             bool  found = false;
-            bool  inverse = false;
-            float progressCur = 0;
+            //float progressCur = 0;
             foreach(var p in quest.PartsListForReading)
                 if( p is QuestPart_ProgressComplex ppc)
                     if(ppc.progressName == progressName)
                     {
                         found = true;
-                        progressCur = ppc.progressCur;
-                        inverse = ppc.inverse;
+                        rel = ppc.getRelativeProgress();
                         break;
                     }
             //Log.Message("QuestPart_ProgressGiveReward B");
             if (found)
             {
                 //Log.Message("QuestPart_ProgressGiveReward C");
-                float rel;
                 if(progressMin == progressMax) //something gone wrong if they are equal!
                 {
                     rel = 1;
                     Log.Warning($"ProgressReward: 'progressMin' is equal to 'progressMax'( {progressMin}={progressMax}), it is wrong!");
-                }
-                else
-                if (inverse)
-                {
-                    float span = progressMin - progressMax;
-                    progressCur -= progressMax;
-                    rel = progressCur / span;
-                }
-                else
-                {
-                    float span = progressMax - progressMin;
-                    progressCur -= progressMin;
-                    rel = progressCur / span;
                 }
                 //Log.Message("QuestPart_ProgressGiveReward D");
                 if (rel > 0 && rel < 10)

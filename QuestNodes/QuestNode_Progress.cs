@@ -36,13 +36,10 @@ namespace LoGiQ.QuestNodes
 		}
 		protected override void RunInt()
 		{
-
 			Slate slate = QuestGen.slate;
 			var questPart = new QuestPart_ProgressComplex();
 
-			questPart.outSignalsCompleted.Add(QuestGenUtility.HardcodedSignalWithQuestID(outSignalComplete.GetValue(slate)));
-
-            if (!progressMin.TryGetValue(slate, out int defProgressCur))
+			if (!progressMin.TryGetValue(slate, out int defProgressCur))
                 defProgressCur = 0;
 			if (!progressMax.TryGetValue(slate, out int defProgressMax))
 				defProgressMax = 100;
@@ -60,6 +57,7 @@ namespace LoGiQ.QuestNodes
 			questPart.message     = defMessage;
 			questPart.progressName = defProgressName;
 
+			questPart.outSignalsCompleted.Add(QuestGenUtility.HardcodedSignalWithQuestID(outSignalComplete.GetValue(slate)));
 			questPart.inSignals.Add(QuestGenUtility.HardcodedSignalWithQuestID(inSignal.GetValue(slate)), defIncrement);
 
 			QuestGen.quest.AddPart(questPart);
@@ -86,9 +84,6 @@ namespace LoGiQ.QuestNodes
 
 		[NoTranslate]
 		public SlateRef<string> progressName;
-
-		[NoTranslate]
-		public SlateRef<IEnumerable<string>> addInfoToInspectStringOf;
 
 		public SlateRef<float> progressMax;
 		public SlateRef<float> progressMin;
@@ -130,7 +125,7 @@ namespace LoGiQ.QuestNodes
 			//... resolve: signal -> increment ...
 			var signalToInc = new Dictionary<string, float>();
 			IEnumerable<string> signals;
-			IEnumerable<float>    tmp_incs;
+			IEnumerable<float>  tmp_incs;
 			inSignals .TryGetValue(slate, out signals );
 			increments.TryGetValue(slate, out tmp_incs);
 			List<float> incs = (List<float>)tmp_incs;
@@ -148,8 +143,6 @@ namespace LoGiQ.QuestNodes
 				defProgressMax = 100;
 			if (!progressMessage.TryGetValue(slate, out string defMessage))
 				defMessage = "";
-			if (!addInfoToInspectStringOf.TryGetValue(slate, out IEnumerable<string> defInspectTarget))
-				defInspectTarget = new List<string>();
 
 			string defProgressName="";
 			progressName.TryGetValue(slate, out defProgressName);
@@ -160,8 +153,6 @@ namespace LoGiQ.QuestNodes
 			questPart.message     = defMessage;
 			questPart.inverse     = defProgressCur > defProgressMax;
 			questPart.progressName = defProgressName;
-			if (!defInspectTarget.EnumerableNullOrEmpty())
-                questPart.inspectTargets = new List<string>(defInspectTarget);
 
 			QuestGen.quest.AddPart(questPart);
 		}
