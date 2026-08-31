@@ -174,6 +174,7 @@ namespace LoGiQ.QuestNodes
 
 		protected override bool TestRunInt(Slate slate)
 		{
+			/*
 			int maxR = -1;
 			maxReward.TryGetValue(QuestGen.slate, out maxR);
 
@@ -182,8 +183,10 @@ namespace LoGiQ.QuestNodes
 
 			bool ok = maxR > 0 && !pName.NullOrEmpty();
 			if (!ok) Log.Error($"LoGiQ.QuestNodes.QuestNode_ProgressGiveReward: maxReward={maxR} or progressName={pName} not setted up!");
-
 			return ok;
+			*/
+
+			return true;
 		}
 		protected override void RunInt()
 		{
@@ -218,7 +221,7 @@ namespace LoGiQ.QuestNodes
 			questPart.maxReward    = defMaxReward;    
 			questPart.progressName = defProgressName;
 			questPart.mapParent = defSite;
-			//Log.Message($"QuestNode_ProgressGiveReward resolved site: {defSite}");
+			Log.Message($"QuestNode_ProgressGiveReward resolved site: {defSite}, reward={defMaxReward}");
 
 			QuestGen.quest.AddPart(questPart);
 		}

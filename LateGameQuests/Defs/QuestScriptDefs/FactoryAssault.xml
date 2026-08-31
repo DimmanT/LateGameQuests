@@ -149,21 +149,17 @@
 		
 		<!-- . . . . . . . . REWARDS . . . . . . . . -->
 		<li Class="QuestNode_GetMap"/>
-        <!-- <li Class="QuestNode_Set"> -->
-          <!-- <name>rewardValue</name> -->
-          <!-- <value>$(randInt(17,25)*250)</value> -->
-		  <!-- <convertTo>Int32</convertTo> -->
-        <!-- </li> -->
-		<li Class="QuestNode_Set">
+        <li Class="QuestNode_Set">
           <name>rewardValue</name>
-          <value>5000</value>
+          <value>$(randInt(17,23)*250)</value>
+		  <convertTo>Int32</convertTo>
         </li>
 		<li Class="LoGiQ.QuestNodes.QuestNode_ProgressGiveReward">
 		  <inSignal>site.AllEnemiesDefeated</inSignal>
 		  <progressMin>100</progressMin>
 		  <progressMax>0</progressMax>
 		  <progressName>CommercialValue</progressName>
-		  <maxReward>5000</maxReward>
+		  <maxReward>$rewardValue</maxReward>
 		</li>
 		<!-- . . . . . . . . . . . . . . . . . . . . -->
 		<!-- . . . GOALS . . . . . . . . . . . . . . -->
@@ -269,7 +265,7 @@
     <questDescriptionRules>
       <rulesStrings>
         <li>questDescription -&gt; [asker_nameDef], [asker_faction_leaderTitle] of [asker_faction_name], contacted you and offered some delicate job. [enemyFaction_name] have some kind of factory at given coordinates. [asker_faction_leaderTitle] [asker_nameFull] whants to seizure this place with help of your forces. But the mission must be accurate, if you killed an engineer o let them go, or damage the equipment, your reward will be decreased.
-		\nMax reward will be 5000 of silver chunks.
+		\nMax reward will be [rewardValue_money] of silver chunks.
 		\nIn addition, [asker_nameFull] say, that enemies have central security terminal, that controls turrets. If you hack it, the turrets will stop shooting you. [asker_pronoun] shares the special "icebreaker" with you, it will help you hack the terminal.
 		</li>
       </rulesStrings>
