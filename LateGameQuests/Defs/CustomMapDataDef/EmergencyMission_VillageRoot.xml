@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestEditor_Library.CustomMapDataDef>
+    <defName>LoGiQ_Map_EmergencyMission_VillageRoot</defName>
+    <label>LoGiQ_Map_EmergencyMission_VillageRoot</label>
+    <description>LoGiQ_Map_EmergencyMission_VillageRoot</description>
+    <fogged>false</fogged>
+    <size>(4, 1, 4)</size>
+    <destroyAllThing>false</destroyAllThing>
+    <commonality>1</commonality>
+    <faction>MapFaction</faction>
+	<terrainsRect>
+      <li>
+        <key>PackedDirt</key>
+        <value>
+          <li>(4,4,5,5)</li>
+        </value>
+      </li>
+    </terrainsRect>
+	<customSteps>
+	  <li Class="LoGiQ.GenStep_MapPartAdv">
+        <count>3~4</count>
+        <set>
+          <tags>
+            <LoGiQ_MapPart_Village>1</LoGiQ_MapPart_Village>
+          </tags>
+        </set>
+		<zone>Center</zone>
+      </li>
+	  <li Class="LoGiQ.GenStep_MapPartAdv">
+        <count>2~3</count>
+        <set>
+          <tags>
+            <LoGiQ_MapPart_Village>1</LoGiQ_MapPart_Village>
+          </tags>
+        </set>
+		<zone>AroundCenter</zone>
+      </li>
+	</customSteps>
+  </QuestEditor_Library.CustomMapDataDef>
+</Defs>

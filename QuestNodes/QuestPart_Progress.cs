@@ -47,6 +47,12 @@ namespace LoGiQ.QuestNodes
             if (!inSignals.TryGetValue(signal.tag, out increment))
                 return;
 
+            if (signal.args.TryGetArg<float>("IncMult", out float m))
+            {
+                Log.Message($"DBG.multed by {m}");
+                increment *= m;
+            }
+
             progressCur += increment;
 
             //Log.Message($"progress '{message}' {progressCur} / {progressMax}");

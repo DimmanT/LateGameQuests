@@ -85,8 +85,10 @@
     <Compile Include="CQFConditions\CQFCondition_ColonistsInRadius.cs" />
     <Compile Include="CQFConditions\CQFCondition_PowerOn.cs" />
     <Compile Include="Events\IncidentWorker_QuestGiver.cs" />
+    <Compile Include="GameConditions\EmergencyOperation.cs" />
     <Compile Include="GameConditions\FactoryAssault.cs" />
     <Compile Include="Jobs\JobGiver_ManTurretsCE.cs" />
+    <Compile Include="Misc\GenStep_MapPartAdv.cs" />
     <Compile Include="Misc\QuestGoalsPanelMaker.cs" />
     <Compile Include="Misc\GenStep_Replacement.cs" />
     <Compile Include="Misc\HarmonyPatches.cs" />

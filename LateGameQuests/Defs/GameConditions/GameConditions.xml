@@ -15,6 +15,28 @@
       <!-- <li>Cooler</li> -->
     <!-- </letterHyperlinks> -->
 	<canBePermanent>True</canBePermanent>
-  </GameConditionDef>
+ </GameConditionDef>
+ <GameConditionDef>
+    <defName>LoGiQ_GameCondition_EmergencyOperation</defName>
+    <conditionClass>LoGiQ.GameConditions.EmergencyOperationBase</conditionClass>
+    <label>Emergency operation in progress</label>
+    <description>todo.</description>
+	<startMessage>The emergency operation begun.</startMessage>
+    <endMessage>Emergency operation  is over! No one in danger now.</endMessage>
+    <letterText>todo title.\n\n todo text.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+	<canBePermanent>True</canBePermanent>
+ </GameConditionDef>
+  <GameConditionDef>
+    <defName>LoGiQ_GameCondition_EmergencyOperation_FireEvent</defName>
+    <conditionClass>LoGiQ.GameConditions.EmergencyOperation_FireEvent</conditionClass>
+    <label>Fire.Emergency operation in progress</label>
+    <description>Fire.todo.</description>
+	<startMessage>Fire.The emergency operation begun.</startMessage>
+    <endMessage>Fire.Emergency operation  is over! No one in danger now.</endMessage>
+    <letterText>todo Fire.title.\n\n todo Fire.text.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+	<canBePermanent>True</canBePermanent>
+ </GameConditionDef>
 
 </Defs>

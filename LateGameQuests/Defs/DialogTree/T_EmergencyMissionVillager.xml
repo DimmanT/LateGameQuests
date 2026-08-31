@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestEditor_Library.DialogTreeDef>
+    <defName>LoGiQ_EmergencyMissionVillager</defName>
+    <title>LoGiQ_EmergencyMissionVillager_Title</title>
+    <requireNonHostile>true</requireNonHostile>
+    <dialogReportKey>LoGiQ_EmergencyMissionVillagerKey</dialogReportKey>
+    <curIndex>1</curIndex>
+    <nodeMoulds>
+      <li>
+        <key>0</key>
+        <value>
+          <text>LoGiQ_RescueMissionA_Intro</text>
+          <index>0</index>
+          <subNodeIndexs />
+          <options>
+			<li Class="QuestEditor_Library.DialogOption">
+              <text>LoGiQ_RescueMissionA_Stay</text>
+              <results>
+                <li>
+                  <resultName>Exit_Stay</resultName>
+				  <actions>
+                    <li Class="QuestEditor_Library.CQFAction_SetDuty">
+					  <targetsText><li>Interviewer</li></targetsText>
+                      <duty>IdleNoInteraction</duty>
+                    </li>
+                  </actions>
+                </li>
+              </results>
+            </li>
+			<li Class="QuestEditor_Library.DialogOption">
+              <text>LoGiQ_RescueMissionA_Move</text>
+              <results>
+                <li>
+                  <resultName>Exit_Move</resultName>
+				  <actions>
+                    <li Class="QuestEditor_Library.CQFAction_SetDuty">
+					  <targetsText><li>Interviewer</li></targetsText>
+                      <duty>ExitMapBestAndDefendSelf</duty>
+                    </li>
+                  </actions>
+                </li>
+              </results>
+            </li>
+			<li Class="QuestEditor_Library.DialogOption">
+              <text>LoGiQ_EmergencyMission_Follow</text>
+              <results>
+                <li>
+                  <resultName>Exit_Follow</resultName>
+				  <actions>
+                    <li Class="QuestEditor_Library.CQFAction_SetDuty">
+					  <targetsText><li>Interviewer</li></targetsText>
+                      <duty>Follow</duty>
+                    </li>
+                  </actions>
+                </li>
+              </results>
+            </li>
+			<li Class="QuestEditor_Library.DialogOption">
+              <text>LoGiQ_RescueMissionA_Finish</text>
+              <removeDialogAfterSelect>false</removeDialogAfterSelect>
+              <results>
+                <li>
+                  <resultName>Exit</resultName>
+                </li>
+              </results>
+            </li>
+          </options>
+        </value>
+      </li>
+    </nodeMoulds>
+  </QuestEditor_Library.DialogTreeDef>
+</Defs>

@@ -1,0 +1,136 @@
+﻿using QuestEditor_Library;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+using UnityEngine;
+using Verse;
+using System.Diagnostics;
+
+namespace LoGiQ
+{
+    public class GenStep_MapPartAdv : CustomMapStep
+    {
+        public enum MapZone : byte { Anywhere, Center, AroundCenter, Perifery, North, East, South, West, NorthEast, SouthEast, SouthWest, NorthWest, Invalid};
+
+        public string buffer;
+        public string buffer2;
+
+        public IntRange count = IntRange.One;
+        public CustomMapGenerationSet set = new CustomMapGenerationSet();
+        public MapZone zone = MapZone.Anywhere;
+
+        public override void Draw(ref float y, Rect inRect, float x)
+        {
+            Widgets.Label(new Rect(x, y, inRect.width - x - 12f, 30f), "Generate map parts (LoGiQ)".Colorize(ColorLibrary.SkyBlue));
+            y += 35f;
+            CQFEditorTools.DrawIntRange(ref y, "Parts count", ref count, ref buffer, ref buffer2, x, 60f);
+            set.Draw(ref y, inRect, x);
+
+            //.... Zones ....
+            Listing_Standard listing = new Listing_Standard();
+            listing.ColumnWidth = inRect.width;
+            Rect listingRect = inRect;
+            listingRect.y = y;
+            listingRect.height = 512;
+            listing.Begin(listingRect);
+            listing.Label("Zone to generate in");
+
+            if (listing.ButtonText(zone.ToString()))
+            {
+                var zones = new List<FloatMenuOption>();
+                for(var z = MapZone.Anywhere; z < MapZone.Invalid; ++z)
+                    zones.Add(new FloatMenuOption(z.ToString(), () => { zone = z; Log.Message($"Choosed {z}."); }));
+                Find.WindowStack.Add(new FloatMenu(zones));
+            }
+            listing.End();
+            //......................
+        }
+
+        public override void Generate(Map map, CustomMapDataDef def, CustomSitePartParams param)
+        {
+            int num = count.RandomInRange;
+            Log.Message($"Start generating in {zone}. Total parts {num}.");
+            int remNum = num;
+            double elapsedTime1 = 0;
+            double elapsedTime2 = 0;
+            double elapsedTime3 = 0;
+            while (num-->0)
+            {
+                Stopwatch stopwatch = Stopwatch.StartNew();
+                CustomMapDataDef partDef = set.GetMap();
+                stopwatch.Stop(); elapsedTime1 += stopwatch.Elapsed.TotalMilliseconds;
+                if (partDef == null)
+                {
+                    Log.Warning("Null map in set, skip.");
+                    continue;
+                }
+                if (Prefs.DevMode)
+                    Log.Message("Spawning Part:" + partDef.defName);
+
+                stopwatch = Stopwatch.StartNew();
+                var pos = getPosToGenerateAt(map, partDef);
+                stopwatch.Stop(); elapsedTime2 += stopwatch.Elapsed.TotalMilliseconds;
+
+                stopwatch = Stopwatch.StartNew();
+                partDef.GenerateByCore(pos, map, GameTools.GetQuestFromMap(map));
+                stopwatch.Stop(); elapsedTime3 += stopwatch.Elapsed.TotalMilliseconds;
+            }
+
+            elapsedTime1 /= remNum;
+            elapsedTime2 /= remNum;
+            elapsedTime3 /= remNum;
+
+            Log.Message($"A={elapsedTime1},B={elapsedTime2},C={elapsedTime3}");
+        }
+
+        public override XElement SaveToXElement(string nodeName)
+        {
+            XElement result = base.SaveToXElement(nodeName);
+            result.Add(new XElement("count", count));
+            result.Add(set.SaveToXElement("set"));
+            result.Add(new XElement("zone", zone));
+            return result;
+        }
+
+        protected IntVec3 getPosToGenerateAt(Map map, CustomMapDataDef partDef)
+        {
+            int W = map.Size.x;
+            int H = map.Size.z;
+            int partW = partDef.size.x;
+            int partH = partDef.size.z;
+            Log.Message($"Try find cell for part({partW}x{partH}) at map({W}x{H})");
+            switch (zone)
+            {
+                case MapZone.Center:  
+                    {
+                        IntVec3 cell = new IntVec3(W / 2, 0, H / 2);
+                        cell.x += Verse.Rand.Range(-W / 8, W / 8);
+                        cell.z += Verse.Rand.Range(-H / 8, H / 8);
+                        //todo check size of partMap
+                        return cell;
+                    }
+                case MapZone.AroundCenter:
+                    {
+                        IntVec3 cell = new IntVec3(W / 2, 0, H / 2);
+                        var R = Verse.Rand.Range((W+H) / 16, (W+H) / 8);
+                        var alpha = Verse.Rand.Range(0.0f, 6.283f);
+                        cell.x += (int)(R * Mathf.Cos(alpha));
+                        cell.z += (int)(R * Mathf.Sin(alpha));
+                        //todo check size of partMap
+                        return cell;
+                    }
+                //todo more
+                default: //same as MapZone.Anywhere
+                    {
+                        IntVec3 cell = new IntVec3(W / 2, 0, H / 2);
+                        cell.x += (int)Verse.Rand.Range(-0.45f * (W - partW), 0.45f * (W - partW));
+                        cell.z += (int)Verse.Rand.Range(-0.45f * (H - partH), 0.45f * (H - partH));
+                        return cell; 
+                    }
+            }
+        }
+    }
+}
