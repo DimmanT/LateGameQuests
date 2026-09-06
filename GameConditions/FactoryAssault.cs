@@ -53,15 +53,15 @@ namespace LoGiQ.GameConditions
         }
         public override void GameConditionTick()
         {
-            if(skipCnt++ > 120)
+            if (skipCnt++ > 120)
             {
                 skipCnt = 0;
-                for(int i = 0 ; i < things.Count(); ++i)
+                for (int i = 0; i < things.Count(); ++i)
                 {
                     var t = things[i];
                     float rel = (float)(hitpoints[i] - t.HitPoints) / t.MaxHitPoints;
 
-                    if (rel > 0.1) 
+                    if (rel > 0.1)
                     {
                         //if damage more then 10% of max health from last check
                         Log.Message($"Relative health decrement={rel} of {t}");
@@ -70,6 +70,29 @@ namespace LoGiQ.GameConditions
                         quest.Notify_SignalReceived(signal);
                     }
                 }
+            }
+            else
+            if(skipCnt == 111)
+            {
+                var enms = map.attackTargetsCache.TargetsHostileToFaction(Faction.OfPlayer);
+                if (enms.Count > 10)
+                    return;
+
+                //filer out all threats, that not a "LoGiQ_EngineerIndustrial"
+                foreach (IAttackTarget item in map.attackTargetsCache.TargetsHostileToFaction(Faction.OfPlayer))
+                {
+                    if (item.Thing is Pawn p)
+                    {
+                        if (p.kindDef.defName != "LoGiQ_EngineerIndustrial")
+                            return;
+                    }
+                    else return;
+                }
+                //<-- here only LoGiQ_EngineerIndustrial is threat for player
+
+                Signal signalAED = new Signal($"Quest{quest.id}.site.AllEnemiesDefeated");
+                quest.Notify_SignalReceived(signalAED);
+
             }
         }
 

@@ -36,7 +36,7 @@ namespace LoGiQ.QuestNodes
 
 		protected override void RunInt()
         {
-			//Log.Message("Run derived");
+
 			Slate slate = QuestGen.slate;
 			Site site = siteToRaid.GetValue(slate);
 			//Log.Message($"Decoded site '{site.Label}'");
@@ -176,4 +176,5 @@ namespace LoGiQ.QuestNodes
 		}
 
 	}
+
 }

@@ -158,6 +158,7 @@ namespace LoGiQ.QuestNodes
 		}
 	}
 
+	// todo : give to caravan option
 	class QuestNode_ProgressGiveReward : QuestNode
 	{
 		[NoTranslate]
@@ -168,7 +169,7 @@ namespace LoGiQ.QuestNodes
 
 		public SlateRef<float> progressMax;
 		public SlateRef<float> progressMin;
-		public SlateRef<int> maxReward;
+		public SlateRef<float> maxReward;
 
 		public SlateRef<MapParent> site;
 
@@ -198,10 +199,9 @@ namespace LoGiQ.QuestNodes
 
 			float defProgressMin = 0;
 			float defProgressMax = 100;
-			int defMaxReward   = 1000;
+			float defMaxReward   = 1000;
 			string defProgressName = "";
 			MapParent defSite=null;
-
 
 			progressMin .TryGetValue(slate, out defProgressMin); 
 			progressMax .TryGetValue(slate, out defProgressMax); 
@@ -218,10 +218,10 @@ namespace LoGiQ.QuestNodes
 			
 			questPart.progressMin  = defProgressMin;  
 			questPart.progressMax  = defProgressMax;  
-			questPart.maxReward    = defMaxReward;    
+			questPart.maxReward    = (int)defMaxReward;    
 			questPart.progressName = defProgressName;
 			questPart.mapParent = defSite;
-			Log.Message($"QuestNode_ProgressGiveReward resolved site: {defSite}, reward={defMaxReward}");
+			Log.Message($"QuestNode_ProgressGiveReward resolved site: {defSite}, reward={defMaxReward}({questPart.maxReward})");
 
 			QuestGen.quest.AddPart(questPart);
 		}

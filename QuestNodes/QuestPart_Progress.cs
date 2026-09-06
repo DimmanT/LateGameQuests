@@ -102,7 +102,7 @@ namespace LoGiQ.QuestNodes
             if (signal.tag != inSignal)
                 return;
 
-            //Log.Message("QuestPart_ProgressGiveReward A");
+            Log.Message($"QuestPart_ProgressGiveReward : progressNmae={progressName}, reward={maxReward}. Min={progressMin}, Max= {progressMax}");
 
             float rel = 1;
             bool  found = false;
@@ -127,7 +127,7 @@ namespace LoGiQ.QuestNodes
                 //Log.Message("QuestPart_ProgressGiveReward D");
                 if (rel > 0 && rel < 10)
                 {
-                    //Log.Message($"Making reward {maxReward}*{rel}");
+                    Log.Message($"Making reward {maxReward}*{rel}");
                     List<Thing> rewardList = new List<Thing>();
                     ThingDef rewardDef = ThingDefOf.Silver;
                     int rewardValue = (int)Math.Ceiling(rel * maxReward);

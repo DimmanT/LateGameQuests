@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using QuestEditor_Library;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace LoGiQ.GameConditions
 {
     public class EmergencyOperationBase : GameCondition
     {
-        Faction faction = null;
-        Map map;
-        string signalStr;
-        List<Pawn> pawns;
-        float totalWeight = 0;
+        protected Faction faction = null;
+        protected Map map;
+        protected string signalStr;
+        protected List<Pawn> pawns;
+        protected float totalWeight = 0;
 
         int skipCnt = 0;
         public override void Init()
@@ -46,25 +47,10 @@ namespace LoGiQ.GameConditions
                     pawns.Add(p);
                     totalWeight += WeightOfPawn(p);
 
-                    //preparePawn(p);
-                    Hediff heatstroke = HediffMaker.MakeHediff(HediffDefOf.Heatstroke, p);
-                    heatstroke.Severity = Verse.Rand.Range(0.3f, 0.6f);
-                    p.health.AddHediff(heatstroke);
-
-                    //For most pawn set job to fight with fire
-                    if (Verse.Rand.Chance(0.75f))
-                    {
-                        Verse.AI.Job job = JobMaker.MakeJob(JobDefOf.ExtinguishFiresNearby);
-                        bool ok = p.jobs.TryTakeOrderedJob(job);
-                        if(ok)
-                        {
-                            Log.Message("OKKKKKK");
-                        }
-                        else
-                        {
-                            Log.Message("YOUR JOB IS INVALID !");
-                        }
-                    }
+                    //... prepare pawn ...
+                    DialogManagerDef dlg = DefDatabase<DialogManagerDef>.GetNamed("LoGiQ_EmergencyMission");
+                    Current.Game.GetComponent<GameComponent_Editor>().AddDialog(p, dlg);
+                    //....................
                 }
             }
             
@@ -132,10 +118,6 @@ namespace LoGiQ.GameConditions
             return w;
         }
 
-        protected void preparePawn(Pawn p)
-        {
-            //move here
-        }
     }
 
     public class EmergencyOperation_FireEvent : EmergencyOperationBase
@@ -179,6 +161,38 @@ namespace LoGiQ.GameConditions
                         }
                 }
                 //todo fix case when fire starts too far from first point
+            }
+
+            foreach (Pawn p in pawns)
+                preparePawn(p);
+
+        }
+        protected void preparePawn(Pawn p)
+        {
+            Hediff heatstroke = HediffMaker.MakeHediff(HediffDefOf.Heatstroke, p);
+            heatstroke.Severity = Verse.Rand.Range(0.35f, 0.6f);
+            p.health.AddHediff(heatstroke);
+
+            p.TakeDamage(new DamageInfo(DamageDefOf.Burn,5f));
+
+            //For most pawn set job to fight with fire
+            if (p != null && p.Map != null && Verse.Rand.Chance(0.9f))
+            {
+                var fireThing = GenClosest.ClosestThingReachable(p.Position, p.Map, ThingRequest.ForDef(ThingDefOf.Fire), Verse.AI.PathEndMode.ClosestTouch, TraverseParms.For(p), 10);
+                Log.Message($"Fire:{fireThing}");
+                if (fireThing == null)
+                    return;
+                Verse.AI.Job job = JobMaker.MakeJob(JobDefOf.BeatFire, fireThing);
+                bool ok = p.jobs.TryTakeOrderedJob(job);
+                //if (ok)
+                //{
+                //    Log.Message("OKKKKKK");
+                //}
+                //else
+                //{
+                //    Log.Message("YOUR JOB IS INVALID !");
+                //}
+
             }
         }
 

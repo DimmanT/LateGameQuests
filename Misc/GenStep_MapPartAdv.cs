@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using UnityEngine;
 using Verse;
-using System.Diagnostics;
+//using System.Diagnostics;
 
 namespace LoGiQ
 {
@@ -21,6 +21,7 @@ namespace LoGiQ
         public IntRange count = IntRange.One;
         public CustomMapGenerationSet set = new CustomMapGenerationSet();
         public MapZone zone = MapZone.Anywhere;
+        public bool allowIntersections = false;
 
         public override void Draw(ref float y, Rect inRect, float x)
         {
@@ -47,21 +48,20 @@ namespace LoGiQ
             }
             listing.End();
             //......................
+
+            //todo draw 'allowIntersections'
         }
 
         public override void Generate(Map map, CustomMapDataDef def, CustomSitePartParams param)
         {
             int num = count.RandomInRange;
             Log.Message($"Start generating in {zone}. Total parts {num}.");
+            List<CellRect> filledRects = new List<CellRect>();
             int remNum = num;
-            double elapsedTime1 = 0;
-            double elapsedTime2 = 0;
-            double elapsedTime3 = 0;
             while (num-->0)
             {
-                Stopwatch stopwatch = Stopwatch.StartNew();
+                //Stopwatch stopwatch = Stopwatch.StartNew();
                 CustomMapDataDef partDef = set.GetMap();
-                stopwatch.Stop(); elapsedTime1 += stopwatch.Elapsed.TotalMilliseconds;
                 if (partDef == null)
                 {
                     Log.Warning("Null map in set, skip.");
@@ -70,20 +70,13 @@ namespace LoGiQ
                 if (Prefs.DevMode)
                     Log.Message("Spawning Part:" + partDef.defName);
 
-                stopwatch = Stopwatch.StartNew();
-                var pos = getPosToGenerateAt(map, partDef);
-                stopwatch.Stop(); elapsedTime2 += stopwatch.Elapsed.TotalMilliseconds;
+                var pos = allowIntersections ? getPosToGenerateAt(map, partDef)
+                                             : getPosToGenerateAtWithoutIntersections(map, partDef, ref filledRects);
 
-                stopwatch = Stopwatch.StartNew();
                 partDef.GenerateByCore(pos, map, GameTools.GetQuestFromMap(map));
-                stopwatch.Stop(); elapsedTime3 += stopwatch.Elapsed.TotalMilliseconds;
             }
 
-            elapsedTime1 /= remNum;
-            elapsedTime2 /= remNum;
-            elapsedTime3 /= remNum;
-
-            Log.Message($"A={elapsedTime1},B={elapsedTime2},C={elapsedTime3}");
+            //Log.Message($"A={elapsedTime1},B={elapsedTime2},C={elapsedTime3}");
         }
 
         public override XElement SaveToXElement(string nodeName)
@@ -92,6 +85,7 @@ namespace LoGiQ
             result.Add(new XElement("count", count));
             result.Add(set.SaveToXElement("set"));
             result.Add(new XElement("zone", zone));
+            result.Add(new XElement("allowIntersections", allowIntersections));
             return result;
         }
 
@@ -131,6 +125,29 @@ namespace LoGiQ
                         return cell; 
                     }
             }
+        }
+
+        protected IntVec3 getPosToGenerateAtWithoutIntersections(Map map, CustomMapDataDef partDef, ref List<CellRect> filledRects)
+        {
+            int lim = 9;
+            IntVec3 resPos = IntVec3.Zero;
+            CellRect resRect = CellRect.Empty;
+            while (lim++ > 0)
+            {
+                resPos = getPosToGenerateAt(map, partDef);
+                resRect = new CellRect(resPos.x - partDef.size.x / 2, resPos.z - partDef.size.z / 2,
+                                       partDef.size.x, partDef.size.z);
+                bool bad = false;
+                foreach (var R in filledRects)
+                {
+                    bad = R.Intersect(resRect).EnumerableNullOrEmpty();
+                    if (bad) break;
+                }
+                if (!bad)
+                    break;
+            }
+            filledRects.Add(resRect);
+            return resPos;
         }
     }
 }

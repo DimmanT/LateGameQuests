@@ -140,7 +140,7 @@ namespace LoGiQ.QuestNodes
 
         public override void Notify_QuestSignalReceived(Signal signal)
         {
-            //Log.Message($"Input signal {signal.tag}. Total: {triggerSignals}");
+            //Log.Message($"Input signal {signal.tag}.");
             if (!triggerSignals.Contains(signal.tag))
                 return;
             //Log.Message($"Processing signal {signal.tag}");

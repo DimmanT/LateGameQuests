@@ -85,6 +85,7 @@
     <Compile Include="CQFConditions\CQFCondition_ColonistsInRadius.cs" />
     <Compile Include="CQFConditions\CQFCondition_PowerOn.cs" />
     <Compile Include="Events\IncidentWorker_QuestGiver.cs" />
+    <Compile Include="GameConditions\DefenceOperation.cs" />
     <Compile Include="GameConditions\EmergencyOperation.cs" />
     <Compile Include="GameConditions\FactoryAssault.cs" />
     <Compile Include="Jobs\JobGiver_ManTurretsCE.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="QuestNodes\QuestNode_GetFactionAdv.cs" />
     <Compile Include="QuestNodes\QuestNode_GetSketchesRequiredResourcesString.cs" />
     <Compile Include="QuestNodes\QuestNode_Goals.cs" />
+    <Compile Include="QuestNodes\QuestNode_KeepAnEyeEnemies.cs" />
     <Compile Include="QuestNodes\QuestNode_MakeCustomLord.cs" />
     <Compile Include="QuestNodes\QuestNode_Progress.cs" />
     <Compile Include="QuestNodes\QuestNode_RaidSite.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="QuestNodes\QuestPart_DoCQFActionChangeFaction.cs" />
     <Compile Include="QuestNodes\QuestPart_GameConditionRemovable.cs" />
     <Compile Include="QuestNodes\QuestPart_Goals.cs" />
+    <Compile Include="QuestNodes\QuestPart_KeepAnEyeEnemies.cs" />
     <Compile Include="QuestNodes\QuestPart_Progress.cs" />
     <Compile Include="Misc\ThingDefOfLocal.cs" />
     <Compile Include="QuestNodes\QuestPart_SpawnAtAnchor.cs" />
