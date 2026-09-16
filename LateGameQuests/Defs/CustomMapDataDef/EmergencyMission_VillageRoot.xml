@@ -2,11 +2,11 @@
 <Defs>
   <QuestEditor_Library.CustomMapDataDef>
     <defName>LoGiQ_Map_EmergencyMission_VillageRoot</defName>
-    <label>LoGiQ_Map_EmergencyMission_VillageRoot</label>
-    <description>LoGiQ_Map_EmergencyMission_VillageRoot</description>
+    <label>Settlement in danger</label>
+    <description>This settlement needs our help.</description>
     <fogged>false</fogged>
     <size>(4, 1, 4)</size>
-    <destroyAllThing>false</destroyAllThing>
+    <destroyAllThing>true</destroyAllThing>
     <commonality>1</commonality>
     <faction>MapFaction</faction>
 	<terrainsRect>
@@ -19,19 +19,23 @@
     </terrainsRect>
 	<customSteps>
 	  <li Class="LoGiQ.GenStep_MapPartAdv">
-        <count>3~4</count>
+        <count>2~3</count>
         <set>
           <tags>
-            <LoGiQ_MapPart_Village>1</LoGiQ_MapPart_Village>
+			<LoGiQ_MapPart_Village_Living>0.5</LoGiQ_MapPart_Village_Living>
+			<LoGiQ_MapPart_Village_Admin>0.2</LoGiQ_MapPart_Village_Admin>
           </tags>
         </set>
 		<zone>Center</zone>
       </li>
 	  <li Class="LoGiQ.GenStep_MapPartAdv">
-        <count>2~3</count>
+        <count>3~6</count>
         <set>
           <tags>
-            <LoGiQ_MapPart_Village>1</LoGiQ_MapPart_Village>
+		    <LoGiQ_MapPart_Village_Storage>0.6</LoGiQ_MapPart_Village_Storage>
+            <LoGiQ_MapPart_Village_Production>0.5</LoGiQ_MapPart_Village_Production>
+			<LoGiQ_MapPart_Village_Farm>0.5</LoGiQ_MapPart_Village_Farm>
+			<LoGiQ_MapPart_Village_Living>0.3</LoGiQ_MapPart_Village_Living>
           </tags>
         </set>
 		<zone>AroundCenter</zone>

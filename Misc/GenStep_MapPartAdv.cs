@@ -64,7 +64,7 @@ namespace LoGiQ
                 CustomMapDataDef partDef = set.GetMap();
                 if (partDef == null)
                 {
-                    Log.Warning("Null map in set, skip.");
+                    Log.Warning("Null map in set.GetMap(), skip.");
                     continue;
                 }
                 if (Prefs.DevMode)
@@ -73,7 +73,7 @@ namespace LoGiQ
                 var pos = allowIntersections ? getPosToGenerateAt(map, partDef)
                                              : getPosToGenerateAtWithoutIntersections(map, partDef, ref filledRects);
 
-                partDef.GenerateByCore(pos, map, GameTools.GetQuestFromMap(map));
+                partDef.GenerateByCore(pos, map, GameTools.GetQuestFromMap(map),destroyThings: partDef.destroyAllThing);
             }
 
             //Log.Message($"A={elapsedTime1},B={elapsedTime2},C={elapsedTime3}");
@@ -95,7 +95,7 @@ namespace LoGiQ
             int H = map.Size.z;
             int partW = partDef.size.x;
             int partH = partDef.size.z;
-            Log.Message($"Try find cell for part({partW}x{partH}) at map({W}x{H})");
+            //Log.Message($"Try find cell for part({partW}x{partH}) at map({W}x{H}) name={partDef.defName} zone={zone}");
             switch (zone)
             {
                 case MapZone.Center:  
@@ -116,6 +116,15 @@ namespace LoGiQ
                         //todo check size of partMap
                         return cell;
                     }
+                case MapZone.Perifery:
+                    {
+                        IntVec3 cell = new IntVec3(W / 2, 0, H / 2);
+                        var R = Verse.Rand.Range(4*(W + H) / 7, 2*(W + H) / 3);
+                        var alpha = Verse.Rand.Range(0.0f, 6.283f);
+                        cell.x += (int)(R * Mathf.Cos(alpha));
+                        cell.z += (int)(R * Mathf.Sin(alpha));
+                        return cell;
+                    }
                 //todo more
                 default: //same as MapZone.Anywhere
                     {
@@ -129,10 +138,11 @@ namespace LoGiQ
 
         protected IntVec3 getPosToGenerateAtWithoutIntersections(Map map, CustomMapDataDef partDef, ref List<CellRect> filledRects)
         {
-            int lim = 9;
+            const int LIM=8;
+            int lim = LIM;
             IntVec3 resPos = IntVec3.Zero;
             CellRect resRect = CellRect.Empty;
-            while (lim++ > 0)
+            while (lim-->0)
             {
                 resPos = getPosToGenerateAt(map, partDef);
                 resRect = new CellRect(resPos.x - partDef.size.x / 2, resPos.z - partDef.size.z / 2,
@@ -140,12 +150,26 @@ namespace LoGiQ
                 bool bad = false;
                 foreach (var R in filledRects)
                 {
-                    bad = R.Intersect(resRect).EnumerableNullOrEmpty();
+                    foreach (var c in resRect.Corners)
+                    {
+                        bad = R.Contains(c);
+                        if (bad) break;
+                    }
+                    //Log.Message($"---Check -> {resPos} in {R} ok={!bad}");
                     if (bad) break;
                 }
+                //if (!bad)
+                //{
+                    //todo check for stone
+                    //map.thingGrid.CellContains(resPos,ThingCategory.Item)
+                //}
                 if (!bad)
+                {
+                    lim = LIM;
                     break;
+                }
             }
+            //Log.Message($"Generated pos when lim={lim}, now filled {filledRects.Count()} it is {resPos}");
             filledRects.Add(resRect);
             return resPos;
         }

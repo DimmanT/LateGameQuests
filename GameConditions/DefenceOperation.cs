@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
+using Verse.AI;
 
 namespace LoGiQ.GameConditions
 {
@@ -37,7 +38,7 @@ namespace LoGiQ.GameConditions
                 {
                     if (bld.Faction != null)
                         continue;
-                    if (bld.def == ThingDefOf.Wall)
+                    if (bld.def == ThingDefOf.SteleLarge || bld.def == ThingDefOf.SteleGrand || bld.def == ThingDefOf.Sarcophagus)
                         continue;
                     if (bld.MarketValue < 75)
                         continue;
@@ -46,7 +47,7 @@ namespace LoGiQ.GameConditions
                     initialThingsMarketValues[bld.thingIDNumber] = bld.MarketValue;
                     things.Add(bld);
 
-                    Log.Message($"Track building:  {bld}");
+                    //Log.Message($"Track building:  {bld}");
 
                 }
             Log.Message($"Total buildings in account:  {things.Count} of {totalMarketValue}$");
@@ -60,7 +61,7 @@ namespace LoGiQ.GameConditions
                 {
                     if (cnt-- > 0)
                     {
-                        Log.Message($"ready to set faction to player for {p}");
+                        //Log.Message($"ready to set faction to player for {p}");
                         p.SetFaction(Faction.OfPlayer);
                         pawns.Add(p);
                     }
@@ -79,6 +80,10 @@ namespace LoGiQ.GameConditions
             { 
                 //Log.Message($"ready to reset faction for {p}");
                 p.SetFaction(Faction.OfAncients);
+                Job job = JobMaker.MakeJob(JobDefOf.Wait_Wander);
+                job.expiryInterval = 30000;
+                job.checkOverrideOnExpire = true;
+                p.jobs.TryTakeOrderedJob(job);
             }
         }
 
@@ -100,7 +105,7 @@ namespace LoGiQ.GameConditions
                         i--;
                     }
                 }
-                for (int i = 0; i < pawns.Count(); ++i)
+                for (int i = 0; i < pawns.Count(); ++i) //todo change to signalreceiver
                 {
                     var p = pawns[i];
                     if(p.health.Dead)

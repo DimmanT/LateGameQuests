@@ -2,7 +2,7 @@
 <LanguageData>
   
   	<!-- . . . Common data . . . -->
-	<LoGiQ_GoalLabel_DefeatRaders>Отразить атаку рейдеров</LoGiQ_GoalLabel_DefeatRaders>
+	<LoGiQ_GoalLabel_DefeatRaiders>Отразить атаку рейдеров</LoGiQ_GoalLabel_DefeatRaiders>
 	<LoGiQ_GoalLabel_DefeatGuards>Победить защитников</LoGiQ_GoalLabel_DefeatGuards>
 	<LoGiQ_GoalLabel_HackSecurityTerminal>Взломать терминал системы безопасности</LoGiQ_GoalLabel_HackSecurityTerminal>
 	<!-- . . . . . . . . . . . . -->
@@ -26,9 +26,13 @@
 	<LoGiQ_GoalLabel_FollowPrisoner>Вывести пленника</LoGiQ_GoalLabel_FollowPrisoner>
 	<!-- . . . . . . . . . . . . . -->
 	
-	 <!-- . . Factory assault  . -->
+	<!-- . . Factory assault  . -->
 	<LoGiQ_GoalLabel_CommercialValueProgress>Коммерческая ценность фабрики</LoGiQ_GoalLabel_CommercialValueProgress>
 	<LoGiQ_GoalLabel_KeepFactorySafe>Обеспечить сохранность персонала и оборудования</LoGiQ_GoalLabel_KeepFactorySafe>
+	<!-- . . . . . . . . . . . . -->
+	
+	<!-- . Defend settlement .  -->
+	<LoGiQ_GoalLabel_SettlementSaved>Обеспечить безопасность жителей и их имущества</LoGiQ_GoalLabel_SettlementSaved>
 	<!-- . . . . . . . . . . . . -->
 	
 </LanguageData>

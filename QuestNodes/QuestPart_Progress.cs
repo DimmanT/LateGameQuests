@@ -90,6 +90,7 @@ namespace LoGiQ.QuestNodes
     class QuestPart_ProgressGiveReward : QuestPart
     {
         public MapParent mapParent;
+        public bool giveToCaravan = false;
 
         public string inSignal;
         public float  progressMin=0;
@@ -140,12 +141,34 @@ namespace LoGiQ.QuestNodes
                         rewardThing.stackCount = stack;
                         rewardList.Add(rewardThing);
                     }
-                    var cell = SpawnDropPods(rewardList);
+                    TaggedString text;
+                    TaggedString label;
+                    LookTargets info;
+                    if (giveToCaravan)
+                    {
+                        var playersPawns = mapParent.Map.mapPawns.FreeColonistsSpawned;
+                        if (playersPawns.Empty())
+                            throw new Exception($"No player pawns at map {mapParent.Map}");
+                        Pawn p = playersPawns[0];
 
-                    //todo: add custom labels
-                    var text = "LetterQuestDropPodsArrived".Translate(GenLabel.ThingsLabel(rewardList));
-                    var label = "LetterLabelQuestDropPodsArrived".Translate();
-                    Find.LetterStack.ReceiveLetter(label, text, LetterDefOf.PositiveEvent, new TargetInfo(cell, mapParent.Map), null, quest);
+                        foreach(var r in rewardList)
+                            p.inventory.AddHauledCaravanItem(r);
+
+                        //todo: add custom labels
+                        label = "LoGiQ_LetterRewardGivenToPawnLabel".Translate();
+                        text = "LoGiQ_LetterRewardGivenToPawnText".Translate(GenLabel.ThingsLabel(rewardList));
+                        info = new LookTargets(p);
+                    }
+                    else
+                    {
+                        var cell = SpawnDropPods(rewardList);
+
+                        //todo: add custom labels
+                        text = "LetterQuestDropPodsArrived".Translate(GenLabel.ThingsLabel(rewardList));
+                        label = "LetterLabelQuestDropPodsArrived".Translate();
+                        info = new TargetInfo(cell, mapParent.Map);
+                    }
+                    Find.LetterStack.ReceiveLetter(label, text, LetterDefOf.PositiveEvent, info, null, quest);
                 }
                 else Log.Warning($"Relative progress less then 0 or greater 10! {progressName}");
             }
@@ -186,7 +209,8 @@ namespace LoGiQ.QuestNodes
             Scribe_Values.Look(ref progressMax, "progressMax");
             Scribe_Values.Look(ref progressName, "progressName");
             Scribe_Values.Look(ref maxReward, "maxReward");
-            Scribe_References.Look(ref mapParent, "mapParent"); 
+            Scribe_References.Look(ref mapParent, "mapParent");
+            Scribe_Values.Look(ref giveToCaravan, "giveToCaravan");
         }
     }
 }

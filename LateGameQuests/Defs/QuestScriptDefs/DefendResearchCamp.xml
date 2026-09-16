@@ -205,7 +205,7 @@
 			</mandatory>
 			<optional>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>LoGiQ_GoalLabel_DefeatRaders</label>
+					<label>LoGiQ_GoalLabel_DefeatRaiders</label>
 					<setSignal>site.AllEnemiesDefeated</setSignal>
 					<unsetSignal>ReadyForAttack</unsetSignal>
 					<initialState>true</initialState>

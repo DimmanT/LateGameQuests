@@ -5,4 +5,17 @@
 <LoGiQ_GameCondition_FactoryAssault.endMessage>Битва завершена, производство под вашим контролем.</LoGiQ_GameCondition_FactoryAssault.endMessage>
 <LoGiQ_GameCondition_FactoryAssault.letterText>Штурм начался.\n\n Постарайтесь не убивать гражданских, а также не портить производственное оборудование. Чем меньше разрушений вы после себя оставите, тем выше будет награда.</LoGiQ_GameCondition_FactoryAssault.letterText>
 <LoGiQ_GameCondition_FactoryAssault.startMessage>Штурм начался.</LoGiQ_GameCondition_FactoryAssault.startMessage>
+
+<LoGiQ_GameCondition_EmergencyOperation.label>Emergency operation in progress</LoGiQ_GameCondition_EmergencyOperation.label>
+<LoGiQ_GameCondition_EmergencyOperation.description>todo</LoGiQ_GameCondition_EmergencyOperation.description>
+<LoGiQ_GameCondition_EmergencyOperation.endMessage>Emergency operation  is over! No one in danger now.</LoGiQ_GameCondition_EmergencyOperation.endMessage>
+<LoGiQ_GameCondition_EmergencyOperation.letterText>todo title.\n\n todo text.</LoGiQ_GameCondition_EmergencyOperation.letterText>
+<LoGiQ_GameCondition_EmergencyOperation.startMessage>The emergency operation begun.</LoGiQ_GameCondition_EmergencyOperation.startMessage>
+
+<LoGiQ_GameCondition_DefenceOperation.label>Поселение под нашей защитой</LoGiQ_GameCondition_DefenceOperation.label>
+<LoGiQ_GameCondition_DefenceOperation.description>Задача: защитить поселение от захватчиков.</LoGiQ_GameCondition_DefenceOperation.description>
+<LoGiQ_GameCondition_DefenceOperation.endMessage>Поселение больше не нуждается в нашей помощи.</LoGiQ_GameCondition_DefenceOperation.endMessage>
+<LoGiQ_GameCondition_DefenceOperation.letterText>Задача: защитить поселение от захватчиков.</LoGiQ_GameCondition_DefenceOperation.letterText>
+<LoGiQ_GameCondition_DefenceOperation.startMessage>Наш отряд прибыл для защиты поселения от рейдеров. Требуется организовать оборону, используя все доступные ресурсы.</LoGiQ_GameCondition_DefenceOperation.startMessage>
+
 </LanguageData>

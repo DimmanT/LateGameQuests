@@ -172,6 +172,7 @@ namespace LoGiQ.QuestNodes
 		public SlateRef<float> maxReward;
 
 		public SlateRef<MapParent> site;
+		public SlateRef<bool> giveToCaravan;
 
 		protected override bool TestRunInt(Slate slate)
 		{
@@ -201,12 +202,14 @@ namespace LoGiQ.QuestNodes
 			float defProgressMax = 100;
 			float defMaxReward   = 1000;
 			string defProgressName = "";
+			bool defGiveToCaravan = false;
 			MapParent defSite=null;
 
 			progressMin .TryGetValue(slate, out defProgressMin); 
 			progressMax .TryGetValue(slate, out defProgressMax); 
 			maxReward   .TryGetValue(slate, out defMaxReward);   
 			progressName.TryGetValue(slate, out defProgressName);
+			giveToCaravan.TryGetValue(slate, out defGiveToCaravan);
 			site.TryGetValue(slate, out defSite);
 
 			if(defSite == null)
@@ -221,6 +224,7 @@ namespace LoGiQ.QuestNodes
 			questPart.maxReward    = (int)defMaxReward;    
 			questPart.progressName = defProgressName;
 			questPart.mapParent = defSite;
+			questPart.giveToCaravan = defGiveToCaravan;
 			Log.Message($"QuestNode_ProgressGiveReward resolved site: {defSite}, reward={defMaxReward}({questPart.maxReward})");
 
 			QuestGen.quest.AddPart(questPart);

@@ -613,4 +613,144 @@
         </loots>
 	</QuestEditor_Library.LootDataDef>
 	
+	
+	<!-- . . Village . . . -->
+	<QuestEditor_Library.LootDataDef>
+    <defName>LoGiQ_VillageCrate</defName>
+    <loots>
+      <li>
+        <dataName>VillageResources_Cloth</dataName>
+        <chance>0.5</chance>
+        <message>You found some useful materials</message>
+        <things>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>40~80</count>
+            <thing>Cloth</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>40~80</count>
+            <thing>Leather_Plain</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>10~20</count>
+            <thing>DevilstrandCloth</thing>
+          </li>
+        </things>
+      </li>
+      <li>
+        <dataName>VillageResources_MaterialsA</dataName>
+        <chance>0.5</chance>
+        <message>You found some useful materials</message>
+        <things>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>2~4</count>
+            <thing>ComponentIndustrial</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>25~100</count>
+            <thing>Steel</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>20~30</count>
+            <thing>Chemfuel</thing>
+          </li>
+        </things>
+        <categorys>
+          <li Class="QuestEditor_Library.CQFThingCategoryCount">
+            <count>20~50</count>
+            <category>StoneBlocks</category>
+          </li>
+        </categorys>
+      </li>
+      <li>
+        <dataName>VillageResources_MaterialsB</dataName>
+        <chance>0.5</chance>
+        <message>You found some useful materials</message>
+        <things>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>50~120</count>
+            <thing>Steel</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>100~250</count>
+            <thing>WoodLog</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>15~25</count>
+            <thing>Plasteel</thing>
+          </li>
+        </things>
+      </li>
+      <li>
+        <dataName>VillageResources_MaterialsC</dataName>
+        <chance>0.25</chance>
+        <message>You found some useful materials</message>
+        <things>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>50~90</count>
+            <thing>Steel</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>10~40</count>
+            <thing>Plasteel</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>30~50</count>
+            <thing>Cloth</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>4~8</count>
+            <thing>ComponentIndustrial</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>20~35</count>
+            <thing>Chemfuel</thing>
+          </li>
+        </things>
+      </li>
+      <li>
+        <dataName>VillageResources_Medical</dataName>
+        <chance>0.4</chance>
+        <message>You found some useful medical supplies</message>
+        <things>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>10~20</count>
+            <thing>MedicineHerbal</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>4~10</count>
+            <thing>MedicineIndustrial</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>5~25</count>
+            <thing>Neutroamine</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>10~20</count>
+            <thing>Cloth</thing>
+          </li>
+        </things>
+      </li>
+      <li>
+        <dataName>VillageResources_Food</dataName>
+        <chance>0.4</chance>
+        <message>You found some food</message>
+        <things>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>5~9</count>
+            <thing>MealSurvivalPack</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>5~11</count>
+            <thing>Beer</thing>
+          </li>
+          <li Class="QuestEditor_Library.CQFThingDefCount">
+            <count>20~30</count>
+            <thing>Chocolate</thing>
+          </li>
+        </things>
+      </li>
+    </loots>
+  </QuestEditor_Library.LootDataDef>
+  
 </Defs>

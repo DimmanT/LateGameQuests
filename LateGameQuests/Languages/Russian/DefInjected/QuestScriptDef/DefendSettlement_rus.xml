@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <LoGiQ_DefendSettlement.questDescriptionRules.rulesStrings>
+    <li>questDescription -&gt; Независимое поселение, расположенное по соседству просит о помощи. На них собираются напасть налетчики из фракции [enemyFaction_name]. [independentLeaderName] готов предоставить награду, если мы защитим их от этой угрозы.\n\n[questNotation]</li>
+	<li>questDescription -&gt; Люди из независимой колонии, расположенной неподалеку, просят нас о защите. Отряд фракции [enemyFaction_name] угрожает им расправой. Это небогатое поселение готово заплатить частью своих запасов за нашу защиту.\n\n[questNotation]</li>
+	<li>questDescription -&gt; Жители колонии, расположенной по соседству обратились к нам за помощью. [independentLeaderName] сообщает, что они не находятся под протекторатом какой-либо крупной фракции, из-за чего испытывают проблемы с разбойниками и рейдерами. В данный момент им угрожает отряд [enemyFaction_name]. Жители просят нас защитить их от налёта и готовы заплатить за это небольшую сумму.\n\n[questNotation]</li>
+	<li>questDescription -&gt; Поселение, расположеное недалеко от нас прислало просьбу о помощи. [independentLeaderName] сообщает о группе наёмников из [enemyFaction_name], которые угрожают им нападением. Поскольку поселение не находится под протекторатом ни одной из крупных фракций им больше не к кому обратиться. [independentLeaderName] готов предложить некоторые из их вещей в качестве оплаты.\n\n[questNotation]</li>
+	<li>independentLeaderName -&gt; Лидер поселения</li>
+	<li>independentLeaderName -&gt; Старейшина деревни</li>
+	<li>independentLeaderName -&gt; Управляющий городка</li>
+	<li>independentLeaderName -&gt; Главный поселенец</li>
+	<li>questNotation -&gt;    Выдвигайтесь к поселению и организуйте оборону. Местные жители обещают помочь всеми силами. Они заплатят вам [extraRewardValue_money] сверху, если вся их собственность переживет нападение. \nСовет: Вы можете использовать любые ресурсы поселения (но не личные вещи) для организации обороны. \nСовет: Это небольшое поселение, скорее всего, является целью небольшой группы налетчиков. \nСовет: Чем раньше вы прибудете на место, тем больше времени останется на подготовку.</li>
+  </LoGiQ_DefendSettlement.questDescriptionRules.rulesStrings>
+
+  <LoGiQ_DefendSettlement.questNameRules.rulesStrings>
+    <li>questName -&gt; Защита независимого поселения</li>
+    <li>questName -&gt; Соседи в опасности</li>
+    <li>questName -&gt; Жители поселения просят защиты</li>
+	<li>questName -&gt; Оборона независимого поселения</li>
+	<li>questName -&gt; Соседняя колония просит о помощи</li>
+	<li>questName -&gt; Защита соседей от рейдеров</li>
+	<li>questName -&gt; Независимое поселение просит помощи</li>
+	<li>questName -&gt; Независимое поселение в опасности</li>
+  </LoGiQ_DefendSettlement.questNameRules.rulesStrings>
+
+  <LoGiQ_DefendSettlement.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>Нужно прибыть в течение {0}, чтобы защитить поселение.</LoGiQ_DefendSettlement.root.nodes.WorldObjectTimeout.expiryInfoPart.slateRef>
+  <LoGiQ_DefendSettlement.root.nodes.WorldObjectTimeout.expiryInfoPartTip.slateRef> Нужно прибыть не позднее {0}, чтобы защитить поселение.</LoGiQ_DefendSettlement.root.nodes.WorldObjectTimeout.expiryInfoPartTip.slateRef>
+  <LoGiQ_DefendSettlement.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>Квест [resolvedQuestName] просрочен.</LoGiQ_DefendSettlement.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef> 
+  <LoGiQ_DefendSettlement.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>Независимое поселение было разграблено и уничтожено. Квест [resolvedQuestName] провален.</LoGiQ_DefendSettlement.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef> 
+  <LoGiQ_DefendSettlement.root.nodes.ProgressComplex.progressMessage.slateRef>Оплата сокращена (из-за повреждения имущества или смерти поселенца)</LoGiQ_DefendSettlement.root.nodes.ProgressComplex.progressMessage.slateRef>
+  <LoGiQ_DefendSettlement.root.nodes.Letter.label.slateRef>Слишком много разрушений!</LoGiQ_DefendSettlement.root.nodes.Letter.label.slateRef>
+  <LoGiQ_DefendSettlement.root.nodes.Letter.text.slateRef>Вы не оправдали ожиданий жителей этого поселения. Они уверены, что от вас больше бед чем от рейдеров.</LoGiQ_DefendSettlement.root.nodes.Letter.text.slateRef>
+  <LoGiQ_DefendSettlement.root.nodes.Delay.expiryInfoPart.slateRef>$enemyFaction будут готовы напасть через {0}</LoGiQ_DefendSettlement.root.nodes.Delay.expiryInfoPart.slateRef> 
+  <LoGiQ_DefendSettlement.root.nodes.Delay.expiryInfoPartTip.slateRef>$enemyFaction нападут {0}</LoGiQ_DefendSettlement.root.nodes.Delay.expiryInfoPartTip.slateRef> 
+  <LoGiQ_DefendSettlement.root.nodes.Delay.node.parms.customLetterLabel.value.slateRef>Налетчики атакуют!</LoGiQ_DefendSettlement.root.nodes.Delay.node.parms.customLetterLabel.value.slateRef> 
+  <LoGiQ_DefendSettlement.root.nodes.Delay.node.parms.customLetterText.value.slateRef>[enemyFaction_pawnsPlural] завершили свои приготовления и приступили к штурму.</LoGiQ_DefendSettlement.root.nodes.Delay.node.parms.customLetterText.value.slateRef> 
+
+ 
+</LanguageData>

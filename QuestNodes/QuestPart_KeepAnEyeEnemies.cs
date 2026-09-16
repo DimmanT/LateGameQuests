@@ -9,14 +9,14 @@ using Verse;
 
 namespace LoGiQ.QuestNodes
 {
-    class QuestPart_KeepAnEyeEnemies: QuestPart, ISignalReceiver
+    class QuestPart_KeepAnEyeEnemies: QuestPart//, ISignalReceiver
     {
         public bool active = false;
 
         public Site site;
         public string inSignal = "";
         public string inSignalDisable = "";
-        public string outSignalEnemiesArrived = "";
+        public string outSignalEnemiesArrived = ""; //not working now (16.09.2026)
         public string outSignalEnemiesDefeated = "";
         public bool canBeFogged = false;
         public bool countDormantPawnsAsHostile = false;
@@ -38,7 +38,7 @@ namespace LoGiQ.QuestNodes
             
             base.Notify_PawnKilled(pawn, dinfo);
             bool anyEnemy = GenHostility.AnyHostileActiveThreatToPlayer(site.Map,countDormantPawnsAsHostile, canBeFogged);
-            Log.Message($"DBG: anyEnemy? {anyEnemy}");
+            //Log.Message($"DBG: anyEnemy? {anyEnemy}");
             if(!anyEnemy)
                 Find.SignalManager.SendSignal(new Signal(outSignalEnemiesDefeated));
         }
@@ -61,9 +61,9 @@ namespace LoGiQ.QuestNodes
             }
         }
 
-        public void Notify_SignalReceived(Signal signal)
-        {
-            Log.Message($"QuestPart_KeepAnEyeEnemies: Generic input signal {signal.tag}, args={signal.args}.");
-        }
+        //public void Notify_SignalReceived(Signal signal)
+        //{
+            //Log.Message($"QuestPart_KeepAnEyeEnemies: Generic input signal {signal.tag}, args={signal.args}.");
+        //}
     }
 }

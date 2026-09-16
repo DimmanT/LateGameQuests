@@ -12,4 +12,8 @@
   <LoGiQ_MandatoryGoals>Mandatory</LoGiQ_MandatoryGoals>
   <LoGiQ_OptionalGoals>Optional</LoGiQ_OptionalGoals>
   
+  <LoGiQ_LetterRewardGivenToPawnLabel>Reward has been given to colonist</LoGiQ_LetterRewardGivenToPawnLabel>
+  <LoGiQ_LetterRewardGivenToPawnText>The reward has been given to one of your colonists</LoGiQ_LetterRewardGivenToPawnText>
+
+  
 </LanguageData> 

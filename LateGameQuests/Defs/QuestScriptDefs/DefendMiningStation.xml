@@ -372,7 +372,7 @@
 			</mandatory>
 			<optional>
 				<li Class="LoGiQ.QuestNodes.GoalBoolean">
-					<label>LoGiQ_GoalLabel_DefeatRaders</label>
+					<label>LoGiQ_GoalLabel_DefeatRaiders</label>
 					<setSignal>site.AllEnemiesDefeated</setSignal>
 					<unsetSignal>ReadyForAttack</unsetSignal>
 					<initialState>false</initialState>
@@ -438,7 +438,7 @@
     <hideOnCleanup>False</hideOnCleanup>
     <expireDaysRange>
       <min>1</min>
-      <max>2</max>
+      <max>3</max>
     </expireDaysRange>
     <nameMustBeUnique>False</nameMustBeUnique>
     <defaultChallengeRating>2</defaultChallengeRating>

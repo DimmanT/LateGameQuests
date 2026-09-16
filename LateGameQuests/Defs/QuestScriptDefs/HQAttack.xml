@@ -128,7 +128,7 @@
         </li>
 	  </nodes>
     </root>
-	<rootSelectionWeight>1.25</rootSelectionWeight>
+	<rootSelectionWeight>1.0</rootSelectionWeight>
     <randomlySelectable>False</randomlySelectable>
 	<decreeTags><li>LoGiQ_Random</li></decreeTags>
 	<decreeSelectionWeight>0</decreeSelectionWeight>

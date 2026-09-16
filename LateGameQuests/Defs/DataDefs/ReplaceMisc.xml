@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+ 
+<QuestEditor_Library.ReplacementDataDef>
+    <defName>LoGiQ_REPL_PlantHopsToOtherPlants</defName>
+    <datas>
+	  <li>
+        <dataName>PlantHops</dataName>
+        <replaceThings/>
+      </li>
+	  <li>
+        <dataName>PlantPotato</dataName>
+        <replaceThings>
+          <Plant_Hops>Plant_Potato</Plant_Hops>
+        </replaceThings>
+      </li>
+	  <li>
+        <dataName>PlantCorn</dataName>
+        <replaceThings>
+          <Plant_Hops>Plant_Corn</Plant_Hops>
+        </replaceThings>
+      </li>
+	  <li>
+        <dataName>PlantRice</dataName>
+        <replaceThings>
+          <Plant_Hops>Plant_Rice</Plant_Hops>
+        </replaceThings>
+      </li>
+	  <li>
+        <dataName>PlantCotton</dataName>
+        <replaceThings>
+          <Plant_Hops>Plant_Cotton</Plant_Hops>
+        </replaceThings>
+      </li>
+    </datas>
+</QuestEditor_Library.ReplacementDataDef>
+
+</Defs>

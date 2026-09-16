@@ -3,10 +3,11 @@
   <QuestEditor_Library.CustomMapDataDef>
     <defName>LoGiQ_MapPart_Village_BeerHouseA</defName>
     <label>LoGiQ_MapPart_Village_BeerHouseA</label>
-    <fogged>true</fogged>
+    <fogged>false</fogged>
     <size>(8, 1, 8)</size>
     <isPart>true</isPart>
     <commonality>1</commonality>
+	<destroyAllThing>true</destroyAllThing>
     <faction>MapFaction</faction>
     <!-- <generationLimit>2</generationLimit> -->
     <pawns>
@@ -19,7 +20,6 @@
             <count>1</count>
             <faction>MapFaction</faction>
             <!-- <generationChance>0.8</generationChance> -->
-            <dialogManager>LoGiQ_EmergencyMission</dialogManager>
             <spawnType>MapGeneration</spawnType>
             <hediffs>
               <li>
@@ -30,6 +30,8 @@
                 <partLabelForSeeing />
               </li>
             </hediffs>
+			<enableLord>true</enableLord>
+			<duty>Defend</duty>
           </li>
         </value>
       </li>

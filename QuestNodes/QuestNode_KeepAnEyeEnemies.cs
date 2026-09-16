@@ -12,9 +12,13 @@ namespace LoGiQ.QuestNodes
     class QuestNode_KeepAnEyeEnemies : QuestNode
     {
         SlateRef<Site>   site;
+        [NoTranslate]
         SlateRef<string> inSignal;
+        [NoTranslate]
         SlateRef<string> inSignalDisable;
+        [NoTranslate]
         SlateRef<string> outSignalEnemiesArrived;
+        [NoTranslate]
         SlateRef<string> outSignalEnemiesDefeated;
 
         protected override void RunInt()
@@ -44,7 +48,7 @@ namespace LoGiQ.QuestNodes
                 questPart.outSignalEnemiesDefeated = QuestGenUtility.HardcodedSignalWithQuestID(outSignalEnemiesDefeatedStr);
 
             QuestGen.quest.AddPart(questPart);
-            Find.SignalManager.RegisterReceiver(questPart);
+            //Find.SignalManager.RegisterReceiver(questPart);
         }
 
         protected override bool TestRunInt(Slate slate)

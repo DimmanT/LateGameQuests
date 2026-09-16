@@ -165,7 +165,7 @@
     <randomlySelectable>False</randomlySelectable>
 	<decreeTags><li>LoGiQ_Random</li></decreeTags>
 	<decreeSelectionWeight>0</decreeSelectionWeight>
-    <rootSelectionWeight>1.25</rootSelectionWeight>
+    <rootSelectionWeight>1.0</rootSelectionWeight>
     <rootMinPoints>1150</rootMinPoints>
     <rootIncreasesPopulation>False</rootIncreasesPopulation>
     <minRefireDays>8</minRefireDays>

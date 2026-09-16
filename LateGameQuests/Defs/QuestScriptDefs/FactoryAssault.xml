@@ -152,7 +152,6 @@
         <li Class="QuestNode_Set">
           <name>rewardValue</name>
           <value>$(randInt(17,23)*250)</value>
-		  <convertTo>Int32</convertTo>
         </li>
 		<li Class="LoGiQ.QuestNodes.QuestNode_ProgressGiveReward">
 		  <inSignal>site.AllEnemiesDefeated</inSignal>

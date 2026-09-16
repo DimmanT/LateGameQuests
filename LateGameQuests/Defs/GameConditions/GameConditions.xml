@@ -38,5 +38,16 @@
     <letterDef>NeutralEvent</letterDef>
 	<canBePermanent>True</canBePermanent>
  </GameConditionDef>
+ <GameConditionDef>
+    <defName>LoGiQ_GameCondition_DefenceOperation</defName>
+    <conditionClass>LoGiQ.GameConditions.DefenceOperation</conditionClass>
+    <label>Settlement is under our protection</label>
+    <description>The task: protect the settlement from invaders.</description>
+	<startMessage>Our squad has arrived to protect the settlement from raiders. We need to set up defenses using all available resources.</startMessage>
+    <endMessage>This settlement doesn't need our help anymore.</endMessage>
+    <letterText>The task: protect the settlement from invaders.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+	<canBePermanent>True</canBePermanent>
+ </GameConditionDef>
 
 </Defs>

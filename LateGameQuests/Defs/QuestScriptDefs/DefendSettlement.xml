@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>LoGiQ_DefendSettlement</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+	    <li Class="QuestNode_EvaluateSimpleCurve">
+          <value>$points</value>
+          <storeAs>pointsReduceFactor</storeAs>
+          <curve>
+            <points>
+              <li>0, 1.1</li>
+              <li>2500, 1</li>
+              <li>10000, 0.4</li>
+            </points>
+          </curve>
+        </li>
+		<li Class="QuestNode_Multiply">
+          <value1>$points</value1>
+          <value2>$pointsReduceFactor</value2>
+		  <storeAs>points</storeAs>
+        </li>
+		<!-- . . . Gen map . . . -->
+		<li Class="QuestNode_GetRandomInRangeInt">
+          <storeAs>siteDistance</storeAs>
+          <range>10~13</range>
+        </li>
+		<li Class="QuestNode_Set">
+		  <name>arriveDeadline</name>
+		  <value>$($siteDistance*12000)</value>
+		  <convertTo>Double</convertTo>
+		</li>
+		<!-- Slightly decrease time, if we have access to vehicles.-->
+		<li Class="QuestNode_ModIsActive"> 
+		  <modID>SmashPhil.VehicleFramework</modID>
+		  <node Class="QuestNode_Multiply">
+			<value1>0.8</value1>
+			<value2>$arriveDeadline</value2>
+			<storeAs>arriveDeadline</storeAs>
+		  </node>
+		</li>
+        <li Class="QuestEditor_Library.QuestNode_RandomCustomMap">
+          <datas>
+			<li><key>LoGiQ_Map_EmergencyMission_VillageRoot</key><value>1</value></li>
+		  </datas>
+          <buffer>10</buffer>
+          <bufferMin>20</bufferMin>
+          <expandingIconPath>Things/Sites/village_needs_defence</expandingIconPath>
+          <replaceMapGeneration>False</replaceMapGeneration>
+          <enableBlack>True</enableBlack>
+          <storeAs>site</storeAs>
+		  <!-- <faction>Ancients</faction> -->
+          <distance>10~13</distance>
+          <blacklist />
+        </li>
+		<li Class="QuestNode_Signal">
+          <inSignal>site.MapGenerated</inSignal>
+		  <outSignals><li>InitCQF</li></outSignals>
+		  <!--  <node Class="QuestNode_Sequence"> 
+            <nodes> 
+			    <li Class="QuestNode_Letter"> 
+					<letterDef>NeutralEvent</letterDef> 
+					<label>Prepare to defened the settlement</label> 
+					<text>Your forces arrived to settlement. Time to organize the defence.</text> 
+			    </li>
+			</nodes>
+          </node> -->
+        </li>
+		<li Class="LoGiQ.QuestNodes.QuestNode_GameConditionSite">
+		  <inSignal>InitCQF</inSignal>
+		  <removeSignal>NeedFinishCondition</removeSignal>
+		  <gameCondition>LoGiQ_GameCondition_DefenceOperation</gameCondition>
+		  <targetWorld>false</targetWorld>
+		  <duration>-1</duration>
+		  <site>$site</site>
+		</li>	
+		<li Class="RimWorld.QuestGen.QuestNode_WorldObjectTimeout">
+          <destroyOnCleanup>true</destroyOnCleanup>
+          <worldObject>$site</worldObject>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <delayTicks>$arriveDeadline</delayTicks>
+		  <expiryInfoPart TKey="InfoPartQuestExpired">You must arrive within {0} to defend the settlement.</expiryInfoPart>
+          <expiryInfoPartTip TKey="InfoPartTipQuestExpired">You must arrive within {0} to defend the settlement.</expiryInfoPartTip>
+          <node Class="RimWorld.QuestGen.QuestNode_Sequence">
+            <nodes>
+              <li Class="RimWorld.QuestGen.QuestNode_Letter">
+                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestExpired">Settlement was raided and destroyed. The quest [resolvedQuestName] has expired.</text>
+              </li>
+              <li Class="RimWorld.QuestGen.QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+		<!-- . . . . . . . . . . -->
+		<!-- . . . . . . . . Regress. . . . . . . . -->
+		<li Class="LoGiQ.QuestNodes.QuestNode_ProgressComplex">
+		   	<inSignals>
+				<li>AnyBuildingDestroyed</li>
+				<li>AnyVillagerKilled</li>
+				<li>SomethingStolen</li>
+			</inSignals>
+			<increments>
+				<li>-100</li>
+				<li>-100</li>
+				<li>-35</li>
+			</increments>
+		   <progressMax>10</progressMax>
+		   <progressMin>100</progressMin>
+		   <progressMessage>Your payment will be reduced.</progressMessage>
+		   <progressName>SettlementSaved</progressName>
+		   <outSignalComplete>TooMuchDestruction</outSignalComplete>
+	    </li>
+		<li Class="QuestNode_Letter">
+		  <inSignal>TooMuchDestruction</inSignal>
+		  <label>Too much destruction!</label>
+		  <letterDef>NegativeEvent</letterDef>
+		  <text>You have not met the expectations of the settlement people. They think you do more damage than the raiders, so they will not pay.</text>
+		</li>
+		<!-- . . . . . . . . . . . . . . . . . . . . -->
+		<!-- . . . . . . . CONFIGURATING RAIDERS . . . . . . . -->
+        <li Class="QuestNode_GetFaction">
+          <storeAs>enemyFaction</storeAs>
+          <allowEnemy>true</allowEnemy>
+		  <allowNeutral>false</allowNeutral> <!-- check why neutral can not raid -->
+		  <allowAlly>false</allowAlly>
+        </li>
+		<li Class="RimWorld.QuestGen.QuestNode_Delay">
+          <inSignalDisable>site.Destroyed</inSignalDisable>
+          <outSignalComplete>ReadyForAttack</outSignalComplete>
+          <expiryInfoPart TKey="InfoPartReadyForAttack">$enemyFaction preparing for attack {0}</expiryInfoPart>
+          <expiryInfoPartTip TKey="InfoPartTipReadyForAttack">$enemyFaction preparing  for attack {0}</expiryInfoPartTip>
+          <delayTicks>$($arriveDeadline + 45000)</delayTicks>
+          <isQuestTimeout>false</isQuestTimeout>
+		  <node Class="RimWorld.QuestGen.QuestNode_SubScript">
+			  <def>Util_RaidSiteComplex</def>
+			  <parms>
+				<points>$points</points>
+				<faction>$enemyFaction</faction>
+				<inSignal>ReadyForAttack</inSignal>
+				<siteToRaid>$site</siteToRaid>
+				<customLetterLabel TKey="LetterLabelAttack">Raiders attack!</customLetterLabel>
+				<customLetterText  TKey="LetterTextAttack">[enemyFaction_pawnsPlural] completed their preparations and began the assault.</customLetterText>
+				<arrivalMode>EdgeWalkIn</arrivalMode>
+				<canTimeoutOrFlee>true</canTimeoutOrFlee>
+				<inSignalLeave>EndRaid</inSignalLeave>
+			  </parms>
+			</node>
+        </li>
+		<li Class="LoGiQ.QuestNodes.QuestNode_KeepAnEyeEnemies">
+			<site>$site</site>
+			<inSignal>ReadyForAttack</inSignal>
+			<inSignalDisable>AllEnemiesDefeated</inSignalDisable>
+			<outSignalEnemiesDefeated>AllEnemiesDefeated</outSignalEnemiesDefeated>
+		</li>
+		<!-- . . . . . . . . REWARDS . . . . . . . . -->
+		<li Class="QuestNode_Set">
+          <name>rewardValue</name>
+          <value>$($points * randFloat(0.6, 0.75))</value>
+        </li>
+		<li Class="QuestNode_Set">
+          <name>extraRewardValue</name>
+          <value>$($points * randFloat(0.4, 0.6))</value>
+		  <!-- <convertTo>Int32</convertTo> -->
+        </li>
+		<li Class="QuestNode_GetMap"/>
+		<li Class="LoGiQ.QuestNodes.QuestNode_ProgressGiveReward">
+		  <inSignal>AllEnemiesDefeated</inSignal>
+		  <progressMin>100</progressMin>
+		  <progressMax>0</progressMax>
+		  <progressName>SettlementSaved</progressName>
+		  <maxReward>$extraRewardValue</maxReward>
+		  <giveToCaravan>false</giveToCaravan>
+		</li>
+		<li Class="QuestNode_GiveRewards">
+          <inSignal>AllEnemiesDefeated</inSignal>
+          <parms>
+            <allowGoodwill>false</allowGoodwill>
+            <allowRoyalFavor>false</allowRoyalFavor>
+            <giveToCaravan>false</giveToCaravan>
+          </parms>
+	      <useDifficultyFactor>false</useDifficultyFactor>
+        </li>
+		<!-- . . . . . . . . . . -->
+		<!-- . . . GOALS . . . . -->
+		<li Class="LoGiQ.QuestNodes.QuestNode_Goals">
+			<mandatory>
+				<li Class="LoGiQ.QuestNodes.GoalProgress">
+					<label>LoGiQ_GoalLabel_SettlementSaved</label>
+					<progressName>SettlementSaved</progressName>
+				</li>
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
+					<label>LoGiQ_GoalLabel_DefeatRaiders</label>
+					<setSignal>AllEnemiesDefeated</setSignal>
+				</li>
+			</mandatory>
+		</li>
+		<!-- . . . . . . . . . . -->
+		<!-- . . . Ending  . . . -->
+		<!-- FINISH FAIL if a lot people are killed or buildings are damaged -->
+		<!-- todo signal to disable lootboxes -->
+		<li Class="QuestNode_Signal">
+			<inSignal>AllEnemiesDefeated</inSignal>
+			<outSignals>
+				<li>NeedFinishCondition</li>
+				<li>NeedFinishQuestGood</li>
+			</outSignals>
+		</li>
+		<li Class="QuestNode_Signal">
+			<inSignal>TooMuchDestruction</inSignal>
+			<outSignals>
+				<li>NeedFinishCondition</li>
+				<li>NeedFinishQuestBad</li>
+			</outSignals>
+		</li>
+		<li Class="QuestNode_Signal">
+			<inSignal>site.Destroyed</inSignal>
+			<outSignals>
+				<li>NeedFinishCondition</li>
+				<li>NeedFinishQuestBad</li>
+			</outSignals>
+		</li>
+        <li Class="QuestNode_End">
+          <inSignal>NeedFinishQuestBad</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Fail</outcome>
+        </li>
+		<li Class="QuestNode_End">
+          <inSignal>NeedFinishQuestGood</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Success</outcome>
+        </li>
+	  </nodes>
+    </root>
+    <randomlySelectable>False</randomlySelectable>
+	<decreeTags><li>LoGiQ_Random</li></decreeTags>
+	<decreeSelectionWeight>0</decreeSelectionWeight>
+    <rootSelectionWeight>1.0</rootSelectionWeight>
+    <rootMinPoints>750</rootMinPoints>
+    <rootIncreasesPopulation>False</rootIncreasesPopulation>
+    <minRefireDays>8</minRefireDays>
+	<rootEarliestDay>1</rootEarliestDay>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription -&gt; An independent settlement nearby is asking for help. Raiders from the [enemyFaction_name] faction are planning to attack. [independentLeaderName] is ready to offer a reward if we protect them from this threat.\n\n[questNotation]</li>
+		<li>questDescription -&gt; People from an independent colony nearby are asking us for protection. A squad from the [enemyFaction_name] faction is threatening them. This not-so-rich settlement is willing to pay part of their supplies for our protection.\n\n[questNotation]</li>
+		<li>questDescription -&gt; The residents of the nearby colony are asking us for help. [independentLeaderName] says they aren't under the protection of any major faction, which is why they're having trouble with bandits and raiders. Right now, they're threatened by a [enemyFaction_name] squad. The villagers are asking us to defend them from the raid and are willing to pay a small reward.\n\n[questNotation]</li>
+		<li>questDescription -&gt; A settlement located not far from us sent a request for help. [independentLeaderName] reports a group of mercenaries from [enemyFaction_name] threatening to attack them. Since the settlement isn't under the protection of any major faction, they have no one else to help. [independentLeaderName] is ready to offer some of their resources as payment.\n\n[questNotation]</li>
+		<li>independentLeaderName -&gt; Leader if the settlement</li>
+		<li>independentLeaderName -&gt; Village elder</li>
+		<li>independentLeaderName -&gt; Town manager</li>
+		<li>independentLeaderName -&gt; Main settler</li>
+		<li>independentLeaderName -&gt; Main colonist</li>
+		<li>questNotation -&gt; Go to the settlement and set up defenses. The locals promise to help with everything they can, they will pay extra [extraRewardValue_money] if all their property survived. \nTip: This small settlement is most likely the target of a small group of raiders. \nTip: You can use any of the settlement's resources (but not personal items) to organize the defense. \nTip: The earlier you get there, the more time you'll have to get ready.</li>
+	  </rulesStrings>
+      <rulesFiles />
+      <rulesRaw IsNull="True" />
+      <include IsNull="True" />
+    </questDescriptionRules>
+    <questNameRules>
+      <rulesStrings>
+		<li>questName -&gt; Defend the independent settlement</li>
+		<li>questName -&gt; Protect the independent settlement</li>
+		<li>questName -&gt; Neighbors in danger</li>
+		<li>questName -&gt; Neighboring settlement is in danger</li>
+		<li>questName -&gt; Villagers are asking for protection</li>
+		<li>questName -&gt; Neighboring colony is in danger</li>
+		<li>questName -&gt; Neighboring colony is asking for protection</li>
+		<li>questName -&gt; Neighboring colony is asking for help</li>
+		<li>questName -&gt; Defend the neighbors from raiders</li>
+		<li>questName -&gt; Independent settlement is asking for help</li>
+		<li>questName -&gt; Independent settlement is in danger</li>
+      </rulesStrings>
+      <rulesFiles />
+      <rulesRaw IsNull="True" />
+      <include IsNull="True" />
+    </questNameRules>
+    <autoAccept>false</autoAccept>
+	<expireDaysRange>
+      <min>1</min>
+      <max>3</max>
+    </expireDaysRange>
+    <hideOnCleanup>True</hideOnCleanup>
+    <nameMustBeUnique>False</nameMustBeUnique>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <defaultHidden>False</defaultHidden>
+    <isRootSpecial>True</isRootSpecial>
+    <canGiveRoyalFavor>False</canGiveRoyalFavor>
+    <questAvailableLetterTextIsDescription>False</questAvailableLetterTextIsDescription>
+    <hideInvolvedFactionsInfo>False</hideInvolvedFactionsInfo>
+    <affectedByPopulation>False</affectedByPopulation>
+    <affectedByPoints>True</affectedByPoints>
+    <defaultCharity>True</defaultCharity>
+    <sendAvailableLetter>True</sendAvailableLetter>
+    <epic>False</epic>
+    <endOnColonyMove>True</endOnColonyMove>
+    <everAcceptableInSpace>False</everAcceptableInSpace>
+    <neverPossibleInSpace>False</neverPossibleInSpace>
+    <givenBy />
+    <canOccurOnAllPlanetLayers>False</canOccurOnAllPlanetLayers>
+    <ignoreConfigErrors>False</ignoreConfigErrors>
+    <ignoreIllegalLabelCharacterConfigError>False</ignoreIllegalLabelCharacterConfigError>
+    
+  </QuestScriptDef>
+</Defs>

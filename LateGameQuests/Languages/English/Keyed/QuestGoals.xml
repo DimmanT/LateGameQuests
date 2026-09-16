@@ -2,7 +2,7 @@
 <LanguageData>
 
 	<!-- . . . Common data . . . -->
-	<LoGiQ_GoalLabel_DefeatRaders>Defeat raiders</LoGiQ_GoalLabel_DefeatRaders>
+	<LoGiQ_GoalLabel_DefeatRaiders>Defeat raiders</LoGiQ_GoalLabel_DefeatRaiders>
 	<LoGiQ_GoalLabel_DefeatGuards>Defeat guards</LoGiQ_GoalLabel_DefeatGuards>
 	<LoGiQ_GoalLabel_HackSecurityTerminal>Hack the security terminal</LoGiQ_GoalLabel_HackSecurityTerminal>
 	<!-- . . . . . . . . . . . . -->
@@ -30,4 +30,9 @@
 	<LoGiQ_GoalLabel_CommercialValueProgress>Commercial value</LoGiQ_GoalLabel_CommercialValueProgress>
 	<LoGiQ_GoalLabel_KeepFactorySafe>Keep workers and equipment safe</LoGiQ_GoalLabel_KeepFactorySafe>
 	<!-- . . . . . . . . . . . . -->
+	
+	<!-- . Defend settlement .  -->
+	<LoGiQ_GoalLabel_SettlementSaved>Keep villagers and their property safe</LoGiQ_GoalLabel_SettlementSaved>
+	<!-- . . . . . . . . . . . . -->
+	
 </LanguageData> 

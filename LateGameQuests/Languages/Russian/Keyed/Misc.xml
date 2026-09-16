@@ -12,4 +12,7 @@
   <LoGiQ_MandatoryGoals>Обязательные</LoGiQ_MandatoryGoals>
   <LoGiQ_OptionalGoals>Дополнительные</LoGiQ_OptionalGoals>
   
+  <LoGiQ_LetterRewardGivenToPawnLabel>Награда передана поселенцу</LoGiQ_LetterRewardGivenToPawnLabel>
+  <LoGiQ_LetterRewardGivenToPawnText>Награда выдана одному из ваших поселенцев</LoGiQ_LetterRewardGivenToPawnText>
+  
 </LanguageData> 
