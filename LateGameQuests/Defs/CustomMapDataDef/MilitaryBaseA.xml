@@ -12,7 +12,7 @@
     <customThings>
 	  <li Class="QuestEditor_Library.CustomThingData_CustomTrap">
         <def>QE_TriggerTrap</def>
-        <position>(11,0,16)</position>
+        <position>(14,0,21)</position>
         <trapComps>
           <li>
             <mode>Tick</mode>
@@ -91,10 +91,11 @@
           <li>
             <dataName>EliteA</dataName>
             <kind>Mercenary_Elite</kind>
-            <count>4</count>
+            <count>3</count>
             <faction>MapFaction</faction>
             <spawnType>MapGeneration</spawnType>
 			<enableLord>true</enableLord>
+			<duty>Defend</duty>
 			<lordDataName>agressivedefense</lordDataName>
           </li>
         </value>
@@ -105,7 +106,7 @@
           <li>
             <dataName>EliteB</dataName>
             <kind>Mercenary_Elite</kind>
-            <count>4</count>
+            <count>3</count>
             <faction>MapFaction</faction>
             <spawnType>MapGeneration</spawnType>
 			<enableLord>true</enableLord>
@@ -145,7 +146,7 @@
 				<enableLord>true</enableLord>
 				<duty>Defend</duty>
                 <kind>Mercenary_Elite</kind>
-                <count>3~4</count>
+                <count>2~3</count>
                 <faction>MapFaction</faction>
                 <spawnType>MapGeneration</spawnType>
               </li>
@@ -154,7 +155,7 @@
 				<enableLord>true</enableLord>
 				<duty>Defend</duty>
                 <kind>AncientSoldier</kind>
-                <count>4~4</count>
+                <count>2~4</count>
                 <faction>MapFaction</faction>
                 <spawnType>MapGeneration</spawnType>
               </li>
@@ -169,7 +170,7 @@
             <dataName>MortarTeam</dataName>
             <kind>LoGiQ_Mercenary_Crew</kind>
 			<enableLord>true</enableLord>
-            <count>3~4</count>
+            <count>2~3</count>
             <faction>MapFaction</faction>
             <spawnType>MapGeneration</spawnType>
 			<enableLord>true</enableLord>
@@ -189,17 +190,21 @@
                 <dataName>Heavy</dataName>
                 <kind>Mercenary_Heavy</kind>
 				<enableLord>true</enableLord>
-                <count>3~4</count>
+				<duty>Defend</duty>
+                <count>1~3</count>
                 <faction>MapFaction</faction>
                 <spawnType>MapGeneration</spawnType>
+				<lordDataName>agressivedefense</lordDataName>
               </li>
               <li>
                 <dataName>Fighters</dataName>
                 <kind>Mercenary_Gunner</kind>
 				<enableLord>true</enableLord>
-                <count>5~6</count>
+				<duty>Defend</duty>
+                <count>2~5</count>
                 <faction>MapFaction</faction>
                 <spawnType>MapGeneration</spawnType>
+				<lordDataName>agressivedefense</lordDataName>
               </li>
             </datas>
           </li>
@@ -217,12 +222,14 @@
                 <dataName>Sniper</dataName>
                 <kind>Mercenary_Sniper</kind>
 				<enableLord>true</enableLord>
-                <count>2~2</count>
+				<duty>Defend</duty>
+                <count>1~2</count>
                 <faction>MapFaction</faction>
                 <spawnType>MapGeneration</spawnType>
 				<extraKinds>
                   <li>Grenadier_Destructive</li>
                 </extraKinds>
+				<lordDataName>agressivedefense</lordDataName>
               </li>
             </datas>
           </li>
@@ -1039,27 +1046,28 @@
       </li>
       <li>
         <def>Shell_HighExplosive</def>
-        <count>25</count>
+        <count>15</count>
         <allRect>
           <li>(6,8,6,9)</li>
         </allRect>
       </li>
       <li>
         <def>Shell_Incendiary</def>
-        <count>25</count>
+        <count>15</count>
         <allRect>
           <li>(6,6,6,7)</li>
         </allRect>
       </li>
     </thingDatas>
     <customSteps>
-      <li Class="QuestEditor_Library.CustomMapStep_MapPart">
+      <li Class="LoGiQ.GenStep_MapPartAdv">
         <count>3~4</count>
         <set>
           <tags>
             <LoGiQ_MilitaryBasePostL>1</LoGiQ_MilitaryBasePostL>
           </tags>
         </set>
+		<zone>Perifery</zone>
       </li>
 	  <li Class="LoGiQ.GenStep_Replacement">
          <replaceDataDefNames>

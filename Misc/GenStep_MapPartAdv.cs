@@ -52,7 +52,7 @@ namespace LoGiQ
             //todo draw 'allowIntersections'
         }
 
-        public override void Generate(Map map, CustomMapDataDef def, CustomSitePartParams param)
+        public override void Generate(Map map, CustomMapDataDef def, CustomMapGenerationContext context)
         {
             int num = count.RandomInRange;
             Log.Message($"Start generating in {zone}. Total parts {num}.");
@@ -119,13 +119,14 @@ namespace LoGiQ
                 case MapZone.Perifery:
                     {
                         IntVec3 cell = new IntVec3(W / 2, 0, H / 2);
-                        var R = Verse.Rand.Range(4*(W + H) / 7, 2*(W + H) / 3);
+                        var R = Verse.Rand.Range((W + H) / 7, (W + H) / 5);
                         var alpha = Verse.Rand.Range(0.0f, 6.283f);
                         cell.x += (int)(R * Mathf.Cos(alpha));
                         cell.z += (int)(R * Mathf.Sin(alpha));
                         return cell;
                     }
                 //todo more
+                case MapZone.Anywhere:
                 default: //same as MapZone.Anywhere
                     {
                         IntVec3 cell = new IntVec3(W / 2, 0, H / 2);
@@ -138,7 +139,7 @@ namespace LoGiQ
 
         protected IntVec3 getPosToGenerateAtWithoutIntersections(Map map, CustomMapDataDef partDef, ref List<CellRect> filledRects)
         {
-            const int LIM=8;
+            const int LIM=10;
             int lim = LIM;
             IntVec3 resPos = IntVec3.Zero;
             CellRect resRect = CellRect.Empty;
@@ -173,5 +174,6 @@ namespace LoGiQ
             filledRects.Add(resRect);
             return resPos;
         }
+
     }
 }

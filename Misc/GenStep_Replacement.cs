@@ -18,10 +18,12 @@ namespace LoGiQ
              
         }
 
-        public override void Generate(Map map, CustomMapDataDef def, CustomSitePartParams param)
+        public override void Generate(Map map, CustomMapDataDef def, CustomMapGenerationContext context)
         {
             if (DebugSettings.godMode)
                 return; //skip this step, so we can edit map and replacements on it.
+
+            Log.Message($"Starting replacement on map {def.defName}");
 
             // . . . . create replace rules ....
             var replaceThings = new Dictionary<string, ThingDef>();
@@ -44,11 +46,11 @@ namespace LoGiQ
                 foreach (var originalName in data.replaceThings.Keys) //todo via GetEnumerator
                 {
                     string newName = data.replaceThings[originalName];
-                    ThingDef newDef = DefDatabase<ThingDef>.GetNamed(newName);
+                    ThingDef newDef = DefDatabase<ThingDef>.GetNamed(newName,false);
                     if (newDef == null)
                     {
                         Log.Warning($"Can not find ThingDef={newName}, replacing with 'Steel'");
-                        newDef = DefDatabase<ThingDef>.GetNamed("Steel");
+                        newDef = DefDatabase<ThingDef>.GetNamed("Steel"); //becase ammo can be replaced with steel for vanilla (its dirty, i know)
                     }
                     replaceThings[originalName] = newDef;
                 }
