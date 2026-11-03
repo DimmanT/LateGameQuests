@@ -86,6 +86,10 @@
 				<letterDef>NegativeEvent</letterDef>
 				<text>Enemies have detected you, they call to reinforcements. Forces will be here in a day or so.</text>
 			  </li>
+			  <li Class="QuestNode_Set">
+				<name>arrivalMode</name>
+				<value>EdgeWalkIn</value>
+			  </li>
               <li Class="RimWorld.QuestGen.QuestNode_Delay">
 				  <inSignalDisable>site.Destroyed</inSignalDisable>
 				  <outSignalComplete>ReadyForAttack</outSignalComplete>

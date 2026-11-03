@@ -229,11 +229,7 @@
 				<letterDef>PositiveEvent</letterDef>
 				<text>Enemies are defeated, the factory are under your control! Now you can leave. The incomed forces will tend civils.</text>
 			  </li>
-			  <li Class="QuestNode_End">          
-				<inSignal>TooMuchDestruction</inSignal>
-				<sendStandardLetter>true</sendStandardLetter>
-				<outcome>Fail</outcome>
-			  </li>
+
 			</nodes>
           </node>
         </li>
@@ -243,13 +239,31 @@
 		  <inSignalEnable>site.AllEnemiesDefeated</inSignalEnable>
 		  <destroyOnCleanup>true</destroyOnCleanup>
 		</li>
-		<li Class="QuestNode_End">
-			<outcome>Success</outcome>
+		<li Class="QuestNode_End">          
+			<inSignal>TooMuchDestruction</inSignal>
+			<sendStandardLetter>true</sendStandardLetter>
+			<outcome>Fail</outcome>
 		</li>
-        <!-- <li Class="QuestNode_End"> -->
-          <!-- <inSignal>site.Destroyed</inSignal> -->
-          <!-- <outcome>Success</outcome> -->
-        <!-- </li> -->
+		<li Class="LoGiQ.QuestNodes.QuestNode_ProgressComplex">
+		   	<inSignals>
+				<li>site.AllEnemiesDefeated</li>
+				<li>site.Destroyed</li>
+			</inSignals>
+			<increments>
+				<li>1</li>
+				<li>10</li>
+			</increments>
+		   <progressMin>0</progressMin>
+		   <progressMax>11</progressMax>
+		   <progressMessage></progressMessage>
+		   <progressName>ConditionAnd</progressName>
+		   <outSignalComplete>SuccessfullyFinished</outSignalComplete>
+	    </li>
+        <li Class="QuestNode_End">
+          <inSignal>SuccessfullyFinished</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Success</outcome>
+        </li>
 		<!-- . . . . . . . . . . . . . . . . . . . .  -->
 	  </nodes>
     </root>

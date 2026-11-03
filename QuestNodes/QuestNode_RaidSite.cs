@@ -40,6 +40,7 @@ namespace LoGiQ.QuestNodes
 			Slate slate = QuestGen.slate;
 			Site site = siteToRaid.GetValue(slate);
 			//Log.Message($"Decoded site '{site.Label}'");
+			Log.Message($"Decoded arrivalmode '{base.arrivalMode}' vs '{arrivalMode.GetValue(slate)}'");
 			QuestGen.slate.Set<Map>("map", site.Map);
 
 			float points = 0f;
@@ -56,6 +57,7 @@ namespace LoGiQ.QuestNodes
 			IEnumerable<PawnKindDef> enumerable;
 			do
 			{
+				
 				incidentParms = GenerateIncidentParmsS(points, faction, slate, questPart_Incident);
 				defaultPawnGroupMakerParms = GetDefaultPawnGroupMakerParmsS(PawnGroupKindDefOf.Combat, incidentParms, site.Tile, ensureCanGenerateAtLeastOnePawn: true);
 				defaultPawnGroupMakerParms.points = AdjustedRaidPointsS(defaultPawnGroupMakerParms.points, incidentParms.raidArrivalMode, incidentParms.raidStrategy, defaultPawnGroupMakerParms.faction, PawnGroupKindDefOf.Combat);
