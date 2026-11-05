@@ -112,7 +112,7 @@
         <lootDef>LoGiQ_LootBox_RescueMission_Boss</lootDef>
         <lootBoxName>BossCrate</lootBoxName>
         <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Search for something usefull</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
       </li>
     </customThings>

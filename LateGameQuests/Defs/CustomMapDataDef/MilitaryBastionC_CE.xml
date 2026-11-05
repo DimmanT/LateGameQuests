@@ -52,7 +52,7 @@
         <lootDef>LoGiQ_LootBox_HQAttackHard_Boss</lootDef>
         <lootBoxName>CommandersLootbox</lootBoxName>
         <tickToOpen>200</tickToOpen>
-        <openReport>pick</openReport>
+        <openReport>Pick the lock</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
       </li>
       <li Class="QuestEditor_Library.CustomThingData_LootBox">
@@ -62,8 +62,9 @@
         <position>(30,0,6)</position>
         <lootDef>LoGiQ_LootBox_HQAttack_Crate</lootDef>
         <lootBoxName>SomeCrate</lootBoxName>
+		<customName>Supply crates</customName>
         <tickToOpen>222</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Search for something usefull</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
       </li>
     </customThings>

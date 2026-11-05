@@ -3,7 +3,7 @@
   <QuestEditor_Library.CustomMapDataDef>
     <defName>LoGiQ_Map_MilitaryBastionB</defName>
     <label>Enemy fortress</label>
-    <description>Fortress, from where raiders attacking the colony.</description>
+    <description>Fortress, from where raiders attack the colony.</description>
     <fogged>true</fogged>
     <size>(36, 1, 36)</size>
     <commonality>1</commonality>
@@ -46,7 +46,7 @@
         <position>(9,0,15)</position>
         <lootBoxName>CommandersLootbox</lootBoxName>
         <tickToOpen>300</tickToOpen>
-        <openReport>pick</openReport>
+        <openReport>Pick the lock</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
 		<lootDef>LoGiQ_LootBox_HQAttackHard_Boss</lootDef>
       </li>
@@ -56,7 +56,7 @@
         <position>(22,0,19)</position>
         <lootBoxName>SomeResources</lootBoxName>
         <tickToOpen>90</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Search for something usefull</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
         <openWhenDestroyed>false</openWhenDestroyed>
         <lootDef>LoGiQ_LootBox_HQAttack_Crate</lootDef>

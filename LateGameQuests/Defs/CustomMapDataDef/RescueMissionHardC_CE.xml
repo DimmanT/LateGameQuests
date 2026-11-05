@@ -46,7 +46,7 @@
         <lootDef>LoGiQ_LootBox_RescueMission_Boss</lootDef>
         <lootBoxName>BossCabinet</lootBoxName>
         <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Pick the lock</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
       </li>
       <li Class="QuestEditor_Library.CustomThingData_CustomContainer">
@@ -99,7 +99,7 @@
         <lootDef>LoGiQ_LootBox_RescueMissionHard_Crate</lootDef>
         <lootBoxName>Undefined</lootBoxName>
         <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Search for something usefull</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
       </li>
     </customThings>

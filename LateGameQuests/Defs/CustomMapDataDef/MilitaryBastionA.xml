@@ -3,7 +3,7 @@
   <QuestEditor_Library.CustomMapDataDef>
     <defName>LoGiQ_Map_MilitaryBastionA</defName>
     <label>Enemy fortress</label>
-    <description>Fortress, from where raiders attacking the colony.</description>
+    <description>Fortress, from where raiders attack the colony.</description>
 	<tags><li>LoGiQ_MilitaryBastionRoot</li></tags>
     <fogged>true</fogged>
     <size>(32, 1, 32)</size>
@@ -40,20 +40,21 @@
         </trapComps>
         <trapName>DefendPoint</trapName>
       </li>
+      <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
+        <def>LoGiQ_InteractableConsole</def>
+        <position>(18,0,14)</position>
+		<rotation>2</rotation>
+      </li>
       <li Class="QuestEditor_Library.CustomThingData_LootBox">
         <def>LoGiQ_Cabinet</def>
         <stuff>Steel</stuff>
         <position>(20,0,13)</position>
         <lootBoxName>BossCabinet</lootBoxName>
+		<customName>Commander's cabinet</customName>
         <tickToOpen>300</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Pick the lock</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
 		<lootDef>LoGiQ_LootBox_HQAttackHard_Boss</lootDef>
-      </li>
-      <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
-        <def>LoGiQ_InteractableConsole</def>
-        <position>(18,0,14)</position>
-		<rotation>2</rotation>
       </li>
     </customThings>
     <pawns>

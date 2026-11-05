@@ -80,7 +80,7 @@
         <position>(22,0,12)</position>
         <lootBoxName>SomeResources</lootBoxName>
         <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Search for somethiung usefull</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
         <lootDef>LoGiQ_LootBox_RescueMissionHard_Crate</lootDef>
       </li>

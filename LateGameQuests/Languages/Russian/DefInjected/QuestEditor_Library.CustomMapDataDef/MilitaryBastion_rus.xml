@@ -3,14 +3,23 @@
 
 <LoGiQ_Map_MilitaryBastionA.label>Крепость</LoGiQ_Map_MilitaryBastionA.label>
 <LoGiQ_Map_MilitaryBastionA.description>Крепость враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBastionA.description>
+<LoGiQ_Map_MilitaryBastionA.customThings.2.openReport>Взломать замок.</LoGiQ_Map_MilitaryBastionA.customThings.2.openReport>
 <LoGiQ_Map_MilitaryBastionB.label>Крепость</LoGiQ_Map_MilitaryBastionB.label>
 <LoGiQ_Map_MilitaryBastionB.description>Крепость враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBastionB.description>
 <LoGiQ_Map_MilitaryBastionB.customThings.1.customName>Сундук коменданта.</LoGiQ_Map_MilitaryBastionB.customThings.1.customName>
+<LoGiQ_Map_MilitaryBastionB.customThings.2.openReport>Взломать замок.</LoGiQ_Map_MilitaryBastionB.customThings.2.openReport>
+<LoGiQ_Map_MilitaryBastionB.customThings.3.openReport>Искать что-нибудь полезное.</LoGiQ_Map_MilitaryBastionB.customThings.3.openReport>
 <LoGiQ_Map_MilitaryBastionC_CE.label>Крепость</LoGiQ_Map_MilitaryBastionC_CE.label>
 <LoGiQ_Map_MilitaryBastionC_CE.description>Крепость враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBastionC_CE.description>
-<LoGiQ_Map_MilitaryBastionC_CE.customThings.1.customName>Ящик коменданта.</LoGiQ_Map_MilitaryBastionC_CE.customThings.1.customName>
+<LoGiQ_Map_MilitaryBastionC_CE.customThings.2.customName>Сундук коменданта.</LoGiQ_Map_MilitaryBastionC_CE.customThings.2.customName>
+<LoGiQ_Map_MilitaryBastionC_CE.customThings.2.openReport>Взломать замок.</LoGiQ_Map_MilitaryBastionC_CE.customThings.2.openReport>
+<LoGiQ_Map_MilitaryBastionC_CE.customThings.3.customName>Ящики с припасами.</LoGiQ_Map_MilitaryBastionC_CE.customThings.3.customName>
+<LoGiQ_Map_MilitaryBastionC_CE.customThings.3.openReport>Искать что-нибудь полезное.</LoGiQ_Map_MilitaryBastionC_CE.customThings.3.openReport>
 <LoGiQ_Map_MilitaryBastionD_VFS.label>Крепость</LoGiQ_Map_MilitaryBastionD_VFS.label>
 <LoGiQ_Map_MilitaryBastionD_VFS.description>Крепость враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBastionD_VFS.description>
-<LoGiQ_Map_MilitaryBastionD_VFS.customThings.1.customName>Ящик коменданта.</LoGiQ_Map_MilitaryBastionD_VFS.customThings.1.customName>
+<LoGiQ_Map_MilitaryBastionD_VFS.customThings.2.customName>Сундук коменданта.</LoGiQ_Map_MilitaryBastionD_VFS.customThings.2.customName>
+<LoGiQ_Map_MilitaryBastionD_VFS.customThings.2.openReport>Взломать замок.</LoGiQ_Map_MilitaryBastionD_VFS.customThings.2.openReport>
+<LoGiQ_Map_MilitaryBastionD_VFS.customThings.3.customName>Ящики с припасами.</LoGiQ_Map_MilitaryBastionD_VFS.customThings.3.customName>
+<LoGiQ_Map_MilitaryBastionD_VFS.customThings.3.openReport>Искать что-нибудь полезное.</LoGiQ_Map_MilitaryBastionD_VFS.customThings.3.openReport>
 
 </LanguageData>

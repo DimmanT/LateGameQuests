@@ -51,7 +51,7 @@
         <lootDef>LoGiQ_LootBox_HQAttack_Boss</lootDef>
         <lootBoxName>BossCrate</lootBoxName>
         <tickToOpen>222</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Pick the lock</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
       </li>
       <li Class="QuestEditor_Library.CustomThingData_LootBox">
@@ -61,7 +61,7 @@
         <lootDef>LoGiQ_LootBox_HQAttack_Armory</lootDef>
         <lootBoxName>Armory</lootBoxName>
         <tickToOpen>333</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Search for something usefull</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
       </li>
       <li Class="QuestEditor_Library.CustomThingData_LootBox">
@@ -71,7 +71,7 @@
         <lootDef>LoGiQ_LootBox_HQAttack_Crate</lootDef>
         <lootBoxName>SomeResources</lootBoxName>
         <tickToOpen>222</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Search for something usefull</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
       </li>
     </customThings>

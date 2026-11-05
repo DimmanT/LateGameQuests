@@ -10,34 +10,7 @@
     <commonality>1</commonality>
     <faction>MapFaction</faction>
     <customThings>   
-	  <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
-        <def>LoGiQ_InteractableConsole</def>
-        <rotation>2</rotation>
-        <position>(24,0,13)</position>
-      </li>
-	  <li Class="QuestEditor_Library.CustomThingData_LootBox">
-        <def>LoGiQ_Cabinet</def>
-		<customName>Commander's cabinet</customName>
-        <stuff>BlocksSandstone</stuff>
-        <position>(25,0,10)</position>
-        <lootDef>LoGiQ_LootBox_HQAttackHard_Boss</lootDef>
-        <lootBoxName>CommandersLootbox</lootBoxName>
-        <tickToOpen>200</tickToOpen>
-        <openReport>pick</openReport>
-        <destroyAfterOpening>false</destroyAfterOpening>
-      </li>
-	  <li Class="QuestEditor_Library.CustomThingData_LootBox">
-        <def>QE_APileOfCrate</def>
-        <stuff>Uranium</stuff>
-        <position>(12,0,22)</position>
-        <lootDef>LoGiQ_LootBox_HQAttack_Crate</lootDef>
-        <lootBoxName>StorageResources</lootBoxName>
-        <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
-        <destroyAfterOpening>false</destroyAfterOpening>
-        <openWhenDestroyed>false</openWhenDestroyed>
-      </li>   
-      <li Class="QuestEditor_Library.CustomThingData_CustomTrap">
+	  <li Class="QuestEditor_Library.CustomThingData_CustomTrap">
         <def>QE_TriggerTrap</def>
         <position>(21,0,13)</position>
         <trapComps>
@@ -67,6 +40,34 @@
         </trapComps>
         <trapName>DefendPoint</trapName>
       </li>
+	  <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
+        <def>LoGiQ_InteractableConsole</def>
+        <rotation>2</rotation>
+        <position>(24,0,13)</position>
+      </li>
+	  <li Class="QuestEditor_Library.CustomThingData_LootBox">
+        <def>LoGiQ_Cabinet</def>
+		<customName>Commander's cabinet</customName>
+        <stuff>BlocksSandstone</stuff>
+        <position>(25,0,10)</position>
+        <lootDef>LoGiQ_LootBox_HQAttackHard_Boss</lootDef>
+        <lootBoxName>CommandersLootbox</lootBoxName>
+        <tickToOpen>200</tickToOpen>
+        <openReport>Pick the lock</openReport>
+        <destroyAfterOpening>false</destroyAfterOpening>
+      </li>
+	  <li Class="QuestEditor_Library.CustomThingData_LootBox">
+        <def>QE_APileOfCrate</def>
+		<customName>Supply crates</customName>
+        <stuff>Steel</stuff>
+        <position>(12,0,22)</position>
+        <lootDef>LoGiQ_LootBox_HQAttack_Crate</lootDef>
+        <lootBoxName>StorageResources</lootBoxName>
+        <tickToOpen>100</tickToOpen>
+        <openReport>Search for something usefull</openReport>
+        <destroyAfterOpening>false</destroyAfterOpening>
+        <openWhenDestroyed>false</openWhenDestroyed>
+      </li>   
     </customThings>
     <pawns>
       <li>

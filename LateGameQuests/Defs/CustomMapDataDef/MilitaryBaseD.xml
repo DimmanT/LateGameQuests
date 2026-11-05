@@ -3,7 +3,7 @@
   <QuestEditor_Library.CustomMapDataDef>
     <defName>LoGiQ_Map_MilitaryBaseD</defName>
     <label>Enemy military base</label>
-    <description>Military base, from where raiders attacking the colony.</description>
+    <description>Military base	from where raiders attack the colony.</description>
     <fogged>true</fogged>
     <size>(32, 1, 32)</size>
     <commonality>1</commonality>
@@ -39,6 +39,10 @@
         </trapComps>
         <trapName>DefendPoint</trapName>
       </li>
+	  <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
+        <def>LoGiQ_InteractableConsole</def>
+        <position>(22,0,18)</position>
+      </li>
       <li Class="QuestEditor_Library.CustomThingData_LootBox">
         <def>LoGiQ_Cabinet</def>
         <stuff>Steel</stuff>
@@ -46,12 +50,8 @@
         <lootDef>LoGiQ_LootBox_HQAttack_Boss</lootDef>
         <lootBoxName>BossCrate</lootBoxName>
         <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Pick the lock</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
-      </li>
-      <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
-        <def>LoGiQ_InteractableConsole</def>
-        <position>(22,0,18)</position>
       </li>
       <li Class="QuestEditor_Library.CustomThingData_LootBox">
         <def>LoGiQ_Cabinet</def>
@@ -60,7 +60,7 @@
         <lootDef>LoGiQ_LootBox_HQAttack_Armory</lootDef>
         <lootBoxName>Armory</lootBoxName>
         <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Pick the lock</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
       </li>
       <li Class="QuestEditor_Library.CustomThingData_LootBox">
@@ -70,7 +70,7 @@
         <lootDef>LoGiQ_LootBox_HQAttack_Crate</lootDef>
         <lootBoxName>Crates</lootBoxName>
         <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Search for something useful</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
       </li>
     </customThings>

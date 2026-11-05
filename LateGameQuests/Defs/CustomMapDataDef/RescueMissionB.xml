@@ -45,7 +45,7 @@
         <position>(15,0,14)</position>
         <lootBoxName>BossCrate</lootBoxName>
         <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Pick the lock</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
 		<lootDef>LoGiQ_LootBox_RescueMission_Boss</lootDef>
       </li>

@@ -40,24 +40,24 @@
         </trapComps>
         <trapName>DefendPoint</trapName>
       </li>
+	  <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
+        <def>LoGiQ_InteractableConsole</def>
+        <position>(21,0,2)</position>
+      </li>
       <li Class="QuestEditor_Library.CustomThingData_LootBox">
         <def>LoGiQ_Cabinet</def>
         <stuff>Plasteel</stuff>
         <position>(24,0,4)</position>
         <lootBoxName>BossCrate</lootBoxName>
         <tickToOpen>200</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Pick the lock</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
         <lootDef>LoGiQ_LootBox_HQAttack_Boss</lootDef>
-      </li>
-      <li Class="QuestEditor_Library.CustomThingData_InteractableThing">
-        <def>LoGiQ_InteractableConsole</def>
-        <position>(21,0,2)</position>
       </li>
       <li Class="QuestEditor_Library.CustomThingData_LootBox">
         <def>LoGiQ_Cabinet</def>
         <stuff>Steel</stuff>
-        <customDescription>Search for something usefull</customDescription>
+        <customDescription>Pick the lock</customDescription>
         <position>(9,0,18)</position>
         <lootBoxName>ArmoryCrate</lootBoxName>
         <tickToOpen>150</tickToOpen>

@@ -68,7 +68,7 @@
         <position>(16,0,17)</position>
         <lootBoxName>SupplyCrate</lootBoxName>
         <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Search for something useful</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
         <lootDef>LoGiQ_LootBox_HQAttack_Crate</lootDef>
       </li>

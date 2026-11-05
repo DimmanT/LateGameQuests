@@ -49,7 +49,7 @@
         <position>(33,0,24)</position>
         <lootBoxName>BossBox</lootBoxName>
         <tickToOpen>200</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Pick the lock</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
 		<lootDef>LoGiQ_LootBox_HQAttack_Boss</lootDef>
       </li>
