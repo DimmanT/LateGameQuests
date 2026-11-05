@@ -18,6 +18,7 @@
 <LoGiQ_ResearchCampBase_RBench.interactions.3.interactionText>Создание чертежей</LoGiQ_ResearchCampBase_RBench.interactions.3.interactionText>
 <LoGiQ_ResearchCampBase_Console.interactions.0.interactionText>Поиск в базах данных</LoGiQ_ResearchCampBase_Console.interactions.0.interactionText>
 <LoGiQ_ResearchCampBase_Console.interactions.1.interactionText>Онлайн консультация</LoGiQ_ResearchCampBase_Console.interactions.1.interactionText>
+<LoGiQ_ResearchCampBase_Console.interactions.2.interactionText>Созвать научный совет</LoGiQ_ResearchCampBase_Console.interactions.2.interactionText>
 <LoGiQ_ResearchCampAPC_Disasm.interactions.0.interactionText>Быстрый демонтаж</LoGiQ_ResearchCampAPC_Disasm.interactions.0.interactionText>
 <LoGiQ_ResearchCampAPC_Disasm.interactions.1.interactionText>Аккуратный демонтаж</LoGiQ_ResearchCampAPC_Disasm.interactions.1.interactionText>
 <LoGiQ_ResearchCampAPC_Disasm.interactions.1.results.1.actions.0.datas.0.message>Некоторые обломки оказались полезны, проверьте инвентарь.</LoGiQ_ResearchCampAPC_Disasm.interactions.1.results.1.actions.0.datas.0.message>

@@ -36,7 +36,7 @@
 <LoGiQ_DefendMiningStation.root.nodes.Delay-0.node.parms.customLetterText.value.slateRef>[enemyFaction_pawnsPlural] завершили свои приготовления и приступили к штурму.</LoGiQ_DefendMiningStation.root.nodes.Delay-0.node.parms.customLetterText.value.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.Delay-1.expiryInfoPart.slateRef>Подкрепления $enemyFaction прибудут через {0}'</LoGiQ_DefendMiningStation.root.nodes.Delay-1.expiryInfoPart.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.Delay-1.expiryInfoPartTip.slateRef>Подкрепления $enemyFaction прибудут {0}'</LoGiQ_DefendMiningStation.root.nodes.Delay-1.expiryInfoPartTip.slateRef>
-<LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterLabel.value.slateRef>Вторая волна рейдеров!</LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterLabel.value.slateRef>
+<LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterLabel.value.slateRef>Ещё одна волна рейдеров!</LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterLabel.value.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterText.value.slateRef>[enemyFaction_pawnsPlural] готовы к битве!</LoGiQ_DefendMiningStation.root.nodes.Delay-1.node.parms.customLetterText.value.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.label.slateRef>Перегрузка прошла успешно!</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.label.slateRef>
 <LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.text.slateRef>Выход продукции увеличен. Излишек можно оставить себе.</LoGiQ_DefendMiningStation.root.nodes.OverdrivedForProduction.node.nodes.Letter.text.slateRef>

@@ -505,6 +505,45 @@
 			<failReason></failReason>
 			<targetText>Trigger</targetText>
 			<skill>Intellectual</skill>
+			<level>7</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+          <li Class="LoGiQ.CQFConditions.CQFCondition_PowerOn">
+			<targetText>CustomThing</targetText>
+		  </li>
+		</condition>
+	  </li>
+	</conditions>
+  </li>
+  <li>
+  <interactionText>Call scientific council</interactionText>
+	<tickToOperate>4200</tickToOperate>
+	<results>
+	  <li>
+		<resultName>BigProgress</resultName>
+		<actions>
+		  <li Class="QuestEditor_Library.CQFAction_SentSignal">
+			<signal>AddBigProgress</signal>
+		  </li>
+		</actions>
+		<conditions />
+	  </li>
+	</results>
+	<conditions>
+	  <li Class="QuestEditor_Library.DialogCondition_And">
+		<failReason></failReason>
+		<condition>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<skill>Social</skill>
+			<level>12</level>
+			<needToBeGreater>true</needToBeGreater>
+		  </li>
+		  <li Class="QuestEditor_Library.DialogCondition_Skill">
+			<failReason></failReason>
+			<targetText>Trigger</targetText>
+			<skill>Intellectual</skill>
 			<level>8</level>
 			<needToBeGreater>true</needToBeGreater>
 		  </li>
