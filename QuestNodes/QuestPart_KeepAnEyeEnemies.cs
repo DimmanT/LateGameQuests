@@ -9,31 +9,40 @@ using Verse;
 
 namespace LoGiQ.QuestNodes
 {
-    class QuestPart_KeepAnEyeEnemies: QuestPart//, ISignalReceiver
+    class QuestPart_KeepAnEyeEnemies: QuestPartActivable//, ISignalReceiver
     {
-        public bool active = false;
+
 
         public Site site;
-        public string inSignal = "";
-        public string inSignalDisable = "";
-        public string outSignalEnemiesArrived = ""; //not working now (16.09.2026)
+        public string outSignalEnemiesArrived = ""; 
         public string outSignalEnemiesDefeated = "";
         public bool canBeFogged = false;
         public bool countDormantPawnsAsHostile = false;
 
+        private bool Active => State == QuestPartState.Enabled;
+        private int skiper = 0;
+        private bool prevAnyEnemy = false; //previouse value of anyEnemy flag
+
+        /// manually set active/incative (enable/disable)
+        /// <param name="on">set enable (active) or disable (inactive)</param>
+        public void SetActive(bool on)
+        {
+            if (on)
+                 Enable(new SignalArgs());
+            else Disable();
+        }
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_References.Look(ref site, "Site");
-            Scribe_Values.Look(ref inSignal, "InSignal");
-            Scribe_Values.Look(ref inSignalDisable, "InSignalDisable");
             Scribe_Values.Look(ref outSignalEnemiesArrived, "OutSignalEnemiesArrived");
             Scribe_Values.Look(ref outSignalEnemiesDefeated, "OutSignalEnemiesDefeated");
+            Scribe_Values.Look(ref prevAnyEnemy, "PrevAnyEnemy");
         }
 
         public override void Notify_PawnKilled(Pawn pawn, DamageInfo? dinfo)
         {
-            if (!active)
+            if (!Active)
                 return;
             
             base.Notify_PawnKilled(pawn, dinfo);
@@ -41,29 +50,30 @@ namespace LoGiQ.QuestNodes
             //Log.Message($"DBG: anyEnemy? {anyEnemy}");
             if(!anyEnemy)
                 Find.SignalManager.SendSignal(new Signal(outSignalEnemiesDefeated));
+            prevAnyEnemy = anyEnemy;
         }
-
-        public override void Notify_QuestSignalReceived(Signal signal)
+        public override void QuestPartTick()
         {
-            //Log.Message($"QuestPart_KeepAnEyeEnemies: Input signal {signal.tag}.");
-            
-            //first of all - check activity
-            if(active)
+            if (Active && skiper++ == 300)
             {
-                //check disable
-                if (signal.tag == inSignalDisable)
-                    active = false;
+                skiper = 0;
+                bool anyEnemy = GenHostility.AnyHostileActiveThreatToPlayer(site.Map, countDormantPawnsAsHostile, canBeFogged);
+                if(anyEnemy && !prevAnyEnemy)
+                    Find.SignalManager.SendSignal(new Signal(outSignalEnemiesArrived));
+                else
+                if (!anyEnemy && prevAnyEnemy)
+                    Find.SignalManager.SendSignal(new Signal(outSignalEnemiesDefeated));
+
+                //Log.Message($"checking enemies: now {anyEnemy} / was {prevAnyEnemy}");
+
+                prevAnyEnemy = anyEnemy;
             }
-            else
-            {
-                if (signal.tag == inSignal)
-                    active = true;
-            }
+
         }
 
         //public void Notify_SignalReceived(Signal signal)
         //{
-            //Log.Message($"QuestPart_KeepAnEyeEnemies: Generic input signal {signal.tag}, args={signal.args}.");
+        //Log.Message($"QuestPart_KeepAnEyeEnemies: Generic input signal {signal.tag}, args={signal.args}.");
         //}
     }
 }

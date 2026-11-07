@@ -184,6 +184,25 @@
 			<progressMessage TKey="ProgressMessage">research progress</progressMessage>
 			<outSignalComplete>FinishResearch</outSignalComplete>
 		</li>
+		<li Class="LoGiQ.QuestNodes.QuestNode_Progress"> <!-- regress -->
+		   <inSignal>Scientist.Killed</inSignal>
+		   <increment>1</increment>
+		   <progressMax>2</progressMax>
+		   <progressMin>0</progressMin>
+		   <progressMessage>Scientist is dead! You are not handling your task well.</progressMessage>
+		   <progressName>ScientistsKilledProgress</progressName>
+		   <outSignalComplete>AllScientistsKilled</outSignalComplete>
+	    </li>
+		<li Class="QuestNode_ChangeFactionGoodwill">
+			<inSignal>Scientist.Killed</inSignal>
+			<faction>$askerFaction</faction>
+			<change>-15</change>
+			<canSendLetter>true</canSendLetter>
+			<canSendMessage>true</canSendMessage>
+			<ensureHostile>false</ensureHostile>
+			<reason>MemberNeutrallyDied</reason>
+			<!-- <reason>QuestPawnLost</reason> -->
+		</li>
 		<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
 		<!-- . . . GOALS . . . . . . . . . . . . . . . . . . -->
 		<li Class="LoGiQ.QuestNodes.QuestNode_Goals">
@@ -201,6 +220,11 @@
 					<setSignal>site.MapGenerated</setSignal>
 					<unsetSignal>site.Destroyed</unsetSignal>
 					<initialState>false</initialState>
+				</li>
+				<li Class="LoGiQ.QuestNodes.GoalBoolean">
+					<label>LoGiQ_GoalLabel_AllScientistsAlive</label>
+					<unsetSignal>AllScientistsKilled</unsetSignal>
+					<initialState>true</initialState>
 				</li>
 			</mandatory>
 			<optional>
@@ -254,6 +278,11 @@
         </li>
         <li Class="RimWorld.QuestGen.QuestNode_End">
           <inSignal>site.Destroyed</inSignal>
+		  <sendStandardLetter>true</sendStandardLetter>
+          <outcome>Fail</outcome>
+        </li>
+		<li Class="RimWorld.QuestGen.QuestNode_End">
+          <inSignal>AllScientistsKilled</inSignal>
 		  <sendStandardLetter>true</sendStandardLetter>
           <outcome>Fail</outcome>
         </li>

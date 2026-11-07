@@ -127,6 +127,28 @@
           <outcome>Success</outcome>
 		  <sendStandardLetter>true</sendStandardLetter>
         </li>
+		<!-- Limit the raids-->
+		<li Class="LoGiQ.QuestNodes.QuestNode_Progress">
+		    <inSignal>PerformNextRaid</inSignal>
+		    <increment>1</increment>
+		    <progressMin>0</progressMin>
+		    <progressMax>10</progressMax>
+		    <progressMessage></progressMessage>
+		    <progressName>AllRaidsGoneProgress</progressName>
+		    <outSignalComplete>AllRaidsGone</outSignalComplete>
+	    </li>
+		<li Class="QuestNode_Letter">
+		    <inSignal>AllRaidsGone</inSignal>
+			<label>Quest is expired.</label>
+			<letterDef>NeutralEvent</letterDef>
+			<text>Since the raiders have never once succeeded, they stop attacking the colony.</text>
+		</li>
+		<li Class="QuestNode_End">
+          <inSignal>AllRaidsGone</inSignal>
+          <outcome>Fail</outcome>
+		  <sendStandardLetter>false</sendStandardLetter>
+        </li>
+		<!-- . . . . . -->
 	  </nodes>
     </root>
 	<rootSelectionWeight>1.25</rootSelectionWeight>

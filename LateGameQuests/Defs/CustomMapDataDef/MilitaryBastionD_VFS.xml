@@ -50,6 +50,7 @@
 		<customName>Commander's cabinet</customName>
         <stuff>BlocksSandstone</stuff>
         <position>(25,0,10)</position>
+		<rotation>1</rotation>
         <lootDef>LoGiQ_LootBox_HQAttackHard_Boss</lootDef>
         <lootBoxName>CommandersLootbox</lootBoxName>
         <tickToOpen>200</tickToOpen>

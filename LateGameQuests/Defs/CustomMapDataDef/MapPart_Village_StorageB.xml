@@ -16,7 +16,7 @@
         <lootDef>LoGiQ_VillageCrate</lootDef>
         <lootBoxName>VillageCrateB</lootBoxName>
         <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Search for something usefull</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
         <openWhenDestroyed>false</openWhenDestroyed>
       </li>
@@ -27,7 +27,7 @@
         <lootDef>LoGiQ_VillageCrate</lootDef>
         <lootBoxName>VillageCrateA</lootBoxName>
         <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Search for something usefull</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
         <openWhenDestroyed>false</openWhenDestroyed>
       </li>

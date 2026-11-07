@@ -15,7 +15,7 @@
         <position>(3,0,2)</position>
         <lootBoxName>VillageCrate</lootBoxName>
         <tickToOpen>100</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Search for something usefull</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
         <openWhenDestroyed>false</openWhenDestroyed>
         <lootDef>LoGiQ_VillageCrate</lootDef>

@@ -15,10 +15,11 @@
 	<LoGiQ_GoalLabel_OverdriveMining>Optimize mining</LoGiQ_GoalLabel_OverdriveMining>
 	<!-- . . . . . . . . . . . . -->
 		
-	<!-- . DefendMiningStation . -->
+	<!-- . DefendResearchCamp . -->
 	<LoGiQ_GoalLabel_FinishResearch>Finish the research</LoGiQ_GoalLabel_FinishResearch>
 	<LoGiQ_GoalLabel_ResearchProgress>Research progress</LoGiQ_GoalLabel_ResearchProgress>
 	<LoGiQ_GoalLabel_StayAtSector>Stay at sector</LoGiQ_GoalLabel_StayAtSector>
+	<LoGiQ_GoalLabel_AllScientistsAlive>Keep scientists alive</LoGiQ_GoalLabel_AllScientistsAlive>
 	<!-- . . . . . . . . . . . . -->
 	
 	<!-- RescueMission(Easy/Hard)  -->

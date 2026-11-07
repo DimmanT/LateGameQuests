@@ -28,5 +28,7 @@
 <LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>Силы $enemyFaction будут здесь {0}</LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>
 <LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>Вражеское подкрепление!</LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>
 <LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>Вражеский отряд достиг точки назначения и готов контратаковать.</LoGiQ_AttackHQ.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>
+<LoGiQ_AttackHQ.root.nodes.Letter-0.label.slateRef>Задание стало неактуально</LoGiQ_AttackHQ.root.nodes.Letter-0.label.slateRef>
+<LoGiQ_AttackHQ.root.nodes.Letter-0.text.slateRef>Поскольку рейдеры ни разу не добились успеха, они прекращают нападать на колонию.</LoGiQ_AttackHQ.root.nodes.Letter-0.text.slateRef>
 
 </LanguageData>

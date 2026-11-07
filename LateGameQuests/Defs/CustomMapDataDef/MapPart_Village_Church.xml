@@ -29,7 +29,7 @@
         <position>(5,0,8)</position>
         <lootBoxName>NobleChest</lootBoxName>
         <tickToOpen>500</tickToOpen>
-        <openReport>CQF_Open</openReport>
+        <openReport>Steal</openReport>
         <destroyAfterOpening>false</destroyAfterOpening>
         <loots>
           <li>

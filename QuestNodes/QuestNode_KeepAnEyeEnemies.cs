@@ -28,8 +28,8 @@ namespace LoGiQ.QuestNodes
 
             //activate - deactivate
             if (inSignal.TryGetValue(slate, out string inSignalStr))
-                questPart.inSignal = QuestGenUtility.HardcodedSignalWithQuestID(inSignalStr);
-            else questPart.active = true;
+                questPart.inSignalEnable = QuestGenUtility.HardcodedSignalWithQuestID(inSignalStr);
+            else questPart.SetActive(true);
             if (inSignalDisable.TryGetValue(slate, out string inSignalDisableStr))
                 questPart.inSignalDisable = QuestGenUtility.HardcodedSignalWithQuestID(inSignalDisableStr);
 

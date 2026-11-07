@@ -42,7 +42,7 @@
 				<li>-10</li>
 				<li>-5</li>
 			</increments>
-		   <progressMax>10</progressMax>
+		   <progressMax>20</progressMax>
 		   <progressMin>100</progressMin>
 		   <progressMessage>commercial value left</progressMessage>
 		   <progressName>CommercialValue</progressName>

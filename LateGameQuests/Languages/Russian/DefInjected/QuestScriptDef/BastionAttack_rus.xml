@@ -30,6 +30,8 @@
 <LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>Отряд $enemyFaction будет здесь {0}'</LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.expiryInfoPartTip.slateRef>
 <LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>К противнику подошло подкрепление!</LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterLabel.value.slateRef>
 <LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>Подкрепление противника прибыло в сектор и готово контратаковать.</LoGiQ_AttackBastion.root.nodes.siteMapGenerated.node.nodes.Delay.node.parms.customLetterText.value.slateRef>
-  
+<LoGiQ_AttackBastion.root.nodes.Letter-0.label.slateRef>Задание стало неактуально</LoGiQ_AttackBastion.root.nodes.Letter-0.label.slateRef>
+<LoGiQ_AttackBastion.root.nodes.Letter-0.text.slateRef>Поскольку рейдеры ни разу не добились успеха, они прекращают нападать на колонию.</LoGiQ_AttackBastion.root.nodes.Letter-0.text.slateRef>
+
 
 </LanguageData>
