@@ -25,6 +25,16 @@
         </value>
       </li>
     </pawns>
+	<roofRects>
+      <li>
+        <key>RoofConstructed</key>
+        <value>
+          <li>(0,1,9,6)</li>
+          <li>(1,7,9,7)</li>
+          <li>(5,8,9,9)</li>
+        </value>
+      </li>
+    </roofRects>
     <terrainsRect>
       <li>
         <key>PackedDirt</key>

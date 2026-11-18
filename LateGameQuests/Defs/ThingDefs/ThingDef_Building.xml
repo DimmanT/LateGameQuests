@@ -241,15 +241,14 @@
 		  <li>PlaceWorker_NotUnderRoof</li>
 		</placeWorkers>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-		<!-- <comps> -->
-		  <!-- <li Class="CompProperties_Shuttle" /> -->
-		  <!-- <li Class="CompProperties_Transporter"> -->
-			<!-- <massCapacity>1000</massCapacity> -->
-			<!-- <max1PerGroup>true</max1PerGroup> -->
-			<!-- <canChangeAssignedThingsAfterStarting>false</canChangeAssignedThingsAfterStarting> -->
-			<!-- <showOverallStats>false</showOverallStats> -->
-		  <!-- </li> -->
-		<!-- </comps> -->
+		<comps>
+		  <li Class="LoGiQ.Components.CompProperties_TransporterQuest">
+			<massCapacity>1000</massCapacity>
+			<max1PerGroup>true</max1PerGroup>
+			<canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+			<showOverallStats>true</showOverallStats>
+		  </li>
+		</comps>
 		<minTechLevelToBuild>Animal</minTechLevelToBuild>
 		<maxTechLevelToBuild>Animal</maxTechLevelToBuild>
 		<designationCategory>Misc</designationCategory>
