@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные со сборкой.
 [assembly: AssemblyTitle("LateGameQuests")]
-[assembly: AssemblyDescription("DotNet 4.8 (RimW 1.6)")]
+[assembly: AssemblyDescription("DotNet 10 (RimW 1.7)")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Dimman")]
 [assembly: AssemblyProduct("LateGameQuests")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номера сборки и редакции по умолчанию 
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.1.4")]
-[assembly: AssemblyFileVersion("0.1.1.4")]
+[assembly: AssemblyVersion("0.6.3.0")]
+[assembly: AssemblyFileVersion("0.6.3.0")]
