@@ -52,7 +52,7 @@ namespace LoGiQ.QuestNodes
             var comp = transporter.TryGetComp<LoGiQ.Components.CompTransporterQuest>();
             if (comp == null)
             {
-                Log.Warning("Can not get 'CompTransporterQuest'");
+                Log.Warning("Can not get comp 'CompTransporterQuest'");
                 return;
             }
             //...............................

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <QuestEditor_Library.CustomMapDataDef>
-    <defName>LoGiQ_MapPart_Village_Church</defName>
-    <label>LoGiQ_MapPart_Village_Church</label>
+    <defName>LoGiQ_MapPart_Village_ChurchA</defName>
+    <label>LoGiQ_MapPart_Village_ChurchA</label>
     <size>(10, 1, 10)</size>
     <isPart>true</isPart>
-    <commonality>1</commonality>
+    <commonality>0.85</commonality>
     <faction>MapFaction</faction>
 	<destroyAllThing>true</destroyAllThing>
     <customThings>

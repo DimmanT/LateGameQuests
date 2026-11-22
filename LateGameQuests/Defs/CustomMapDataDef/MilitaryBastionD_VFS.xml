@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <QuestEditor_Library.CustomMapDataDef>
+  <QuestEditor_Library.CustomMapDataDef MayRequire="VanillaExpanded.VFESecurity">
     <defName>LoGiQ_Map_MilitaryBastionD_VFS</defName>
     <label>Enemy fortress</label>
     <description>Fortress, from where raiders attacking the colony.</description>

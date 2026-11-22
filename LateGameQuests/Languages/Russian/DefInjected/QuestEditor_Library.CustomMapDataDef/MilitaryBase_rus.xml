@@ -28,4 +28,11 @@
 <LoGiQ_Map_MilitaryBaseG_FI.description MayRequire="aoba.fortress.industrial">Военная база враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBaseG_FI.description>
 <LoGiQ_Map_MilitaryBaseG_FI.customThings.2.openReport MayRequire="aoba.fortress.industrial">Взломать замок</LoGiQ_Map_MilitaryBaseG_FI.customThings.2.openReport>
 <LoGiQ_Map_MilitaryBaseG_FI.customThings.3.openReport MayRequire="aoba.fortress.industrial">Взломать замок</LoGiQ_Map_MilitaryBaseG_FI.customThings.3.openReport>
+<LoGiQ_Map_MilitaryBaseH_VFS_FI.label MayRequire="VanillaExpanded.VFESecurity,aoba.fortress.industrial">Военная база</LoGiQ_Map_MilitaryBaseH_VFS_FI.label>
+<LoGiQ_Map_MilitaryBaseH_VFS_FI.description MayRequire="VanillaExpanded.VFESecurity,aoba.fortress.industrial">Военная база враждебной фракции, с которой на колонию нападают рейдеры.</LoGiQ_Map_MilitaryBaseH_VFS_FI.description>
+<LoGiQ_Map_MilitaryBaseH_VFS_FI.customThings.2.openReport MayRequire="VanillaExpanded.VFESecurity,aoba.fortress.industrial">Искать что-нибудь полезное</LoGiQ_Map_MilitaryBaseH_VFS_FI.customThings.2.openReport>
+<LoGiQ_Map_MilitaryBaseH_VFS_FI.customThings.3.openReport MayRequire="VanillaExpanded.VFESecurity,aoba.fortress.industrial">Искать что-нибудь полезное</LoGiQ_Map_MilitaryBaseH_VFS_FI.customThings.3.openReport>
+<LoGiQ_Map_MilitaryBaseH_VFS_FI.customThings.4.openReport MayRequire="VanillaExpanded.VFESecurity,aoba.fortress.industrial">Взломать замок</LoGiQ_Map_MilitaryBaseH_VFS_FI.customThings.4.openReport>
+<LoGiQ_Map_MilitaryBaseH_VFS_FI.customThings.5.openReport MayRequire="VanillaExpanded.VFESecurity,aoba.fortress.industrial">Искать что-нибудь полезное</LoGiQ_Map_MilitaryBaseH_VFS_FI.customThings.5.openReport>
+
 </LanguageData>

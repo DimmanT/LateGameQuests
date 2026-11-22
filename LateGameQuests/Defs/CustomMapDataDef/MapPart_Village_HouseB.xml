@@ -17,7 +17,6 @@
             <kind>Villager</kind>
             <count>1</count>
             <faction>MapFaction</faction>
-            <generationChance>0.75</generationChance>
             <spawnType>MapGeneration</spawnType>
           </li>
         </value>
